@@ -38,7 +38,9 @@ Do the work at build or collection time rather than per request, so that a CDN s
 ahead of time comes before a server, and a scheduled job before a queue. When a feature does need a server or
 background work, say why static output cannot serve it, and keep each job idempotent and bounded by a timeout.
 The interface starts from an established component kit and one set of design tokens, keeps one purpose per page,
-and carries no decoration that adds no information.
+and carries no decoration that adds no information. GongJae wants it simple, natural, and clean, and not
+recognizable as agent-made. The frontend-design skill lists the defaults that give a generated page away; where its
+call for a distinctive identity or an aesthetic risk pulls against GongJae's direction, GongJae's direction wins.
 
 ## Code
 
@@ -74,6 +76,11 @@ loosening the assertion, skipping the test, or disabling a lint rule; if a test 
 A change is done when the project's full check passes, the one command that `CLAUDE.md` names for formatting,
 lint, type check, tests, and build. For a change a user can see, also check the page in a browser at a phone width
 and a desktop width, walk the changed path with the keyboard, and run an accessibility scan against WCAG 2.2 AA.
+GongJae reviews the interface while it is built, on a track of its own beside the collectors. Keep the dev server
+running for them. Before each handoff to GongJae, run ui-reviewer on the pages and states that changed and settle
+its findings, then tell GongJae what changed and which page to open. Record their design feedback in
+`docs/decisions.md` when it constrains later pages, and send each correction to the harness as `~/.claude/CLAUDE.md`
+describes, since it shows GongJae's taste for the next service too.
 Before each commit that changes code or the build, run `/code-review` on the change; a commit that changes only
 documentation or dependency-update settings needs none. Once the repository has an `origin` remote, add
 `/security-review` when the change touches input handling, collection, or the rendering of external text. A
