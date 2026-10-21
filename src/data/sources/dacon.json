@@ -1,0 +1,25 @@
+{
+  "source": "dacon",
+  "retrievedAt": "2026-10-21T11:33:16.455Z",
+  "listings": [
+    {
+      "id": "dacon:236771",
+      "source": "dacon",
+      "kind": "challenge",
+      "title": "항만 문제해결을 위한 AI 기술 공모전",
+      "organizer": "해양수산부",
+      "conference": null,
+      "url": "https://dacon.io/competitions/official/236771/overview/description",
+      "sourceUrl": "https://dacon.io/competitions/official/236771/overview/description",
+      "opensAt": "2026-10-12T01:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-02T01:00:00.000Z",
+          "zone": "KST"
+        }
+      ]
+    }
+  ]
+}
