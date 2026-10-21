@@ -2,3 +2,8 @@
 .claude/settings.local.json
 .claude/worktrees/
 .env
+
+# Research material (survey notes, reports, task checklists) stays local; the repository holds only the service.
+lab/
+reports/
+research_notes/

@@ -1,8 +1,8 @@
 # AI-Challenge-Board (ACB)
 
 AI-Challenge-Board, ACB for short, is a web service in Korean and English, later an app, that gathers AI
-challenges, competitions, benchmarks, and conference-linked contests so that AI researchers can search, filter,
-bookmark, and follow their deadlines. Its repository is `ai-challenge-board`.
+challenges, competitions, workshop paper calls, and conference-linked contests so that AI researchers can search,
+filter, bookmark, and follow their deadlines. Its repository is `ai-challenge-board`.
 Its first phase covers the major conferences (CVPR, ICCV, ECCV, NeurIPS, ICML, ICLR, AAAI); the project memory
 holds GongJae's statement of the vision and the phase order.
 
@@ -15,6 +15,16 @@ skills are turned off in `.claude/settings.json`.
 Research and design. The stack and the hosting are not chosen, and no feature is implemented until GongJae
 approves the first scope and the stack. This directory is a local git repository; the GitHub repository will be
 private and does not exist yet.
+
+## Scope
+
+GongJae set these on 2026-10-20:
+- Listed: time-bound challenges and competitions, workshop paper calls (CFPs), and domestic Korean competitions
+  such as DACON, AIFactory, and 과기정통부 programs.
+- Not listed: persistent benchmarks and leaderboards without a deadline.
+- Not decided: whether journal special issues, fellowships, and internships are listed.
+
+The landscape survey behind these choices is `reports/AI 챌린지 서비스 생태계 조사.md`.
 
 ## Product constraints
 
@@ -33,6 +43,9 @@ GongJae set these on 2026-10-20:
   it and its Crawl-delay, stopping when blocked.
 
 ## Layout
+
+These folders hold research material and stay local; `.gitignore` keeps them out of the repository, which
+holds only the service.
 
 - `lab/`: the working checklist of the current task, deleted when the task ends.
 - `research_notes/`: notes on services and data sources, one file per topic, with evidence tags.
