@@ -171,6 +171,10 @@ Korean platforms GongJae chose on 2026-10-21.
   structured 주최 row of a competition's page; the list's host page name is sometimes a series or AIFactory
   itself, so it is not used. Practice entries and recruitment posts are dropped by their title prefixes. Nothing
   was open on 2026-10-21, so the source lists nothing until a competition opens.
+- **HTML pages:** DrivenData, grand-challenge.org, and AIcrowd publish their lists only as server-rendered HTML,
+  which the collectors read with `node-html-parser` and CSS selectors rather than regular expressions. It was
+  chosen on 2026-10-21 over cheerio, which brings eleven dependencies and about 1 MB, and parse5, which has no
+  selectors; it is pinned to 9.0.4, the release before one published two days earlier.
 - **Duplicates:** a challenge that two sources carry, such as NeurIPS's Predictive AI Evaluation Competition on
   OpenReview and Codabench, is listed once. `src/lib/duplicates.ts` merges two listings from different sources at
   build time when they have the same kind, the same title words once conference names, years, "at", and "the" are
