@@ -3,6 +3,7 @@ import { aicrowd } from "./aicrowd/index.ts"
 import { aifactory } from "./aifactory/index.ts"
 import { codabench } from "./codabench/index.ts"
 import { dacon } from "./dacon/index.ts"
+import { drivendata } from "./drivendata/index.ts"
 import { evalai } from "./evalai/index.ts"
 import { kaggle } from "./kaggle/index.ts"
 import { lablab } from "./lablab/index.ts"
@@ -18,6 +19,7 @@ export const sources: Source[] = [
   kaggle,
   dacon,
   aifactory,
+  drivendata,
   lablab,
   zindi,
   signate,
