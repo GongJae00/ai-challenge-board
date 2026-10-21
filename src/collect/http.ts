@@ -4,7 +4,8 @@ import robotsParser from "robots-parser"
 export const ROBOTS_TOKEN = "ACB-collector"
 export const USER_AGENT = `${ROBOTS_TOKEN}/0.1 (+https://github.com/GongJae00/ai-challenge-board)`
 
-const TIMEOUT_MS = 30_000
+/** Codabench sends its API responses at a few kilobytes a second, so a list page takes tens of seconds. */
+const TIMEOUT_MS = 90_000
 /** Tries per request: the first and up to two retries. */
 const MAX_ATTEMPTS = 3
 const BACKOFF_MS = [5_000, 15_000]
@@ -31,7 +32,29 @@ export interface ClientOptions {
 export interface Client {
   getText(url: string): Promise<string>
   getJson(url: string): Promise<unknown>
+  /**
+   * A POST that only reads, such as a list query an API takes as JSON. It is retried like a GET, and it is not
+   * followed through a redirect, so `headers` such as a token reach only the URL given.
+   */
+  postJson(
+    url: string,
+    body: unknown,
+    headers?: Record<string, string>
+  ): Promise<unknown>
 }
+
+/** A response with its body read. */
+interface Answer {
+  status: number
+  headers: Headers
+  body: string
+}
+
+type RequestSpec =
+  | { method: "GET" }
+  | { method: "POST"; body: string; headers: Record<string, string> }
+
+const GET: RequestSpec = { method: "GET" }
 
 interface Host {
   robots: { isAllowed(url: string, ua?: string): boolean | undefined } | null
@@ -68,32 +91,47 @@ export function createClient(options: ClientOptions = {}): Client {
   }
 
   /**
-   * One GET with retries on network errors, 5xx, and 429. It returns the last response, or throws when the
+   * One request with retries on network errors, 5xx, and 429, with its body read inside the retry, so that a
+   * timeout or a reset while a slow body streams is retried too. It returns the last answer, or throws when the
    * request never got one; a 429 that does not clear blocks the source.
    */
   async function fetchWithRetry(
     host: Host,
     url: string,
-    redirect: RequestRedirect
-  ): Promise<Response> {
+    redirect: RequestRedirect,
+    spec: RequestSpec = GET
+  ): Promise<Answer> {
     for (let n = 1; ; n += 1) {
       await waitTurn(host)
-      let response: Response | null = null
+      let answer: Answer | null = null
       let failure: unknown = null
       try {
-        response = await doFetch(url, {
-          headers: { "user-agent": USER_AGENT, accept: "*/*" },
+        const response = await doFetch(url, {
+          method: spec.method,
+          headers: {
+            "user-agent": USER_AGENT,
+            accept: "*/*",
+            ...(spec.method === "POST"
+              ? { "content-type": "application/json", ...spec.headers }
+              : {}),
+          },
+          body: spec.method === "POST" ? spec.body : undefined,
           redirect,
           signal: AbortSignal.timeout(TIMEOUT_MS),
         })
+        answer = {
+          status: response.status,
+          headers: response.headers,
+          body: await response.text(),
+        }
       } catch (error) {
         failure = error
       }
-      if (response && !isRetryable(response.status)) return response
+      if (answer && !isRetryable(answer.status)) return answer
       if (n >= MAX_ATTEMPTS) {
-        if (response?.status === 429)
+        if (answer?.status === 429)
           throw new BlockedError(url, "rate limit did not clear")
-        if (response) return response
+        if (answer) return answer
         throw new Error(`Request to ${url} failed: ${String(failure)}`, {
           cause: failure,
         })
@@ -121,8 +159,8 @@ export function createClient(options: ClientOptions = {}): Client {
     const isText = (response.headers.get("content-type") ?? "text/plain")
       .toLowerCase()
       .startsWith("text/plain")
-    if (response.ok && isText) {
-      const robots = robotsParser(robotsUrl, await response.text())
+    if (response.status >= 200 && response.status < 300 && isText) {
+      const robots = robotsParser(robotsUrl, response.body)
       host.robots = robots
       const crawlDelay = robots.getCrawlDelay(ROBOTS_TOKEN)
       if (crawlDelay !== undefined)
@@ -146,21 +184,30 @@ export function createClient(options: ClientOptions = {}): Client {
   /** The body of a successful response, or the next URL when the response redirects. */
   async function fetchPage(
     host: Host,
-    url: string
+    url: string,
+    spec: RequestSpec
   ): Promise<{ text: string } | { redirect: string }> {
-    const response = await fetchWithRetry(host, url, "manual")
+    const response = await fetchWithRetry(host, url, "manual", spec)
     const location = response.headers.get("location")
-    if (response.status >= 300 && response.status < 400 && location)
+    if (response.status >= 300 && response.status < 400 && location) {
+      if (spec.method === "POST")
+        throw new Error(`A POST to ${url} answered a redirect to ${location}`)
       return { redirect: new URL(location, url).href }
+    }
     if (response.headers.get("cf-mitigated") === "challenge")
       throw new BlockedError(url, "challenge page")
     if (response.status === 401 || response.status === 403)
       throw new BlockedError(url, `status ${response.status}`)
-    if (!response.ok) throw new Error(`Status ${response.status} from ${url}`)
-    return { text: await response.text() }
+    if (response.status < 200 || response.status >= 300)
+      throw new Error(`Status ${response.status} from ${url}`)
+    return { text: response.body }
   }
 
-  async function getText(url: string, redirects = 0): Promise<string> {
+  async function fetchText(
+    url: string,
+    spec: RequestSpec,
+    redirects = 0
+  ): Promise<string> {
     const parsed = new URL(url)
     if (parsed.protocol !== "https:")
       throw new Error(`Only https is collected: ${url}`)
@@ -168,7 +215,7 @@ export function createClient(options: ClientOptions = {}): Client {
     if (host.robots && host.robots.isAllowed(url, ROBOTS_TOKEN) === false)
       throw new BlockedError(url, "disallowed by robots.txt")
 
-    const run = () => fetchPage(host, url)
+    const run = () => fetchPage(host, url, spec)
     const result = host.queue.then(run, run)
     host.queue = result.catch(() => undefined)
     const page = await result
@@ -176,18 +223,29 @@ export function createClient(options: ClientOptions = {}): Client {
     if (redirects >= MAX_REDIRECTS)
       throw new Error(`More than ${MAX_REDIRECTS} redirects from ${url}`)
     // The redirect goes through the same checks: https, the new host's robots.txt, and its queue.
-    return getText(page.redirect, redirects + 1)
+    return fetchText(page.redirect, GET, redirects + 1)
+  }
+
+  function parseJson(text: string, url: string): unknown {
+    try {
+      return JSON.parse(text) as unknown
+    } catch (error) {
+      throw new Error(`Response from ${url} is not JSON`, { cause: error })
+    }
   }
 
   return {
-    getText: (url) => getText(url),
+    getText: (url) => fetchText(url, GET),
     async getJson(url) {
-      const text = await getText(url)
-      try {
-        return JSON.parse(text) as unknown
-      } catch (error) {
-        throw new Error(`Response from ${url} is not JSON`, { cause: error })
+      return parseJson(await fetchText(url, GET), url)
+    },
+    async postJson(url, body, headers = {}) {
+      const spec: RequestSpec = {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers,
       }
+      return parseJson(await fetchText(url, spec), url)
     },
   }
 }

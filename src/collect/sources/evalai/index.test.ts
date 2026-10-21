@@ -16,6 +16,7 @@ function clientFor(responses: Record<string, unknown>) {
   const requested: string[] = []
   const client: Client = {
     getText: async () => "",
+    postJson: async () => ({}),
     async getJson(url) {
       requested.push(url)
       if (!(url in responses)) throw new Error(`Unexpected request: ${url}`)
@@ -37,7 +38,7 @@ describe("evalai", () => {
       [`${API}/2703/challenge_phase`]: phases2703,
       [`${API}/2680/challenge_phase`]: phases2680,
     })
-    const listings = await evalai.collect(client, now)
+    const listings = await evalai.collect(client, now, { previous: null })
     expect(listings.map((l) => l.id)).toEqual(["evalai:2703", "evalai:2680"])
     expect(requested).toEqual([
       `${API}/present/approved/public`,
@@ -56,7 +57,7 @@ describe("evalai", () => {
       [`${API}/present/approved/public`]: { ...challengesPast, next },
       [next]: { ...challengesPresent, results: [] },
     })
-    expect(await evalai.collect(client, now)).toEqual([])
+    expect(await evalai.collect(client, now, { previous: null })).toEqual([])
     expect(requested.slice(0, 2)).toEqual([
       `${API}/present/approved/public`,
       next,
@@ -69,7 +70,9 @@ describe("evalai", () => {
       ...lists,
       [`${API}/present/approved/public`]: { ...challengesPresent, next },
     })
-    await expect(evalai.collect(client, now)).rejects.toThrow(next)
+    await expect(
+      evalai.collect(client, now, { previous: null })
+    ).rejects.toThrow(next)
     expect(requested).toEqual([`${API}/present/approved/public`])
   })
 
@@ -80,7 +83,9 @@ describe("evalai", () => {
       [`${API}/present/approved/public`]: { ...challengesPast, next: loop },
       [loop]: { ...challengesPast, next: loop },
     })
-    await expect(evalai.collect(client, now)).rejects.toThrow(/more than/)
+    await expect(
+      evalai.collect(client, now, { previous: null })
+    ).rejects.toThrow(/more than/)
   })
 
   it("rejects a response that does not parse, saying what is wrong", async () => {
@@ -88,9 +93,9 @@ describe("evalai", () => {
       ...lists,
       [`${API}/present/approved/public`]: { detail: "Server is busy." },
     })
-    await expect(evalai.collect(client, now)).rejects.toThrow(
-      /EvalAI challenges response does not fit/
-    )
+    await expect(
+      evalai.collect(client, now, { previous: null })
+    ).rejects.toThrow(/EvalAI challenges response does not fit/)
   })
 
   it("rejects a phases response that does not parse", async () => {
@@ -99,8 +104,8 @@ describe("evalai", () => {
       [`${API}/2703/challenge_phase`]: { results: "none", next: null },
       [`${API}/2680/challenge_phase`]: phases2680,
     })
-    await expect(evalai.collect(client, now)).rejects.toThrow(
-      /EvalAI phases response does not fit/
-    )
+    await expect(
+      evalai.collect(client, now, { previous: null })
+    ).rejects.toThrow(/EvalAI phases response does not fit/)
   })
 })

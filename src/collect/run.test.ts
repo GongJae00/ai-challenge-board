@@ -6,6 +6,7 @@ import { runSource, type Source } from "./run.ts"
 
 const client: Client = {
   getText: async () => "",
+  postJson: async () => ({}),
   getJson: async () => ({}),
 }
 
@@ -143,5 +144,53 @@ describe("runSource", () => {
     })
     expect(result.outcome).toBe("kept")
     expect(result.reason).toMatch(/url/)
+  })
+
+  it("returns the state a source saves only when the run publishes its listings", async () => {
+    const saving = (listings: Listing[]): Source => ({
+      id: "openreview",
+      collect: async (_client, _now, state) => {
+        state.next = { seen: [1] }
+        return listings
+      },
+    })
+    const updated = await runSource({
+      source: saving([listing(1, later)]),
+      client,
+      now,
+      previous: null,
+    })
+    expect(updated.outcome).toBe("updated")
+    expect(updated.outcome === "updated" && updated.state).toEqual({
+      seen: [1],
+    })
+
+    const open = [1, 2, 3, 4, 5, 6].map((n) => listing(n, later))
+    const kept = await runSource({
+      source: saving([]),
+      client,
+      now,
+      previous: previousFile(open, "2026-10-20T00:00:00.000Z"),
+    })
+    expect(kept.outcome).toBe("kept")
+    expect("state" in kept).toBe(false)
+  })
+
+  it("hands the source the state it saved last time", async () => {
+    let seen: unknown = undefined
+    await runSource({
+      source: {
+        id: "openreview",
+        collect: async (_client, _now, state) => {
+          seen = state.previous
+          return []
+        },
+      },
+      client,
+      now,
+      previous: null,
+      previousState: { seen: [7] },
+    })
+    expect(seen).toEqual({ seen: [7] })
   })
 })

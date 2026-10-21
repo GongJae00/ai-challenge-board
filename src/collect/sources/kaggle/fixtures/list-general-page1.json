@@ -1,0 +1,552 @@
+{
+  "competitions": [
+    {
+      "id": 86518,
+      "ref": "https://www.kaggle.com/competitions/llm-classification-finetuning",
+      "title": "LLM Classification Finetuning",
+      "url": "https://www.kaggle.com/competitions/llm-classification-finetuning",
+      "organizationName": "Kaggle",
+      "hostName": "Kaggle",
+      "category": "Getting Started",
+      "reward": "Knowledge",
+      "deadline": "2030-07-01T23:59:00Z",
+      "mergerDeadline": "2030-07-01T23:59:00Z",
+      "enabledDate": "2024-10-16T19:00:30.487Z",
+      "tags": [
+        {
+          "ref": "languages",
+          "name": "languages"
+        },
+        {
+          "ref": "text conversation",
+          "name": "text conversation"
+        },
+        {
+          "ref": "log loss",
+          "name": "log loss"
+        }
+      ]
+    },
+    {
+      "id": 21733,
+      "ref": "https://www.kaggle.com/competitions/contradictory-my-dear-watson",
+      "title": "Contradictory, My Dear Watson",
+      "url": "https://www.kaggle.com/competitions/contradictory-my-dear-watson",
+      "organizationName": "Kaggle",
+      "hostName": "Kaggle",
+      "category": "Getting Started",
+      "reward": "Knowledge",
+      "deadline": "2030-07-01T23:59:00Z",
+      "mergerDeadline": "2030-07-01T23:59:00Z",
+      "enabledDate": "2020-07-30T21:03:15.780Z",
+      "tags": [
+        {
+          "ref": "nlp",
+          "name": "nlp"
+        },
+        {
+          "ref": "text",
+          "name": "text"
+        },
+        {
+          "ref": "multiclass classification",
+          "name": "multiclass classification"
+        },
+        {
+          "ref": "categorizationaccuracy",
+          "name": "categorizationaccuracy"
+        }
+      ]
+    },
+    {
+      "id": 29781,
+      "ref": "https://www.kaggle.com/competitions/store-sales-time-series-forecasting",
+      "title": "Store Sales - Time Series Forecasting",
+      "url": "https://www.kaggle.com/competitions/store-sales-time-series-forecasting",
+      "organizationName": "Kaggle",
+      "hostName": "Kaggle",
+      "category": "Getting Started",
+      "reward": "Knowledge",
+      "deadline": "2030-06-30T23:59:00Z",
+      "mergerDeadline": "2030-06-30T23:59:00Z",
+      "enabledDate": "2021-10-06T17:45:52.597Z",
+      "tags": [
+        {
+          "ref": "beginner",
+          "name": "beginner"
+        },
+        {
+          "ref": "time series analysis",
+          "name": "time series analysis"
+        },
+        {
+          "ref": "tabular",
+          "name": "tabular"
+        },
+        {
+          "ref": "rmsle",
+          "name": "rmsle"
+        }
+      ]
+    },
+    {
+      "id": 21154,
+      "ref": "https://www.kaggle.com/competitions/tpu-getting-started",
+      "title": "Petals to the Metal - Flower Classification on TPU",
+      "url": "https://www.kaggle.com/competitions/tpu-getting-started",
+      "organizationName": "Kaggle",
+      "hostName": "Kaggle",
+      "category": "Getting Started",
+      "reward": "Knowledge",
+      "deadline": "2030-06-03T23:59:00Z",
+      "mergerDeadline": "2030-06-03T23:59:00Z",
+      "enabledDate": "2020-06-18T23:27:53.083Z",
+      "tags": [
+        {
+          "ref": "image",
+          "name": "image"
+        },
+        {
+          "ref": "multiclass classification",
+          "name": "multiclass classification"
+        },
+        {
+          "ref": "fscoremacro",
+          "name": "fscoremacro"
+        }
+      ]
+    },
+    {
+      "id": 10211,
+      "ref": "https://www.kaggle.com/competitions/home-data-for-ml-course",
+      "title": "Housing Prices Competition for Kaggle Learn Users",
+      "url": "https://www.kaggle.com/competitions/home-data-for-ml-course",
+      "organizationName": "Kaggle",
+      "hostName": "Kaggle",
+      "category": "Getting Started",
+      "reward": "Knowledge",
+      "deadline": "2030-01-01T23:59:00Z",
+      "mergerDeadline": "2030-01-01T23:59:00Z",
+      "enabledDate": "2018-07-18T19:25:27.107Z",
+      "tags": [
+        {
+          "ref": "mae",
+          "name": "mae"
+        }
+      ]
+    },
+    {
+      "id": 34377,
+      "ref": "https://www.kaggle.com/competitions/spaceship-titanic",
+      "title": "Spaceship Titanic",
+      "url": "https://www.kaggle.com/competitions/spaceship-titanic",
+      "organizationName": "Kaggle",
+      "hostName": "Kaggle",
+      "category": "Getting Started",
+      "reward": "Knowledge",
+      "deadline": "2030-01-01T00:00:00Z",
+      "mergerDeadline": "2030-01-01T00:00:00Z",
+      "enabledDate": "2022-02-23T19:33:28.377Z",
+      "tags": [
+        {
+          "ref": "beginner",
+          "name": "beginner"
+        },
+        {
+          "ref": "tabular",
+          "name": "tabular"
+        },
+        {
+          "ref": "binary classification",
+          "name": "binary classification"
+        },
+        {
+          "ref": "categorizationaccuracy",
+          "name": "categorizationaccuracy"
+        }
+      ]
+    },
+    {
+      "id": 17777,
+      "ref": "https://www.kaggle.com/competitions/nlp-getting-started",
+      "title": "Natural Language Processing with Disaster Tweets",
+      "url": "https://www.kaggle.com/competitions/nlp-getting-started",
+      "organizationName": "Kaggle",
+      "hostName": "Kaggle",
+      "category": "Getting Started",
+      "reward": "Knowledge",
+      "deadline": "2030-01-01T00:00:00Z",
+      "mergerDeadline": "2030-01-01T00:00:00Z",
+      "enabledDate": "2019-12-23T22:02:26.193Z",
+      "tags": [
+        {
+          "ref": "nlp",
+          "name": "nlp"
+        },
+        {
+          "ref": "text",
+          "name": "text"
+        },
+        {
+          "ref": "binary classification",
+          "name": "binary classification"
+        },
+        {
+          "ref": "custom metric",
+          "name": "custom metric"
+        }
+      ]
+    },
+    {
+      "id": 17592,
+      "ref": "https://www.kaggle.com/competitions/connectx",
+      "title": "Connect X",
+      "url": "https://www.kaggle.com/competitions/connectx",
+      "organizationName": "Kaggle",
+      "hostName": "Kaggle",
+      "category": "Getting Started",
+      "reward": "Knowledge",
+      "deadline": "2030-01-01T00:00:00Z",
+      "mergerDeadline": "2030-01-01T00:00:00Z",
+      "enabledDate": "2020-01-03T21:25:59Z",
+      "tags": [
+        {
+          "ref": "simulations",
+          "name": "simulations"
+        },
+        {
+          "ref": "custom metric",
+          "name": "custom metric"
+        }
+      ]
+    },
+    {
+      "id": 5407,
+      "ref": "https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques",
+      "title": "House Prices - Advanced Regression Techniques",
+      "url": "https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques",
+      "organizationName": "Kaggle",
+      "hostName": "Kaggle",
+      "category": "Getting Started",
+      "reward": "Knowledge",
+      "deadline": "2030-01-01T00:00:00Z",
+      "mergerDeadline": "2030-01-01T00:00:00Z",
+      "enabledDate": "2016-08-30T01:08:56.763Z",
+      "tags": [
+        {
+          "ref": "tabular",
+          "name": "tabular"
+        },
+        {
+          "ref": "regression",
+          "name": "regression"
+        },
+        {
+          "ref": "rmsle",
+          "name": "rmsle"
+        }
+      ]
+    },
+    {
+      "id": 3136,
+      "ref": "https://www.kaggle.com/competitions/titanic",
+      "title": "Titanic - Machine Learning from Disaster",
+      "url": "https://www.kaggle.com/competitions/titanic",
+      "organizationName": "Kaggle",
+      "hostName": "Kaggle",
+      "category": "Getting Started",
+      "reward": "Knowledge",
+      "deadline": "2030-01-01T00:00:00Z",
+      "mergerDeadline": "2030-01-01T00:00:00Z",
+      "enabledDate": "2012-09-28T21:13:33.550Z",
+      "tags": [
+        {
+          "ref": "beginner",
+          "name": "beginner"
+        },
+        {
+          "ref": "tabular",
+          "name": "tabular"
+        },
+        {
+          "ref": "binary classification",
+          "name": "binary classification"
+        },
+        {
+          "ref": "categorizationaccuracy",
+          "name": "categorizationaccuracy"
+        }
+      ]
+    },
+    {
+      "id": 3004,
+      "ref": "https://www.kaggle.com/competitions/digit-recognizer",
+      "title": "Digit Recognizer",
+      "url": "https://www.kaggle.com/competitions/digit-recognizer",
+      "organizationName": "Kaggle",
+      "hostName": "Kaggle",
+      "category": "Getting Started",
+      "reward": "Knowledge",
+      "deadline": "2030-01-01T00:00:00Z",
+      "mergerDeadline": "2030-01-01T00:00:00Z",
+      "enabledDate": "2012-07-25T20:43:30.087Z",
+      "tags": [
+        {
+          "ref": "tabular",
+          "name": "tabular"
+        },
+        {
+          "ref": "image",
+          "name": "image"
+        },
+        {
+          "ref": "multiclass classification",
+          "name": "multiclass classification"
+        },
+        {
+          "ref": "categorizationaccuracy",
+          "name": "categorizationaccuracy"
+        }
+      ]
+    },
+    {
+      "id": 170484,
+      "ref": "https://www.kaggle.com/competitions/name-that-llm",
+      "title": "Name That LLM",
+      "url": "https://www.kaggle.com/competitions/name-that-llm",
+      "organizationName": "Kaggle",
+      "hostName": "Kaggle",
+      "category": "Featured",
+      "reward": "50,000 Usd",
+      "deadline": "2027-01-14T23:59:00.817Z",
+      "mergerDeadline": "2027-01-06T23:59:00Z",
+      "newEntrantDeadline": "2027-01-06T23:59:00Z",
+      "enabledDate": "2026-10-14T13:15:00Z",
+      "tags": [
+        {
+          "ref": "classification",
+          "name": "classification"
+        },
+        {
+          "ref": "balanced accuracy score",
+          "name": "balanced accuracy score"
+        }
+      ]
+    },
+    {
+      "id": 168019,
+      "ref": "https://www.kaggle.com/competitions/the-pokemon-company-ptcg-ai-battle-challenge-playground",
+      "title": "The Pokémon Company - PTCG AI Battle Challenge Playground",
+      "url": "https://www.kaggle.com/competitions/the-pokemon-company-ptcg-ai-battle-challenge-playground",
+      "organizationName": "The Pokémon Company - PTCGABC Team",
+      "hostName": "The Pokémon Company - PTCGABC Team",
+      "category": "Playground",
+      "reward": "Swag",
+      "deadline": "2027-01-08T23:59:59Z",
+      "mergerDeadline": "2027-01-01T23:59:59Z",
+      "newEntrantDeadline": "2027-01-01T23:59:59Z",
+      "enabledDate": "2026-09-29T00:31:00.783Z",
+      "tags": [
+        {
+          "ref": "games",
+          "name": "games"
+        },
+        {
+          "ref": "artificial intelligence",
+          "name": "artificial intelligence"
+        },
+        {
+          "ref": "reinforcement learning",
+          "name": "reinforcement learning"
+        },
+        {
+          "ref": "custom metric",
+          "name": "custom metric"
+        }
+      ]
+    },
+    {
+      "id": 162982,
+      "ref": "https://www.kaggle.com/competitions/nfl-big-data-bowl-2027",
+      "title": "NFL Big Data Bowl 2027",
+      "url": "https://www.kaggle.com/competitions/nfl-big-data-bowl-2027",
+      "organizationName": "The National Football League",
+      "hostName": "The National Football League",
+      "category": "Featured",
+      "reward": "100,000 Usd",
+      "deadline": "2027-01-06T23:59:00Z",
+      "mergerDeadline": "2027-01-06T23:59:59Z",
+      "newEntrantDeadline": "2027-01-06T23:59:59Z",
+      "enabledDate": "2026-10-06T19:43:47.377Z",
+      "tags": [
+        {
+          "ref": "football",
+          "name": "football"
+        },
+        {
+          "ref": "sports",
+          "name": "sports"
+        },
+        {
+          "ref": "data analytics",
+          "name": "data analytics"
+        }
+      ]
+    },
+    {
+      "id": 143318,
+      "ref": "https://www.kaggle.com/competitions/enveda-CASMI26-molecule-id-mass-spectra",
+      "title": "Enveda CASMI 2026 - Molecule ID From Mass Spectra",
+      "url": "https://www.kaggle.com/competitions/enveda-CASMI26-molecule-id-mass-spectra",
+      "organizationName": "Enveda",
+      "hostName": "Enveda",
+      "category": "Featured",
+      "reward": "50,000 Usd",
+      "deadline": "2026-12-14T23:59:00Z",
+      "mergerDeadline": "2026-12-07T23:59:00Z",
+      "newEntrantDeadline": "2026-12-07T23:59:00Z",
+      "enabledDate": "2026-09-14T22:57:37.417Z",
+      "tags": [
+        {
+          "ref": "biology",
+          "name": "biology"
+        },
+        {
+          "ref": "chemistry",
+          "name": "chemistry"
+        },
+        {
+          "ref": "custom metric",
+          "name": "custom metric"
+        }
+      ]
+    },
+    {
+      "id": 149921,
+      "ref": "https://www.kaggle.com/competitions/gemma-4-developer-agent",
+      "title": "Google - The Gemma 4 Developer Agent Competition",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent",
+      "organizationName": "Google DeepMind",
+      "hostName": "Google DeepMind",
+      "category": "Featured",
+      "reward": "75,000 Usd",
+      "deadline": "2026-12-02T23:59:00Z",
+      "mergerDeadline": "2026-11-25T23:59:00Z",
+      "newEntrantDeadline": "2026-11-25T23:59:00Z",
+      "enabledDate": "2026-09-23T14:05:47.363Z",
+      "tags": [
+        {
+          "ref": "artificial intelligence",
+          "name": "artificial intelligence"
+        },
+        {
+          "ref": "coding",
+          "name": "coding"
+        },
+        {
+          "ref": "custom metric",
+          "name": "custom metric"
+        }
+      ]
+    },
+    {
+      "id": 163111,
+      "ref": "https://www.kaggle.com/competitions/gemma-4-developer-agent-paper",
+      "title": "Google - The Gemma 4 Developer Agent Paper Track",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent-paper",
+      "organizationName": "Google DeepMind",
+      "hostName": "Google DeepMind",
+      "category": "Featured",
+      "reward": "35,000 Usd",
+      "deadline": "2026-11-12T23:59:00.807Z",
+      "mergerDeadline": "2026-11-12T23:59:00Z",
+      "newEntrantDeadline": "2026-11-12T23:59:00Z",
+      "enabledDate": "2026-09-23T15:15:22.937Z",
+      "tags": [
+        {
+          "ref": "artificial intelligence",
+          "name": "artificial intelligence"
+        },
+        {
+          "ref": "coding",
+          "name": "coding"
+        }
+      ]
+    },
+    {
+      "id": 133724,
+      "ref": "https://www.kaggle.com/competitions/arc-prize-2026-paper-track",
+      "title": "ARC Prize 2026 - Paper Track",
+      "url": "https://www.kaggle.com/competitions/arc-prize-2026-paper-track",
+      "organizationName": "Abstraction and Reasoning Corpus",
+      "hostName": "Abstraction and Reasoning Corpus",
+      "category": "Featured",
+      "reward": "450,000 Usd",
+      "deadline": "2026-11-09T23:59:00Z",
+      "mergerDeadline": "2026-11-09T23:59:00Z",
+      "enabledDate": "2026-03-25T17:38:13.097Z",
+      "tags": [
+        {
+          "ref": "artificial intelligence",
+          "name": "artificial intelligence"
+        },
+        {
+          "ref": "general knowledge and reasoning",
+          "name": "general knowledge and reasoning"
+        }
+      ]
+    },
+    {
+      "id": 133469,
+      "ref": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-2",
+      "title": "ARC Prize 2026 - ARC-AGI-2",
+      "url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-2",
+      "organizationName": "Abstraction and Reasoning Corpus",
+      "hostName": "Abstraction and Reasoning Corpus",
+      "category": "Featured",
+      "reward": "700,000 Usd",
+      "deadline": "2026-11-02T23:59:00Z",
+      "mergerDeadline": "2026-10-26T23:59:00Z",
+      "newEntrantDeadline": "2026-10-26T23:59:00Z",
+      "enabledDate": "2026-03-25T17:38:19.547Z",
+      "tags": [
+        {
+          "ref": "artificial intelligence",
+          "name": "artificial intelligence"
+        },
+        {
+          "ref": "custom metric",
+          "name": "custom metric"
+        }
+      ]
+    },
+    {
+      "id": 133468,
+      "ref": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3",
+      "title": "ARC Prize 2026 - ARC-AGI-3",
+      "url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3",
+      "organizationName": "Abstraction and Reasoning Corpus",
+      "hostName": "Abstraction and Reasoning Corpus",
+      "category": "Featured",
+      "reward": "850,000 Usd",
+      "deadline": "2026-11-02T23:59:00Z",
+      "mergerDeadline": "2026-10-26T23:59:00Z",
+      "newEntrantDeadline": "2026-10-26T11:59:00Z",
+      "enabledDate": "2026-03-25T17:38:23.913Z",
+      "tags": [
+        {
+          "ref": "artificial intelligence",
+          "name": "artificial intelligence"
+        },
+        {
+          "ref": "general knowledge and reasoning",
+          "name": "general knowledge and reasoning"
+        },
+        {
+          "ref": "custom metric",
+          "name": "custom metric"
+        }
+      ]
+    }
+  ]
+}

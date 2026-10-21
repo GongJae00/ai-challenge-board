@@ -1,6 +1,7 @@
 /**
- * Collects every source and writes `src/data/sources/<source>.json`; run with `npm run collect`. It exits
- * non-zero when a source failed, after writing the others, so that the scheduled job shows the failure.
+ * Collects every source and writes `src/data/sources/<source>.json`, and a source's own state to
+ * `src/data/state/<source>.json`; run with `npm run collect`. It exits non-zero when a source failed, after
+ * writing the others, so that the scheduled job shows the failure.
  */
 import { mkdir, readFile, writeFile } from "node:fs/promises"
 
@@ -10,21 +11,33 @@ import { runSource } from "./run.ts"
 import { sources } from "./sources/index.ts"
 
 const dataDir = new URL("../data/sources/", import.meta.url)
+const stateDir = new URL("../data/state/", import.meta.url)
 
-async function readPrevious(id: string): Promise<SourceFile | null> {
+/** A JSON file's parsed content, or null when the file does not exist. */
+async function readJson(url: URL): Promise<unknown> {
   let text: string
   try {
-    text = await readFile(new URL(`${id}.json`, dataDir), "utf8")
+    text = await readFile(url, "utf8")
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code === "ENOENT") return null
     throw error
   }
-  return sourceFileSchema.parse(JSON.parse(text))
+  return JSON.parse(text) as unknown
+}
+
+async function writeJson(url: URL, value: unknown): Promise<void> {
+  await writeFile(url, `${JSON.stringify(value, null, 2)}\n`)
+}
+
+async function readPrevious(id: string): Promise<SourceFile | null> {
+  const json = await readJson(new URL(`${id}.json`, dataDir))
+  return json === null ? null : sourceFileSchema.parse(json)
 }
 
 const client = createClient()
 const now = new Date()
 await mkdir(dataDir, { recursive: true })
+await mkdir(stateDir, { recursive: true })
 
 // Sources live on different hosts, so they run at once; the client keeps each host to one request at a time.
 const results = await Promise.allSettled(
@@ -34,12 +47,12 @@ const results = await Promise.allSettled(
       client,
       now,
       previous: await readPrevious(source.id),
+      previousState: await readJson(new URL(`${source.id}.json`, stateDir)),
     })
     if (result.file)
-      await writeFile(
-        new URL(`${source.id}.json`, dataDir),
-        `${JSON.stringify(result.file, null, 2)}\n`
-      )
+      await writeJson(new URL(`${source.id}.json`, dataDir), result.file)
+    if (result.outcome === "updated" && result.state !== undefined)
+      await writeJson(new URL(`${source.id}.json`, stateDir), result.state)
     return result
   })
 )

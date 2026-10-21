@@ -22,6 +22,10 @@ GongJae set these on 2026-10-21:
   day, which the code enforces for every source.
 - The data model, the repository setup, and the implementation are left to Claude, with each constraining choice
   recorded in `docs/decisions.md`.
+- Kaggle is collected through its official API with an API token from GongJae's own Kaggle account, kept as the
+  `KAGGLE_API_TOKEN` secret in GitHub Actions and in `~/.kaggle/access_token` on this machine ("Kaggle 내가 하는
+  작업정도는 수집 가능할텐데"). This is the one exception to collecting nothing behind a login: the official API
+  only, never Kaggle's web pages.
 
 ## Scope
 
@@ -58,7 +62,8 @@ The site is a static Astro build; `docs/decisions.md` records the stack and why.
 - `src/lib/`: code the pages and the collector share, such as the listing schema in `listing.ts`.
 - `src/collect/`: the collector, which runs in Node outside the site: the polite HTTP client, the runner, and one
   folder per source under `sources/` with its parser, tests, and fixtures.
-- `src/data/sources/`: the collected listings, one JSON file per source, written by the collector and committed.
+- `src/data/sources/`: the collected listings, one JSON file per source, written by the collector and committed;
+  `src/data/state/`: what a source remembers between runs, such as the Codabench entries it need not fetch again.
 - `src/styles/global.css`: Tailwind and the shadcn design tokens, the one set of tokens.
 - `e2e/`: Playwright tests against the production build, at phone and desktop widths, with an axe scan.
 - `docs/`: `decisions.md`, and later `operations.md`.
@@ -77,7 +82,9 @@ These folders hold research material and stay local; `.gitignore` keeps them out
 - `npm run collect`: fetch every source due for collection and write `src/data/sources/`. The Collect workflow
   runs it at 00:17 and 12:17 UTC, commits the data, and starts CI, which deploys it.
 - Deploy: a push to `main` that passes the check deploys to GitHub Pages; there is no separate preview deploy.
-- Setup on a new machine: `npm ci`, then `npx playwright install chromium` for the end-to-end tests.
+- Setup on a new machine: `npm ci`, then `npx playwright install chromium` for the end-to-end tests. A local
+  `npm run collect` needs `KAGGLE_API_TOKEN` in the environment, for example
+  `KAGGLE_API_TOKEN="$(cat ~/.kaggle/access_token)" npm run collect`; without it only Kaggle fails.
 
 The project's `.mcp.json` runs the Playwright MCP server (headless Chromium) and the shadcn MCP server from the
 installed dev dependencies, and `.claude/settings.json` enables the frontend-design plugin for this project.

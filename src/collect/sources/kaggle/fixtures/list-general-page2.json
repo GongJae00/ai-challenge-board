@@ -1,0 +1,71 @@
+{
+  "competitions": [
+    {
+      "id": 125224,
+      "ref": "https://www.kaggle.com/competitions/playground-series-s6e10",
+      "title": "Predicting Airline Satisfaction",
+      "url": "https://www.kaggle.com/competitions/playground-series-s6e10",
+      "organizationName": "Kaggle",
+      "hostName": "Kaggle",
+      "category": "Playground",
+      "reward": "Swag",
+      "deadline": "2026-10-31T23:59:00Z",
+      "mergerDeadline": "2026-10-31T23:59:00Z",
+      "enabledDate": "2026-10-01T00:00:00Z",
+      "tags": [
+        {
+          "ref": "beginner",
+          "name": "beginner"
+        },
+        {
+          "ref": "tabular",
+          "name": "tabular"
+        },
+        {
+          "ref": "roc auc score",
+          "name": "roc auc score"
+        }
+      ]
+    },
+    {
+      "id": 154281,
+      "ref": "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection",
+      "title": "RSNA Knee Abnormality Detection",
+      "url": "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection",
+      "organizationName": "Radiological Society of North America",
+      "hostName": "Radiological Society of North America",
+      "category": "Research",
+      "reward": "77,000 Usd",
+      "deadline": "2026-10-22T23:59:00Z",
+      "mergerDeadline": "2026-10-15T23:59:00Z",
+      "newEntrantDeadline": "2026-10-15T23:59:00Z",
+      "enabledDate": "2026-08-05T15:51:31.833Z",
+      "tags": [
+        {
+          "ref": "medicine",
+          "name": "medicine"
+        },
+        {
+          "ref": "computer vision",
+          "name": "computer vision"
+        },
+        {
+          "ref": "image",
+          "name": "image"
+        },
+        {
+          "ref": "text",
+          "name": "text"
+        },
+        {
+          "ref": "image classification",
+          "name": "image classification"
+        },
+        {
+          "ref": "roc auc score",
+          "name": "roc auc score"
+        }
+      ]
+    }
+  ]
+}

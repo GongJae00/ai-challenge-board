@@ -83,9 +83,20 @@ stays the same across runs and can later key bookmarks and calendar events.
   have to be stored per URL in the repository; they wait until a source serves large pages.
 
 Sources in order: OpenReview first, because one public API covers the workshop calls of five of the seven
-phase-1 conferences (37 open on 2026-10-21); EvalAI next (2 open time-bound challenges). Codabench has the most
-challenges but lists 1,536 entries, many of them coursework, and needs one request per entry for its deadlines, so
-it waits for a filter that picks research challenges.
+phase-1 conferences (37 open on 2026-10-21); then EvalAI, Codabench, and Kaggle.
+- **Codabench** lists 1,536 public entries, most of them coursework and tests, sends its API responses at a few
+  kilobytes a second, and gives deadlines only in a request per competition. The collector therefore takes only
+  the competitions whose title names a phase-1 conference, found through Codabench's search and checked against
+  the title, and reads the conference and its year from the title. It remembers in
+  `src/data/state/codabench.json` the competitions that ended more than 30 days ago or never end, so it does not
+  request them again; one that ended lately is still checked, in case its deadline is extended. A challenge whose title names no conference is
+  missed. This was chosen over dropping Codabench, which GongJae raised on 2026-10-21, because Codabench hosts
+  most of the CVPR and NeurIPS workshop challenges.
+- **Kaggle** is read through its official API with GongJae's token (see `CLAUDE.md`). Getting Started
+  competitions, which stay open with placeholder 2030 deadlines, are left out. A listing carries the entry and
+  team merger deadlines as well as the final one, as the deadline kinds `entry` and `merger`.
+- **Not yet deduplicated:** a competition that both OpenReview and Codabench list, such as NeurIPS's Predictive AI
+  Evaluation Competition, appears twice.
 
 The collector runs in Node 22 directly from TypeScript, using Node's type stripping, so it needs no build step;
 its modules import each other with `.ts` extensions. Alternatives considered: `tsx` as a runner, which adds a

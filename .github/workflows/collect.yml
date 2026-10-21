@@ -16,7 +16,8 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    # Codabench answers slowly and needs a request per competition; a run with a backlog takes tens of minutes.
+    timeout-minutes: 45
     permissions:
       contents: write
       actions: write
@@ -32,9 +33,12 @@ jobs:
       # still committed, and the job fails at the end so that the failure shows.
       - id: collect
         run: npm run collect || echo "failed=true" >> "$GITHUB_OUTPUT"
+        env:
+          # From GongJae's Kaggle account; only this step sees it.
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
       - id: commit
         run: |
-          git add src/data/sources
+          git add src/data/sources src/data/state
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else

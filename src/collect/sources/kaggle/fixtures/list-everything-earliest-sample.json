@@ -1,0 +1,58 @@
+{
+  "competitions": [
+    {
+      "id": 2408,
+      "ref": "https://www.kaggle.com/competitions/Eurovision2010",
+      "title": "Forecast Eurovision Voting ",
+      "url": "https://www.kaggle.com/competitions/Eurovision2010",
+      "hostName": "Kaggle",
+      "category": "Featured",
+      "reward": "1,000 Usd",
+      "deadline": "2010-05-25T18:00:00Z",
+      "mergerDeadline": "2010-05-25T18:00:00Z",
+      "enabledDate": "2010-04-07T07:57:43Z",
+      "tags": [
+        {
+          "ref": "ae",
+          "name": "ae"
+        }
+      ]
+    },
+    {
+      "id": 2442,
+      "ref": "https://www.kaggle.com/competitions/worldcupconf",
+      "title": "World Cup 2010 - Confidence Challenge",
+      "url": "https://www.kaggle.com/competitions/worldcupconf",
+      "hostName": "Kaggle",
+      "category": "Featured",
+      "reward": "100 Usd",
+      "deadline": "2010-06-11T13:28:00Z",
+      "mergerDeadline": "2010-06-11T13:28:00Z",
+      "enabledDate": "2010-06-03T08:08:08Z",
+      "tags": [
+        {
+          "ref": "custom metric",
+          "name": "custom metric"
+        }
+      ]
+    },
+    {
+      "id": 2438,
+      "ref": "https://www.kaggle.com/competitions/worldcup2010",
+      "title": "World Cup 2010 - Take on the Quants",
+      "url": "https://www.kaggle.com/competitions/worldcup2010",
+      "hostName": "Kaggle",
+      "category": "Featured",
+      "reward": "100 Usd",
+      "deadline": "2010-06-11T13:29:00Z",
+      "mergerDeadline": "2010-06-11T13:29:00Z",
+      "enabledDate": "2010-06-03T08:08:08Z",
+      "tags": [
+        {
+          "ref": "custom metric",
+          "name": "custom metric"
+        }
+      ]
+    }
+  ]
+}

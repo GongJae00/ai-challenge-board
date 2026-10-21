@@ -12,6 +12,8 @@ export function deadlineName(
 ): string | null {
   if (deadline.kind === "submission") return null
   if (deadline.kind === "end") return t(locale, "deadline.end")
+  if (deadline.kind === "entry") return t(locale, "deadline.entry")
+  if (deadline.kind === "merger") return t(locale, "deadline.merger")
   return deadline.label
     ? t(locale, "deadline.phase", { name: deadline.label })
     : t(locale, "deadline.phaseUnnamed")

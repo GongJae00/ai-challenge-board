@@ -16,10 +16,19 @@ export function collectionWindow(at: Date): string {
   return `${at.toISOString().slice(0, 10)} ${at.getUTCHours() < 12 ? "AM" : "PM"}`
 }
 
+/**
+ * What a source keeps between runs, such as the entries it no longer needs to fetch. `previous` is what the
+ * source saved after its last successful run, or null; the source validates it, and sets `next` to save anew.
+ */
+export interface SourceState {
+  readonly previous: unknown
+  next?: unknown
+}
+
 /** One collector: it fetches a source through the shared client and returns its open listings. */
 export interface Source {
   id: SourceId
-  collect(client: Client, now: Date): Promise<Listing[]>
+  collect(client: Client, now: Date, state: SourceState): Promise<Listing[]>
 }
 
 /**
@@ -27,7 +36,13 @@ export interface Source {
  * `attemptedAt`, so that a failed attempt also counts toward the twice-a-day limit.
  */
 export type RunResult =
-  | { outcome: "updated"; file: SourceFile; reason?: undefined }
+  | {
+      outcome: "updated"
+      file: SourceFile
+      /** The source's new state, when it keeps one. */
+      state?: unknown
+      reason?: undefined
+    }
   | { outcome: "kept"; file?: SourceFile; reason: string }
   | { outcome: "skipped"; file?: undefined; reason: string }
 
@@ -45,8 +60,11 @@ export async function runSource(input: {
   client: Client
   now: Date
   previous: SourceFile | null
+  /** The state the source saved after its last successful run. */
+  previousState?: unknown
 }): Promise<RunResult> {
   const { source, client, now, previous } = input
+  const state: SourceState = { previous: input.previousState ?? null }
   const lastAttempt = previous?.attemptedAt ?? previous?.retrievedAt
   if (
     lastAttempt &&
@@ -64,7 +82,7 @@ export async function runSource(input: {
 
   let listings: Listing[]
   try {
-    const collected = await source.collect(client, now)
+    const collected = await source.collect(client, now, state)
     const checked = z.array(listingSchema).safeParse(collected)
     if (!checked.success)
       return keep(
@@ -87,6 +105,7 @@ export async function runSource(input: {
 
   return {
     outcome: "updated",
+    state: state.next,
     file: {
       source: source.id,
       retrievedAt: now.toISOString(),

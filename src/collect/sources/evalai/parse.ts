@@ -7,16 +7,9 @@ import {
   type Listing,
 } from "../../../lib/listing.ts"
 import { cleanText } from "../../text.ts"
-import { isoFromMs } from "../../time.ts"
+import { isoFromMs, PLACEHOLDER_AFTER_MS } from "../../time.ts"
 
 const HOST = "eval.ai"
-
-/**
- * A challenge that ends more than this long after `now` is a persistent benchmark, not a time-bound challenge.
- * EvalAI has no flag for it, and hosts of a benchmark that never closes enter a placeholder end such as 2042,
- * 2099, or 2100 instead, while the real challenges end within months.
- */
-export const PERSISTENT_AFTER_MS = 2 * 365 * 24 * 60 * 60 * 1000
 
 const instant = z.iso.datetime()
 
@@ -135,7 +128,7 @@ export function isOpenTimeBound(challenge: Challenge, now: Date): boolean {
     challenge.published &&
     challenge.approved &&
     end > now.getTime() &&
-    end <= now.getTime() + PERSISTENT_AFTER_MS
+    end <= now.getTime() + PLACEHOLDER_AFTER_MS
   )
 }
 

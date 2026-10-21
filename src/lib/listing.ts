@@ -1,7 +1,12 @@
 import { z } from "zod"
 
 /** The sources ACB collects from; each has a collector under `src/collect/sources/`. */
-export const sourceIds = ["openreview", "evalai"] as const
+export const sourceIds = [
+  "openreview",
+  "evalai",
+  "codabench",
+  "kaggle",
+] as const
 export type SourceId = (typeof sourceIds)[number]
 
 export const conferences = [
@@ -22,8 +27,11 @@ const instant = z.iso.datetime()
 const webUrl = z.url({ protocol: /^https?$/ })
 
 export const deadlineSchema = z.object({
-  /** A paper call's submission deadline, the end of one challenge phase, or the end of a whole challenge. */
-  kind: z.enum(["submission", "phase", "end"]),
+  /**
+   * A final submission deadline, the end of one challenge phase, the end of a whole challenge, the last day to
+   * join (Kaggle's entry deadline), or the last day to merge teams.
+   */
+  kind: z.enum(["submission", "phase", "end", "entry", "merger"]),
   /** The source's name for the deadline, such as a phase's name; null when the kind says it all. */
   label: z.string().min(1).nullable(),
   at: instant,

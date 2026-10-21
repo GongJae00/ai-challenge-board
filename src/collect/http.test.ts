@@ -5,12 +5,24 @@ import { BlockedError, createClient, USER_AGENT } from "./http.ts"
 type Handler = (url: string, init: RequestInit) => Response
 
 function fakeWeb(handler: Handler) {
-  const calls: { url: string; at: number; headers: Headers }[] = []
+  const calls: {
+    url: string
+    at: number
+    headers: Headers
+    method: string
+    body: string | null
+  }[] = []
   let clock = 0
   const client = createClient({
     fetch: async (input, init = {}) => {
       const url = String(input)
-      calls.push({ url, at: clock, headers: new Headers(init.headers) })
+      calls.push({
+        url,
+        at: clock,
+        headers: new Headers(init.headers),
+        method: init.method ?? "GET",
+        body: typeof init.body === "string" ? init.body : null,
+      })
       return handler(url, init)
     },
     sleep: async (ms) => {
@@ -138,6 +150,25 @@ describe("createClient", () => {
     expect(calls).toHaveLength(4)
   })
 
+  it("retries a request whose body fails while it streams", async () => {
+    let attempts = 0
+    const { client } = fakeWeb((url) => {
+      if (url.endsWith("/robots.txt")) return new Response(robotsAllowAll)
+      attempts += 1
+      if (attempts === 1)
+        return new Response(
+          new ReadableStream({
+            start(controller) {
+              controller.error(new Error("connection reset"))
+            },
+          })
+        )
+      return new Response("ok")
+    })
+    await expect(client.getText("https://a.example/api")).resolves.toBe("ok")
+    expect(attempts).toBe(2)
+  })
+
   it("gives up on a 429 that does not clear", async () => {
     const { client, calls } = fakeWeb((url) =>
       url.endsWith("/robots.txt")
@@ -251,6 +282,43 @@ describe("createClient", () => {
         : new Response("ok")
     })
     await expect(client.getText("https://a.example/api")).resolves.toBe("ok")
+  })
+
+  it("posts a JSON query with its headers and reads the JSON answer", async () => {
+    const { client, calls } = fakeWeb((url) =>
+      url.endsWith("/robots.txt")
+        ? new Response("", { status: 404 })
+        : new Response('{"items":[]}')
+    )
+    await expect(
+      client.postJson(
+        "https://api.example/list",
+        { page: 1 },
+        { authorization: "Bearer test-token" }
+      )
+    ).resolves.toEqual({ items: [] })
+    const post = calls[1]
+    expect(post.method).toBe("POST")
+    expect(post.body).toBe('{"page":1}')
+    expect(post.headers.get("authorization")).toBe("Bearer test-token")
+    expect(post.headers.get("content-type")).toBe("application/json")
+    // robots.txt is read without the token.
+    expect(calls[0].headers.get("authorization")).toBeNull()
+  })
+
+  it("does not follow a redirect from a POST, so its headers go nowhere else", async () => {
+    const { client, calls } = fakeWeb((url) =>
+      url.endsWith("/robots.txt")
+        ? new Response(robotsAllowAll)
+        : new Response(null, {
+            status: 302,
+            headers: { location: "https://b.example/steal" },
+          })
+    )
+    await expect(
+      client.postJson("https://a.example/list", {}, { authorization: "x" })
+    ).rejects.toThrow(/redirect/)
+    expect(calls.some((c) => c.url.startsWith("https://b.example"))).toBe(false)
   })
 
   it("parses JSON responses", async () => {
