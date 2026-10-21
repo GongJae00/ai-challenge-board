@@ -14,6 +14,8 @@ const SOURCE_RANK: Record<SourceId, number> = {
   evalai: 0,
   codabench: 0,
   kaggle: 0,
+  dacon: 0,
+  aifactory: 0,
   openreview: 1,
 }
 

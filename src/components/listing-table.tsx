@@ -63,6 +63,7 @@ export function ListingTable({ items, locale, now, timeZone }: Props) {
           const days = daysLeft(deadline.at, now, timeZone)
           const conference = conferenceName(listing)
           const name = deadlineName(deadline, locale)
+          const sourceTime = formatSourceTime(deadline, locale, timeZone)
           return (
             <TableRow key={listing.id} className="*:align-top">
               <TableCell
@@ -93,11 +94,8 @@ export function ListingTable({ items, locale, now, timeZone }: Props) {
                     {formatDaysLeft(days, locale)}
                   </span>
                   {name && <span>{name}</span>}
-                  {/* A deadline the organizers state in AoE also reads as they announce it. */}
-                  {deadline.zone === "AoE" && (
-                    <span className="tabular-nums">
-                      {formatSourceTime(deadline, locale)}
-                    </span>
+                  {sourceTime && (
+                    <span className="tabular-nums">{sourceTime}</span>
                   )}
                 </div>
               </TableCell>

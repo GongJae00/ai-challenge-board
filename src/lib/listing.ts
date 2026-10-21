@@ -6,6 +6,8 @@ export const sourceIds = [
   "evalai",
   "codabench",
   "kaggle",
+  "dacon",
+  "aifactory",
 ] as const
 export type SourceId = (typeof sourceIds)[number]
 
@@ -35,8 +37,11 @@ export const deadlineSchema = z.object({
   /** The source's name for the deadline, such as a phase's name; null when the kind says it all. */
   label: z.string().min(1).nullable(),
   at: instant,
-  /** The time zone the source states the deadline in. "UTC" also covers sources that give only an instant. */
-  zone: z.enum(["UTC", "AoE"]),
+  /**
+   * The time zone the source states the deadline in: "UTC" also covers sources that give only an instant, and
+   * "KST" covers Korean sources, whose pages state deadlines in Korean time.
+   */
+  zone: z.enum(["UTC", "AoE", "KST"]),
 })
 export type Deadline = z.infer<typeof deadlineSchema>
 

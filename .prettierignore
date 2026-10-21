@@ -3,3 +3,5 @@ package-lock.json
 # Prose and the harness are written by hand; Prettier formats code only.
 *.md
 .claude/
+# HTML fixtures are a source's pages as received; formatting would rewrite their markup and inline scripts.
+src/collect/sources/*/fixtures/*.html

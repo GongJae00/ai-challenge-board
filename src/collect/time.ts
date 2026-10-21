@@ -22,3 +22,25 @@ export function deadlineZone(ms: number): Deadline["zone"] {
   const clock = at.getUTCHours() * 60 + at.getUTCMinutes()
   return clock === 11 * 60 + 59 || clock === 12 * 60 ? "AoE" : "UTC"
 }
+
+const LOCAL_TIME = /^(20\d{2}-\d{2}-\d{2})[ T](\d{2}:\d{2})(?::(\d{2}))?$/
+
+/** Korea keeps UTC+9 all year, with no daylight saving time. */
+const KST_OFFSET_MS = 9 * 60 * 60 * 1000
+const DAY_MS = 24 * 60 * 60 * 1000
+
+/**
+ * A Korean local date and time without a zone, such as DACON's "2026-11-02 10:00:00", as a UTC instant, or null
+ * when the text is not one. "24:00", a common way to write the end of a day in Korea, is midnight after that day.
+ */
+export function isoFromKst(text: string): string | null {
+  const match = LOCAL_TIME.exec(text.trim())
+  if (!match) return null
+  const [, date, time, seconds = "00"] = match
+  const endOfDay = time === "24:00" && seconds === "00"
+  const local = `${date}T${endOfDay ? "00:00" : time}:${seconds}.000Z`
+  const ms = Date.parse(local)
+  // An impossible time, such as February 30, either fails to parse or rolls over, so it does not read back.
+  if (Number.isNaN(ms) || isoFromMs(ms) !== local) return null
+  return isoFromMs(ms + (endOfDay ? DAY_MS : 0) - KST_OFFSET_MS)
+}

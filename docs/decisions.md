@@ -18,10 +18,12 @@ Every date and time is shown in Korean time (KST), on the English page too, as G
 마감일이나 시간같은거 한국시간 기준으로하자. 나중에 로그인같은거 기능만들면 국가선택같은거 해서 그 국가나지역
 표준시에 맞게 알아서 변환되도록하면 편할거같음." The deadline column's header and the calendar say so, and
 `DISPLAY_TIME_ZONE` in `src/lib/datetime.ts` is the one place to change it; the formatting functions take the
-zone as an argument, so a reader's own region can replace it later. A deadline the organizers state in AoE also
-shows its AoE date and time, so that "AoE 11월 15일 23:59" on a workshop's page reads the same on ACB. A
-deadline marked `UTC` comes from a source that gives only an instant, with no zone of its own, so it shows no
-second time. The deadline cell keeps to two lines: the date and time, then the days left and the AoE time.
+zone as an argument, so a reader's own region can replace it later. A deadline the organizers state in another
+zone than the page's also shows its date and time in that zone, so that "AoE 11월 15일 23:59" on a workshop's page
+reads the same on ACB; a KST deadline therefore shows no second time while the page shows KST. A deadline marked
+`UTC` comes from a source that gives only an instant, with no zone of its own, so it shows no second time either.
+`formatSourceTime` in `src/lib/datetime.ts` holds this rule for every view. The deadline cell keeps to two lines:
+the date and time, then the days left and the source's time.
 
 ## 2026-10-21: Type and spacing
 
@@ -55,12 +57,13 @@ source page the facts came from, when it opens, and one or more deadlines. `src/
 and the collector, the build, and the pages all use it. A listing's id is `<source>:<the source's own id>`, so it
 stays the same across runs and can later key bookmarks and calendar events.
 
-- **Deadlines:** each deadline is an instant in UTC with the zone the source gives it in, `UTC` or `AoE`. A
+- **Deadlines:** each deadline is an instant in UTC with the zone the source gives it in, `UTC`, `AoE`, or `KST`. A
   listing keeps every deadline still ahead, such as each challenge phase's end, and the page shows the next one.
   OpenReview, EvalAI, and Codabench store instants without the organizers' own zone. A deadline at 11:59 or
   12:00 UTC is 23:59 or midnight AoE, the convention of paper deadlines, so `src/collect/time.ts` marks it `AoE`;
   the instant is the same either way, and the AoE form matches the organizers' announcement. Any other deadline
-  carries `UTC`.
+  from these sources carries `UTC`. The Korean sources, DACON and AIFactory, state their times in Korean time, so
+  their deadlines carry `KST`; DACON writes a local time without a zone, which `isoFromKst` converts.
 - **Conference:** filled only from a structured field, such as OpenReview's venue group or an EvalAI tag like
   `cvpr2026`, never guessed from a title or description, since these mention conferences that a challenge merely
   follows.

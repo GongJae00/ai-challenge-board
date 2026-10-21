@@ -35,6 +35,10 @@ GongJae set these on 2026-10-20:
 - Not listed: persistent benchmarks and leaderboards without a deadline.
 - Not decided: whether journal special issues, fellowships, and internships are listed.
 
+On 2026-10-21 GongJae chose DACON and AIFactory as the domestic sources ("한국 Dacon이랑 AIFactory 추가하자") and
+left 과기정통부's own program sites out ("과기부는 딱히 안해도 될듯?"); a ministry competition that runs on DACON or
+AIFactory is listed through that platform.
+
 The landscape survey behind these choices is `reports/AI 챌린지 서비스 생태계 조사.md`, kept locally.
 
 ## Product constraints

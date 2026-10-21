@@ -4,6 +4,7 @@ import type { Deadline } from "./listing.ts"
 const SOURCE_ZONES: Record<Deadline["zone"], string> = {
   UTC: "UTC",
   AoE: "Etc/GMT+12",
+  KST: "Asia/Seoul",
 }
 
 const clock = { hour: "2-digit", minute: "2-digit", hourCycle: "h23" } as const
@@ -55,10 +56,17 @@ export function formatTime(at: Date, locale: string, timeZone: string): string {
 }
 
 /**
- * The deadline in the zone the source states it in, with its date, such as "AoE 11월 15일 23:59": a deadline at
- * midnight AoE is ambiguous without one.
+ * The deadline in the zone the source states it in, with its date, such as "AoE 11월 15일 23:59", so that it reads
+ * as the organizers announce it; a deadline at midnight AoE is ambiguous without the date. Null when the source
+ * states no zone of its own (`UTC`) or states the zone the page shows times in.
  */
-export function formatSourceTime(deadline: Deadline, locale: string): string {
+export function formatSourceTime(
+  deadline: Deadline,
+  locale: string,
+  timeZone: string
+): string | null {
+  if (deadline.zone === "UTC" || SOURCE_ZONES[deadline.zone] === timeZone)
+    return null
   const text = new Intl.DateTimeFormat(locale, {
     timeZone: SOURCE_ZONES[deadline.zone],
     month: "short",

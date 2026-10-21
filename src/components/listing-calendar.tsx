@@ -174,6 +174,11 @@ export function ListingCalendar({ items, locale, now, timeZone }: Props) {
               <ul className="mt-1 divide-y border-y">
                 {list.map(({ listing, deadline }) => {
                   const name = deadlineName(deadline, locale)
+                  const sourceTime = formatSourceTime(
+                    deadline,
+                    locale,
+                    timeZone
+                  )
                   return (
                     <li
                       key={`${listing.id}-${listing.deadlines.indexOf(deadline)}`}
@@ -195,10 +200,8 @@ export function ListingCalendar({ items, locale, now, timeZone }: Props) {
                         <p className="mt-0.5 flex flex-wrap gap-x-3 text-xs text-muted-foreground">
                           <ListingContext listing={listing} locale={locale} />
                           {name && <span>{name}</span>}
-                          {deadline.zone === "AoE" && (
-                            <span className="tabular-nums">
-                              {formatSourceTime(deadline, locale)}
-                            </span>
+                          {sourceTime && (
+                            <span className="tabular-nums">{sourceTime}</span>
                           )}
                         </p>
                       </div>

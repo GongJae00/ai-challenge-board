@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
 
-import { deadlineZone, isoFromMs } from "./time.ts"
+import { deadlineZone, isoFromKst, isoFromMs } from "./time.ts"
 
 describe("isoFromMs", () => {
   it("writes an epoch time as a UTC instant", () => {
@@ -19,5 +19,28 @@ describe("deadlineZone", () => {
     expect(deadlineZone(Date.parse("2026-11-16T10:59:00Z"))).toBe("UTC")
     expect(deadlineZone(Date.parse("2026-11-16T23:59:59Z"))).toBe("UTC")
     expect(deadlineZone(Date.parse("2026-11-16T12:01:00Z"))).toBe("UTC")
+  })
+})
+
+describe("isoFromKst", () => {
+  it("reads a Korean local time without a zone as KST, UTC+9", () => {
+    expect(isoFromKst("2026-11-02 10:00:00")).toBe("2026-11-02T01:00:00.000Z")
+    expect(isoFromKst("2026-11-02T23:59")).toBe("2026-11-02T14:59:00.000Z")
+    expect(isoFromKst(" 2026-11-02 10:00:00 ")).toBe("2026-11-02T01:00:00.000Z")
+  })
+
+  it("reads 24:00 as midnight at the end of the day", () => {
+    expect(isoFromKst("2026-11-02 24:00:00")).toBe("2026-11-02T15:00:00.000Z")
+    expect(isoFromKst("2026-11-02 24:01")).toBeNull()
+  })
+
+  it("rejects text that is not a local date and time", () => {
+    expect(isoFromKst("2026-11-02")).toBeNull()
+    expect(isoFromKst("2026-11-02T01:00:00Z")).toBeNull()
+    expect(isoFromKst("2026-13-02 10:00:00")).toBeNull()
+    expect(isoFromKst("2026-11-02 10:61:00")).toBeNull()
+    expect(isoFromKst("2026-02-30 10:00:00")).toBeNull()
+    expect(isoFromKst("0000-01-01 00:00")).toBeNull()
+    expect(isoFromKst("")).toBeNull()
   })
 })

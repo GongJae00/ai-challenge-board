@@ -19,6 +19,7 @@ const utc: Deadline = {
   zone: "UTC",
 }
 const aoe: Deadline = { ...utc, zone: "AoE" }
+const kst: Deadline = { ...utc, zone: "KST" }
 
 describe("datetime", () => {
   it("names months in each locale", () => {
@@ -44,9 +45,17 @@ describe("datetime", () => {
   })
 
   it("gives the source's own date and clock, with AoE as UTC−12", () => {
-    expect(formatSourceTime(aoe, "ko")).toBe("AoE 11월 15일 23:59")
-    expect(formatSourceTime(aoe, "en")).toBe("AoE Nov 15, 23:59")
-    expect(formatSourceTime(utc, "en")).toBe("UTC Nov 16, 11:59")
+    expect(formatSourceTime(aoe, "ko", "Asia/Seoul")).toBe(
+      "AoE 11월 15일 23:59"
+    )
+    expect(formatSourceTime(aoe, "en", "Asia/Seoul")).toBe("AoE Nov 15, 23:59")
+    expect(formatSourceTime(kst, "en", "UTC")).toBe("KST Nov 16, 20:59")
+  })
+
+  it("gives no source time when it would repeat the shown time or the source states no zone", () => {
+    expect(formatSourceTime(kst, "ko", "Asia/Seoul")).toBeNull()
+    expect(formatSourceTime(aoe, "en", "Etc/GMT+12")).toBeNull()
+    expect(formatSourceTime(utc, "en", "Asia/Seoul")).toBeNull()
   })
 
   it("says days left in words", () => {
