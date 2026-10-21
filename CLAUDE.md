@@ -12,9 +12,15 @@ skills are turned off in `.claude/settings.json`.
 
 ## Current phase
 
-Research and design. The stack and the hosting are not chosen, and no feature is implemented until GongJae
-approves the first scope and the stack. This directory is a local git repository; the GitHub repository will be
-private and does not exist yet.
+Building the first working version, which GongJae uses alone and develops further before an official launch.
+GongJae set these on 2026-10-21:
+- The GitHub repository `ai-challenge-board` is public, so that the site is served free by GitHub Pages; it does
+  not exist yet. Nothing secret goes into it, and the research folders below stay out of it.
+- Working features come first. Until the official launch, a source needs no recorded terms review or per-source
+  approval: the collector still obeys robots.txt and its Crawl-delay, keeps to facts, and runs at most twice a
+  day, which the code enforces for every source.
+- The data model, the repository setup, and the implementation are left to Claude, with each constraining choice
+  recorded in `docs/decisions.md`.
 
 ## Scope
 
