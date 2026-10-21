@@ -5,6 +5,7 @@ import { codabench } from "./codabench/index.ts"
 import { dacon } from "./dacon/index.ts"
 import { drivendata } from "./drivendata/index.ts"
 import { evalai } from "./evalai/index.ts"
+import { grandchallenge } from "./grandchallenge/index.ts"
 import { kaggle } from "./kaggle/index.ts"
 import { lablab } from "./lablab/index.ts"
 import { openreview } from "./openreview/index.ts"
@@ -24,5 +25,6 @@ export const sources: Source[] = [
   zindi,
   signate,
   tianchi,
+  grandchallenge,
   aicrowd,
 ]
