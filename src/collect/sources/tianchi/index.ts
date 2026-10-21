@@ -1,5 +1,6 @@
 import type { Listing } from "../../../lib/listing.ts"
 import type { Source } from "../../run.ts"
+import { ENDED_LONG_AGO_MS } from "../../time.ts"
 import { isListed, parseRacePage, toListing, type Race } from "./parse.ts"
 
 const LIST_URL = "https://tianchi.aliyun.com/v3/proxy/competition/api/race/page"
@@ -7,11 +8,6 @@ const LIST_URL = "https://tianchi.aliyun.com/v3/proxy/competition/api/race/page"
 const PAGE_SIZE = 10
 /** A bound on pages: the whole catalogue, 600 rows, was 60 pages when this was written. */
 const MAX_PAGES = 80
-/**
- * The list is newest first only roughly, with series rows in odd places, so a page on which every row ended
- * longer ago than this has no open competition after it.
- */
-const STOP_AFTER_MS = 180 * 24 * 60 * 60 * 1000
 
 /**
  * Open Tianchi competitions. The list comes from the JSON endpoint behind tianchi.aliyun.com's own competition
@@ -33,9 +29,14 @@ export const tianchi: Source = {
       )
       if (page.length === 0) break
       for (const race of page) if (isListed(race, now)) open.set(race.id, race)
-      const allLongEnded = page.every(
-        (race) => Date.parse(race.endsAt) < now.getTime() - STOP_AFTER_MS
-      )
+      // Learning competitions and series containers keep rolling or far ends, so only the others say how old
+      // the page is.
+      const dated = page.filter((race) => !race.learning && !race.series)
+      const allLongEnded =
+        dated.length > 0 &&
+        dated.every(
+          (race) => Date.parse(race.endsAt) < now.getTime() - ENDED_LONG_AGO_MS
+        )
       if (page.length === PAGE_SIZE && allLongEnded) break
     }
 

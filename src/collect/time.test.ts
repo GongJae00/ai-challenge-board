@@ -6,6 +6,7 @@ import {
   isoFromKst,
   isoFromLocal,
   isoFromMs,
+  monthOf,
   PLACEHOLDER_AFTER_MS,
 } from "./time.ts"
 
@@ -78,6 +79,12 @@ describe("isoFromLocal", () => {
     )
   })
 
+  it("reads a far placeholder year, which endsAhead then rules out", () => {
+    expect(isoFromLocal("2199-12-31 23:59:59", "Asia/Tokyo")).toBe(
+      "2199-12-31T14:59:59.000Z"
+    )
+  })
+
   it("rejects text that is not a local date and time", () => {
     expect(isoFromLocal("2026-02-30 10:00", "Asia/Shanghai")).toBeNull()
     expect(isoFromLocal("2026-10-26", "Asia/Shanghai")).toBeNull()
@@ -95,5 +102,18 @@ describe("endsAhead", () => {
   it("fails for an end that has passed or is a placeholder for never", () => {
     expect(endsAhead(now.getTime(), now)).toBe(false)
     expect(endsAhead(now.getTime() + PLACEHOLDER_AFTER_MS + 1, now)).toBe(false)
+  })
+})
+
+describe("monthOf", () => {
+  it("reads an English three-letter month", () => {
+    expect(monthOf("Jan")).toBe(1)
+    expect(monthOf("Oct")).toBe(10)
+  })
+
+  it("reads nothing else", () => {
+    expect(monthOf("oct")).toBeNull()
+    expect(monthOf("October")).toBeNull()
+    expect(monthOf("")).toBeNull()
   })
 })

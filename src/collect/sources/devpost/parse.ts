@@ -1,12 +1,13 @@
 import { z } from "zod"
 
 import {
+  canonicalZone,
   isTimeZone,
   type Deadline,
   type Listing,
 } from "../../../lib/listing.ts"
 import { cleanText } from "../../text.ts"
-import { endsAhead, isoFromLocal } from "../../time.ts"
+import { endsAhead, isoFromLocal, monthOf } from "../../time.ts"
 
 /**
  * A hackathon's own page, `https://<slug>.devpost.com/`. The collector requests a calendar on this host, so a
@@ -122,71 +123,51 @@ function firstEvent(text: string): Map<string, Property> | null {
   return null
 }
 
-const CALENDAR_TIME = /^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})$/
+/** A date and time written as `YYYYMMDDTHHMMSS`, with a trailing `Z` when it is in UTC. */
+const CALENDAR_TIME = /^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})(Z)?$/
 
-/** A time property of the event, such as DTSTART, as a UTC instant and the IANA zone it is written in. */
+/**
+ * A time property of the event, such as DTSTART, as a UTC instant and the zone it is written in: the IANA name in
+ * its TZID (which may be quoted), or "UTC" for a time written with a trailing `Z`. Null when ACB cannot place the
+ * time: the property is missing, a whole day (`VALUE=DATE`), floating (neither a TZID nor a `Z`), in a TZID that
+ * is not an IANA zone, or not a time.
+ */
 function eventTime(
   event: Map<string, Property>,
-  name: string,
-  hackathon: string
-): { at: string; zone: string } {
-  const where = `Devpost calendar of ${hackathon}`
+  name: string
+): { at: string; zone: string } | null {
   const property = event.get(name)
-  const zone = property?.params.get("TZID")
   const match = CALENDAR_TIME.exec(property?.value ?? "")
-  if (!property || !zone || !match)
-    throw new Error(`${where} has no ${name} with a time zone and a time`)
-  if (!isTimeZone(zone))
-    throw new Error(`${where} gives ${name} in ${zone}, not an IANA time zone`)
-  const [, year, month, day, hour, minute, second] = match
+  if (!property || !match) return null
+  const [, year, month, day, hour, minute, second, utc] = match
+  const zone = utc
+    ? "UTC"
+    : property.params.get("TZID")?.replace(/^"(.*)"$/, "$1")
+  if (!zone || !isTimeZone(zone)) return null
   const at = isoFromLocal(
     `${year}-${month}-${day} ${hour}:${minute}:${second}`,
     zone
   )
-  if (at === null)
-    throw new Error(
-      `${where} has a ${name} that is not a time: ${property.value}`
-    )
-  return { at, zone }
+  return at === null ? null : { at, zone: canonicalZone(zone) }
 }
 
 /**
- * The deadline in a hackathon's calendar file. An online hackathon's calendar holds one event, "<title>
- * submission deadline", which starts at the deadline, so its start is the submission deadline. Any other event,
- * such as an on-site hackathon, runs from a start to an end, and its end is the deadline. The zone is the TZID,
- * an IANA name, which is the organizer's own and not Devpost's Eastern time. Fails, naming the hackathon, when the
- * file holds no event or the times do not read.
+ * The deadline in a hackathon's calendar file, or null when the file gives none that ACB can place. An online
+ * hackathon's calendar holds one event, "<title> submission deadline", which starts at the deadline, so its start
+ * is the submission deadline. Any other event, such as an on-site hackathon, runs from a start to an end, and its
+ * end is the deadline. The zone is the TZID, an IANA name, which is the organizer's own and not Devpost's Eastern
+ * time, or "UTC" for a time written with a `Z`. Null when the file holds no event, or when the time is a whole
+ * day, floating, in a zone that is not an IANA zone, or not a time.
  */
-export function parseCalendar(text: string, hackathon: string): Deadline {
+export function parseCalendar(text: string): Deadline | null {
   const event = firstEvent(text)
-  if (event === null)
-    throw new Error(`Devpost calendar of ${hackathon} has no event`)
+  if (event === null) return null
   const online = /submission deadline$/i.test(
     (event.get("SUMMARY")?.value ?? "").trim()
   )
-  return online
-    ? {
-        kind: "submission",
-        label: null,
-        ...eventTime(event, "DTSTART", hackathon),
-      }
-    : { kind: "end", label: null, ...eventTime(event, "DTEND", hackathon) }
+  const time = eventTime(event, online ? "DTSTART" : "DTEND")
+  return time && { kind: online ? "submission" : "end", label: null, ...time }
 }
-
-const MONTHS = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-]
 
 /** "Aug 31 - Oct 23, 2026", "Oct 05 - 27, 2026", "Nov 01, 2026", or "Jul 16, 2026 - Jan 15, 2027". */
 const SUBMISSION_PERIOD =
@@ -202,16 +183,17 @@ export function opensAtFrom(dates: string, zone: string): string | null {
   if (!match || !isTimeZone(zone)) return null
   const [, startMonth, startDay, startYear, endMonth, endDay, endYear] = match
   const year = Number(startYear ?? endYear)
-  const month = MONTHS.indexOf(startMonth)
-  if (!year || month === -1) return null
+  const month = monthOf(startMonth)
+  if (!year || month === null) return null
   if (endYear !== undefined) {
-    const lastMonth = endMonth === undefined ? month : MONTHS.indexOf(endMonth)
+    const lastMonth = endMonth === undefined ? month : monthOf(endMonth)
+    if (lastMonth === null) return null
     const start = year * 10_000 + month * 100 + Number(startDay)
     const end = Number(endYear) * 10_000 + lastMonth * 100 + Number(endDay)
-    if (lastMonth === -1 || start > end) return null
+    if (start > end) return null
   }
   return isoFromLocal(
-    `${year}-${String(month + 1).padStart(2, "0")}-${startDay.padStart(2, "0")} 00:00:00`,
+    `${year}-${String(month).padStart(2, "0")}-${startDay.padStart(2, "0")} 00:00:00`,
     zone
   )
 }

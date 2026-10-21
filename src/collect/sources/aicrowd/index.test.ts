@@ -112,6 +112,27 @@ describe("aicrowd", () => {
     )
   })
 
+  it("reads the next list page after a full one", async () => {
+    const full = `<div id="challenges-div">${'<div class="card card-challenge"></div>'.repeat(18)}</div>`
+    const requested: string[] = []
+    const client: Client = {
+      getJson: async () => ({}),
+      postJson: async () => ({}),
+      getText: async (url) => {
+        requested.push(url)
+        if (url === LIST) return full
+        if (url === `${LIST}&page=2`) return list
+        if (url === ARC) return react
+        throw new Error(`Request to ${url} failed`)
+      },
+    }
+    const listings = await aicrowd.collect(client, now, state())
+    expect(requested.slice(0, 2)).toEqual([LIST, `${LIST}&page=2`])
+    expect(listings.map((l) => l.id)).toEqual([
+      "aicrowd:arc-white-box-estimation-challenge-2026",
+    ])
+  })
+
   it("fails when a challenge page request fails", async () => {
     const { client } = fakeClient({})
     await expect(aicrowd.collect(client, now, state())).rejects.toThrow(

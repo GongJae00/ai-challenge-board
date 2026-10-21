@@ -1,5 +1,6 @@
 import type { Listing } from "../../../lib/listing.ts"
 import type { Source } from "../../run.ts"
+import { ENDED_LONG_AGO_MS } from "../../time.ts"
 import {
   competitionUrl,
   isOpen,
@@ -14,11 +15,6 @@ const LIST_URL = "https://app.dacon.io/api/v1/competition/list"
 const PAGE_SIZE = 15
 /** A bound on pages: the whole catalogue, 324 competitions since 2018, was 22 pages when this was written. */
 const MAX_PAGES = 30
-/**
- * The list is newest first by end date only roughly, out of order by up to about three months, so a page on
- * which every competition ended longer ago than this has no open competition after it.
- */
-const STOP_AFTER_MS = 180 * 24 * 60 * 60 * 1000
 
 /**
  * Open DACON competitions. The list comes from the JSON endpoint behind dacon.io's own competitions page. The
@@ -39,7 +35,7 @@ export const dacon: Source = {
         if (isOpen(competition, now)) open.set(competition.id, competition)
       const allLongEnded = page.every(
         (competition) =>
-          Date.parse(competition.endsAt) < now.getTime() - STOP_AFTER_MS
+          Date.parse(competition.endsAt) < now.getTime() - ENDED_LONG_AGO_MS
       )
       if (page.length < PAGE_SIZE || allLongEnded) break
     }

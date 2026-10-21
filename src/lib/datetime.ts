@@ -1,7 +1,7 @@
-import { zoneCodes, type Deadline } from "./listing.ts"
+import { canonicalZone, zoneCodes, type Deadline } from "./listing.ts"
 
 function isZoneCode(zone: string): zone is keyof typeof zoneCodes {
-  return zone in zoneCodes
+  return Object.hasOwn(zoneCodes, zone)
 }
 
 /** A deadline's zone as an IANA name; Anywhere on Earth is UTC−12, which the IANA database names Etc/GMT+12. */
@@ -88,7 +88,7 @@ export function formatSourceTime(
   locale: string,
   timeZone: string
 ): string | null {
-  if (deadline.zone === "UTC") return null
+  if (canonicalZone(deadline.zone) === "UTC") return null
   const at = new Date(deadline.at)
   const format = (zone: string) =>
     new Intl.DateTimeFormat(locale, {

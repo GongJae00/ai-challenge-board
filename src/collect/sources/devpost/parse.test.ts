@@ -114,7 +114,7 @@ describe("calendarUrl", () => {
 describe("parseCalendar", () => {
   it("reads an online hackathon's submission deadline in the zone of its TZID", () => {
     // 12:00 PDT is 19:00 UTC, the instant the hackathon's dates page gives as 2026-10-23T15:00:00-04:00.
-    expect(parseCalendar(amazonIcs, "Amazon")).toEqual({
+    expect(parseCalendar(amazonIcs)).toEqual({
       kind: "submission",
       label: null,
       at: "2026-10-23T19:00:00.000Z",
@@ -124,7 +124,7 @@ describe("parseCalendar", () => {
 
   it("reads the submission deadline of an upcoming hackathon after the clocks change to standard time", () => {
     // 14:00 PST on 2026-12-04 is 22:00 UTC; the dates page gives 2026-12-04T17:00:00-05:00.
-    expect(parseCalendar(kiroweenIcs, "Kiroween")).toMatchObject({
+    expect(parseCalendar(kiroweenIcs)).toMatchObject({
       kind: "submission",
       at: "2026-12-04T22:00:00.000Z",
       zone: "America/Los_Angeles",
@@ -134,7 +134,7 @@ describe("parseCalendar", () => {
   it("takes the end of an on-site event, not its start, as the end", () => {
     // The event runs 2026-11-06 17:00 to 2026-11-08 10:00 in Turku, which is on EET (UTC+2) after 25 October;
     // the dates page gives the end as 2026-11-08T03:00:00-05:00.
-    expect(parseCalendar(sinceAiIcs, "Since AI")).toEqual({
+    expect(parseCalendar(sinceAiIcs)).toEqual({
       kind: "end",
       label: null,
       at: "2026-11-08T08:00:00.000Z",
@@ -146,7 +146,7 @@ describe("parseCalendar", () => {
     // The Amazon file breaks "submission deadline" after "deadlin"; read unfolded, it is an online deadline,
     // and read as it stands, the summary would look like an on-site event's.
     expect(amazonIcs).toMatch(/deadlin\r?\n e/)
-    expect(parseCalendar(amazonIcs, "Amazon").kind).toBe("submission")
+    expect(parseCalendar(amazonIcs)?.kind).toBe("submission")
   })
 
   it("ignores the time zone rules and the reminder around the event", () => {
@@ -155,49 +155,73 @@ describe("parseCalendar", () => {
       "SUMMARY:Kiroween 2026 submission deadline",
       "SUMMARY:Kiroween 2026"
     )
-    expect(parseCalendar(ics, "Kiroween").kind).toBe("end")
+    expect(parseCalendar(ics)?.kind).toBe("end")
   })
 
   it("accepts LF line breaks", () => {
-    expect(parseCalendar(amazonIcs.replaceAll("\r\n", "\n"), "Amazon")).toEqual(
-      parseCalendar(amazonIcs, "Amazon")
+    expect(parseCalendar(amazonIcs.replaceAll("\r\n", "\n"))).toEqual(
+      parseCalendar(amazonIcs)
     )
   })
 
-  it("fails and names the hackathon when the TZID is not an IANA zone", () => {
-    const ics = amazonIcs.replaceAll("America/Los_Angeles", "Not/AZone")
-    expect(() => parseCalendar(ics, "Amazon Hackathon")).toThrow(
-      /Amazon Hackathon.*Not\/AZone/
-    )
-  })
-
-  it("fails and names the hackathon when the time does not read", () => {
-    const ics = amazonIcs.replace("20261023T120000", "20261323T120000")
-    expect(() => parseCalendar(ics, "Amazon Hackathon")).toThrow(
-      /Amazon Hackathon/
-    )
-  })
-
-  it("fails when there is no event", () => {
-    expect(() =>
-      parseCalendar("BEGIN:VCALENDAR\r\nEND:VCALENDAR\r\n", "Empty")
-    ).toThrow(/Empty.*no event/)
-    expect(() => parseCalendar("<html>Not found</html>", "Empty")).toThrow(
-      /Empty.*no event/
-    )
-  })
-
-  it("fails when the event's time has no TZID", () => {
+  it("reads a time written in UTC with a Z as zone UTC", () => {
     const ics = amazonIcs.replace(
       "DTSTART;TZID=America/Los_Angeles:20261023T120000",
-      "DTSTART:20261023T190000Z"
+      "DTSTART:20261023T070000Z"
     )
-    expect(() => parseCalendar(ics, "Amazon")).toThrow(/Amazon.*DTSTART/)
+    expect(parseCalendar(ics)).toEqual({
+      kind: "submission",
+      label: null,
+      at: "2026-10-23T07:00:00.000Z",
+      zone: "UTC",
+    })
   })
 
-  it("fails when an on-site event has no end", () => {
-    const ics = sinceAiIcs.replace(/DTEND;[^\r\n]*\r?\n/, "")
-    expect(() => parseCalendar(ics, "Since AI")).toThrow(/Since AI.*DTEND/)
+  it("reads a quoted TZID", () => {
+    const ics = amazonIcs.replace(
+      "DTSTART;TZID=America/Los_Angeles:",
+      'DTSTART;TZID="America/Los_Angeles":'
+    )
+    expect(parseCalendar(ics)).toEqual(parseCalendar(amazonIcs))
+  })
+
+  it("is null when the TZID is not an IANA zone", () => {
+    expect(
+      parseCalendar(amazonIcs.replaceAll("America/Los_Angeles", "Not/AZone"))
+    ).toBeNull()
+  })
+
+  it("is null when the time does not read", () => {
+    expect(
+      parseCalendar(amazonIcs.replace("20261023T120000", "20261323T120000"))
+    ).toBeNull()
+  })
+
+  it("is null when there is no event", () => {
+    expect(parseCalendar("BEGIN:VCALENDAR\r\nEND:VCALENDAR\r\n")).toBeNull()
+    expect(parseCalendar("<html>Not found</html>")).toBeNull()
+  })
+
+  it("is null for an all-day time", () => {
+    const ics = amazonIcs.replace(
+      "DTSTART;TZID=America/Los_Angeles:20261023T120000",
+      "DTSTART;VALUE=DATE:20261023"
+    )
+    expect(parseCalendar(ics)).toBeNull()
+  })
+
+  it("is null for a floating time with neither a TZID nor a Z", () => {
+    const ics = amazonIcs.replace(
+      "DTSTART;TZID=America/Los_Angeles:20261023T120000",
+      "DTSTART:20261023T120000"
+    )
+    expect(parseCalendar(ics)).toBeNull()
+  })
+
+  it("is null when an on-site event has no end", () => {
+    expect(
+      parseCalendar(sinceAiIcs.replace(/DTEND;[^\r\n]*\r?\n/, ""))
+    ).toBeNull()
   })
 })
 
@@ -253,7 +277,7 @@ describe("opensAtFrom", () => {
 })
 
 describe("toListing", () => {
-  const deadline = parseCalendar(amazonIcs, "Amazon")
+  const deadline = parseCalendar(amazonIcs)!
 
   it("lists a hackathon as a challenge with its page as both links and its deadline in the event's zone", () => {
     const listing = toListing(hackathon(), deadline, now)
@@ -282,7 +306,7 @@ describe("toListing", () => {
   it("lists an on-site event with its end", () => {
     const listing = toListing(
       hackathon({ id: 1, dates: "Nov 06 - 08, 2026" }),
-      parseCalendar(sinceAiIcs, "Since AI"),
+      parseCalendar(sinceAiIcs)!,
       now
     )
     expect(listing?.deadlines).toEqual([

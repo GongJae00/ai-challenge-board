@@ -131,6 +131,22 @@ describe("createClient", () => {
       expect(at[i] - at[i - 1]).toBeGreaterThanOrEqual(5000)
   })
 
+  it("spaces requests to two hosts of one site that start together, robots.txt included", async () => {
+    const { client, calls } = fakeWeb((url) =>
+      url.endsWith("/robots.txt")
+        ? new Response(robotsAllowAll)
+        : new Response("ok")
+    )
+    await Promise.all([
+      client.getText("https://one.devpost.com/calendar"),
+      client.getText("https://two.devpost.com/calendar"),
+    ])
+    const at = calls.map((c) => c.at).sort((a, b) => a - b)
+    expect(at).toHaveLength(4)
+    for (let i = 1; i < at.length; i += 1)
+      expect(at[i] - at[i - 1]).toBeGreaterThanOrEqual(5000)
+  })
+
   it("keeps the pace of different sites apart", async () => {
     const { client, calls } = fakeWeb((url) =>
       url.endsWith("/robots.txt")

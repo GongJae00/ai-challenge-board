@@ -7,7 +7,7 @@ import type { SourceState } from "../../run.ts"
 import lastPage from "./fixtures/list-open-ml-last-page.json"
 import page1 from "./fixtures/list-open-ml-page1.json"
 import upcomingPage1 from "./fixtures/list-upcoming-ml-page1.json"
-import { devpost } from "./index.ts"
+import { devpost, REFRESH_AFTER_MS } from "./index.ts"
 
 const now = new Date("2026-10-21T14:00:00Z")
 const LIST =
@@ -35,6 +35,7 @@ const TOTAL = fixturePages.flat().length
 const INVITE_ONLY_ID = 31626
 const AMAZON_ID = 30992
 const GITLAB_ID = 31503
+const KIROWEEN_ID = 31667
 
 const envelope = (hackathons: Raw[], total = TOTAL) => ({
   hackathons,
@@ -81,6 +82,12 @@ function fakeClient({
   }
   return { client, requested }
 }
+
+/** What the source saved for a hackathon. */
+const savedEntry = (state: SourceState, id: number) =>
+  (state.next as { id: number; checkedAt: string; deadline: unknown }[]).find(
+    (entry) => entry.id === id
+  )
 
 const listRequests = (requested: string[]) =>
   requested.filter((url) => url.startsWith(LIST))
@@ -191,6 +198,7 @@ describe("devpost", () => {
     const saved = state.next as {
       id: number
       dates: string
+      checkedAt: string
       deadline: unknown
     }[]
     expect(saved).toHaveLength(9)
@@ -200,6 +208,7 @@ describe("devpost", () => {
     expect(saved.find((e) => e.id === AMAZON_ID)).toEqual({
       id: AMAZON_ID,
       dates: "Aug 31 - Oct 23, 2026",
+      checkedAt: "2026-10-21T14:00:00.000Z",
       deadline: {
         kind: "submission",
         label: null,
@@ -315,18 +324,20 @@ describe("devpost", () => {
     ).rejects.toThrow(/Status 500/)
   })
 
-  it("fails and names the hackathon when its calendar has no event", async () => {
+  it("leaves out a hackathon whose calendar has no event and lists the others", async () => {
     const { client } = fakeClient({
       calendars: {
         "kiroween.devpost.com": "BEGIN:VCALENDAR\r\nEND:VCALENDAR\r\n",
       },
     })
-    await expect(
-      devpost.collect(client, now, { previous: null })
-    ).rejects.toThrow(/Kiroween 2026.*no event/)
+    const state: SourceState = { previous: null }
+    const listings = await devpost.collect(client, now, state)
+    expect(listings).toHaveLength(8)
+    expect(listings.some((l) => l.id === `devpost:${KIROWEEN_ID}`)).toBe(false)
+    expect(savedEntry(state, KIROWEEN_ID)?.deadline).toBeNull()
   })
 
-  it("fails and names the hackathon when the calendar's time zone is not an IANA zone", async () => {
+  it("leaves out a hackathon whose calendar's time zone is not an IANA zone", async () => {
     const { client } = fakeClient({
       calendars: {
         "kiroween.devpost.com": kiroweenIcs.replaceAll(
@@ -335,9 +346,107 @@ describe("devpost", () => {
         ),
       },
     })
-    await expect(
-      devpost.collect(client, now, { previous: null })
-    ).rejects.toThrow(/Kiroween 2026.*Not\/AZone/)
+    const listings = await devpost.collect(client, now, { previous: null })
+    expect(listings).toHaveLength(8)
+    expect(listings.some((l) => l.id === `devpost:${KIROWEEN_ID}`)).toBe(false)
+  })
+
+  it("leaves out a hackathon whose calendar gives an all-day time", async () => {
+    const { client } = fakeClient({
+      calendars: {
+        "kiroween.devpost.com": kiroweenIcs.replace(
+          "DTSTART;TZID=America/Los_Angeles:20261204T140000",
+          "DTSTART;VALUE=DATE:20261204"
+        ),
+      },
+    })
+    const listings = await devpost.collect(client, now, { previous: null })
+    expect(listings.some((l) => l.id === `devpost:${KIROWEEN_ID}`)).toBe(false)
+  })
+
+  it("lists a hackathon whose calendar gives a UTC time, in zone UTC", async () => {
+    const { client } = fakeClient({
+      calendars: {
+        "kiroween.devpost.com": kiroweenIcs.replace(
+          "DTSTART;TZID=America/Los_Angeles:20261204T140000",
+          "DTSTART:20261204T220000Z"
+        ),
+      },
+    })
+    const listings = await devpost.collect(client, now, { previous: null })
+    expect(
+      listings.find((l) => l.id === `devpost:${KIROWEEN_ID}`)?.deadlines
+    ).toEqual([
+      {
+        kind: "submission",
+        label: null,
+        at: "2026-12-04T22:00:00.000Z",
+        zone: "UTC",
+      },
+    ])
+  })
+
+  it("remembers a calendar that gave no deadline, and does not request it again", async () => {
+    const empty = "BEGIN:VCALENDAR\r\nEND:VCALENDAR\r\n"
+    const first = fakeClient({ calendars: { "kiroween.devpost.com": empty } })
+    const state: SourceState = { previous: null }
+    await devpost.collect(first.client, now, state)
+
+    const second = fakeClient({ calendars: { "kiroween.devpost.com": empty } })
+    const next: SourceState = { previous: state.next }
+    const listings = await devpost.collect(second.client, now, next)
+    expect(calendarRequests(second.requested)).toEqual([])
+    expect(listings.some((l) => l.id === `devpost:${KIROWEEN_ID}`)).toBe(false)
+    expect(savedEntry(next, KIROWEEN_ID)?.deadline).toBeNull()
+  })
+
+  it("reads the calendars again once the saved reading is older than the refresh age", async () => {
+    const first = fakeClient()
+    const state: SourceState = { previous: null }
+    await devpost.collect(first.client, now, state)
+
+    // The deadline moves while the list's dates string stays the same.
+    const second = fakeClient({
+      calendars: {
+        "amazonappdev2026.devpost.com": amazonIcs.replace(
+          "20261023T120000",
+          "20261030T180000"
+        ),
+      },
+    })
+    const later = new Date(now.getTime() + REFRESH_AFTER_MS + 1000)
+    const next: SourceState = { previous: state.next }
+    const listings = await devpost.collect(second.client, later, next)
+    expect(calendarRequests(second.requested)).toHaveLength(9)
+    expect(
+      listings.find((l) => l.id === `devpost:${AMAZON_ID}`)?.deadlines[0].at
+    ).toBe("2026-10-31T01:00:00.000Z")
+    expect(savedEntry(next, AMAZON_ID)?.checkedAt).toBe(later.toISOString())
+  })
+
+  it("does not read the calendars again before the refresh age", async () => {
+    const first = fakeClient()
+    const state: SourceState = { previous: null }
+    await devpost.collect(first.client, now, state)
+    const second = fakeClient()
+    const almost = new Date(now.getTime() + REFRESH_AFTER_MS)
+    await devpost.collect(second.client, almost, { previous: state.next })
+    expect(calendarRequests(second.requested)).toEqual([])
+  })
+
+  it("reads the calendar of a saved entry that has no reading time", async () => {
+    const first = fakeClient()
+    const state: SourceState = { previous: null }
+    await devpost.collect(first.client, now, state)
+    const stale = (state.next as { id: number }[]).map((entry) => ({
+      id: entry.id,
+      dates: (entry as unknown as { dates: string }).dates,
+      deadline: (entry as unknown as { deadline: unknown }).deadline,
+    }))
+
+    const second = fakeClient()
+    await devpost.collect(second.client, now, { previous: stale })
+    expect(calendarRequests(second.requested)).toHaveLength(9)
   })
 
   it("fails when a list page does not fit", async () => {
@@ -349,5 +458,31 @@ describe("devpost", () => {
     await expect(
       devpost.collect(client, now, { previous: null })
     ).rejects.toThrow(/Devpost list/)
+  })
+})
+
+describe("staleIds", () => {
+  it("picks the oldest entries past the refresh age, at most the limit, entries without a check first", async () => {
+    const { staleIds } = await import("./index.ts")
+    const at = (days: number) =>
+      new Date(now.getTime() - days * 24 * 60 * 60 * 1000).toISOString()
+    const entry = (id: number, checkedAt?: string) => ({
+      id,
+      dates: "Oct 01 - 31, 2026",
+      checkedAt,
+      deadline: null,
+    })
+    const cached = new Map(
+      [
+        entry(1, at(1)),
+        entry(2, at(5)),
+        entry(3, at(9)),
+        entry(4),
+        entry(5, at(4)),
+      ].map((e) => [e.id, e])
+    )
+    expect(staleIds([1, 2, 3, 4, 5, 6], cached, now, 3)).toEqual(
+      new Set([4, 3, 2])
+    )
   })
 })

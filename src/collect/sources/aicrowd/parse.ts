@@ -4,7 +4,7 @@ import { z } from "zod"
 import { minuteOf } from "../../../lib/datetime.ts"
 import type { Deadline, Listing } from "../../../lib/listing.ts"
 import { cleanText } from "../../text.ts"
-import { endsAhead, isoFromMs } from "../../time.ts"
+import { endsAhead, isoFromLocal, isoFromMs } from "../../time.ts"
 
 const SITE = "https://www.aicrowd.com"
 
@@ -21,6 +21,11 @@ export interface Card {
   endsAt: string
 }
 
+/** How many challenge cards a list page holds, to tell a full page, after which another may follow. */
+export function cardCount(html: string): number {
+  return parse(html).querySelectorAll(".card-challenge").length
+}
+
 export function challengeUrl(slug: string): string {
   return `${SITE}/challenges/${slug}`
 }
@@ -32,11 +37,8 @@ const CHALLENGE_LINK = /^\/challenges\/([\w.~%-]+)$/
 /** The instant a tooltip states, or null when it is not a real date and time in the format. */
 function instantOfTooltip(text: string): number | null {
   const match = TOOLTIP.exec(text)
-  if (!match) return null
-  const iso = `${match[1]}T${match[2]}.000Z`
-  const ms = Date.parse(iso)
-  // An impossible date, such as February 30, either fails to parse or rolls over, so it does not read back.
-  return Number.isNaN(ms) || isoFromMs(ms) !== iso ? null : ms
+  const iso = match ? isoFromLocal(`${match[1]} ${match[2]}`, "UTC") : null
+  return iso === null ? null : Date.parse(iso)
 }
 
 function organizerOf(card: HTMLElement): string | null {

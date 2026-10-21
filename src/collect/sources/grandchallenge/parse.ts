@@ -2,7 +2,7 @@ import { parse, type HTMLElement } from "node-html-parser"
 
 import type { Listing } from "../../../lib/listing.ts"
 import { cleanText, webUrl } from "../../text.ts"
-import { endsAhead, isoFromLocal } from "../../time.ts"
+import { endsAhead, isoFromLocal, monthOf } from "../../time.ts"
 
 /** The phase deadline a card states: the phase's name and the instant it stops accepting submissions. */
 export interface PhaseDeadline {
@@ -26,21 +26,6 @@ export interface ListPage {
   /** Whether the page's Next link is disabled. */
   last: boolean
 }
-
-const MONTHS = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-]
 
 // The card's line is `Phase.submission_status_string`; its date is strftime "%b %d %Y at %H:%M". A phase name
 // may hold " until ", so the date is anchored at the end.
@@ -90,7 +75,7 @@ function isLastPage(root: HTMLElement): boolean {
 /** The date of a card's line as a UTC instant; fails when the text is not a date it can read. */
 function readDate(text: string, slug: string): string {
   const match = DATE.exec(text)
-  const month = match ? MONTHS.indexOf(match[1]) + 1 : 0
+  const month = match ? (monthOf(match[1]) ?? 0) : 0
   const iso =
     match && month > 0
       ? isoFromLocal(
@@ -122,14 +107,19 @@ function readDeadline(card: HTMLElement, slug: string): PhaseDeadline | null {
   return null
 }
 
-function readCard(card: HTMLElement): Card {
+/**
+ * A card's challenge, or null for a challenge hosted elsewhere, whose card links to its own site: ACB lists the
+ * challenges grand-challenge.org runs. A card without a web link means the markup has changed, and fails.
+ */
+function readCard(card: HTMLElement): Card | null {
   const href = card.querySelector("a.stretched-link")?.getAttribute("href")
   const address = webUrl(href)
-  const host = address ? new URL(address) : null
+  if (address === null)
+    throw pageError(`card has no challenge address: ${href}`)
+  const host = new URL(address)
   const slug =
-    host?.protocol === "https:" ? HOST.exec(host.hostname)?.[1] : null
-  if (!slug || slug === "www")
-    throw pageError(`card has a challenge address that does not fit: ${href}`)
+    host.protocol === "https:" ? HOST.exec(host.hostname)?.[1] : undefined
+  if (!slug || slug === "www") return null
   const title = cleanText(card.querySelector("h5.card-title")?.text, 300)
   if (title === null) throw pageError(`card ${slug} has no title`)
   return {
@@ -141,16 +131,20 @@ function readCard(card: HTMLElement): Card {
 }
 
 /**
- * The challenges of one list page and whether it is the last. Fails when the page's time zone is not UTC, when
- * its pagination or cards are missing, or when a card does not fit, rather than returning a part of the list.
+ * The challenges of one list page and whether it is the last. The open list always holds challenges, since
+ * finished challenges keep open leaderboards, so a page with no cards, or with only cards that link elsewhere,
+ * means the markup has changed. Fails then, and when the time zone is not UTC, the pagination is missing, or a
+ * card does not fit, rather than returning a part of the list.
  */
 export function parseListPage(html: string): ListPage {
   const root = parse(html)
   checkTimeZone(root)
-  const last = isLastPage(root)
   const found = root.querySelectorAll(".gc-card")
   if (found.length === 0) throw pageError("page holds no challenges")
-  return { cards: found.map(readCard), last }
+  const cards = found.flatMap((card) => readCard(card) ?? [])
+  if (cards.length === 0)
+    throw pageError("page holds no challenge hosted on grand-challenge.org")
+  return { cards, last: isLastPage(root) }
 }
 
 /**

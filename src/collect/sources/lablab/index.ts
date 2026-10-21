@@ -10,7 +10,7 @@ const LIST_URL = "https://lablab.ai/ai-hackathons"
 export const lablab: Source = {
   id: "lablab",
   async collect(client, now) {
-    const events = parseEvents(await client.getText(LIST_URL))
+    const events = parseEvents(await client.getText(LIST_URL), now)
     return events.filter((event) => inScope(event, now)).map(toListing)
   },
 }

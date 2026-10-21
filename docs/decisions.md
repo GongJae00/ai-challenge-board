@@ -145,7 +145,10 @@ stays the same across runs and can later key bookmarks and calendar events.
 
 Sources in order: OpenReview first, because one public API covers the workshop calls of five of the seven
 phase-1 conferences (37 open on 2026-10-21); then EvalAI, Codabench, and Kaggle; then DACON and AIFactory, the
-Korean platforms GongJae chose on 2026-10-21.
+Korean platforms GongJae chose on 2026-10-21; then, the same day, eight more sites that run their own
+competitions, after GongJae asked for every such site: DrivenData, lablab.ai, Zindi, SIGNATE, Tianchi, Devpost,
+grand-challenge.org, and AIcrowd. DAKER is left out because its robots.txt disallows the only path with its
+listings (see `CLAUDE.md`).
 - **Codabench** lists 1,536 public entries, most of them coursework and tests, sends its API responses at a few
   kilobytes a second, and gives deadlines only in a request per competition. The collector therefore takes only
   the competitions whose title names a phase-1 conference, found through Codabench's search and checked against
@@ -172,6 +175,31 @@ Korean platforms GongJae chose on 2026-10-21.
   structured 주최 row of a competition's page; the list's host page name is sometimes a series or AIFactory
   itself, so it is not used. Practice entries and recruitment posts are dropped by their title prefixes. Nothing
   was open on 2026-10-21, so the source lists nothing until a competition opens.
+- **DrivenData:** one request to the server-rendered competitions page; only the cards in its prize section are
+  listed, since the page also holds benchmarks, practice, and completed competitions. The end date is written
+  in UTC in a tooltip; the organizer is the host logo's alt text.
+- **lablab.ai:** one request; all its AI hackathons are in the page's Next.js data. The end of an event is its
+  deadline, in the event's own time zone when it has one; there is no organizer field.
+- **Zindi:** one request to the JSON list behind its site, with all 515 entries. Entries that need a private code
+  are left out. Times are exact UTC instants.
+- **SIGNATE:** the JSON list behind its site, then one overview request per open competition for its submission
+  deadline, which carries a +09:00 offset and is shown as `JST`. Titles are in Japanese only.
+- **Tianchi:** the JSON race list behind its site, paged until a page has only competitions that ended long ago.
+  Times are China local times read as `Asia/Shanghai`. Learning competitions and series containers are left out;
+  the English name is used when there is one.
+- **Devpost:** the JSON list behind its site, asked for open and upcoming hackathons with the "Machine
+  Learning/AI" theme and checked for that theme item by item; invite-only events are left out. The list gives
+  dates only, so the exact deadline and its zone come from each hackathon's calendar file, a request GongJae
+  approved; `src/data/state/devpost.json` remembers each one, so a calendar is fetched again only when the
+  hackathon's dates change or three days have passed, which catches a deadline moved within the same day. A
+  calendar ACB cannot place, such as an all-day event, leaves that hackathon out rather than stopping the source.
+- **grand-challenge.org:** its robots.txt disallows the API, so the collector reads the HTML list of open
+  challenges. A card states a deadline only while exactly one phase is open, so the source lists few; post-
+  challenge phases, open leaderboards after a challenge, are left out as persistent.
+- **AIcrowd:** its robots.txt turns away AI crawlers but allows the collector with a 10-second Crawl-delay. The
+  running list's cards give the current phase's end; a challenge page with the newer overview gives every round.
+  Only cards that offer a prize or another award are listed, which leaves out the coursework and test entries
+  that also run there.
 - **HTML pages:** DrivenData, grand-challenge.org, and AIcrowd publish their lists only as server-rendered HTML,
   which the collectors read with `node-html-parser` and CSS selectors rather than regular expressions. It was
   chosen on 2026-10-21 over cheerio, which brings eleven dependencies and about 1 MB, and parse5, which has no

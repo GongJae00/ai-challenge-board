@@ -205,11 +205,6 @@ describe("parseListPage", () => {
     ).toThrow(/title/)
     const noLink = `<div class="card gc-card"><h5 class="card-title">X</h5></div>`
     expect(() => parseListPage(pageHtml([noLink]))).toThrow(/address/)
-    const foreign = cardHtml("x1", "X", null).replace(
-      "https://x1.grand-challenge.org/",
-      "https://example.com/"
-    )
-    expect(() => parseListPage(pageHtml([foreign]))).toThrow(/address/)
     const script = cardHtml("x1", "X", null).replace(
       "https://x1.grand-challenge.org/",
       "javascript:alert(1)"
@@ -224,8 +219,19 @@ describe("parseListPage", () => {
     expect(() => parseListPage("")).toThrow(/Grand Challenge/)
   })
 
-  it("fails on a page with no cards", () => {
+  it("fails on a page with no cards, since the open list always holds some", () => {
     expect(() => parseListPage(pageHtml([]))).toThrow(/no challenges/)
+  })
+
+  it("skips a challenge hosted elsewhere, whose card links to its own site", () => {
+    const foreign = cardHtml("x1", "X", null).replace(
+      "https://x1.grand-challenge.org/",
+      "https://example.com/"
+    )
+    const page = parseListPage(pageHtml([foreign, cardHtml("x2", "Y", null)]))
+    expect(page.cards.map((c) => c.slug)).toEqual(["x2"])
+    // Every card linking elsewhere means the links have changed.
+    expect(() => parseListPage(pageHtml([foreign]))).toThrow(/hosted on/)
   })
 })
 

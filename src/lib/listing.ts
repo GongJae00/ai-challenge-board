@@ -56,6 +56,31 @@ export const zoneCodes = {
   JST: "Asia/Tokyo",
 } as const
 
+/** IANA's names for UTC itself, which say no more than the code `UTC`. */
+const UTC_NAMES = new Set([
+  "UTC",
+  "Etc/UTC",
+  "Etc/UCT",
+  "UCT",
+  "Etc/GMT",
+  "Etc/GMT0",
+  "Etc/GMT+0",
+  "Etc/GMT-0",
+  "GMT",
+  "GMT0",
+  "Etc/Greenwich",
+  "Greenwich",
+  "Etc/Zulu",
+  "Zulu",
+  "Etc/Universal",
+  "Universal",
+])
+
+/** A deadline's zone as stored: `UTC` for any of IANA's names for UTC, and any other zone as given. */
+export function canonicalZone(zone: string): string {
+  return UTC_NAMES.has(zone) ? "UTC" : zone
+}
+
 /** Whether a name is an IANA time zone the runtime knows, such as "America/Los_Angeles". */
 export function isTimeZone(name: string): boolean {
   try {

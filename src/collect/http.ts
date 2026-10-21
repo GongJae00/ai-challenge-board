@@ -116,6 +116,13 @@ export function createClient(options: ClientOptions = {}): Client {
     return pace
   }
 
+  /** Runs a request after the site's earlier ones, whether they succeeded or failed. */
+  function inTurn<T>(pace: Pace, run: () => Promise<T>): Promise<T> {
+    const result = pace.queue.then(run, run)
+    pace.queue = result.catch(() => undefined)
+    return result
+  }
+
   async function waitTurn(host: Host): Promise<void> {
     const wait = host.pace.nextAt - now()
     if (wait > 0) await sleep(wait)
@@ -179,8 +186,11 @@ export function createClient(options: ClientOptions = {}): Client {
       pace: paceOf(new URL(origin).hostname),
     }
     const robotsUrl = `${origin}/robots.txt`
-    // RFC 9309 has crawlers follow robots.txt's own redirects.
-    const response = await fetchWithRetry(host, robotsUrl, "follow")
+    // RFC 9309 has crawlers follow robots.txt's own redirects. The read waits in the site's queue, since another
+    // host of the site may be busy.
+    const response = await inTurn(host.pace, () =>
+      fetchWithRetry(host, robotsUrl, "follow")
+    )
     if (response.status >= 500)
       // RFC 9309: an unreachable robots.txt means the whole site is disallowed.
       throw new BlockedError(
@@ -246,10 +256,7 @@ export function createClient(options: ClientOptions = {}): Client {
     if (host.robots && host.robots.isAllowed(url, ROBOTS_TOKEN) === false)
       throw new BlockedError(url, "disallowed by robots.txt")
 
-    const run = () => fetchPage(host, url, spec)
-    const result = host.pace.queue.then(run, run)
-    host.pace.queue = result.catch(() => undefined)
-    const page = await result
+    const page = await inTurn(host.pace, () => fetchPage(host, url, spec))
     if ("text" in page) return page.text
     if (redirects >= MAX_REDIRECTS)
       throw new Error(`More than ${MAX_REDIRECTS} redirects from ${url}`)

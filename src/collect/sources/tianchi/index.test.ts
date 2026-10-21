@@ -107,6 +107,28 @@ describe("tianchi", () => {
     expect(requested).toEqual([pageUrl(1), pageUrl(2)])
   })
 
+  it("stops after a full page of old competitions though a learning competition on it ends ahead", async () => {
+    // A learning competition's end rolls forward, so it says nothing about where the open competitions are.
+    const learning = learningPage.data.list[1] as unknown as Row
+    const old = Array.from({ length: 9 }, (_, i) =>
+      row(ended, 700000 + i, "2026-04-20")
+    )
+    const { client, requested } = fakeClient([envelope([learning, ...old])])
+    await tianchi.collect(client, now, { previous: null })
+    expect(requested).toEqual([pageUrl(1)])
+  })
+
+  it("does not stop after a full page with only learning competitions on it", async () => {
+    const learning = learningPage.data.list[2] as unknown as Row
+    const onlyLearning = Array.from({ length: 10 }, (_, i) => ({
+      ...learning,
+      raceId: 900000 + i,
+    }))
+    const { client, requested } = fakeClient([envelope(onlyLearning)])
+    await tianchi.collect(client, now, { previous: null })
+    expect(requested).toHaveLength(2)
+  })
+
   it("goes on past a full page on which one competition ended within 180 days", async () => {
     // 2026-05-01 is 173 days before now.
     const mostlyOld = Array.from({ length: 10 }, (_, i) =>

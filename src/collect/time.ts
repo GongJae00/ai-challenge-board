@@ -12,6 +12,33 @@ export function endsAhead(endMs: number, now: Date): boolean {
   return endMs > now.getTime() && endMs <= now.getTime() + PLACEHOLDER_AFTER_MS
 }
 
+/**
+ * How long ago a competition ended for a list ordered by end date only roughly, as DACON's and Tianchi's are, to
+ * show that no open one follows: a page on which every competition ended longer ago than this ends the paging.
+ */
+export const ENDED_LONG_AGO_MS = 180 * 24 * 60 * 60 * 1000
+
+const MONTH_ABBREVIATIONS = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+]
+
+/** The month, 1 to 12, of an English three-letter abbreviation such as "Oct", or null for anything else. */
+export function monthOf(abbreviation: string): number | null {
+  const index = MONTH_ABBREVIATIONS.indexOf(abbreviation)
+  return index === -1 ? null : index + 1
+}
+
 /** Milliseconds since the epoch as an ISO 8601 UTC instant. */
 export function isoFromMs(ms: number): string {
   return new Date(ms).toISOString()
@@ -28,7 +55,9 @@ export function deadlineZone(ms: number): Deadline["zone"] {
   return clock === 11 * 60 + 59 || clock === 12 * 60 ? "AoE" : "UTC"
 }
 
-const LOCAL_TIME = /^(20\d{2}-\d{2}-\d{2})[ T](\d{2}:\d{2})(?::(\d{2}))?$/
+// Years from 1900 to 2999, which takes in a far placeholder such as 2199 for `endsAhead` to rule out.
+const LOCAL_TIME =
+  /^((?:19|2\d)\d{2}-\d{2}-\d{2})[ T](\d{2}:\d{2})(?::(\d{2}))?$/
 
 const DAY_MS = 24 * 60 * 60 * 1000
 

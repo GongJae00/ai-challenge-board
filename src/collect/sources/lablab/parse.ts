@@ -1,6 +1,10 @@
 import { z } from "zod"
 
-import { deadlineSchema, type Listing } from "../../../lib/listing.ts"
+import {
+  canonicalZone,
+  deadlineSchema,
+  type Listing,
+} from "../../../lib/listing.ts"
 import { flightText, jsonAt } from "../../flight.ts"
 import { cleanText } from "../../text.ts"
 import { endsAhead, isoFromMs } from "../../time.ts"
@@ -26,11 +30,17 @@ export type LablabEvent = z.infer<typeof eventSchema>
 // The page is a server-rendered Next.js page; `src/collect/flight.ts` reads the data it ships.
 const EVENTS_KEY = '"sortedEvents":'
 
+/** Every event's end, which says whether the rest of the event matters. */
+const endSchema = z.object({ endAt: instant })
+
 /**
- * The hackathons on the list page, each once; fails when the page holds none or one does not fit. The list
- * always includes past events, so an empty or missing one means the page's format has changed.
+ * The hackathons on the list page that end after `now`, each once. The list always includes past events, so an
+ * empty or missing one means the page's format has changed, and fails; so does an event ending ahead whose other
+ * fields do not fit. An event that has ended, or whose end does not read, cannot be listed and is not read
+ * further, so that one old entry in an odd shape does not stop the source; were every end to stop reading, the
+ * runner's guard against most listings vanishing at once would keep the last data.
  */
-export function parseEvents(html: string): LablabEvent[] {
+export function parseEvents(html: string, now: Date): LablabEvent[] {
   const text = flightText(html)
   const at = text.indexOf(EVENTS_KEY)
   const found =
@@ -39,6 +49,8 @@ export function parseEvents(html: string): LablabEvent[] {
     throw new Error("lablab list page holds no events")
   const bySlug = new Map<string, LablabEvent>()
   for (const item of found) {
+    const end = endSchema.safeParse(item)
+    if (!end.success || Date.parse(end.data.endAt) <= now.getTime()) continue
     const result = eventSchema.safeParse(item)
     if (!result.success)
       throw new Error(
@@ -90,7 +102,7 @@ export function toListing(event: LablabEvent): Listing {
         kind: "end",
         label: null,
         at: isoFromMs(Date.parse(event.endAt)),
-        zone: event.timezone ?? "UTC",
+        zone: canonicalZone(event.timezone ?? "UTC"),
       },
     ],
   }

@@ -15,7 +15,10 @@ function fixture(name: string): string {
   return readFileSync(new URL(`./fixtures/${name}`, import.meta.url), "utf8")
 }
 
-const events = parseEvents(fixture("list-excerpt.html"))
+/** A time before every event in the fixtures, so that each is read in full. */
+const before = new Date("2020-01-01T00:00:00Z")
+
+const events = parseEvents(fixture("list-excerpt.html"), before)
 
 function event(slug: string): LablabEvent {
   const found = events.find((e) => e.slug === slug)
@@ -84,38 +87,58 @@ describe("parseEvents", () => {
 
   it("lists an event that appears twice once", () => {
     const entry = eventJson("a")
-    expect(parseEvents(sorted(entry, entry))).toHaveLength(1)
+    expect(parseEvents(sorted(entry, entry), before)).toHaveLength(1)
   })
 
   it("fails when the page has no flight data, since the markup has changed", () => {
-    expect(() => parseEvents("<html>Access denied</html>")).toThrow(/no events/)
+    expect(() => parseEvents("<html>Access denied</html>", before)).toThrow(
+      /no events/
+    )
   })
 
   it("fails when the page has flight data without the event list", () => {
-    expect(() => parseEvents(page('1:["$","div",null,{}]'))).toThrow(
+    expect(() => parseEvents(page('1:["$","div",null,{}]'), before)).toThrow(
       /no events/
     )
   })
 
   it("fails when the event list is empty, since the page always lists past events", () => {
-    expect(() => parseEvents(sorted())).toThrow(/no events/)
+    expect(() => parseEvents(sorted(), before)).toThrow(/no events/)
   })
 
   it("fails when the event list is cut off", () => {
-    expect(() => parseEvents(page('1:{"sortedEvents":[{"name":"a"'))).toThrow(
-      /cut off/
+    expect(() =>
+      parseEvents(page('1:{"sortedEvents":[{"name":"a"'), before)
+    ).toThrow(/cut off/)
+  })
+
+  it("leaves out a past event without reading the rest of it", () => {
+    const past = eventJson("old").replace(
+      '"startAt":"2026-01-01T00:00:00.000Z"',
+      '"startAt":null'
     )
+    const after = new Date("2026-03-01T00:00:00Z")
+    expect(parseEvents(sorted(past), after)).toEqual([])
+  })
+
+  it("leaves out an event whose end does not read", () => {
+    const noEnd = eventJson("a").replace("2026-02-01T00:00:00.000Z", "later")
+    expect(
+      parseEvents(sorted(noEnd, eventJson("b")), before).map((e) => e.slug)
+    ).toEqual(["b"])
   })
 
   it("fails when an event does not fit, naming the field", () => {
     const badDate = eventJson("a").replace("2026-01-01T00:00:00.000Z", "soon")
-    expect(() => parseEvents(sorted(badDate))).toThrow(/startAt/)
-    expect(() => parseEvents(sorted(eventJson("not a slug")))).toThrow(/slug/)
+    expect(() => parseEvents(sorted(badDate), before)).toThrow(/startAt/)
+    expect(() => parseEvents(sorted(eventJson("not a slug")), before)).toThrow(
+      /slug/
+    )
     const badZone = eventJson("a").replace(
       '"timezone":null',
       '"timezone":"Mars/Base"'
     )
-    expect(() => parseEvents(sorted(badZone))).toThrow(/timezone/)
+    expect(() => parseEvents(sorted(badZone), before)).toThrow(/timezone/)
   })
 })
 

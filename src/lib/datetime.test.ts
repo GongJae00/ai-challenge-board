@@ -76,6 +76,9 @@ describe("datetime", () => {
     expect(formatSourceTime(kst, "ko", "Asia/Seoul")).toBeNull()
     expect(formatSourceTime(aoe, "en", "Etc/GMT+12")).toBeNull()
     expect(formatSourceTime(utc, "en", "Asia/Seoul")).toBeNull()
+    // IANA's other names for UTC state no zone of the organizers' either.
+    for (const zone of ["Etc/UTC", "Etc/GMT", "GMT", "Etc/Zulu"])
+      expect(formatSourceTime({ ...utc, zone }, "en", "Asia/Seoul")).toBeNull()
     expect(formatSourceTime(kst, "ko", "Asia/Tokyo")).toBeNull()
   })
 

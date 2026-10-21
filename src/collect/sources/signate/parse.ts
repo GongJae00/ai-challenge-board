@@ -2,7 +2,7 @@ import { z } from "zod"
 
 import type { Listing } from "../../../lib/listing.ts"
 import { cleanText } from "../../text.ts"
-import { endsAhead, isoFromMs } from "../../time.ts"
+import { endsAhead, isoFromLocal } from "../../time.ts"
 
 const JST_OFFSET = "+09:00"
 const ISO_WITH_OFFSET =
@@ -23,12 +23,11 @@ const jstInstant = z.string().transform((text, ctx) => {
   const [, date, time, offset] = match
   if (offset !== JST_OFFSET)
     return fail(`"${text}" is not in Japan Standard Time (${JST_OFFSET})`)
-  // An impossible date, such as February 30, rolls over when parsed, so it does not read back.
-  const local = `${date}T${time}.000Z`
-  const localMs = Date.parse(local)
-  if (Number.isNaN(localMs) || isoFromMs(localMs) !== local)
-    return fail(`"${text}" is not a real date and time`)
-  return isoFromMs(Date.parse(text))
+  // The wall clock read in Japan time, which also rejects an impossible date such as February 30.
+  return (
+    isoFromLocal(`${date} ${time}`, "Asia/Tokyo") ??
+    fail(`"${text}" is not a real date and time`)
+  )
 })
 
 // Only what ACB uses is read; the reward, the entry count, and the other labels are left alone.
