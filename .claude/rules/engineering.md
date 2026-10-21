@@ -66,8 +66,9 @@ within a bound rather than one after another.
 
 Titles and descriptions copied from other sites become text on ACB's pages, so render them as text or through a
 sanitizer, never as raw HTML. Store times in UTC. A deadline keeps its source time zone, since many are given in
-Anywhere on Earth (UTC−12), and the interface shows it in the viewer's zone with the source zone beside it. Every
-user-facing string goes through the KO/EN message catalog from the first screen on.
+Anywhere on Earth (UTC−12). The interface shows times in the display zone that `CLAUDE.md` or `docs/decisions.md`
+records, with the source zone beside a deadline that was given in another zone. Every user-facing string goes
+through the KO/EN message catalog from the first screen on.
 
 ## Checks and review
 
