@@ -45,7 +45,8 @@ A page for desktop readers lays data out as data, a table with the fields as col
 data a tab away, and not as a narrow vertical feed. It has one look, the light one, unless GongJae asks for a
 dark theme. A setting that changes the whole page, such as the language, opens a menu of its choices, while a
 filter with a handful of choices shows them on the page as compact chips that toggle, each choice the service
-covers kept visible and dimmed when it has nothing to show.
+covers kept visible and dimmed when it has nothing to show. Several filter categories each take a labeled row
+under the search box, with their choices in a fixed order, such as alphabetical.
 
 ## Code
 
