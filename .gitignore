@@ -1,0 +1,4 @@
+# Personal Claude Code settings, parallel worktrees, and local secrets stay out of the repository.
+.claude/settings.local.json
+.claude/worktrees/
+.env
