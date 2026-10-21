@@ -111,6 +111,38 @@ describe("createClient", () => {
     expect(second - first).toBeGreaterThanOrEqual(10_000)
   })
 
+  it("spaces requests to the hosts of one site as one host, each read under its own robots.txt", async () => {
+    // Devpost serves each hackathon on its own subdomain of devpost.com.
+    const { client, calls } = fakeWeb((url) =>
+      url.endsWith("/robots.txt")
+        ? new Response(robotsAllowAll)
+        : new Response("ok")
+    )
+    await client.getText("https://one.devpost.com/calendar")
+    await client.getText("https://two.devpost.com/calendar")
+    expect(calls.map((c) => new URL(c.url).pathname)).toEqual([
+      "/robots.txt",
+      "/calendar",
+      "/robots.txt",
+      "/calendar",
+    ])
+    const at = calls.map((c) => c.at)
+    for (let i = 1; i < at.length; i += 1)
+      expect(at[i] - at[i - 1]).toBeGreaterThanOrEqual(5000)
+  })
+
+  it("keeps the pace of different sites apart", async () => {
+    const { client, calls } = fakeWeb((url) =>
+      url.endsWith("/robots.txt")
+        ? new Response(robotsAllowAll)
+        : new Response("ok")
+    )
+    await client.getText("https://a.example/1")
+    await client.getText("https://b.example/1")
+    const [, aPage, bRobots] = calls.map((c) => c.at)
+    expect(bRobots).toBe(aPage)
+  })
+
   it("stops on 403 without retrying", async () => {
     const { client, calls } = fakeWeb((url) =>
       url.endsWith("/robots.txt")

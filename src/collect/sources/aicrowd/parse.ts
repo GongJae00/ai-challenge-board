@@ -51,15 +51,18 @@ function organizerOf(card: HTMLElement): string | null {
 }
 
 /**
- * The running challenges on a list page that end ahead, with the end of the phase now running. Only a running
- * card has a tooltip on its badge, `YYYY-MM-DD HH:MM:SS UTC`; a completed or starting-soon card has an empty
- * one, and a card whose tooltip is in another form is left out as well. The relative text beside the tooltip
- * ("11 hours left") is never read. A page with no cards at all, or a running card without a title or a link,
- * means the markup has changed, and fails.
+ * The running challenges on a list page that end ahead and offer a prize or another award, with the end of the
+ * phase now running. Only a running card has a tooltip on its badge, `YYYY-MM-DD HH:MM:SS UTC`; a completed or
+ * starting-soon card has an empty one. The relative text beside the tooltip ("11 hours left") is never read. The
+ * award, a `.prize-item` such as cash, authorship, or travel grants, sets the public challenges apart from the
+ * coursework and test entries that also run on AIcrowd, which offer none. A list container with no cards means
+ * nothing runs; a page without the container, a tooltip in another form, or a running card without a title or a
+ * link means the markup has changed, and fails.
  */
 export function parseCards(html: string, now: Date): Card[] {
-  const cards = parse(html).querySelectorAll(".card-challenge")
-  if (cards.length === 0)
+  const page = parse(html)
+  const cards = page.querySelectorAll(".card-challenge")
+  if (cards.length === 0 && !page.querySelector("#challenges-div"))
     throw new Error("AIcrowd challenge list holds no challenge cards")
 
   const running: Card[] = []
@@ -68,7 +71,9 @@ export function parseCards(html: string, now: Date): Card[] {
     const tooltip = badge?.getAttribute("title")?.trim()
     if (!badge || !tooltip) continue
     const endMs = instantOfTooltip(tooltip)
-    if (endMs === null || !endsAhead(endMs, now)) continue
+    if (endMs === null)
+      throw new Error(`AIcrowd card tooltip "${tooltip}" is not a UTC time`)
+    if (!endsAhead(endMs, now) || !card.querySelector(".prize-item")) continue
 
     const anchor = card.querySelector("h5.card-title a")
     const title = cleanText(anchor?.text, 300)

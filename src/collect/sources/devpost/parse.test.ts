@@ -33,6 +33,7 @@ const hackathon = (overrides: Partial<ListedHackathon> = {}) => ({
   organizer: "Amazon",
   dates: "Aug 31 - Oct 23, 2026",
   inviteOnly: false,
+  ai: true,
   ...overrides,
 })
 
@@ -53,6 +54,12 @@ describe("parseListPage", () => {
       [31735, false],
       [31821, false],
     ])
+  })
+
+  it("marks a hackathon without the AI theme, which the collector leaves out", () => {
+    const raw = structuredClone(page1)
+    raw.hackathons[0].themes = [{ id: 22, name: "Open Ended" }]
+    expect(parseListPage(raw).hackathons[0].ai).toBe(false)
   })
 
   it("reads an empty page past the end", () => {

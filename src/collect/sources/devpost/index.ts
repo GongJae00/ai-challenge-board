@@ -49,7 +49,7 @@ async function fetchList(client: Client): Promise<ListedHackathon[]> {
     // A page past the end answers 200 with no hackathons.
     if (hackathons.length === 0 || seen >= total) break
   }
-  return [...byId.values()].filter((h) => !h.inviteOnly)
+  return [...byId.values()].filter((h) => h.ai && !h.inviteOnly)
 }
 
 /**

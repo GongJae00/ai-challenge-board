@@ -59,9 +59,30 @@ const GET: RequestSpec = { method: "GET" }
 interface Host {
   robots: { isAllowed(url: string, ua?: string): boolean | undefined } | null
   delayMs: number
+  pace: Pace
+}
+
+/** When a site may next be asked, and its requests' chain, so that they run one after another. */
+interface Pace {
   nextAt: number
-  /** Requests to one host run one after another on this chain. */
   queue: Promise<unknown>
+}
+
+/**
+ * The site a host belongs to, its registrable domain, such as `devpost.com` for `amazonappdev2026.devpost.com`:
+ * the last two labels, or three under a country's second level such as `co.kr`. The hosts of one site share one
+ * pace, since they are one server; each still has its own robots.txt.
+ */
+export function siteOf(hostname: string): string {
+  const labels = hostname.split(".")
+  const secondLevel = /^(ac|co|go|or|ne|re|com|net|org|gov|edu)$/
+  const keep =
+    labels.length > 2 &&
+    labels.at(-1)!.length === 2 &&
+    secondLevel.test(labels.at(-2)!)
+      ? 3
+      : 2
+  return labels.slice(-keep).join(".")
 }
 
 function isRetryable(status: number): boolean {
@@ -70,7 +91,7 @@ function isRetryable(status: number): boolean {
 
 /**
  * An HTTP client that keeps the collection rules in `.claude/rules/engineering.md`: it reads each host's
- * robots.txt first and obeys it and its Crawl-delay, sends one request at a time per host, times out every
+ * robots.txt first and obeys it and its Crawl-delay, sends one request at a time per site, times out every
  * request, retries only network errors, server errors, and rate limits with backoff, stops on a refusal or a
  * challenge, and follows a redirect only through the same checks, so another host is read under its own rules.
  */
@@ -83,11 +104,22 @@ export function createClient(options: ClientOptions = {}): Client {
   const minDelayMs = options.minDelayMs ?? 5_000
   // The promise, not the host, so that concurrent first requests to an origin share one robots.txt read.
   const hosts = new Map<string, Promise<Host>>()
+  const paces = new Map<string, Pace>()
+
+  function paceOf(hostname: string): Pace {
+    const site = siteOf(hostname)
+    let pace = paces.get(site)
+    if (!pace) {
+      pace = { nextAt: 0, queue: Promise.resolve() }
+      paces.set(site, pace)
+    }
+    return pace
+  }
 
   async function waitTurn(host: Host): Promise<void> {
-    const wait = host.nextAt - now()
+    const wait = host.pace.nextAt - now()
     if (wait > 0) await sleep(wait)
-    host.nextAt = now() + host.delayMs
+    host.pace.nextAt = now() + host.delayMs
   }
 
   /**
@@ -144,8 +176,7 @@ export function createClient(options: ClientOptions = {}): Client {
     const host: Host = {
       robots: null,
       delayMs: minDelayMs,
-      nextAt: 0,
-      queue: Promise.resolve(),
+      pace: paceOf(new URL(origin).hostname),
     }
     const robotsUrl = `${origin}/robots.txt`
     // RFC 9309 has crawlers follow robots.txt's own redirects.
@@ -165,7 +196,7 @@ export function createClient(options: ClientOptions = {}): Client {
       const crawlDelay = robots.getCrawlDelay(ROBOTS_TOKEN)
       if (crawlDelay !== undefined)
         host.delayMs = Math.max(minDelayMs, crawlDelay * 1000)
-      host.nextAt = Math.max(host.nextAt, now() + host.delayMs)
+      host.pace.nextAt = Math.max(host.pace.nextAt, now() + host.delayMs)
     }
     // RFC 9309: a robots.txt that is unavailable (4xx) places no restriction, and neither does a page served
     // in its place, such as a single-page app answering every path with its HTML shell.
@@ -216,8 +247,8 @@ export function createClient(options: ClientOptions = {}): Client {
       throw new BlockedError(url, "disallowed by robots.txt")
 
     const run = () => fetchPage(host, url, spec)
-    const result = host.queue.then(run, run)
-    host.queue = result.catch(() => undefined)
+    const result = host.pace.queue.then(run, run)
+    host.pace.queue = result.catch(() => undefined)
     const page = await result
     if ("text" in page) return page.text
     if (redirects >= MAX_REDIRECTS)

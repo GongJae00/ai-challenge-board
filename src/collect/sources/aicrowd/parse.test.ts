@@ -131,9 +131,25 @@ describe("parseCards", () => {
     ["a date without a zone", "2026-10-21 23:59:00"],
     ["words", "ends tomorrow"],
     ["an impossible date", "2026-02-30 23:59:00 UTC"],
-  ])("skips a card whose tooltip is %s", (_, tooltip) => {
-    const broken = listHtml.replace("2026-10-21 23:59:00 UTC", tooltip)
-    expect(parseCards(broken, now)).toEqual([])
+  ])(
+    "fails on a card whose tooltip is %s, since the format has changed",
+    (_, tooltip) => {
+      const broken = listHtml.replace("2026-10-21 23:59:00 UTC", tooltip)
+      expect(() => parseCards(broken, now)).toThrow(/AIcrowd.*tooltip/)
+    }
+  )
+
+  it("lists only a running card that offers a prize or another award, leaving out coursework and tests", () => {
+    // On 2026-10-21 the running list also held "EPFL Machine Learning Project 1" and a "Test P" tagged
+    // #classroom, neither with a prize; the public challenges each show one.
+    const noAward = listHtml.replaceAll("prize-item", "other-item")
+    expect(parseCards(noAward, now)).toEqual([])
+  })
+
+  it("returns no cards from an empty list, when nothing runs", () => {
+    const empty =
+      '<html><body><div id="challenges-div" data-page="1"></div></body></html>'
+    expect(parseCards(empty, now)).toEqual([])
   })
 
   it("fails on a running card without a title or a challenge link", () => {

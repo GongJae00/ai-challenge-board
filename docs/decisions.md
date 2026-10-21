@@ -128,7 +128,8 @@ stays the same across runs and can later key bookmarks and calendar events.
   so that each run's data is versioned and a failed run leaves the last good file in place. An Astro content
   collection validates the files at build time, and the home page renders them.
 - **Collection rules in code:** `src/collect/http.ts` reads robots.txt before anything else on a host and obeys
-  it and its Crawl-delay, keeps one request at a time per host at least 5 seconds apart, times out each request,
+  it and its Crawl-delay, keeps one request at a time per site at least 5 seconds apart, the hosts of one site
+  such as Devpost's per-hackathon subdomains counting as one, times out each request,
   tries each request up to three times on network errors, server errors, and rate limits, stops on 401, 403, a
   challenge page, or a rate limit that does not clear, and follows a redirect only through the same checks, so a
   redirect to another host first reads that host's robots.txt. `src/collect/run.ts` fetches a source at most once

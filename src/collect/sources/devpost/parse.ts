@@ -1,6 +1,10 @@
 import { z } from "zod"
 
-import type { Deadline, Listing } from "../../../lib/listing.ts"
+import {
+  isTimeZone,
+  type Deadline,
+  type Listing,
+} from "../../../lib/listing.ts"
 import { cleanText } from "../../text.ts"
 import { endsAhead, isoFromLocal } from "../../time.ts"
 
@@ -13,6 +17,9 @@ const hackathonUrl = z.url({
   hostname: /^[a-z0-9-]+\.devpost\.com$/,
 })
 
+/** Devpost's theme for AI hackathons, the only AI theme among its 29. */
+export const AI_THEME = "Machine Learning/AI"
+
 const listPage = z.object({
   hackathons: z.array(
     z.object({
@@ -22,6 +29,7 @@ const listPage = z.object({
       organization_name: z.string().nullish(),
       submission_period_dates: z.string(),
       invite_only: z.boolean(),
+      themes: z.array(z.object({ name: z.string() })),
     })
   ),
   meta: z.object({ total_count: z.number().int().nonnegative() }),
@@ -35,6 +43,11 @@ export interface ListedHackathon {
   /** Devpost's display string for the submission period, such as "Aug 31 - Oct 23, 2026"; no time, no zone. */
   dates: string
   inviteOnly: boolean
+  /**
+   * Whether Devpost tags it with the AI theme. The list request already asks for that theme; checking each item
+   * keeps non-AI hackathons out should Devpost stop honouring the undocumented filter.
+   */
+  ai: boolean
 }
 
 export function parseListPage(json: unknown): {
@@ -55,6 +68,7 @@ export function parseListPage(json: unknown): {
       organizer: cleanText(h.organization_name ?? undefined, 200),
       dates: h.submission_period_dates,
       inviteOnly: h.invite_only,
+      ai: h.themes.some((theme) => theme.name === AI_THEME),
     })),
   }
 }
@@ -62,15 +76,6 @@ export function parseListPage(json: unknown): {
 /** The calendar file of a hackathon, served on its own host. */
 export function calendarUrl(hackathon: ListedHackathon): string {
   return new URL("/calendar", hackathon.url).href
-}
-
-function isTimeZone(name: string): boolean {
-  try {
-    new Intl.DateTimeFormat("en-US", { timeZone: name })
-    return true
-  } catch {
-    return false
-  }
 }
 
 /** A calendar property of the event: its parameters, such as the TZID, and its value. */

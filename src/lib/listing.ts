@@ -56,7 +56,8 @@ export const zoneCodes = {
   JST: "Asia/Tokyo",
 } as const
 
-function isTimeZone(name: string): boolean {
+/** Whether a name is an IANA time zone the runtime knows, such as "America/Los_Angeles". */
+export function isTimeZone(name: string): boolean {
   try {
     new Intl.DateTimeFormat("en-US", { timeZone: name })
     return true
