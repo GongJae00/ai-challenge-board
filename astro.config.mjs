@@ -35,6 +35,8 @@ export default defineConfig({
   markdown: { syntaxHighlight: false },
   vite: {
     plugins: [tailwindcss()],
+    // Subagent worktrees hold whole copies of the project, configs included; watching them restarts the dev server.
+    server: { watch: { ignored: ["**/.claude/worktrees/**"] } },
   },
   integrations: [react()],
 })
