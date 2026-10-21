@@ -1,4 +1,5 @@
 import type { Source } from "../run.ts"
+import { aicrowd } from "./aicrowd/index.ts"
 import { aifactory } from "./aifactory/index.ts"
 import { codabench } from "./codabench/index.ts"
 import { dacon } from "./dacon/index.ts"
@@ -21,4 +22,5 @@ export const sources: Source[] = [
   zindi,
   signate,
   tianchi,
+  aicrowd,
 ]
