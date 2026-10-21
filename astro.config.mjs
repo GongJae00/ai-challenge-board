@@ -31,6 +31,8 @@ export default defineConfig({
       ],
     },
   },
+  // The dev server's toolbar overlays the page GongJae reviews; its audits are covered by the e2e axe scan.
+  devToolbar: { enabled: false },
   // No Markdown content yet, and Shiki's inline styles would conflict with the CSP.
   markdown: { syntaxHighlight: false },
   vite: {
