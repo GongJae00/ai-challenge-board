@@ -18,11 +18,12 @@ These hold at every step. A step that would cross one stops and goes to GongJae.
 1. Public access only: no login, no paywalled content, and no other users' private data.
 2. Robots.txt and terms first. Before any automated request to a host, read its robots.txt (RFC 9309) and its
    terms, and record what they say about automated access, scraping, AI use, and reverse engineering. When the
-   terms forbid automated access, make automated requests to that host only after GongJae's decision for it is in
-   the permission record. When
-   robots.txt disallows AI agents in general or Anthropic's agents (ClaudeBot, Claude-User), WebFetch and the
-   browser tool stay off that host. When robots.txt or a header reserves the content from AI input, such as
-   `Content-Signal: ai-input=no`, page text from that host does not go to the model until GongJae decides.
+   terms forbid automated access, follow the collection policy that the project's `CLAUDE.md` records for the
+   current phase; where it records none, make automated requests to that host only after GongJae's decision for
+   it is in the permission record. When robots.txt disallows AI agents in general or Anthropic's agents
+   (ClaudeBot, Claude-User), WebFetch and the browser tool stay off that host. When robots.txt or a header
+   reserves the content from AI input, such as `Content-Signal: ai-input=no`, page text from that host does not
+   go to the model until GongJae decides.
 3. No evasion: no CAPTCHA solving, no rotating addresses or user agents, no fingerprint masking, and no replayed
    request with altered parameters or someone else's credentials. The browser keeps its own user agent.
 4. Sample, never harvest: one request at a time per host, at least 5 seconds between direct fetches and 10
@@ -52,11 +53,12 @@ These hold at every step. A step that would cross one stops and goes to GongJae.
 3. Documents first: official API and developer documentation, the help center, release notes, the status page,
    feeds (RSS, Atom, iCal), sitemaps, and the schema.org data embedded in pages. They state what the service
    intends and are the strongest evidence of it.
-4. Pages: give the `site-observer` agent the page list and the widths 375, 768, and 1280 px; it loads them in an
-   isolated, headless browser and returns screenshots, the accessibility tree, the navigation, the main flows,
-   such as search, filters, a detail page, and the sign-up gate, and the requests each page made. Use it for any
-   step that needs a rendered page, so that page text stays in its context rather than this one. Without that
-   agent, read single documents with WebFetch and state in the report that no rendered page was observed.
+4. Pages: for a step that needs a rendered page, give a subagent the page list and the widths 375, 768, and
+   1280 px, and have it load them headless with the project's browser tools, such as the Playwright MCP server in
+   `.mcp.json`, and return screenshots, the accessibility tree, the navigation, the main flows, such as search,
+   filters, a detail page, and the sign-up gate, and the requests each page made. Page text then stays in its
+   context rather than this one. When the subagent has no browser tools, read single documents with WebFetch
+   instead, and state in the report that no rendered page was observed.
 5. Performance: run Lighthouse or PageSpeed Insights on the key pages, and look up CrUX field data where it
    exists; record LCP, INP, and CLS with the device and the source of each number.
 6. Technology and security design: infer the stack from response headers, asset names, and generator tags, and
