@@ -1,3 +1,4 @@
+import { minuteOf } from "./datetime.ts"
 import {
   conferences,
   type Conference,
@@ -73,7 +74,7 @@ function sameConference(a: Listing, b: Listing): boolean {
 }
 
 function minute(deadline: Deadline): number {
-  return Math.floor(Date.parse(deadline.at) / 60_000)
+  return minuteOf(Date.parse(deadline.at))
 }
 
 function shareDeadline(a: Listing, b: Listing): boolean {

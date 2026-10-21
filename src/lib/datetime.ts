@@ -10,6 +10,14 @@ const SOURCE_ZONES: Record<Deadline["zone"], string> = {
 const clock = { hour: "2-digit", minute: "2-digit", hourCycle: "h23" } as const
 
 /**
+ * The minute an instant falls in. Sources store some deadlines with stray seconds or milliseconds, so deadlines
+ * in the same minute are one deadline.
+ */
+export function minuteOf(ms: number): number {
+  return Math.floor(ms / 60_000)
+}
+
+/**
  * The zone every date and time on the pages is shown in. GongJae chose Korean time for all readers on
  * 2026-10-21; a reader's own region can replace it once readers can set one.
  */
@@ -58,22 +66,24 @@ export function formatTime(at: Date, locale: string, timeZone: string): string {
 /**
  * The deadline in the zone the source states it in, with its date, such as "AoE 11월 15일 23:59", so that it reads
  * as the organizers announce it; a deadline at midnight AoE is ambiguous without the date. Null when the source
- * states no zone of its own (`UTC`) or states the zone the page shows times in.
+ * states no zone of its own (`UTC`) or its date and clock read the same in the zone the page shows times in.
  */
 export function formatSourceTime(
   deadline: Deadline,
   locale: string,
   timeZone: string
 ): string | null {
-  if (deadline.zone === "UTC" || SOURCE_ZONES[deadline.zone] === timeZone)
-    return null
-  const text = new Intl.DateTimeFormat(locale, {
-    timeZone: SOURCE_ZONES[deadline.zone],
-    month: "short",
-    day: "numeric",
-    ...clock,
-  }).format(new Date(deadline.at))
-  return `${deadline.zone} ${text}`
+  if (deadline.zone === "UTC") return null
+  const at = new Date(deadline.at)
+  const format = (zone: string) =>
+    new Intl.DateTimeFormat(locale, {
+      timeZone: zone,
+      month: "short",
+      day: "numeric",
+      ...clock,
+    }).format(at)
+  const text = format(SOURCE_ZONES[deadline.zone])
+  return text === format(timeZone) ? null : `${deadline.zone} ${text}`
 }
 
 /** Days until a date as the locale says it, such as "내일", "31일 후", or "in 31 days". */

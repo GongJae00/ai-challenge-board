@@ -1,6 +1,12 @@
 import { describe, expect, it } from "vitest"
 
-import { deadlineZone, isoFromKst, isoFromMs } from "./time.ts"
+import {
+  deadlineZone,
+  endsAhead,
+  isoFromKst,
+  isoFromMs,
+  PLACEHOLDER_AFTER_MS,
+} from "./time.ts"
 
 describe("isoFromMs", () => {
   it("writes an epoch time as a UTC instant", () => {
@@ -42,5 +48,19 @@ describe("isoFromKst", () => {
     expect(isoFromKst("2026-02-30 10:00:00")).toBeNull()
     expect(isoFromKst("0000-01-01 00:00")).toBeNull()
     expect(isoFromKst("")).toBeNull()
+  })
+})
+
+describe("endsAhead", () => {
+  const now = new Date("2026-10-21T00:00:00Z")
+
+  it("holds for an end after now and within the placeholder horizon", () => {
+    expect(endsAhead(now.getTime() + 1, now)).toBe(true)
+    expect(endsAhead(now.getTime() + PLACEHOLDER_AFTER_MS, now)).toBe(true)
+  })
+
+  it("fails for an end that has passed or is a placeholder for never", () => {
+    expect(endsAhead(now.getTime(), now)).toBe(false)
+    expect(endsAhead(now.getTime() + PLACEHOLDER_AFTER_MS + 1, now)).toBe(false)
   })
 })

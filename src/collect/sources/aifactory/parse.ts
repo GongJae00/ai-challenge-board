@@ -1,8 +1,9 @@
 import { z } from "zod"
 
+import { minuteOf } from "../../../lib/datetime.ts"
 import type { Deadline, Listing } from "../../../lib/listing.ts"
 import { cleanText } from "../../text.ts"
-import { isoFromMs, PLACEHOLDER_AFTER_MS } from "../../time.ts"
+import { endsAhead, isoFromMs } from "../../time.ts"
 
 const instant = z.iso.datetime()
 
@@ -15,7 +16,6 @@ const taskSchema = z.object({
   endDate: instant,
   participationStartDate: instant.optional(),
   participationDeadline: instant.optional(),
-  page: z.object({ name: z.string() }).optional(),
 })
 
 export type Task = z.infer<typeof taskSchema>
@@ -129,9 +129,13 @@ export function inScope(task: Task, now: Date): boolean {
       task.name.trimStart().startsWith(prefix)
     ) &&
     cleanText(task.name, 300) !== null &&
-    end > now.getTime() &&
-    end <= now.getTime() + PLACEHOLDER_AFTER_MS
+    endsAhead(end, now)
   )
+}
+
+/** A date AIFactory filled in: it stores an empty one as the epoch, 1970-01-01. */
+function given(date: string | undefined): string | undefined {
+  return date && Date.parse(date) > 0 ? date : undefined
 }
 
 /**
@@ -154,10 +158,12 @@ export function toListing(
   const entry = task.participationDeadline
     ? Date.parse(task.participationDeadline)
     : null
-  // Deadlines in the same minute are one deadline, as for Kaggle.
-  const minute = (at: number) => Math.floor(at / 60_000)
   const deadlines: Deadline[] = []
-  if (entry !== null && entry > now.getTime() && minute(entry) < minute(end))
+  if (
+    entry !== null &&
+    entry > now.getTime() &&
+    minuteOf(entry) < minuteOf(end)
+  )
     deadlines.push({
       kind: "entry",
       label: null,
@@ -176,7 +182,7 @@ export function toListing(
     url,
     sourceUrl: url,
     opensAt: isoFromMs(
-      Date.parse(task.participationStartDate ?? task.startDate)
+      Date.parse(given(task.participationStartDate) ?? task.startDate)
     ),
     deadlines,
   }

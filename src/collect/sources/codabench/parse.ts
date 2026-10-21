@@ -7,7 +7,12 @@ import {
   type Listing,
 } from "../../../lib/listing.ts"
 import { cleanText } from "../../text.ts"
-import { deadlineZone, isoFromMs, PLACEHOLDER_AFTER_MS } from "../../time.ts"
+import {
+  deadlineZone,
+  endsAhead,
+  isoFromMs,
+  PLACEHOLDER_AFTER_MS,
+} from "../../time.ts"
 
 const instant = z.iso.datetime()
 
@@ -132,10 +137,7 @@ function deadlines(competition: Detail, now: Date): Deadline[] {
   return competition.phases
     .filter((p) => !POST_PHASE.test(p.name.trim()) && p.end !== null)
     .map((p) => ({ name: p.name, end: Date.parse(p.end!) }))
-    .filter(
-      (p) =>
-        p.end > now.getTime() && p.end <= now.getTime() + PLACEHOLDER_AFTER_MS
-    )
+    .filter((p) => endsAhead(p.end, now))
     .sort((a, b) => a.end - b.end)
     .map((p) => ({
       kind: "phase",

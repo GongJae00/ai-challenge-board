@@ -1,8 +1,9 @@
 import { z } from "zod"
 
+import { minuteOf } from "../../../lib/datetime.ts"
 import type { Deadline, Listing } from "../../../lib/listing.ts"
 import { cleanText, webUrl } from "../../text.ts"
-import { isoFromMs, PLACEHOLDER_AFTER_MS } from "../../time.ts"
+import { endsAhead, isoFromMs } from "../../time.ts"
 
 const instant = z.iso.datetime()
 
@@ -48,8 +49,7 @@ export function toListing(competition: Competition, now: Date): Listing | null {
   if (competition.category === GETTING_STARTED || !competition.deadline)
     return null
   const final = Date.parse(competition.deadline)
-  if (final <= now.getTime() || final > now.getTime() + PLACEHOLDER_AFTER_MS)
-    return null
+  if (!endsAhead(final, now)) return null
   const title = cleanText(competition.title, 300)
   const url = webUrl(competition.url)
   if (title === null || url === null) return null
@@ -60,10 +60,8 @@ export function toListing(competition: Competition, now: Date): Listing | null {
   const merger = competition.mergerDeadline
     ? Date.parse(competition.mergerDeadline)
     : null
-  // Kaggle stores some deadlines with stray milliseconds, so deadlines in the same minute are one deadline.
-  const minute = (at: number) => Math.floor(at / 60_000)
   const before = (at: number | null): at is number =>
-    at !== null && at > now.getTime() && minute(at) < minute(final)
+    at !== null && at > now.getTime() && minuteOf(at) < minuteOf(final)
   const deadlines: Deadline[] = []
   if (before(entry))
     deadlines.push({
@@ -72,7 +70,10 @@ export function toListing(competition: Competition, now: Date): Listing | null {
       at: isoFromMs(entry),
       zone: "UTC",
     })
-  if (before(merger) && (entry === null || minute(merger) !== minute(entry)))
+  if (
+    before(merger) &&
+    (entry === null || minuteOf(merger) !== minuteOf(entry))
+  )
     deadlines.push({
       kind: "merger",
       label: null,

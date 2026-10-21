@@ -66,6 +66,11 @@ describe("extractTasks", () => {
     expect(extractTasks(text)).toEqual([{ id: "1", name: "a" }, { id: "2" }])
   })
 
+  it("skips a task key inside a string that holds escaped JSON", () => {
+    const text = `[{"meta":"{\\"task\\":{\\"id\\":\\"9\\"}}"},${taskJson("2")}]`
+    expect(extractTasks(text)).toEqual([JSON.parse(taskJson("2")).task])
+  })
+
   it("keeps braces, quotes, and escapes inside strings out of the brace count", () => {
     const text =
       '{"task":{"id":"1","name":"a } \\" { b \\\\","page":{"name":"c"}}}'
@@ -277,6 +282,15 @@ describe("toListing", () => {
   it("opens at the start of the competition when registration has no start", () => {
     const listing = toListing(
       task("2105"),
+      null,
+      new Date("2022-09-01T00:00:00Z")
+    )
+    expect(listing.opensAt).toBe("2022-08-29T00:00:00.000Z")
+  })
+
+  it("opens at the start of the competition when registration starts at the 1970 placeholder", () => {
+    const listing = toListing(
+      { ...task("2105"), participationStartDate: "1970-01-01T00:00:00.000Z" },
       null,
       new Date("2022-09-01T00:00:00Z")
     )

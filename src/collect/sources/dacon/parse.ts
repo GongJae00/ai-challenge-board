@@ -2,7 +2,7 @@ import { z } from "zod"
 
 import type { Listing } from "../../../lib/listing.ts"
 import { cleanText } from "../../text.ts"
-import { isoFromKst, PLACEHOLDER_AFTER_MS } from "../../time.ts"
+import { endsAhead, isoFromKst } from "../../time.ts"
 
 /** DACON writes every date as `YYYY-MM-DD HH:MM:SS` in Korean time; one it cannot read fails the response. */
 const kstInstant = z.string().transform((text, ctx) => {
@@ -55,7 +55,7 @@ export function parseListPage(json: unknown): Competition[] {
 /** Whether the competition ends after now, and not so far ahead that the end is a placeholder. */
 export function isOpen(competition: Competition, now: Date): boolean {
   const end = Date.parse(competition.endsAt)
-  return end > now.getTime() && end <= now.getTime() + PLACEHOLDER_AFTER_MS
+  return endsAhead(end, now)
 }
 
 /**

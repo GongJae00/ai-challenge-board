@@ -27,14 +27,16 @@ const STOP_AFTER_MS = 180 * 24 * 60 * 60 * 1000
 export const dacon: Source = {
   id: "dacon",
   async collect(client, now) {
-    const open: Competition[] = []
+    // By id, since a competition can move onto the next page between two requests.
+    const open = new Map<number, Competition>()
     for (let offset = 0; ; offset += 1) {
       if (offset >= MAX_PAGES)
         throw new Error(`DACON lists more than ${MAX_PAGES} pages`)
       const page = parseListPage(
         await client.getJson(`${LIST_URL}?offset=${offset}&range=`)
       )
-      open.push(...page.filter((competition) => isOpen(competition, now)))
+      for (const competition of page)
+        if (isOpen(competition, now)) open.set(competition.id, competition)
       const allLongEnded = page.every(
         (competition) =>
           Date.parse(competition.endsAt) < now.getTime() - STOP_AFTER_MS
@@ -43,10 +45,11 @@ export const dacon: Source = {
     }
 
     const listings: Listing[] = []
-    for (const competition of open) {
-      const organizer = parseOrganizer(
-        await client.getText(competitionUrl(competition))
-      )
+    for (const competition of open.values()) {
+      // A series landing page lives at an address no open competition has shown yet, so it is not requested.
+      const organizer = competition.landing
+        ? null
+        : parseOrganizer(await client.getText(competitionUrl(competition)))
       const listing = toListing(competition, organizer)
       if (listing) listings.push(listing)
     }

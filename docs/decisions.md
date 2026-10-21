@@ -82,11 +82,15 @@ stays the same across runs and can later key bookmarks and calendar events.
   source to twice a day even when a scheduled run starts late. It keeps the last good file when the source fails,
   when a listing does not fit the schema, or when more than half of the listings that should still be open
   vanish.
-- **Not yet:** conditional requests. Each source answers in a few API calls twice a day, and the validators would
-  have to be stored per URL in the repository; they wait until a source serves large pages.
+- **Not yet:** conditional requests and a cache of detail pages. Most sources answer in a few API calls twice a
+  day, and the validators would have to be stored per URL in the repository. AIFactory's list page (about 600 KB)
+  carries no ETag or Last-Modified, so it cannot be asked conditionally, and the DACON and AIFactory detail pages
+  are requested only for competitions still open, a few at a time. A per-id cache of organizers, kept like
+  Codabench's state, waits until those requests grow.
 
 Sources in order: OpenReview first, because one public API covers the workshop calls of five of the seven
-phase-1 conferences (37 open on 2026-10-21); then EvalAI, Codabench, and Kaggle.
+phase-1 conferences (37 open on 2026-10-21); then EvalAI, Codabench, and Kaggle; then DACON and AIFactory, the
+Korean platforms GongJae chose on 2026-10-21.
 - **Codabench** lists 1,536 public entries, most of them coursework and tests, sends its API responses at a few
   kilobytes a second, and gives deadlines only in a request per competition. The collector therefore takes only
   the competitions whose title names a phase-1 conference, found through Codabench's search and checked against
@@ -98,6 +102,21 @@ phase-1 conferences (37 open on 2026-10-21); then EvalAI, Codabench, and Kaggle.
 - **Kaggle** is read through its official API with GongJae's token (see `CLAUDE.md`). Getting Started
   competitions, which stay open with placeholder 2030 deadlines, are left out. A listing carries the entry and
   team merger deadlines as well as the final one, as the deadline kinds `entry` and `merger`.
+- **DACON** has no documented API, but its competitions page fills itself from a public JSON list,
+  `app.dacon.io/api/v1/competition/list`, 15 competitions a page, which the collector reads. The list is ordered
+  by end date only roughly, so paging stops after a page on which every competition ended more than 180 days ago.
+  DACON writes dates as Korean local times without a zone. A listing has one deadline, the end of the
+  competition period, as kind `end`, because its leaderboard can close before then; the other milestones are
+  left out, since the detail page's fields disagree with its prose. The flags `practice`, `on_going`, and
+  `private_open` do not mean what their names suggest and are not used. The organizer, 주최, is read from each
+  open competition's page, best effort; 주관 and 운영, usually DACON itself, are never taken for it.
+- **AIFactory** serves its whole list, 112 competitions on 2026-10-21, in the Next.js data of one server-rendered
+  page, which the collector reads without running it. Its instants are exact, and the organizers enter and the
+  site shows them in Korean time, so the deadlines carry `KST`: the end of the competition period as `end`, and
+  the registration deadline as `entry` when it falls before the end. The organizer comes only from the
+  structured 주최 row of a competition's page; the list's host page name is sometimes a series or AIFactory
+  itself, so it is not used. Practice entries and recruitment posts are dropped by their title prefixes. Nothing
+  was open on 2026-10-21, so the source lists nothing until a competition opens.
 - **Duplicates:** a challenge that two sources carry, such as NeurIPS's Predictive AI Evaluation Competition on
   OpenReview and Codabench, is listed once. `src/lib/duplicates.ts` merges two listings from different sources at
   build time when they have the same kind, the same title words once conference names, years, "at", and "the" are

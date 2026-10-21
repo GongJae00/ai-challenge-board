@@ -87,6 +87,26 @@ describe("dacon", () => {
     ])
   })
 
+  it("lists a competition once when it moves onto the next page between requests", async () => {
+    const { client, requested } = fakeClient([
+      fullPage([open], 800000),
+      envelope([open]),
+    ])
+    const listings = await dacon.collect(client, now, { previous: null })
+    expect(listings.map((l) => l.id)).toEqual(["dacon:236771"])
+    expect(requested.filter((url) => url.startsWith(DETAIL))).toHaveLength(1)
+  })
+
+  it("requests no detail page for a series landing page, whose address is unverified", async () => {
+    const landing = { ...open, cpt_id: 900010, is_landing_cpt: 1 }
+    const { client, requested } = fakeClient([envelope([landing])])
+    const listings = await dacon.collect(client, now, { previous: null })
+    expect(listings.map((l) => [l.url, l.organizer])).toEqual([
+      ["https://dacon.io/competition/900010/overview", null],
+    ])
+    expect(listRequests(requested)).toEqual(requested)
+  })
+
   it("stops at an empty page", async () => {
     const { client, requested } = fakeClient([fullPage([open], 800000)])
     await dacon.collect(client, now, { previous: null })

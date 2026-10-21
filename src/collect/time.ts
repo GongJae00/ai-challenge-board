@@ -7,6 +7,11 @@ import type { Deadline } from "../lib/listing.ts"
  */
 export const PLACEHOLDER_AFTER_MS = 2 * 365 * 24 * 60 * 60 * 1000
 
+/** Whether an end is after now and not so far ahead that it is a placeholder for "never". */
+export function endsAhead(endMs: number, now: Date): boolean {
+  return endMs > now.getTime() && endMs <= now.getTime() + PLACEHOLDER_AFTER_MS
+}
+
 /** Milliseconds since the epoch as an ISO 8601 UTC instant. */
 export function isoFromMs(ms: number): string {
   return new Date(ms).toISOString()

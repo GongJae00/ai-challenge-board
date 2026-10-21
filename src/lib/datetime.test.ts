@@ -6,6 +6,7 @@ import {
   formatMonth,
   formatSourceTime,
   formatTime,
+  minuteOf,
   weekdayNames,
 } from "./datetime.ts"
 import type { Deadline } from "./listing.ts"
@@ -56,6 +57,13 @@ describe("datetime", () => {
     expect(formatSourceTime(kst, "ko", "Asia/Seoul")).toBeNull()
     expect(formatSourceTime(aoe, "en", "Etc/GMT+12")).toBeNull()
     expect(formatSourceTime(utc, "en", "Asia/Seoul")).toBeNull()
+    expect(formatSourceTime(kst, "ko", "Asia/Tokyo")).toBeNull()
+  })
+
+  it("puts instants of the same minute together, stray seconds and milliseconds included", () => {
+    const minute = minuteOf(Date.parse("2026-11-12T23:59:00.000Z"))
+    expect(minuteOf(Date.parse("2026-11-12T23:59:59.807Z"))).toBe(minute)
+    expect(minuteOf(Date.parse("2026-11-13T00:00:00.000Z"))).toBe(minute + 1)
   })
 
   it("says days left in words", () => {

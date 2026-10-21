@@ -7,7 +7,7 @@ import {
   type Listing,
 } from "../../../lib/listing.ts"
 import { cleanText } from "../../text.ts"
-import { isoFromMs, PLACEHOLDER_AFTER_MS } from "../../time.ts"
+import { endsAhead, isoFromMs } from "../../time.ts"
 
 const HOST = "eval.ai"
 
@@ -124,12 +124,7 @@ export function challengeUrl(id: number): string {
 /** Whether a challenge is published, approved, still running at `now`, and not a persistent benchmark. */
 export function isOpenTimeBound(challenge: Challenge, now: Date): boolean {
   const end = Date.parse(challenge.endDate)
-  return (
-    challenge.published &&
-    challenge.approved &&
-    end > now.getTime() &&
-    end <= now.getTime() + PLACEHOLDER_AFTER_MS
-  )
+  return challenge.published && challenge.approved && endsAhead(end, now)
 }
 
 const CONFERENCE_TAG = new RegExp(
