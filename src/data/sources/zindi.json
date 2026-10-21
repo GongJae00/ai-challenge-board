@@ -1,0 +1,82 @@
+{
+  "source": "zindi",
+  "retrievedAt": "2026-10-21T13:00:56.960Z",
+  "listings": [
+    {
+      "id": "zindi:bias-bounty-mapping-equity-challenge",
+      "source": "zindi",
+      "kind": "challenge",
+      "title": "Bias Bounty Mapping Equity Challenge",
+      "organizer": null,
+      "conference": null,
+      "url": "https://zindi.world/competitions/bias-bounty-mapping-equity-challenge",
+      "sourceUrl": "https://zindi.world/competitions/bias-bounty-mapping-equity-challenge",
+      "opensAt": "2026-08-28T14:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-31T23:59:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "zindi:french-embassy-underwater-vessel-noise-challenge",
+      "source": "zindi",
+      "kind": "challenge",
+      "title": "Underwater Vessel Noise Challenge by the French Embassy in South Africa",
+      "organizer": null,
+      "conference": null,
+      "url": "https://zindi.world/competitions/french-embassy-underwater-vessel-noise-challenge",
+      "sourceUrl": "https://zindi.world/competitions/french-embassy-underwater-vessel-noise-challenge",
+      "opensAt": "2026-10-16T12:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-12-13T12:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "zindi:google-mumbai-data-challenge",
+      "source": "zindi",
+      "kind": "challenge",
+      "title": "Google Mumbai Data Challenge: Air Quality Mapping & Forecasting",
+      "organizer": "Google",
+      "conference": null,
+      "url": "https://zindi.world/competitions/google-mumbai-data-challenge",
+      "sourceUrl": "https://zindi.world/competitions/google-mumbai-data-challenge",
+      "opensAt": "2026-10-26T12:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-13T12:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "zindi:google-waxal-asr-challenge-october-study-jam",
+      "source": "zindi",
+      "kind": "challenge",
+      "title": "October Study Jam: Google WAXAL ASR Challenge",
+      "organizer": null,
+      "conference": null,
+      "url": "https://zindi.world/competitions/google-waxal-asr-challenge-october-study-jam",
+      "sourceUrl": "https://zindi.world/competitions/google-waxal-asr-challenge-october-study-jam",
+      "opensAt": "2026-10-05T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-31T23:59:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    }
+  ]
+}

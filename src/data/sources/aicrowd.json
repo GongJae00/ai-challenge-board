@@ -1,0 +1,25 @@
+{
+  "source": "aicrowd",
+  "retrievedAt": "2026-10-21T13:00:56.960Z",
+  "listings": [
+    {
+      "id": "aicrowd:arc-white-box-estimation-challenge-2026",
+      "source": "aicrowd",
+      "kind": "challenge",
+      "title": "ARC White-Box Estimation Challenge 2026",
+      "organizer": "Alignment Research Center",
+      "conference": null,
+      "url": "https://www.aicrowd.com/challenges/arc-white-box-estimation-challenge-2026",
+      "sourceUrl": "https://www.aicrowd.com/challenges/arc-white-box-estimation-challenge-2026",
+      "opensAt": "2026-05-28T00:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "phase",
+          "label": "Phase 2",
+          "at": "2026-10-21T23:59:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "source": "codabench",
-  "retrievedAt": "2026-10-21T06:55:31.840Z",
+  "retrievedAt": "2026-10-21T13:00:56.960Z",
   "listings": [
     {
       "id": "codabench:17739",
@@ -42,7 +42,7 @@
           "kind": "phase",
           "label": "Final & Verification",
           "at": "2026-10-26T11:59:59.000Z",
-          "zone": "UTC"
+          "zone": "AoE"
         }
       ]
     },
@@ -64,7 +64,7 @@
           "kind": "phase",
           "label": "Final & Verification",
           "at": "2026-10-26T11:59:59.000Z",
-          "zone": "UTC"
+          "zone": "AoE"
         }
       ]
     },
@@ -86,7 +86,7 @@
           "kind": "phase",
           "label": "Final & Verification",
           "at": "2026-10-26T11:59:59.000Z",
-          "zone": "UTC"
+          "zone": "AoE"
         }
       ]
     },
@@ -108,7 +108,7 @@
           "kind": "phase",
           "label": "Final & Verification",
           "at": "2026-10-26T11:59:59.000Z",
-          "zone": "UTC"
+          "zone": "AoE"
         }
       ]
     },
@@ -127,7 +127,7 @@
           "kind": "phase",
           "label": "Competition",
           "at": "2026-10-31T11:59:00.000Z",
-          "zone": "UTC"
+          "zone": "AoE"
         }
       ]
     }

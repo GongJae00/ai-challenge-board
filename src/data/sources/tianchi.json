@@ -1,0 +1,208 @@
+{
+  "source": "tianchi",
+  "retrievedAt": "2026-10-21T13:00:56.960Z",
+  "listings": [
+    {
+      "id": "tianchi:532338",
+      "source": "tianchi",
+      "kind": "challenge",
+      "title": "【打榜赛】CCL25-Eval 任务2：第三届汉语框架语义解析评测",
+      "organizer": null,
+      "conference": null,
+      "url": "https://tianchi.aliyun.com/competition/entrance/532338",
+      "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532338",
+      "opensAt": "2025-06-19T16:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "entry",
+          "label": null,
+          "at": "2027-05-24T15:59:59.000Z",
+          "zone": "Asia/Shanghai"
+        },
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2027-05-25T15:59:59.000Z",
+          "zone": "Asia/Shanghai"
+        }
+      ]
+    },
+    {
+      "id": "tianchi:532460",
+      "source": "tianchi",
+      "kind": "challenge",
+      "title": "International Contest on Aftershock Forecasting",
+      "organizer": null,
+      "conference": null,
+      "url": "https://tianchi.aliyun.com/competition/entrance/532460",
+      "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532460",
+      "opensAt": "2026-10-01T00:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-31T15:59:59.000Z",
+          "zone": "Asia/Shanghai"
+        }
+      ]
+    },
+    {
+      "id": "tianchi:532469",
+      "source": "tianchi",
+      "kind": "challenge",
+      "title": "“学AI，你做主”——天池平台学习赛题征集赛",
+      "organizer": null,
+      "conference": null,
+      "url": "https://tianchi.aliyun.com/competition/entrance/532469",
+      "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532469",
+      "opensAt": "2026-10-12T16:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-25T15:59:59.000Z",
+          "zone": "Asia/Shanghai"
+        }
+      ]
+    },
+    {
+      "id": "tianchi:532506",
+      "source": "tianchi",
+      "kind": "challenge",
+      "title": "2026-具身仿真合成挑战赛",
+      "organizer": null,
+      "conference": null,
+      "url": "https://tianchi.aliyun.com/competition/entrance/532506",
+      "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532506",
+      "opensAt": "2026-07-29T16:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-15T15:59:59.000Z",
+          "zone": "Asia/Shanghai"
+        }
+      ]
+    },
+    {
+      "id": "tianchi:532507",
+      "source": "tianchi",
+      "kind": "challenge",
+      "title": "2026-具身安全应用挑战赛",
+      "organizer": null,
+      "conference": null,
+      "url": "https://tianchi.aliyun.com/competition/entrance/532507",
+      "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532507",
+      "opensAt": "2026-07-29T16:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-15T15:59:59.000Z",
+          "zone": "Asia/Shanghai"
+        }
+      ]
+    },
+    {
+      "id": "tianchi:532508",
+      "source": "tianchi",
+      "kind": "challenge",
+      "title": "2026-跨本体具身认知极限联合挑战赛",
+      "organizer": null,
+      "conference": null,
+      "url": "https://tianchi.aliyun.com/competition/entrance/532508",
+      "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532508",
+      "opensAt": "2026-07-29T16:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-15T15:59:59.000Z",
+          "zone": "Asia/Shanghai"
+        }
+      ]
+    },
+    {
+      "id": "tianchi:532510",
+      "source": "tianchi",
+      "kind": "challenge",
+      "title": "知乎知学堂大模型挑战赛：大模型复杂表格识别与内容理解",
+      "organizer": null,
+      "conference": null,
+      "url": "https://tianchi.aliyun.com/competition/entrance/532510",
+      "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532510",
+      "opensAt": "2026-09-30T16:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-12-31T15:59:59.000Z",
+          "zone": "Asia/Shanghai"
+        }
+      ]
+    },
+    {
+      "id": "tianchi:532511",
+      "source": "tianchi",
+      "kind": "challenge",
+      "title": "2026 SMP第十四届全国社会媒体处理大会-大模型图网络决策挑战赛",
+      "organizer": null,
+      "conference": null,
+      "url": "https://tianchi.aliyun.com/competition/entrance/532511",
+      "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532511",
+      "opensAt": "2026-10-08T16:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-25T15:59:59.000Z",
+          "zone": "Asia/Shanghai"
+        }
+      ]
+    },
+    {
+      "id": "tianchi:532514",
+      "source": "tianchi",
+      "kind": "challenge",
+      "title": "蚂蚁灵波具身大模型挑战赛",
+      "organizer": null,
+      "conference": null,
+      "url": "https://tianchi.aliyun.com/competition/entrance/532514",
+      "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532514",
+      "opensAt": "2026-09-10T16:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "entry",
+          "label": null,
+          "at": "2026-10-26T15:59:59.000Z",
+          "zone": "Asia/Shanghai"
+        },
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-16T15:59:59.000Z",
+          "zone": "Asia/Shanghai"
+        }
+      ]
+    },
+    {
+      "id": "tianchi:532515",
+      "source": "tianchi",
+      "kind": "challenge",
+      "title": "OpenLET 具身智能挑战赛",
+      "organizer": null,
+      "conference": null,
+      "url": "https://tianchi.aliyun.com/competition/entrance/532515",
+      "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532515",
+      "opensAt": "2026-09-22T16:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-12-31T15:59:59.000Z",
+          "zone": "Asia/Shanghai"
+        }
+      ]
+    }
+  ]
+}

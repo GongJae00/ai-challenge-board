@@ -1,0 +1,1317 @@
+{
+  "source": "devpost",
+  "retrievedAt": "2026-10-21T13:00:56.960Z",
+  "listings": [
+    {
+      "id": "devpost:29114",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "IEEE ClimateChain Global Hackathon",
+      "organizer": "IEEE Turkey",
+      "conference": null,
+      "url": "https://ieee-climatechain-hack.devpost.com/",
+      "sourceUrl": "https://ieee-climatechain-hack.devpost.com/",
+      "opensAt": "2026-10-04T21:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-10-25T14:00:00.000Z",
+          "zone": "Europe/Istanbul"
+        }
+      ]
+    },
+    {
+      "id": "devpost:29135",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Brewing Codes 4.0",
+      "organizer": "HARD MODE",
+      "conference": null,
+      "url": "https://brewing-codes-4-0.devpost.com/",
+      "sourceUrl": "https://brewing-codes-4-0.devpost.com/",
+      "opensAt": "2028-03-12T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2028-03-27T16:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:30071",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "HarborHack 2026 - Agent In The Loop",
+      "organizer": "Charlestonhacks",
+      "conference": null,
+      "url": "https://harborhack-2026.devpost.com/",
+      "sourceUrl": "https://harborhack-2026.devpost.com/",
+      "opensAt": "2026-10-23T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-25T20:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:30296",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "BioHacks",
+      "organizer": "BioEng4Youth",
+      "conference": null,
+      "url": "https://biohacksmcmaster.devpost.com/",
+      "sourceUrl": "https://biohacksmcmaster.devpost.com/",
+      "opensAt": "2026-11-07T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-08T15:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:30357",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "HackCamp 2026",
+      "organizer": "nwPlus",
+      "conference": null,
+      "url": "https://hackcamp-2026.devpost.com/",
+      "sourceUrl": "https://hackcamp-2026.devpost.com/",
+      "opensAt": "2026-11-07T08:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-08T20:00:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:30447",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Build With AI: Basics",
+      "organizer": "Devpost",
+      "conference": null,
+      "url": "https://learn-ai-basics.devpost.com/",
+      "sourceUrl": "https://learn-ai-basics.devpost.com/",
+      "opensAt": "2026-09-22T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-10-26T21:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:30456",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Bridge The Gap Hacks",
+      "organizer": "Bridge The Gap Hacks",
+      "conference": null,
+      "url": "https://sq-hacks.devpost.com/",
+      "sourceUrl": "https://sq-hacks.devpost.com/",
+      "opensAt": "2026-11-15T08:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-21T07:45:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:30463",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "DeveloperWeek 2027 Hackathon",
+      "organizer": "DevNetwork",
+      "conference": null,
+      "url": "https://developerweek-2027-hackathon.devpost.com/",
+      "sourceUrl": "https://developerweek-2027-hackathon.devpost.com/",
+      "opensAt": "2027-01-25T08:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2027-02-11T18:00:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:30516",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Since AI 2026",
+      "organizer": "Since AI ry",
+      "conference": null,
+      "url": "https://sinceai2026.devpost.com/",
+      "sourceUrl": "https://sinceai2026.devpost.com/",
+      "opensAt": "2026-11-05T22:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-08T08:00:00.000Z",
+          "zone": "Europe/Helsinki"
+        }
+      ]
+    },
+    {
+      "id": "devpost:30539",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "HTCJ × PROOF Aviation Futures Challenge",
+      "organizer": "hacktheconcretejungle",
+      "conference": null,
+      "url": "https://htcj-aviation-futures.devpost.com/",
+      "sourceUrl": "https://htcj-aviation-futures.devpost.com/",
+      "opensAt": "2026-06-25T07:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-28T00:00:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:30548",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "HackFW: MADE Challenge",
+      "organizer": "Fort Worth DAO",
+      "conference": null,
+      "url": "https://hackfw.devpost.com/",
+      "sourceUrl": "https://hackfw.devpost.com/",
+      "opensAt": "2026-10-01T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-30T16:00:00.000Z",
+          "zone": "America/Chicago"
+        }
+      ]
+    },
+    {
+      "id": "devpost:30608",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "SpartaHack 12",
+      "organizer": "SpartaHack",
+      "conference": null,
+      "url": "https://spartahack-12.devpost.com/",
+      "sourceUrl": "https://spartahack-12.devpost.com/",
+      "opensAt": "2027-02-06T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2027-02-07T17:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:30689",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "BearHacks 2027",
+      "organizer": "BearHacks",
+      "conference": null,
+      "url": "https://bearhacks2027.devpost.com/",
+      "sourceUrl": "https://bearhacks2027.devpost.com/",
+      "opensAt": "2027-04-23T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2027-04-25T14:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:30731",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "LarpHacks",
+      "organizer": "larphacks",
+      "conference": null,
+      "url": "https://larphacks.devpost.com/",
+      "sourceUrl": "https://larphacks.devpost.com/",
+      "opensAt": "2026-11-01T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-01T23:30:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:30740",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Code for Humanity",
+      "organizer": "nill",
+      "conference": null,
+      "url": "https://code-for-humanity.devpost.com/",
+      "sourceUrl": "https://code-for-humanity.devpost.com/",
+      "opensAt": "2026-07-15T19:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2027-01-15T12:00:00.000Z",
+          "zone": "Asia/Karachi"
+        }
+      ]
+    },
+    {
+      "id": "devpost:30764",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Syntax Summit",
+      "organizer": "Student Organization",
+      "conference": null,
+      "url": "https://syntax-summit.devpost.com/",
+      "sourceUrl": "https://syntax-summit.devpost.com/",
+      "opensAt": "2026-07-17T19:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2027-01-14T12:00:00.000Z",
+          "zone": "Asia/Karachi"
+        }
+      ]
+    },
+    {
+      "id": "devpost:30789",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Arbiter Hacks V1",
+      "organizer": "Arbiter",
+      "conference": null,
+      "url": "https://arbiter-hacks-v1.devpost.com/",
+      "sourceUrl": "https://arbiter-hacks-v1.devpost.com/",
+      "opensAt": "2026-10-20T07:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-21T05:00:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:30790",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Nebius x NVIDIA Global AI Hackathon",
+      "organizer": "nebius",
+      "conference": null,
+      "url": "https://nebiusglobalaihackathon.devpost.com/",
+      "sourceUrl": "https://nebiusglobalaihackathon.devpost.com/",
+      "opensAt": "2026-08-26T07:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-10-30T17:00:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:30880",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "DevFest Münster 2026: Agentic AI Hackathon",
+      "organizer": "GDG Münster",
+      "conference": null,
+      "url": "https://devfest-ai-hackathon.devpost.com/",
+      "sourceUrl": "https://devfest-ai-hackathon.devpost.com/",
+      "opensAt": "2026-11-20T23:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-21T14:00:00.000Z",
+          "zone": "Europe/Berlin"
+        }
+      ]
+    },
+    {
+      "id": "devpost:30918",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "FutureForge Hacks",
+      "organizer": "Future Forge",
+      "conference": null,
+      "url": "https://futureforge-hacks.devpost.com/",
+      "sourceUrl": "https://futureforge-hacks.devpost.com/",
+      "opensAt": "2026-11-21T08:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-22T03:00:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:30984",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "OpenCV AI Competition 2026, powered by AWS",
+      "organizer": "OpenCV",
+      "conference": null,
+      "url": "https://opencv26.devpost.com/",
+      "sourceUrl": "https://opencv26.devpost.com/",
+      "opensAt": "2026-08-26T07:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-10-27T06:45:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:30992",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Build, Ship, Shape: Amazon Developer Hackathon",
+      "organizer": "Amazon",
+      "conference": null,
+      "url": "https://amazonappdev2026.devpost.com/",
+      "sourceUrl": "https://amazonappdev2026.devpost.com/",
+      "opensAt": "2026-08-31T07:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-10-23T19:00:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31024",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Meta VR Start Developer Competition 2026",
+      "organizer": "Meta",
+      "conference": null,
+      "url": "https://start-developer-competition-26.devpost.com/",
+      "sourceUrl": "https://start-developer-competition-26.devpost.com/",
+      "opensAt": "2026-09-24T07:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-18T20:00:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31052",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "AWS Communication Developer Services (CDS) Agentic AI Partner Hackathon",
+      "organizer": "AWS",
+      "conference": null,
+      "url": "https://aws-cds-partner.devpost.com/",
+      "sourceUrl": "https://aws-cds-partner.devpost.com/",
+      "opensAt": "2026-09-14T07:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-10-28T20:00:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31054",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Qloo Agentic Hackathon",
+      "organizer": "Qloo",
+      "conference": null,
+      "url": "https://qloo.devpost.com/",
+      "sourceUrl": "https://qloo.devpost.com/",
+      "opensAt": "2026-09-30T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-10-31T03:45:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31116",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Next Gen Hackathon 2026 -Bengaluru",
+      "organizer": "RAAIF",
+      "conference": null,
+      "url": "https://next-gen-hackathon.devpost.com/",
+      "sourceUrl": "https://next-gen-hackathon.devpost.com/",
+      "opensAt": "2026-08-31T18:30:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-23T11:30:00.000Z",
+          "zone": "Asia/Kolkata"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31122",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Action Space",
+      "organizer": "university of pennsylvania",
+      "conference": null,
+      "url": "https://action-space-hacks.devpost.com/",
+      "sourceUrl": "https://action-space-hacks.devpost.com/",
+      "opensAt": "2026-10-24T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-25T22:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31126",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Sierra Hacks 2026",
+      "organizer": "CodeCatalyst",
+      "conference": null,
+      "url": "https://sierra-hacks-2026.devpost.com/",
+      "sourceUrl": "https://sierra-hacks-2026.devpost.com/",
+      "opensAt": "2026-10-24T07:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-25T00:00:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31138",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Build North: Ship Something Real",
+      "organizer": "Georgian",
+      "conference": null,
+      "url": "https://build-north.devpost.com/",
+      "sourceUrl": "https://build-north.devpost.com/",
+      "opensAt": "2026-10-16T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-26T04:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31146",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "DevFest: Sheridan Datathon 2026",
+      "organizer": "GDG on Campus Sheridan College",
+      "conference": null,
+      "url": "https://sheridandatathon2026.devpost.com/",
+      "sourceUrl": "https://sheridandatathon2026.devpost.com/",
+      "opensAt": "2026-11-07T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-08T17:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31164",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "CrownHacks",
+      "organizer": "Club for AI Research - Charlotte",
+      "conference": null,
+      "url": "https://crownhacks.devpost.com/",
+      "sourceUrl": "https://crownhacks.devpost.com/",
+      "opensAt": "2026-11-06T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-08T16:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31165",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "2026 AI for Good Hackathon",
+      "organizer": "Florida Data Science for Social Good",
+      "conference": null,
+      "url": "https://2026ai4goodhackathon.devpost.com/",
+      "sourceUrl": "https://2026ai4goodhackathon.devpost.com/",
+      "opensAt": "2026-10-23T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-25T20:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31187",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "STEMergent Hacks 2026",
+      "organizer": "STEMergent",
+      "conference": null,
+      "url": "https://stemergent-hacks.devpost.com/",
+      "sourceUrl": "https://stemergent-hacks.devpost.com/",
+      "opensAt": "2026-10-31T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-16T03:30:00.000Z",
+          "zone": "America/Chicago"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31222",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "checkpoint 1 — games for good",
+      "organizer": "Checkpoint",
+      "conference": null,
+      "url": "https://checkpoint-1.devpost.com/",
+      "sourceUrl": "https://checkpoint-1.devpost.com/",
+      "opensAt": "2027-01-07T17:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2027-01-10T12:00:00.000Z",
+          "zone": "Asia/Bangkok"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31302",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "PayPal AI Hackathon",
+      "organizer": "PayPal",
+      "conference": null,
+      "url": "https://paypalaihackathon.devpost.com/",
+      "sourceUrl": "https://paypalaihackathon.devpost.com/",
+      "opensAt": "2026-10-01T07:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-12T20:00:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31306",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "HackOHI/O 2026",
+      "organizer": "OHI/O",
+      "conference": null,
+      "url": "https://hackohio2026.devpost.com/",
+      "sourceUrl": "https://hackohio2026.devpost.com/",
+      "opensAt": "2026-10-24T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-25T14:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31321",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Build with Gemma - Innovate in Windsor",
+      "organizer": "Google Developer Groups Windsor",
+      "conference": null,
+      "url": "https://innovate-in-windsor-hackathon.devpost.com/",
+      "sourceUrl": "https://innovate-in-windsor-hackathon.devpost.com/",
+      "opensAt": "2026-11-13T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-21T04:45:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31400",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "organizer": "Perfect Corp",
+      "conference": null,
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/",
+      "sourceUrl": "https://youcam-api-skin-ai-ecommerce.devpost.com/",
+      "opensAt": "2026-09-29T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-02T16:45:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31435",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Redhawk Builds 2026",
+      "organizer": "Miami",
+      "conference": null,
+      "url": "https://redhawk-builds-2026.devpost.com/",
+      "sourceUrl": "https://redhawk-builds-2026.devpost.com/",
+      "opensAt": "2026-11-07T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-08T15:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31480",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "AI Agents for Founders Challenge — HETIC 2026",
+      "organizer": "HETIC",
+      "conference": null,
+      "url": "https://ai-agents-founders-hetic-26.devpost.com/",
+      "sourceUrl": "https://ai-agents-founders-hetic-26.devpost.com/",
+      "opensAt": "2026-11-03T23:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-18T16:00:00.000Z",
+          "zone": "Europe/Paris"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31489",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "EthnoHack",
+      "organizer": "ETHCSTWIN",
+      "conference": null,
+      "url": "https://ethnohack2026.devpost.com/",
+      "sourceUrl": "https://ethnohack2026.devpost.com/",
+      "opensAt": "2026-11-01T22:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-08T09:00:00.000Z",
+          "zone": "Europe/Athens"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31497",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "DS+X Hackathon 2026",
+      "organizer": "Boston University Spark!",
+      "conference": null,
+      "url": "https://ds-x-hackathon-2026.devpost.com/",
+      "sourceUrl": "https://ds-x-hackathon-2026.devpost.com/",
+      "opensAt": "2026-10-24T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-25T14:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31503",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Life After Code",
+      "organizer": "GitLab",
+      "conference": null,
+      "url": "https://gitlab-transcend.devpost.com/",
+      "sourceUrl": "https://gitlab-transcend.devpost.com/",
+      "opensAt": "2026-10-05T00:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-10-27T13:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31537",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Indy Init 2026",
+      "organizer": "Indy Hackers",
+      "conference": null,
+      "url": "https://indy-init-2026.devpost.com/",
+      "sourceUrl": "https://indy-init-2026.devpost.com/",
+      "opensAt": "2026-11-07T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-07T22:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31543",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "SC Quantathon v4",
+      "organizer": "Clemson Quantum",
+      "conference": null,
+      "url": "https://sc-quantathon-v4.devpost.com/",
+      "sourceUrl": "https://sc-quantathon-v4.devpost.com/",
+      "opensAt": "2027-10-23T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2027-10-24T15:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31549",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "KUK VIRTUAL HACKATHON",
+      "organizer": "Kelab UMNO Korea",
+      "conference": null,
+      "url": "https://kuk-virtual-hackathon.devpost.com/",
+      "sourceUrl": "https://kuk-virtual-hackathon.devpost.com/",
+      "opensAt": "2026-11-14T15:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-22T15:00:00.000Z",
+          "zone": "Asia/Seoul"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31580",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Ostad Presents YUNet AIgnite Buildathon 2026",
+      "organizer": "Youth Upskill Network - YUNet",
+      "conference": null,
+      "url": "https://yunet-aignite26.devpost.com/",
+      "sourceUrl": "https://yunet-aignite26.devpost.com/",
+      "opensAt": "2026-10-31T18:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-05T16:00:00.000Z",
+          "zone": "Asia/Dhaka"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31612",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "NTU Beyond Binary Techathon 2027",
+      "organizer": "NTU Women In Tech",
+      "conference": null,
+      "url": "https://ntu-beyond-binary-2027.devpost.com/",
+      "sourceUrl": "https://ntu-beyond-binary-2027.devpost.com/",
+      "opensAt": "2027-02-08T16:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2027-02-13T11:00:00.000Z",
+          "zone": "Asia/Singapore"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31617",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "IEEE Hack For Humanity",
+      "organizer": "IEEE Charlotte Section",
+      "conference": null,
+      "url": "https://ieee-ai-hack-for-humanity.devpost.com/",
+      "sourceUrl": "https://ieee-ai-hack-for-humanity.devpost.com/",
+      "opensAt": "2026-10-11T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-10-22T03:45:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31621",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "CapCut x EAST2046 University of Cambridge Creator Lab Free Learning Campus",
+      "organizer": "east2046",
+      "conference": null,
+      "url": "https://cambridge-creator-lab.devpost.com/",
+      "sourceUrl": "https://cambridge-creator-lab.devpost.com/",
+      "opensAt": "2026-10-21T23:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-22T17:30:00.000Z",
+          "zone": "Europe/London"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31659",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Learn AR with SPECS",
+      "organizer": "Devpost",
+      "conference": null,
+      "url": "https://learn-specs.devpost.com/",
+      "sourceUrl": "https://learn-specs.devpost.com/",
+      "opensAt": "2026-10-15T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-09T22:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31660",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "AWS x A10 Hack 2026",
+      "organizer": "Santa Clara University ACM",
+      "conference": null,
+      "url": "https://a10-x-aws-hack-26.devpost.com/",
+      "sourceUrl": "https://a10-x-aws-hack-26.devpost.com/",
+      "opensAt": "2026-11-07T08:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-08T17:00:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31666",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Mathematics for systems security",
+      "organizer": "Software Engineering Club (DEV)",
+      "conference": null,
+      "url": "https://mathematics-systems-security.devpost.com/",
+      "sourceUrl": "https://mathematics-systems-security.devpost.com/",
+      "opensAt": "2026-10-15T21:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-01T14:00:00.000Z",
+          "zone": "Asia/Baghdad"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31667",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Kiroween 2026",
+      "organizer": "Kiro",
+      "conference": null,
+      "url": "https://kiroween.devpost.com/",
+      "sourceUrl": "https://kiroween.devpost.com/",
+      "opensAt": "2026-10-30T07:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-04T22:00:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31681",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "GSD Hackathon - Get Shit Done",
+      "organizer": "Pennovation Works",
+      "conference": null,
+      "url": "https://tbd-hackathon.devpost.com/",
+      "sourceUrl": "https://tbd-hackathon.devpost.com/",
+      "opensAt": "2027-01-23T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2027-01-23T22:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31694",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "MineArena 1.0",
+      "organizer": "Code commit",
+      "conference": null,
+      "url": "https://minearena-1-0.devpost.com/",
+      "sourceUrl": "https://minearena-1-0.devpost.com/",
+      "opensAt": "2026-10-14T18:30:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-31T18:15:00.000Z",
+          "zone": "Asia/Kolkata"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31710",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "OCSEFHacks 3",
+      "organizer": "HackPac",
+      "conference": null,
+      "url": "https://ocsefhacks3.devpost.com/",
+      "sourceUrl": "https://ocsefhacks3.devpost.com/",
+      "opensAt": "2026-11-14T08:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-15T23:00:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31722",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "DeveloperWeek New York 2027 Hackathon",
+      "organizer": "DevNetwork",
+      "conference": null,
+      "url": "https://developerweek-new-york-2027.devpost.com/",
+      "sourceUrl": "https://developerweek-new-york-2027.devpost.com/",
+      "opensAt": "2027-05-31T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2027-06-17T14:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31735",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "AI Build India",
+      "organizer": "Hacker's Unity",
+      "conference": null,
+      "url": "https://sphinx-26.devpost.com/",
+      "sourceUrl": "https://sphinx-26.devpost.com/",
+      "opensAt": "2026-10-13T18:30:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-31T09:00:00.000Z",
+          "zone": "Asia/Kolkata"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31736",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "CreateAThon",
+      "organizer": "Hacker's Unity",
+      "conference": null,
+      "url": "https://graph-hacks.devpost.com/",
+      "sourceUrl": "https://graph-hacks.devpost.com/",
+      "opensAt": "2026-10-14T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-31T21:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31737",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "HackWithAditya",
+      "organizer": "Aditya University",
+      "conference": null,
+      "url": "https://hackwithaditya.devpost.com/",
+      "sourceUrl": "https://hackwithaditya.devpost.com/",
+      "opensAt": "2026-10-15T18:30:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-25T18:15:00.000Z",
+          "zone": "Asia/Kolkata"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31745",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Deal Flow: NYC's First VC Hackathon @ Betaworks",
+      "organizer": "localhost-nyc",
+      "conference": null,
+      "url": "https://nyc-vc-hack.devpost.com/",
+      "sourceUrl": "https://nyc-vc-hack.devpost.com/",
+      "opensAt": "2026-10-24T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-24T21:30:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31765",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "GTransformer AI Buildathon 2026 — AI for Global Good",
+      "organizer": "GTransformer Foundation",
+      "conference": null,
+      "url": "https://gtransformer-buildathon-2026.devpost.com/",
+      "sourceUrl": "https://gtransformer-buildathon-2026.devpost.com/",
+      "opensAt": "2026-11-13T08:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-15T20:00:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31788",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "DevFest Hackathon 2026",
+      "organizer": "Google Developer Group Central Florida.",
+      "conference": null,
+      "url": "https://devfest-hackathon-2026.devpost.com/",
+      "sourceUrl": "https://devfest-hackathon-2026.devpost.com/",
+      "opensAt": "2026-11-06T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-08T20:30:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31802",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "HackOctober MLH X Tech4hack",
+      "organizer": "MLH",
+      "conference": null,
+      "url": "https://hackoctober-mlh-x-tech4hack.devpost.com/",
+      "sourceUrl": "https://hackoctober-mlh-x-tech4hack.devpost.com/",
+      "opensAt": "2026-10-17T18:30:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-22T11:30:00.000Z",
+          "zone": "Asia/Kolkata"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31805",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "NextSpark Hacks",
+      "organizer": "Independent",
+      "conference": null,
+      "url": "https://nextspark-hacks.devpost.com/",
+      "sourceUrl": "https://nextspark-hacks.devpost.com/",
+      "opensAt": "2026-10-21T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-10-27T03:00:00.000Z",
+          "zone": "America/Chicago"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31815",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Neural Storm",
+      "organizer": "JNTUH",
+      "conference": null,
+      "url": "https://neuralstorm.devpost.com/",
+      "sourceUrl": "https://neuralstorm.devpost.com/",
+      "opensAt": "2026-11-01T18:30:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-04T14:30:00.000Z",
+          "zone": "Asia/Kolkata"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31821",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Engage 6.0 – Code with AI Hackathon",
+      "organizer": "The Northcap University",
+      "conference": null,
+      "url": "https://engage6.devpost.com/",
+      "sourceUrl": "https://engage6.devpost.com/",
+      "opensAt": "2026-10-20T18:30:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-27T12:30:00.000Z",
+          "zone": "Asia/Kolkata"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31826",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Global AI Builder’s Challenge",
+      "organizer": "Refactor The World",
+      "conference": null,
+      "url": "https://global-ai-builders-challenge.devpost.com/",
+      "sourceUrl": "https://global-ai-builders-challenge.devpost.com/",
+      "opensAt": "2026-11-21T08:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-28T23:00:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    }
+  ]
+}

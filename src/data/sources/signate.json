@@ -1,0 +1,25 @@
+{
+  "source": "signate",
+  "retrievedAt": "2026-10-21T13:00:56.960Z",
+  "listings": [
+    {
+      "id": "signate:42024ceef5064aa6a7f463aac3f26fc2",
+      "source": "signate",
+      "kind": "challenge",
+      "title": "第５回 空戦AIチャレンジ",
+      "organizer": "防衛装備庁",
+      "conference": null,
+      "url": "https://user.competition.signate.jp/ja/competition/detail/?competition=42024ceef5064aa6a7f463aac3f26fc2",
+      "sourceUrl": "https://user.competition.signate.jp/ja/competition/detail/?competition=42024ceef5064aa6a7f463aac3f26fc2",
+      "opensAt": null,
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-18T14:59:00.000Z",
+          "zone": "JST"
+        }
+      ]
+    }
+  ]
+}

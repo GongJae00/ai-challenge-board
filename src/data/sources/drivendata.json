@@ -1,0 +1,25 @@
+{
+  "source": "drivendata",
+  "retrievedAt": "2026-10-21T13:00:56.960Z",
+  "listings": [
+    {
+      "id": "drivendata:306",
+      "source": "drivendata",
+      "kind": "challenge",
+      "title": "The Geologic Enhanced Mapping System (GEMS) Prize Challenge",
+      "organizer": "DOE",
+      "conference": null,
+      "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/",
+      "sourceUrl": "https://www.drivendata.org/competitions/",
+      "opensAt": "2026-09-10T00:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-12-03T23:59:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    }
+  ]
+}

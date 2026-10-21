@@ -1,0 +1,44 @@
+{
+  "source": "lablab",
+  "retrievedAt": "2026-10-21T13:00:56.960Z",
+  "listings": [
+    {
+      "id": "lablab:amd-lablab-ai-academy-challenge",
+      "source": "lablab",
+      "kind": "challenge",
+      "title": "AMD AI League",
+      "organizer": null,
+      "conference": null,
+      "url": "https://lablab.ai/ai-hackathons/amd-lablab-ai-academy-challenge",
+      "sourceUrl": "https://lablab.ai/ai-hackathons/amd-lablab-ai-academy-challenge",
+      "opensAt": "2026-09-01T19:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-12-01T19:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "lablab:vultr-hackathon",
+      "source": "lablab",
+      "kind": "challenge",
+      "title": "Vultr: Agent Rush Hackathon",
+      "organizer": null,
+      "conference": null,
+      "url": "https://lablab.ai/ai-hackathons/vultr-hackathon",
+      "sourceUrl": "https://lablab.ai/ai-hackathons/vultr-hackathon",
+      "opensAt": "2026-11-03T15:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-08T22:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    }
+  ]
+}

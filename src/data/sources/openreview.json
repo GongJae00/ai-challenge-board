@@ -1,6 +1,6 @@
 {
   "source": "openreview",
-  "retrievedAt": "2026-10-21T06:03:28.832Z",
+  "retrievedAt": "2026-10-21T13:00:56.960Z",
   "listings": [
     {
       "id": "openreview:AAAI.org/2027/Workshop/A2NetOps",
@@ -797,7 +797,7 @@
     {
       "id": "openreview:NeurIPS.cc/2026/Workshop/VLM4RWD_Challenges",
       "source": "openreview",
-      "kind": "challenge",
+      "kind": "cfp",
       "title": "NeurIPS 2026 Workshop VLM4RWD Challenges",
       "organizer": null,
       "conference": {
