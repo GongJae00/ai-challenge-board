@@ -43,7 +43,9 @@ recognizable as agent-made. The frontend-design skill lists the defaults that gi
 call for a distinctive identity or an aesthetic risk pulls against GongJae's direction, GongJae's direction wins.
 A page for desktop readers lays data out as data, a table with the fields as columns and other views of the same
 data a tab away, and not as a narrow vertical feed. It has one look, the light one, unless GongJae asks for a
-dark theme, and a setting that changes the page, such as the language, opens a menu of its choices.
+dark theme. A setting that changes the whole page, such as the language, opens a menu of its choices, while a
+filter with a handful of choices shows them on the page as compact chips that toggle, each choice the service
+covers kept visible and dimmed when it has nothing to show.
 
 ## Code
 

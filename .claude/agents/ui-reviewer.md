@@ -42,8 +42,9 @@ Look for what those checks cannot see:
   keyboard cannot reach;
 - a layout that does not fit its content: tabular data in a narrow single column on a desktop page, where a table
   with the fields as columns, and other views of the same data a tab away, would read as data; a phone-style
-  vertical feed on a website; or a setting that changes the page, such as the language, that switches on one
-  click instead of opening a menu of its choices;
+  vertical feed on a website; a setting that changes the whole page, such as the language, that switches on one
+  click instead of opening a menu of its choices; or a filter with a handful of choices hidden behind a menu
+  instead of shown as chips, or one that drops a covered choice because nothing is open in it;
 - clutter: decoration, repeated information, or more than one purpose on a page;
 - the look of a generated page rather than one designed for ACB: a hero, banner, or tagline ahead of the
   listings; gradient washes, glows, or emoji that carry no information; content cut into identical rounded cards
