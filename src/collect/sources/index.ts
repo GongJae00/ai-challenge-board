@@ -3,6 +3,7 @@ import { aicrowd } from "./aicrowd/index.ts"
 import { aifactory } from "./aifactory/index.ts"
 import { codabench } from "./codabench/index.ts"
 import { dacon } from "./dacon/index.ts"
+import { devpost } from "./devpost/index.ts"
 import { drivendata } from "./drivendata/index.ts"
 import { evalai } from "./evalai/index.ts"
 import { grandchallenge } from "./grandchallenge/index.ts"
@@ -25,6 +26,7 @@ export const sources: Source[] = [
   zindi,
   signate,
   tianchi,
+  devpost,
   grandchallenge,
   aicrowd,
 ]
