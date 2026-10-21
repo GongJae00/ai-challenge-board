@@ -1,11 +1,6 @@
 import { minuteOf } from "./datetime.ts"
-import {
-  conferences,
-  type Conference,
-  type Deadline,
-  type Listing,
-  type SourceId,
-} from "./listing.ts"
+import type { Deadline, Listing, SourceId } from "./listing.ts"
+import { isConferenceWord, namedConferences, words } from "./words.ts"
 
 /**
  * Which listing of a pair stands for both, lower first: a challenge platform's, which has the phases and the page
@@ -20,41 +15,21 @@ const SOURCE_RANK: Record<SourceId, number> = {
   openreview: 1,
 }
 
-const CONFERENCE_WORDS = new Map<string, Conference>(
-  conferences.map((name) => [name.toLowerCase(), name])
-)
-
-/** Words that say where or when a listing runs, which one source puts in a title and another leaves out. */
-const CONTEXT_WORDS = new Set<string>([...CONFERENCE_WORDS.keys(), "at", "the"])
+/** Words that join a challenge's name to its conference, as in "… at NeurIPS 2026". */
+const CONTEXT_WORDS = new Set(["at", "the"])
 
 const YEAR = /^20\d\d$/
 
-function words(title: string): string[] {
-  return (
-    title
-      .normalize("NFKC")
-      .toLowerCase()
-      .match(/\p{L}+|\p{N}+/gu) ?? []
-  )
-}
-
-/** A title's words without context words and years, sorted, or "" when nothing else is left. */
+/**
+ * A title's words without those that say where or when a listing runs, which one source puts in a title and
+ * another leaves out: conference names, years, and context words. Sorted, or "" when nothing else is left.
+ */
 function titleKey(title: string): string {
   const kept = words(title).filter(
-    (word) => !CONTEXT_WORDS.has(word) && !YEAR.test(word)
+    (word) =>
+      !CONTEXT_WORDS.has(word) && !isConferenceWord(word) && !YEAR.test(word)
   )
   return [...new Set(kept)].sort().join(" ")
-}
-
-/** The conferences a listing names, in its conference field or its title. */
-function namedConferences(listing: Listing): Set<Conference> {
-  const named = new Set<Conference>()
-  if (listing.conference) named.add(listing.conference.name)
-  for (const word of words(listing.title)) {
-    const name = CONFERENCE_WORDS.get(word)
-    if (name) named.add(name)
-  }
-  return named
 }
 
 /** False when both name a conference and the conferences, or the years both state, disagree. */

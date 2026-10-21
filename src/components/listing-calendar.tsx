@@ -46,14 +46,18 @@ export function ListingCalendar({ items, locale, now, timeZone }: Props) {
   const lastMonth = lastItem
     ? zonedDate(new Date(lastItem.deadline.at), timeZone).slice(0, 7)
     : firstMonth
-  const [monthParam, setMonth] = useUrlParam("month", firstMonth)
-  // A month from the URL outside the range, or not a month at all, falls back to this month.
+  // The calendar opens on the month of the first deadline, this month unless filters leave it empty.
+  const openingMonth = items[0]
+    ? zonedDate(new Date(items[0].deadline.at), timeZone).slice(0, 7)
+    : firstMonth
+  const [monthParam, setMonth] = useUrlParam("month", openingMonth)
+  // A month from the URL outside the range, or not a month at all, falls back to the opening month.
   const month =
     /^\d{4}-\d{2}$/.test(monthParam) &&
     monthParam >= firstMonth &&
     monthParam <= lastMonth
       ? monthParam
-      : firstMonth
+      : openingMonth
   const dates = byDate(items, timeZone)
   const monthDates = [...dates].filter(([date]) => date.startsWith(month))
   // A date in the list's headings shows its year only when it is not the year of the month on show.

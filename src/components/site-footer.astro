@@ -1,0 +1,55 @@
+---
+import type { Locale } from "@/i18n/locales"
+import { t, type MessageKey } from "@/i18n/messages"
+import { conferencesByName } from "@/lib/listing"
+import { sites, sitesAbroad, sitesInKorea } from "@/lib/sites"
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+
+/** What ACB covers and where it collects from, one row each: the conferences, then every site, abroad and in Korea. */
+const rows: { label: MessageKey; items: { name: string; url?: string }[] }[] = [
+  {
+    label: "footer.conferences",
+    items: conferencesByName.map((name) => ({ name })),
+  },
+  { label: "footer.abroad", items: sitesAbroad.map((id) => sites[id]) },
+  { label: "footer.korea", items: sitesInKorea.map((id) => sites[id]) },
+]
+---
+
+<footer class="border-t">
+  <div class="mx-auto max-w-6xl px-4 py-8 text-sm">
+    <h2 class="font-medium">{t(locale, "footer.heading")}</h2>
+    <dl class="mt-3 grid gap-x-8 gap-y-1 sm:grid-cols-[max-content_1fr] sm:gap-y-2">
+      {rows.map(({ label, items }) => (
+        <div class="contents">
+          <dt class="mt-2 text-muted-foreground sm:mt-0">{t(locale, label)}</dt>
+          <dd class="flex flex-wrap gap-x-3">
+            {items.map(({ name, url }) =>
+              url ? (
+                <a
+                  href={url}
+                  class="underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground"
+                >
+                  {name}
+                </a>
+              ) : (
+                <span>{name}</span>
+              )
+            )}
+          </dd>
+        </div>
+      ))}
+      <div class="contents">
+        <dt class="mt-2 text-muted-foreground sm:mt-0">
+          {t(locale, "footer.updates")}
+        </dt>
+        <dd>{t(locale, "footer.schedule")}</dd>
+      </div>
+    </dl>
+  </div>
+</footer>

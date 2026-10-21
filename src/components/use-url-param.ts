@@ -30,6 +30,8 @@ export function useUrlParam(
       const url = new URL(window.location.href)
       if (next === fallback) url.searchParams.delete(name)
       else url.searchParams.set(name, next)
+      // Commas between several values stay readable in a shared link; a query string allows them unencoded.
+      url.search = url.searchParams.toString().replaceAll("%2C", ",")
       window.history.replaceState(window.history.state, "", url)
       window.dispatchEvent(new Event(CHANGE))
     },

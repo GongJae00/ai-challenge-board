@@ -69,6 +69,65 @@ for (const locale of locales) {
     })
   }
 
+  test(`the ${locale} search narrows the listings and survives a reload`, async ({
+    page,
+  }) => {
+    await page.goto(`${locale}/`)
+    await hydrated(page)
+    const rows = page.locator("tbody tr")
+    const title = (await rows.first().getByRole("link").textContent()) ?? ""
+    const search = page.getByRole("searchbox", {
+      name: t(locale, "filter.search"),
+    })
+
+    await search.fill(title)
+    await expect(page).toHaveURL(/\?q=/)
+    // Every row left holds each word searched for, in the title, host, or conference that the row shows.
+    const fold = (text: string) => text.normalize("NFKC").toLowerCase()
+    await expect(async () => {
+      const shown = (await rows.allTextContents()).map(fold)
+      expect(shown.length).toBeGreaterThan(0)
+      for (const word of fold(title).split(/\s+/).filter(Boolean))
+        for (const row of shown) expect(row).toContain(word)
+    }).toPass()
+    const count = await rows.count()
+    await page.reload()
+    await hydrated(page)
+    await expect(search).toHaveValue(title)
+    await expect(rows).toHaveCount(count)
+    const results = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
+      .analyze()
+    expect(results.violations).toEqual([])
+
+    await search.fill("zz no such listing zz")
+    await expect(page.getByText(t(locale, "home.noMatch"))).toBeVisible()
+    await expect(rows).toHaveCount(0)
+    await page.getByRole("button", { name: t(locale, "filter.clear") }).click()
+    await expect(search).toHaveValue("")
+    await expect(page).toHaveURL(new RegExp(`/${locale}/$`))
+  })
+
+  test(`the ${locale} kind chips filter by keyboard`, async ({ page }) => {
+    await page.goto(`${locale}/`)
+    await hydrated(page)
+    const group = page.getByRole("group", { name: t(locale, "filter.kind") })
+    // The chips follow the search box in the tab order, with one tab stop for the group. A kind with nothing open
+    // has its chip disabled, so the test presses whichever chip the keyboard reaches.
+    await page
+      .getByRole("searchbox", { name: t(locale, "filter.search") })
+      .focus()
+    await page.keyboard.press("Tab")
+    const chip = group.locator(":focus")
+    await expect(chip).toHaveCount(1)
+    await page.keyboard.press("Space")
+    await expect(chip).toHaveAttribute("aria-pressed", "true")
+    await expect(page).toHaveURL(/\?kind=(challenge|cfp)$/)
+    await page.keyboard.press("Space")
+    await expect(chip).toHaveAttribute("aria-pressed", "false")
+    await expect(page).toHaveURL(new RegExp(`/${locale}/$`))
+  })
+
   for (const view of ["table", "calendar"] as const) {
     test(`the ${locale} home's ${view} meets WCAG 2.2 AA`, async ({ page }) => {
       await page.goto(`${locale}/`)

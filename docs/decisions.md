@@ -2,6 +2,55 @@
 
 Decisions that constrain later work, newest first, each with its reason and the alternatives considered.
 
+## 2026-10-21: Search, filters, platforms, and the sources footer
+
+Above the table and the calendar sit a search box and, beneath it, one labeled row of chips for each way to narrow
+both views: 형식 (kind), 학회 (conference), and 플랫폼 (platform), conferences and platforms in alphabetical order.
+The first version put the kinds and conferences in dropdown menus beside the search box, as the language menu is;
+GongJae asked for chips instead ("형식이랑 모든학회같은거 약간 체크하는 블록처럼 상단에서 바꾸는거 어떰?
+Compact하게?"), then for the rows under the search box, in alphabetical order, with the competition platforms in
+a row of their own ("DACON AIFactory Kaggle도 따로 빼서 이렇게 대회 막 올리는곳 따로 해서 분류 깔끔하게 만들자
+줄바꿈 단위로 잘 해서"). The language stays a menu. Any number of chips can be pressed, and none pressed in a row
+sets no filter for it. Every phase-1 conference and every platform has a chip, dimmed while nothing open fits:
+the first menu listed only the conferences with open listings, and GongJae asked why only two appeared, which a
+visitor would ask too. Each chip counts the listings it would show given the search and the other rows, so a
+count does not move when another chip in its own row is pressed.
+
+- **Platforms:** the sites that run competitions, AIFactory, Codabench, DACON, EvalAI, and Kaggle. GongJae named
+  DACON, AIFactory, and Kaggle; Codabench and EvalAI run competitions the same way. OpenReview takes workshop
+  papers for a conference, which is the host, so it has no chip and a listing from it names no platform. A
+  listing from a platform shows the platform's name under its organizer in the host column, as in 해양수산부 above
+  DACON, since GongJae found the organizer alone did not say where to enter; it is left out when the platform
+  is the organizer, as for Kaggle's own competitions. `src/lib/sites.ts` holds each site's name, link, and
+  whether it is a platform and Korean.
+- **Search:** each space-separated term must appear in a listing's title, organizer, conference, or platform,
+  the text its row shows besides the type, which the chips cover; terms are compared after NFKC and
+  lower-casing. A plain substring match finds part of a Korean word without a tokenizer. It runs in the browser
+  over the listings the page already holds, tens of them; a search index such as Pagefind is for when they reach
+  thousands.
+- **A listing's conferences, for the chips:** the conference field, or else each conference named as a whole word
+  in the title, since Codabench titles such as "NeurIPS Predictive AI Evaluation Competition" name it without the
+  field. A filled field wins, because a title can mention conferences a listing only relates to. The field itself
+  stays filled only from structured data. Deduplication reads conferences the same way, and both use
+  `src/lib/words.ts`.
+- **URL:** `?q=`, `?kind=`, `?conference=`, and `?platform=`, with unencoded commas between several values, beside
+  `?view=` and `?month=`, so that a filtered page survives a reload and can be shared. These names are now part of
+  the public URL. Values are written in lower case (`conference=neurips`, `platform=dacon`) and read in any case,
+  since a messenger app may change a link's case. The query filters as it is typed but reaches the URL once typing
+  pauses or the page is left, because browsers limit how often a page may rewrite its URL, Safari to about 100
+  times in 30 seconds. The calendar opens on the month of the first deadline that passes the filters. A filter
+  that leaves a chosen `?month=` out of range shows the opening month and keeps the parameter, so clearing the
+  filter returns to the month chosen.
+- **Clearing:** the clear button sits beside the count it resets, so the search box keeps its width, and the
+  keyboard returns to the search box after a clear. The browser's own clear button inside the search field is
+  hidden, since it takes no design tokens.
+- **Sources footer:** every page ends with the conferences ACB covers, the sites it collects from, abroad and in
+  Korea, linked, and how often it collects, so that a visitor can tell what an empty result means. GongJae asked
+  for it on 2026-10-21. The rows come from `src/lib/sites.ts`, which the type check requires to hold every
+  source; a unit test fails if the Collect workflow's schedule no longer matches the hours the footer states.
+- **No inline styles:** the CSP blocks style attributes, so a kit component that sets one, as shadcn's
+  ToggleGroup did for its gap, is changed to take a class; the end-to-end tests fail on the console error.
+
 ## 2026-10-21: A table and a calendar of the listings
 
 The home page shows the open listings in a table, with a calendar one tab away, on a page as wide as a desktop

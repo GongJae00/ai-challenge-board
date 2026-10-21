@@ -15,10 +15,12 @@ import {
   formatSourceTime,
   formatTime,
 } from "@/lib/datetime"
+import { conferenceName } from "@/lib/listing"
+import { platformName } from "@/lib/sites"
 import { cn } from "@/lib/utils"
 
 import { ListingContext } from "./listing-context"
-import { conferenceName, deadlineName, hostName } from "./listing-text"
+import { deadlineName, hostName } from "./listing-text"
 
 /** Deadlines a week or less away stand out. */
 const SOON_DAYS = 7
@@ -62,6 +64,8 @@ export function ListingTable({ items, locale, now, timeZone }: Props) {
           const at = new Date(deadline.at)
           const days = daysLeft(deadline.at, now, timeZone)
           const conference = conferenceName(listing)
+          const platform = platformName(listing)
+          const host = hostName(listing)
           const name = deadlineName(deadline, locale)
           const sourceTime = formatSourceTime(deadline, locale, timeZone)
           return (
@@ -100,10 +104,14 @@ export function ListingTable({ items, locale, now, timeZone }: Props) {
                 </div>
               </TableCell>
               <TableCell className={cn("whitespace-normal", WIDE_ONLY)}>
-                {hostName(listing) ?? "–"}
-                {listing.organizer && conference && (
-                  <span className="block text-xs text-muted-foreground">
-                    {conference}
+                {/* With no organizer or conference, the platform is the only host the row knows. */}
+                {host ?? platform ?? "–"}
+                {host && ((listing.organizer && conference) || platform) && (
+                  <span className="mt-0.5 flex flex-wrap gap-x-2 text-xs text-muted-foreground">
+                    {listing.organizer && conference && (
+                      <span>{conference}</span>
+                    )}
+                    {platform && <span>{platform}</span>}
                   </span>
                 )}
               </TableCell>

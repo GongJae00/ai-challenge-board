@@ -11,6 +11,10 @@ export const sourceIds = [
 ] as const
 export type SourceId = (typeof sourceIds)[number]
 
+/** A time-bound challenge or competition, or a workshop's call for papers. */
+export const kinds = ["challenge", "cfp"] as const
+export type Kind = (typeof kinds)[number]
+
 export const conferences = [
   "CVPR",
   "ICCV",
@@ -21,6 +25,11 @@ export const conferences = [
   "AAAI",
 ] as const
 export type Conference = (typeof conferences)[number]
+
+/** The conferences in alphabetical order, as the pages list them. */
+export const conferencesByName = [...conferences].sort((a, b) =>
+  a.localeCompare(b, "en")
+)
 
 /** An instant in UTC, written as ISO 8601 with a `Z`. */
 const instant = z.iso.datetime()
@@ -49,7 +58,7 @@ export const listingSchema = z.object({
   /** `<source>:<the source's own id>`, stable across runs. */
   id: z.string().regex(/^[a-z]+:\S+$/),
   source: z.enum(sourceIds),
-  kind: z.enum(["challenge", "cfp"]),
+  kind: z.enum(kinds),
   title: z.string().min(1).max(300),
   organizer: z.string().min(1).max(200).nullable(),
   conference: z
@@ -73,3 +82,10 @@ export const sourceFileSchema = z.object({
   listings: z.array(listingSchema),
 })
 export type SourceFile = z.infer<typeof sourceFileSchema>
+
+/** The conference a listing belongs to as the pages show it, such as "NeurIPS 2026", or null. */
+export function conferenceName(listing: Listing): string | null {
+  return listing.conference
+    ? `${listing.conference.name} ${listing.conference.year}`
+    : null
+}

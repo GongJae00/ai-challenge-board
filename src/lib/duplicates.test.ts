@@ -163,6 +163,22 @@ describe("mergeDuplicates", () => {
     expect(mergeDuplicates([cvpr, neurips])).toHaveLength(2)
   })
 
+  it("trusts a conference field over another conference the title mentions", () => {
+    // The field says CVPR; the shared title also names ICCV, which the other listing takes as its conference.
+    const cvpr: Listing = {
+      ...codabench,
+      title: "Robust Vision Challenge at ICCV",
+      conference: { name: "CVPR", year: 2026 },
+    }
+    const iccv: Listing = {
+      ...codabench,
+      id: "evalai:2802",
+      source: "evalai",
+      title: "Robust Vision Challenge at ICCV",
+    }
+    expect(mergeDuplicates([cvpr, iccv])).toHaveLength(2)
+  })
+
   it("keeps apart titles that differ in a number that is not a year", () => {
     const small: Listing = { ...codabench, title: "Tiny Models 1024" }
     const large: Listing = {

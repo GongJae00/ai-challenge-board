@@ -1,6 +1,6 @@
 import type { Locale } from "@/i18n/locales"
 import { t } from "@/i18n/messages"
-import type { Deadline, Listing } from "@/lib/listing"
+import { conferenceName, type Deadline, type Listing } from "@/lib/listing"
 
 /**
  * What a deadline closes, such as "Quiz Phase 마감" or "대회 종료"; null for a submission deadline, which every
@@ -22,11 +22,4 @@ export function deadlineName(
 /** Who runs a listing: its organizer, or else its conference, such as "NeurIPS 2026". */
 export function hostName(listing: Listing): string | null {
   return listing.organizer ?? conferenceName(listing)
-}
-
-/** The conference a listing belongs to, such as "NeurIPS 2026", or null. */
-export function conferenceName(listing: Listing): string | null {
-  return listing.conference
-    ? `${listing.conference.name} ${listing.conference.year}`
-    : null
 }
