@@ -95,8 +95,18 @@ phase-1 conferences (37 open on 2026-10-21); then EvalAI, Codabench, and Kaggle.
 - **Kaggle** is read through its official API with GongJae's token (see `CLAUDE.md`). Getting Started
   competitions, which stay open with placeholder 2030 deadlines, are left out. A listing carries the entry and
   team merger deadlines as well as the final one, as the deadline kinds `entry` and `merger`.
-- **Not yet deduplicated:** a competition that both OpenReview and Codabench list, such as NeurIPS's Predictive AI
-  Evaluation Competition, appears twice.
+- **Duplicates:** a challenge that two sources carry, such as NeurIPS's Predictive AI Evaluation Competition on
+  OpenReview and Codabench, is listed once. `src/lib/duplicates.ts` merges two listings from different sources at
+  build time when they have the same kind, the same title words once conference names, years, "at", and "the" are
+  set aside, no conflicting conference in their conference fields or titles, and a deadline in the same minute.
+  The title words keep apart the tracks of one challenge, which share a deadline; the deadline keeps apart the
+  yearly editions of one, whose titles may differ only in the year. Two entries of one source are never merged,
+  since the source counts them as two. The challenge platform's listing is kept, because it has the phases and
+  the submission page; it takes the conference, organizer, and opening date it lacks from the other, and every
+  deadline it does not have, so that a merge loses no deadline. Between two platforms the lower id is kept. The
+  shown id therefore changes when a source starts or stops carrying the challenge, which bookmarks will have to
+  allow for. The source files stay as each source gave them, since the collector's checks compare a source with its
+  own last run. A pair whose titles differ in other words is still listed twice.
 
 The collector runs in Node 22 directly from TypeScript, using Node's type stripping, so it needs no build step;
 its modules import each other with `.ts` extensions. Alternatives considered: `tsx` as a runner, which adds a

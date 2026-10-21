@@ -6,6 +6,7 @@ import ListingsView from "@/components/listings-view"
 import { locales, type Locale } from "@/i18n/locales"
 import { t } from "@/i18n/messages"
 import Layout from "@/layouts/main.astro"
+import { mergeDuplicates } from "@/lib/duplicates"
 
 export const getStaticPaths = (() =>
   locales.map((locale) => ({
@@ -18,8 +19,8 @@ interface Props {
 }
 
 const { locale } = Astro.props
-const listings = (await getCollection("sources")).flatMap(
-  (source) => source.data.listings
+const listings = mergeDuplicates(
+  (await getCollection("sources")).flatMap((source) => source.data.listings)
 )
 const builtAt = new Date().toISOString()
 ---
