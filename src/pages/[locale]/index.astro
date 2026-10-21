@@ -1,0 +1,24 @@
+---
+import type { GetStaticPaths } from "astro"
+
+import { locales, type Locale } from "@/i18n/locales"
+import { t } from "@/i18n/messages"
+import Layout from "@/layouts/main.astro"
+
+export const getStaticPaths = (() =>
+  locales.map((locale) => ({
+    params: { locale },
+    props: { locale },
+  }))) satisfies GetStaticPaths
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+---
+
+<Layout locale={locale}>
+  <h1 class="mt-8 text-2xl font-semibold">{t(locale, "home.heading")}</h1>
+  <p class="mt-4 text-muted-foreground">{t(locale, "home.empty")}</p>
+</Layout>

@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "--no",
+        "--",
+        "playwright-mcp",
+        "--browser",
+        "chromium",
+        "--headless",
+        "--isolated",
+        "--output-dir",
+        ".playwright-mcp"
+      ]
+    },
+    "shadcn": {
+      "command": "npx",
+      "args": ["--no", "--", "shadcn", "mcp"]
+    }
+  }
+}

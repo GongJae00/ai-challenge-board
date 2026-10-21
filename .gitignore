@@ -2,8 +2,24 @@
 .claude/settings.local.json
 .claude/worktrees/
 .env
+.env.*
+!.env.example
 
 # Research material (survey notes, reports, task checklists) stays local; the repository holds only the service.
 lab/
 reports/
 research_notes/
+
+# Dependencies, build output, and generated types
+node_modules/
+dist/
+.astro/
+
+# Test and browser-tool output
+test-results/
+playwright-report/
+.playwright-mcp/
+
+# Logs and OS files
+npm-debug.log*
+.DS_Store

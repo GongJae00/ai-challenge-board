@@ -1,0 +1,48 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n"
+
+import "@/styles/global.css"
+import { otherLocale, type Locale } from "@/i18n/locales"
+import { t } from "@/i18n/messages"
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const other = otherLocale(locale)
+---
+
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content={t(locale, "site.description")} />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href={`${import.meta.env.BASE_URL}favicon.svg`}
+    />
+    <title>{t(locale, "site.name")}</title>
+    <slot name="head" />
+  </head>
+  <body class="min-h-svh">
+    <header class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
+      <a href={getRelativeLocaleUrl(locale)} class="font-semibold">
+        {t(locale, "site.name")}
+      </a>
+      <a
+        href={getRelativeLocaleUrl(other)}
+        hreflang={other}
+        lang={other}
+        class="text-sm text-muted-foreground hover:text-foreground"
+      >
+        {t(locale, "nav.otherLanguage")}
+      </a>
+    </header>
+    <main class="mx-auto max-w-5xl px-4 pb-16">
+      <slot />
+    </main>
+  </body>
+</html>

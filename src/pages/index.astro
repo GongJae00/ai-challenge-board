@@ -1,0 +1,20 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n"
+
+import { defaultLocale } from "@/i18n/locales"
+import { t } from "@/i18n/messages"
+import Layout from "@/layouts/main.astro"
+
+// GitHub Pages cannot redirect, so the root sends visitors on with an immediate meta refresh.
+const home = getRelativeLocaleUrl(defaultLocale)
+---
+
+<Layout locale={defaultLocale}>
+  <meta slot="head" http-equiv="refresh" content={`0;url=${home}`} />
+  <link slot="head" rel="canonical" href={new URL(home, Astro.site)} />
+  <p class="mt-8">
+    <a href={home} class="underline">
+      {t(defaultLocale, "redirect.link")}
+    </a>
+  </p>
+</Layout>

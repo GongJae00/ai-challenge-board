@@ -1,10 +1,4 @@
 {
-  "claudeMdExcludes": [
-    "**/.claude/rules/research.md",
-    "**/.claude/rules/code.md",
-    "**/.claude/rules/discovery.md",
-    "**/.claude/rules/papers.md"
-  ],
   "skillOverrides": {
     "research-sprint": "off",
     "research-program": "off",
@@ -24,5 +18,14 @@
         ]
       }
     ]
+  },
+  "claudeMdExcludes": [
+    "**/.claude/rules/research.md",
+    "**/.claude/rules/code.md",
+    "**/.claude/rules/discovery.md",
+    "**/.claude/rules/papers.md"
+  ],
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true
   }
 }

@@ -1,0 +1,18 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n"
+
+import { defaultLocale } from "@/i18n/locales"
+import { t } from "@/i18n/messages"
+import Layout from "@/layouts/main.astro"
+---
+
+<Layout locale={defaultLocale}>
+  <h1 class="mt-8 text-2xl font-semibold">
+    {t(defaultLocale, "notFound.heading")}
+  </h1>
+  <p class="mt-4">
+    <a href={getRelativeLocaleUrl(defaultLocale)} class="underline">
+      {t(defaultLocale, "notFound.home")}
+    </a>
+  </p>
+</Layout>

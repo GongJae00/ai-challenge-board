@@ -14,8 +14,9 @@ skills are turned off in `.claude/settings.json`.
 
 Building the first working version, which GongJae uses alone and develops further before an official launch.
 GongJae set these on 2026-10-21:
-- The GitHub repository `ai-challenge-board` is public, so that the site is served free by GitHub Pages; it does
-  not exist yet. Nothing secret goes into it, and the research folders below stay out of it.
+- The GitHub repository `GongJae00/ai-challenge-board` is public, so that the site is served free by GitHub Pages
+  at https://gongjae00.github.io/ai-challenge-board/. Nothing secret goes into it, and the research folders below
+  stay out of it.
 - Working features come first. Until the official launch, a source needs no recorded terms review or per-source
   approval: the collector still obeys robots.txt and its Crawl-delay, keeps to facts, and runs at most twice a
   day, which the code enforces for every source.
@@ -30,7 +31,7 @@ GongJae set these on 2026-10-20:
 - Not listed: persistent benchmarks and leaderboards without a deadline.
 - Not decided: whether journal special issues, fellowships, and internships are listed.
 
-The landscape survey behind these choices is `reports/AI 챌린지 서비스 생태계 조사.md`.
+The landscape survey behind these choices is `reports/AI 챌린지 서비스 생태계 조사.md`, kept locally.
 
 ## Product constraints
 
@@ -50,17 +51,30 @@ GongJae set these on 2026-10-20:
 
 ## Layout
 
-These folders hold research material and stay local; `.gitignore` keeps them out of the repository, which
-holds only the service.
+The site is a static Astro build; `docs/decisions.md` records the stack and why.
+- `src/pages/`: routes, one folder per locale under `[locale]/`; `src/layouts/`, `src/components/`: the page
+  frame and components, with shadcn/ui components under `src/components/ui/` (added with `npx shadcn add`).
+- `src/i18n/`: the locale list and the KO/EN message catalog.
+- `src/styles/global.css`: Tailwind and the shadcn design tokens, the one set of tokens.
+- `e2e/`: Playwright tests against the production build, at phone and desktop widths, with an axe scan.
+- `docs/`: `decisions.md`, and later `operations.md`.
 
+These folders hold research material and stay local; `.gitignore` keeps them out of the repository:
 - `lab/`: the working checklist of the current task, deleted when the task ends.
 - `research_notes/`: notes on services and data sources, one file per topic, with evidence tags.
 - `reports/`: finished reports.
 
 ## Commands
 
-None yet. When the stack is chosen, name here the one command that runs the full check (formatting, lint, type
-check, tests, and build) and the commands that run the service locally and deploy a preview.
+- `npm run check`: the full check, which runs formatting, lint, type check, unit tests, the build, and the
+  end-to-end tests. CI runs the same command.
+- `npm run dev`: the local server at http://localhost:4321/ai-challenge-board/.
+- `npm run format`: apply Prettier.
+- Deploy: a push to `main` that passes the check deploys to GitHub Pages; there is no separate preview deploy.
+- Setup on a new machine: `npm ci`, then `npx playwright install chromium` for the end-to-end tests.
+
+The project's `.mcp.json` runs the Playwright MCP server (headless Chromium) and the shadcn MCP server from the
+installed dev dependencies, and `.claude/settings.json` enables the frontend-design plugin for this project.
 
 ## Harness
 
