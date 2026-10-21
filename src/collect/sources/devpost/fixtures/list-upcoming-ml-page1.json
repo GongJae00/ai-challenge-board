@@ -1,0 +1,132 @@
+{
+  "hackathons": [
+    {
+      "id": 31667,
+      "title": "Kiroween 2026",
+      "displayed_location": {
+        "icon": "globe",
+        "location": "Online"
+      },
+      "open_state": "upcoming",
+      "analytics_identifier": "Kiroween 2026 (31667)",
+      "url": "https://kiroween.devpost.com/",
+      "time_left_to_submission": "Upcoming",
+      "submission_period_dates": "Oct 30 - Dec 04, 2026",
+      "themes": [
+        {
+          "id": 23,
+          "name": "Beginner Friendly"
+        },
+        {
+          "id": 6,
+          "name": "Machine Learning/AI"
+        },
+        {
+          "id": 22,
+          "name": "Open Ended"
+        }
+      ],
+      "prize_amount": "$<span data-currency-value>100,000</span>",
+      "prizes_counts": {
+        "cash": 1,
+        "other": 0
+      },
+      "registrations_count": 676,
+      "featured": true,
+      "organization_name": "Kiro",
+      "winners_announced": false,
+      "submission_gallery_url": "https://kiroween.devpost.com/project-gallery",
+      "start_a_submission_url": "https://kiroween.devpost.com/challenges/start_a_submission",
+      "invite_only": false,
+      "eligibility_requirement_invite_only_description": null,
+      "managed_by_devpost_badge": true
+    },
+    {
+      "id": 30731,
+      "title": "LarpHacks",
+      "displayed_location": {
+        "icon": "map-marker-alt",
+        "location": "Toronto"
+      },
+      "open_state": "upcoming",
+      "analytics_identifier": "LarpHacks (30731)",
+      "url": "https://larphacks.devpost.com/",
+      "time_left_to_submission": "Upcoming",
+      "submission_period_dates": "Nov 01, 2026",
+      "themes": [
+        {
+          "id": 23,
+          "name": "Beginner Friendly"
+        },
+        {
+          "id": 6,
+          "name": "Machine Learning/AI"
+        },
+        {
+          "id": 25,
+          "name": "Web"
+        }
+      ],
+      "prize_amount": "$<span data-currency-value>21,394</span>",
+      "prizes_counts": {
+        "cash": 4,
+        "other": 0
+      },
+      "registrations_count": 152,
+      "featured": false,
+      "organization_name": "larphacks",
+      "winners_announced": false,
+      "submission_gallery_url": "https://larphacks.devpost.com/project-gallery",
+      "start_a_submission_url": "https://larphacks.devpost.com/challenges/start_a_submission",
+      "invite_only": false,
+      "eligibility_requirement_invite_only_description": null,
+      "managed_by_devpost_badge": false
+    },
+    {
+      "id": 29135,
+      "title": "Brewing Codes 4.0",
+      "displayed_location": {
+        "icon": "globe",
+        "location": "Online"
+      },
+      "open_state": "upcoming",
+      "analytics_identifier": "Brewing Codes 4.0 (29135)",
+      "url": "https://brewing-codes-4-0.devpost.com/",
+      "time_left_to_submission": "Upcoming",
+      "submission_period_dates": "Mar 12 - 27, 2028",
+      "themes": [
+        {
+          "id": 17,
+          "name": "Low/No Code"
+        },
+        {
+          "id": 6,
+          "name": "Machine Learning/AI"
+        },
+        {
+          "id": 25,
+          "name": "Web"
+        }
+      ],
+      "prize_amount": "₹ <span data-currency-value>100,000</span>",
+      "prizes_counts": {
+        "cash": 3,
+        "other": 0
+      },
+      "registrations_count": 80,
+      "featured": false,
+      "organization_name": "HARD MODE",
+      "winners_announced": false,
+      "submission_gallery_url": "https://brewing-codes-4-0.devpost.com/project-gallery",
+      "start_a_submission_url": "https://brewing-codes-4-0.devpost.com/challenges/start_a_submission",
+      "invite_only": false,
+      "eligibility_requirement_invite_only_description": null,
+      "managed_by_devpost_badge": false
+    }
+  ],
+  "meta": {
+    "total_count": 43,
+    "per_page": 9,
+    "fuzzy": false
+  }
+}

@@ -1,10 +1,25 @@
-import type { Deadline } from "./listing.ts"
+import { zoneCodes, type Deadline } from "./listing.ts"
 
-/** Anywhere on Earth is UTC−12, which the IANA database names Etc/GMT+12. */
-const SOURCE_ZONES: Record<Deadline["zone"], string> = {
-  UTC: "UTC",
-  AoE: "Etc/GMT+12",
-  KST: "Asia/Seoul",
+function isZoneCode(zone: string): zone is keyof typeof zoneCodes {
+  return zone in zoneCodes
+}
+
+/** A deadline's zone as an IANA name; Anywhere on Earth is UTC−12, which the IANA database names Etc/GMT+12. */
+function ianaZone(zone: string): string {
+  return isZoneCode(zone) ? zoneCodes[zone] : zone
+}
+
+/**
+ * The name a deadline's zone is shown by: its code, or else the short name English gives the zone at that instant,
+ * such as "PDT", or its offset, such as "GMT+8", where English has no abbreviation for it.
+ */
+function zoneLabel(zone: string, at: Date): string {
+  if (isZoneCode(zone)) return zone
+  return (
+    new Intl.DateTimeFormat("en-US", { timeZone: zone, timeZoneName: "short" })
+      .formatToParts(at)
+      .find((part) => part.type === "timeZoneName")?.value ?? zone
+  )
 }
 
 const clock = { hour: "2-digit", minute: "2-digit", hourCycle: "h23" } as const
@@ -82,8 +97,10 @@ export function formatSourceTime(
       day: "numeric",
       ...clock,
     }).format(at)
-  const text = format(SOURCE_ZONES[deadline.zone])
-  return text === format(timeZone) ? null : `${deadline.zone} ${text}`
+  const text = format(ianaZone(deadline.zone))
+  return text === format(timeZone)
+    ? null
+    : `${zoneLabel(deadline.zone, at)} ${text}`
 }
 
 /** Days until a date as the locale says it, such as "내일", "31일 후", or "in 31 days". */

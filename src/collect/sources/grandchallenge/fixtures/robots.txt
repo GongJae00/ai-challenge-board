@@ -1,0 +1,27 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /admins/
+Disallow: /api/
+Disallow: /cases/
+Disallow: /markdownx/
+Disallow: /media/
+Disallow: /participants/
+Disallow: /registrations/
+Disallow: /settings/
+Disallow: /socialauth/
+Disallow: /static/
+Disallow: /update/
+Disallow: /users/
+Disallow: /verifications/
+Disallow: /workstations/*/sessions/
+
+User-agent: AhrefsBot
+User-agent: rogerbot
+User-agent: MJ12bot
+User-agent: dotbot
+User-agent: SEOkicks
+User-agent: SEOkicks-Robot
+User-agent: BLEXBot
+User-agent: SemrushBot
+User-agent: PetalBot
+Disallow: /

@@ -1,0 +1,29 @@
+{
+  "total_count": 219,
+  "competition_list": [
+    {
+      "public_key": "15e1ac6e0ab14031a37faba923ac2eaf",
+      "title": "【第56回_Beginner限定コンペ】診断データを使った糖尿病発症予測",
+      "subtitle": "患者の診断データから糖尿病を発症したかを予測しよう！",
+      "owner_name": "SIGNATE",
+      "reward": "",
+      "purpose_label": "beginner",
+      "status": "closed",
+      "remaining_second": null,
+      "entry_count": 255,
+      "medal_point_task": "empty"
+    },
+    {
+      "public_key": "30fdea61e32b4662a3802928386b668b",
+      "title": "【第55回_Beginner限定コンペ】国勢調査からの収入予測",
+      "subtitle": "教育年数や職業等の国勢調査データから年収が$50,000ドルを超えるかどうかを予測しよう。",
+      "owner_name": "SIGNATE",
+      "reward": "",
+      "purpose_label": "beginner",
+      "status": "closed",
+      "remaining_second": null,
+      "entry_count": 251,
+      "medal_point_task": "empty"
+    }
+  ]
+}

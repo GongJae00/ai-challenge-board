@@ -12,6 +12,14 @@ const SOURCE_RANK: Record<SourceId, number> = {
   kaggle: 0,
   dacon: 0,
   aifactory: 0,
+  drivendata: 0,
+  lablab: 0,
+  zindi: 0,
+  signate: 0,
+  tianchi: 0,
+  devpost: 0,
+  grandchallenge: 0,
+  aicrowd: 0,
   openreview: 1,
 }
 

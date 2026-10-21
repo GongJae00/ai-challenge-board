@@ -1,0 +1,101 @@
+{
+  "data": {
+    "race": {
+      "raceId": 532514,
+      "referUrl": "",
+      "raceListStatus": 0,
+      "raceStartTime": "2026-09-11 00:00:00",
+      "bonus": 280000,
+      "teamCount": 1815,
+      "signupEndTime": "2026-10-26 23:59:59",
+      "raceEndTime": "2026-11-16 23:59:59",
+      "signupStartTime": "2026-09-11 00:00:00",
+      "visualTab": 1,
+      "tagsList": [
+        {
+          "tagId": 177,
+          "tagType": "RACE",
+          "tagNameCn": "机器人",
+          "tagName": "机器人"
+        },
+        {
+          "tagId": 153,
+          "tagType": "RACE",
+          "tagNameCn": "计算机视觉‌",
+          "tagName": "CV"
+        }
+      ],
+      "finalNameEn": "",
+      "name": "蚂蚁灵波具身大模型挑战赛",
+      "currency": 0
+    },
+    "raceTimeline": [
+      {
+        "raceId": 532514,
+        "startTimeAlias": "",
+        "startTimeAliasEn": "",
+        "name": "初赛",
+        "timePointConfig": [
+          {
+            "name": "报名截止",
+            "nameEn": "Apply Deadline",
+            "time": "2026-10-26 23:59:59"
+          },
+          {
+            "name": "提交结果截止",
+            "nameEn": "Upload Result Deadline",
+            "time": "2026-10-26 23:59:59"
+          }
+        ],
+        "startTime": "2026-09-11 00:00:00",
+        "endTimeAlias": "",
+        "endTimeAliasEn": "",
+        "nameEn": "",
+        "endTime": "2026-10-26 23:59:59"
+      },
+      {
+        "raceId": 532514,
+        "startTimeAlias": "",
+        "startTimeAliasEn": "",
+        "name": "决赛",
+        "timePointConfig": [
+          {
+            "name": "报名截止",
+            "nameEn": "Apply Deadline",
+            "time": "2026-11-16 23:59:59"
+          },
+          {
+            "name": "提交结果截止",
+            "nameEn": "Upload Result Deadline",
+            "time": "2026-11-16 23:59:59"
+          }
+        ],
+        "startTime": "2026-11-14 00:00:00",
+        "endTimeAlias": "",
+        "endTimeAliasEn": "",
+        "nameEn": "",
+        "endTime": "2026-11-16 23:59:59"
+      }
+    ],
+    "raceSeasons": [
+      {
+        "applyEndTime": "Mon Oct 26 23:59:59 CST 2026",
+        "seasonId": 1865,
+        "seasonName": "初赛",
+        "seasonNameEn": "",
+        "seasonNum": 0,
+        "applyStartTime": "Fri Sep 11 00:00:00 CST 2026"
+      },
+      {
+        "applyEndTime": "Mon Nov 16 23:59:59 CST 2026",
+        "seasonId": 1866,
+        "seasonName": "决赛",
+        "seasonNameEn": "",
+        "seasonNum": 1,
+        "applyStartTime": "Sat Nov 14 00:00:00 CST 2026"
+      }
+    ]
+  },
+  "code": "SUCCESS",
+  "success": true
+}

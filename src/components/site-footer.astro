@@ -28,12 +28,12 @@ const rows: { label: MessageKey; items: { name: string; url?: string }[] }[] = [
       {rows.map(({ label, items }) => (
         <div class="contents">
           <dt class="mt-2 text-muted-foreground sm:mt-0">{t(locale, label)}</dt>
-          <dd class="flex flex-wrap gap-x-3">
+          <dd class="flex flex-wrap gap-x-3 gap-y-1">
             {items.map(({ name, url }) =>
               url ? (
                 <a
                   href={url}
-                  class="underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground"
+                  class="py-0.5 underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground"
                 >
                   {name}
                 </a>

@@ -1,0 +1,116 @@
+{
+  "data": {
+    "end_time": "2026-08-16T21:59:00.000Z",
+    "entries_close_at": "2026-08-07T21:59:00.000Z",
+    "id": "geoai-aquaculture-pond-identification-challenge",
+    "is_access_restricted": false,
+    "is_beginner_friendly": true,
+    "is_participant": false,
+    "kind": "competition",
+    "open": false,
+    "organization": "FAO and ITU",
+    "participations_count": 1323,
+    "reward": "1000 CHF",
+    "reward_type": "prize",
+    "sealed": true,
+    "secret_code_required": false,
+    "show_ranks": true,
+    "start_time": "2026-06-08T15:00:00.000Z",
+    "title": "GeoAI Aquaculture Pond Identification Challenge",
+    "cohort": false,
+    "allow_teams": true,
+    "city": null,
+    "country": "",
+    "countrycode": null,
+    "data_type": ["Tabular", "Satellite"],
+    "difficulty": ["Good for beginners"],
+    "entries_closed": true,
+    "helping": [],
+    "helping_countrycode": null,
+    "impact": ["SDG2", "SDG14", "SDG15"],
+    "industry": ["Agriculture", "Climate", "Earth Observation"],
+    "leaderboard_participations_count": 619,
+    "max_number_of_participants_per_team": 4,
+    "organization_url": null,
+    "rules": {
+      "title": "Rules",
+      "url_title": "rules",
+      "content": {
+        "blocks": [
+          {
+            "text": "Who can compete: Open to all",
+            "type": "unordered-list-item"
+          }
+        ]
+      }
+    },
+    "skills": ["Data Analysis", "Classification", "Feature Engineering", "GIS"],
+    "subtitle": "Can you identify aquaculture ponds from space?",
+    "topics": ["Agriculture"],
+    "type_of_problem": ["Classification", "Earth Observation"],
+    "benchmark_submission_private_score": 0.2,
+    "benchmark_submission_public_score": 0.2,
+    "discussions_are_private": false,
+    "error_metric": "multi",
+    "error_metrics": [
+      {
+        "id": "KEjho8",
+        "name": "AUC"
+      },
+      {
+        "id": "AO4hYg",
+        "name": "F1Score"
+      }
+    ],
+    "has_benchmark": true,
+    "has_children": false,
+    "is_restricted_for_user": false,
+    "max_rank": 604,
+    "meta_emoji": "🌾",
+    "reveal_time": "2026-08-16T22:15:00.000Z",
+    "rubric_type": "multi",
+    "sealing_time": "2026-09-22T10:25:20.241Z",
+    "show_private_scores": true,
+    "show_submission_count": true,
+    "submissions_closed_at": "2026-08-16T21:29:00.000Z",
+    "supports_rubric": true,
+    "datafiles": [
+      {
+        "filename": "geoai-aquaculture-pond-identification-challenge20260625-23310-1pvy2g9.zip",
+        "filesize": 1081132,
+        "position": 0,
+        "zip_of_everything": true,
+        "description": null
+      },
+      {
+        "filename": "SampleSubmission.csv",
+        "filesize": 23713,
+        "position": 0,
+        "zip_of_everything": false,
+        "description": "Shows the structure of the sample submission file."
+      },
+      {
+        "filename": "Train.csv",
+        "filesize": 1698772,
+        "position": 0,
+        "zip_of_everything": false,
+        "description": "Train contains the target. This is the dataset that you will use to train your model."
+      },
+      {
+        "filename": "Test.csv",
+        "filesize": 961993,
+        "position": 0,
+        "zip_of_everything": false,
+        "description": "Test resembles Train.csv but without the target-related column. This is the dataset on which you will apply your model to."
+      },
+      {
+        "filename": "Trustworthiness_Evaluation.pdf",
+        "filesize": 139715,
+        "position": 0,
+        "zip_of_everything": false,
+        "description": "AI Trustworthiness Evaluation document"
+      }
+    ],
+    "parent": null
+  }
+}

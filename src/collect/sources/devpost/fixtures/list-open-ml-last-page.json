@@ -1,0 +1,157 @@
+{
+  "hackathons": [
+    {
+      "id": 31737,
+      "title": "HackWithAditya",
+      "displayed_location": {
+        "icon": "globe",
+        "location": "Online"
+      },
+      "open_state": "open",
+      "analytics_identifier": "HackWithAditya (31737)",
+      "url": "https://hackwithaditya.devpost.com/",
+      "time_left_to_submission": "about 1 month left",
+      "submission_period_dates": "Oct 16 - Nov 25, 2026",
+      "themes": [
+        {
+          "id": 19,
+          "name": "Education"
+        },
+        {
+          "id": 16,
+          "name": "Health"
+        },
+        {
+          "id": 6,
+          "name": "Machine Learning/AI"
+        }
+      ],
+      "prize_amount": "₹ <span data-currency-value>500,000</span>",
+      "prizes_counts": {
+        "cash": 1,
+        "other": 0
+      },
+      "registrations_count": 30,
+      "featured": false,
+      "organization_name": "Aditya University",
+      "winners_announced": false,
+      "submission_gallery_url": "https://hackwithaditya.devpost.com/project-gallery",
+      "start_a_submission_url": "https://hackwithaditya.devpost.com/challenges/start_a_submission",
+      "invite_only": false,
+      "eligibility_requirement_invite_only_description": null,
+      "managed_by_devpost_badge": false
+    },
+    {
+      "id": 31626,
+      "title": "Hackathon Agéntico SoftwareChido 2026B",
+      "displayed_location": {
+        "icon": "globe",
+        "location": "Online"
+      },
+      "open_state": "open",
+      "analytics_identifier": "Hackathon Agéntico SoftwareChido 2026B (31626)",
+      "url": "https://hackathon-agentico-2026b.devpost.com/",
+      "time_left_to_submission": "about 1 month left",
+      "submission_period_dates": "Oct 05 - Nov 25, 2026",
+      "themes": [
+        {
+          "id": 19,
+          "name": "Education"
+        },
+        {
+          "id": 6,
+          "name": "Machine Learning/AI"
+        }
+      ],
+      "prize_amount": "$<span data-currency-value>0</span>",
+      "prizes_counts": {
+        "cash": 0,
+        "other": 1
+      },
+      "registrations_count": 28,
+      "featured": false,
+      "organization_name": "ITESO",
+      "winners_announced": false,
+      "submission_gallery_url": "https://hackathon-agentico-2026b.devpost.com/project-gallery",
+      "start_a_submission_url": "https://hackathon-agentico-2026b.devpost.com/challenges/start_a_submission",
+      "invite_only": true,
+      "eligibility_requirement_invite_only_description": "ITESO Students",
+      "managed_by_devpost_badge": false
+    },
+    {
+      "id": 31735,
+      "title": "AI Build India",
+      "displayed_location": {
+        "icon": "map-marker-alt",
+        "location": "jaipur"
+      },
+      "open_state": "open",
+      "analytics_identifier": "AI Build India (31735)",
+      "url": "https://sphinx-26.devpost.com/",
+      "time_left_to_submission": "10 days left",
+      "submission_period_dates": "Oct 14 - 31, 2026",
+      "themes": [
+        {
+          "id": 6,
+          "name": "Machine Learning/AI"
+        },
+        {
+          "id": 22,
+          "name": "Open Ended"
+        }
+      ],
+      "prize_amount": "$<span data-currency-value>0</span>",
+      "prizes_counts": {
+        "cash": 0,
+        "other": 1
+      },
+      "registrations_count": 8,
+      "featured": false,
+      "organization_name": "Hacker's Unity",
+      "winners_announced": false,
+      "submission_gallery_url": "https://sphinx-26.devpost.com/project-gallery",
+      "start_a_submission_url": "https://sphinx-26.devpost.com/challenges/start_a_submission",
+      "invite_only": false,
+      "eligibility_requirement_invite_only_description": null,
+      "managed_by_devpost_badge": false
+    },
+    {
+      "id": 31821,
+      "title": "Engage 6.0 – Code with AI Hackathon",
+      "displayed_location": {
+        "icon": "map-marker-alt",
+        "location": "The NorthCap University"
+      },
+      "open_state": "open",
+      "analytics_identifier": "Engage 6.0 – Code with AI Hackathon (31821)",
+      "url": "https://engage6.devpost.com/",
+      "time_left_to_submission": "6 days left",
+      "submission_period_dates": "Oct 21 - 27, 2026",
+      "themes": [
+        {
+          "id": 6,
+          "name": "Machine Learning/AI"
+        }
+      ],
+      "prize_amount": "$<span data-currency-value>45,000</span>",
+      "prizes_counts": {
+        "cash": 1,
+        "other": 1
+      },
+      "registrations_count": 5,
+      "featured": false,
+      "organization_name": "The Northcap University",
+      "winners_announced": false,
+      "submission_gallery_url": "https://engage6.devpost.com/project-gallery",
+      "start_a_submission_url": "https://engage6.devpost.com/challenges/start_a_submission",
+      "invite_only": false,
+      "eligibility_requirement_invite_only_description": null,
+      "managed_by_devpost_badge": false
+    }
+  ],
+  "meta": {
+    "total_count": 31,
+    "per_page": 9,
+    "fuzzy": false
+  }
+}

@@ -4,6 +4,7 @@ import {
   deadlineZone,
   endsAhead,
   isoFromKst,
+  isoFromLocal,
   isoFromMs,
   PLACEHOLDER_AFTER_MS,
 } from "./time.ts"
@@ -48,6 +49,38 @@ describe("isoFromKst", () => {
     expect(isoFromKst("2026-02-30 10:00:00")).toBeNull()
     expect(isoFromKst("0000-01-01 00:00")).toBeNull()
     expect(isoFromKst("")).toBeNull()
+  })
+})
+
+describe("isoFromLocal", () => {
+  it("reads a local time in a zone without daylight saving", () => {
+    expect(isoFromLocal("2026-10-26 23:59:59", "Asia/Shanghai")).toBe(
+      "2026-10-26T15:59:59.000Z"
+    )
+  })
+
+  it("reads a local time in the zone's offset for that date, summer or winter", () => {
+    expect(isoFromLocal("2026-10-23 12:00", "America/Los_Angeles")).toBe(
+      "2026-10-23T19:00:00.000Z"
+    )
+    expect(isoFromLocal("2027-01-15 12:00", "America/Los_Angeles")).toBe(
+      "2027-01-15T20:00:00.000Z"
+    )
+    expect(isoFromLocal("2026-10-30 23:59", "Europe/Helsinki")).toBe(
+      "2026-10-30T21:59:00.000Z"
+    )
+  })
+
+  it("reads a time just after a clock change in the offset then in force", () => {
+    // Los Angeles falls back from 02:00 PDT to 01:00 PST on 2026-11-01; 03:00 is PST.
+    expect(isoFromLocal("2026-11-01 03:00", "America/Los_Angeles")).toBe(
+      "2026-11-01T11:00:00.000Z"
+    )
+  })
+
+  it("rejects text that is not a local date and time", () => {
+    expect(isoFromLocal("2026-02-30 10:00", "Asia/Shanghai")).toBeNull()
+    expect(isoFromLocal("2026-10-26", "Asia/Shanghai")).toBeNull()
   })
 })
 

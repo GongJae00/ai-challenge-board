@@ -1,0 +1,132 @@
+{
+  "hackathons": [
+    {
+      "id": 31108,
+      "title": "InnovArt 2027: Art and Technology Hack Day",
+      "displayed_location": {
+        "icon": "globe",
+        "location": "Online"
+      },
+      "open_state": "open",
+      "analytics_identifier": "InnovArt 2027: Art and Technology Hack Day (31108)",
+      "url": "https://innovart2027.devpost.com/",
+      "time_left_to_submission": "2 months left",
+      "submission_period_dates": "Aug 23, 2026 - Jan 02, 2027",
+      "themes": [
+        {
+          "id": 15,
+          "name": "Music/Art"
+        },
+        {
+          "id": 23,
+          "name": "Beginner Friendly"
+        },
+        {
+          "id": 22,
+          "name": "Open Ended"
+        }
+      ],
+      "prize_amount": "$<span data-currency-value>0</span>",
+      "prizes_counts": {
+        "cash": 0,
+        "other": 12
+      },
+      "registrations_count": 222,
+      "featured": false,
+      "organization_name": "Binnovative",
+      "winners_announced": false,
+      "submission_gallery_url": "https://innovart2027.devpost.com/project-gallery",
+      "start_a_submission_url": "https://innovart2027.devpost.com/challenges/start_a_submission",
+      "invite_only": false,
+      "eligibility_requirement_invite_only_description": null,
+      "managed_by_devpost_badge": false
+    },
+    {
+      "id": 31551,
+      "title": "Learn to Hack: MATLAB Edition 2026",
+      "displayed_location": {
+        "icon": "globe",
+        "location": "Online"
+      },
+      "open_state": "upcoming",
+      "analytics_identifier": "Learn to Hack: MATLAB Edition 2026 (31551)",
+      "url": "https://ntu-matlab-2026.devpost.com/",
+      "time_left_to_submission": "Upcoming",
+      "submission_period_dates": "Oct 30, 2026",
+      "themes": [
+        {
+          "id": 23,
+          "name": "Beginner Friendly"
+        },
+        {
+          "id": 19,
+          "name": "Education"
+        },
+        {
+          "id": 6,
+          "name": "Machine Learning/AI"
+        }
+      ],
+      "prize_amount": "$<span data-currency-value>0</span>",
+      "prizes_counts": {
+        "cash": 0,
+        "other": 2
+      },
+      "registrations_count": 12,
+      "featured": false,
+      "organization_name": "CCEB ANATA",
+      "winners_announced": false,
+      "submission_gallery_url": "https://ntu-matlab-2026.devpost.com/project-gallery",
+      "start_a_submission_url": "https://ntu-matlab-2026.devpost.com/challenges/start_a_submission",
+      "invite_only": true,
+      "eligibility_requirement_invite_only_description": "Nanyang Technological University students only",
+      "managed_by_devpost_badge": false
+    },
+    {
+      "id": 31152,
+      "title": "Cornell Six Sigma Hackathon",
+      "displayed_location": {
+        "icon": "map-marker-alt",
+        "location": "Upson Hall 116"
+      },
+      "open_state": "open",
+      "analytics_identifier": "Cornell Six Sigma Hackathon (31152)",
+      "url": "https://six-sigma-hackathon.devpost.com/",
+      "time_left_to_submission": "3 days left",
+      "submission_period_dates": "Oct 16 - 23, 2026",
+      "themes": [
+        {
+          "id": 6,
+          "name": "Machine Learning/AI"
+        },
+        {
+          "id": 13,
+          "name": "Social Good"
+        },
+        {
+          "id": 23,
+          "name": "Beginner Friendly"
+        }
+      ],
+      "prize_amount": "$<span data-currency-value>0</span>",
+      "prizes_counts": {
+        "cash": 1,
+        "other": 0
+      },
+      "registrations_count": 110,
+      "featured": false,
+      "organization_name": "Cornell University",
+      "winners_announced": false,
+      "submission_gallery_url": "https://six-sigma-hackathon.devpost.com/project-gallery",
+      "start_a_submission_url": "https://six-sigma-hackathon.devpost.com/challenges/start_a_submission",
+      "invite_only": true,
+      "eligibility_requirement_invite_only_description": "On-campus Cornell SYSEN MEng/MS + SYSEN 5300, 5900",
+      "managed_by_devpost_badge": false
+    }
+  ],
+  "meta": {
+    "total_count": 175,
+    "per_page": 9,
+    "fuzzy": false
+  }
+}

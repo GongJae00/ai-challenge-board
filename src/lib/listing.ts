@@ -8,6 +8,14 @@ export const sourceIds = [
   "kaggle",
   "dacon",
   "aifactory",
+  "drivendata",
+  "lablab",
+  "zindi",
+  "signate",
+  "tianchi",
+  "devpost",
+  "grandchallenge",
+  "aicrowd",
 ] as const
 export type SourceId = (typeof sourceIds)[number]
 
@@ -37,6 +45,26 @@ const instant = z.iso.datetime()
 /** Only web links reach the pages, so a `javascript:` or `data:` link from a source never becomes an href. */
 const webUrl = z.url({ protocol: /^https?$/ })
 
+/**
+ * Short codes for the zones deadlines most often come in, each with its IANA zone; a deadline in any other zone
+ * carries the zone's IANA name, such as "America/Los_Angeles".
+ */
+export const zoneCodes = {
+  UTC: "UTC",
+  AoE: "Etc/GMT+12",
+  KST: "Asia/Seoul",
+  JST: "Asia/Tokyo",
+} as const
+
+function isTimeZone(name: string): boolean {
+  try {
+    new Intl.DateTimeFormat("en-US", { timeZone: name })
+    return true
+  } catch {
+    return false
+  }
+}
+
 export const deadlineSchema = z.object({
   /**
    * A final submission deadline, the end of one challenge phase, the end of a whole challenge, the last day to
@@ -47,10 +75,13 @@ export const deadlineSchema = z.object({
   label: z.string().min(1).nullable(),
   at: instant,
   /**
-   * The time zone the source states the deadline in: "UTC" also covers sources that give only an instant, and
-   * "KST" covers Korean sources, whose pages state deadlines in Korean time.
+   * The time zone the source states the deadline in, as a code from `zoneCodes` or an IANA name. "UTC" also covers
+   * sources that give only an instant.
    */
-  zone: z.enum(["UTC", "AoE", "KST"]),
+  zone: z.union([
+    z.enum(Object.keys(zoneCodes) as [keyof typeof zoneCodes]),
+    z.string().refine(isTimeZone, "not an IANA time zone"),
+  ]),
 })
 export type Deadline = z.infer<typeof deadlineSchema>
 

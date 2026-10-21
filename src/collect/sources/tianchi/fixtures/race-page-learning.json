@@ -1,0 +1,115 @@
+{
+  "data": {
+    "pageSize": 10,
+    "list": [
+      {
+        "raceId": 23,
+        "referUrl": "",
+        "raceStartTime": "2016-03-09 00:00:00",
+        "bonus": 0,
+        "teamCount": 47331,
+        "nameEn": "",
+        "isSeries": 1,
+        "raceEndTime": "2026-09-30 23:59:59",
+        "trackList": [
+          {
+            "raceId": 231522,
+            "referUrl": "",
+            "raceListStatus": 4,
+            "raceStartTime": "2016-03-09 00:00:00",
+            "bonus": 0,
+            "teamCount": 18810,
+            "nameEn": "Tianchi Getting Started Competition [Offline]",
+            "isSeries": 0,
+            "raceEndTime": "2026-03-31 23:59:59",
+            "visualTab": 4,
+            "tagsList": [
+              {
+                "tagId": 139,
+                "tagType": "RACE",
+                "tagNameCn": "电商",
+                "tagName": "E-commerce"
+              }
+            ],
+            "name": "天池新人实战赛之[离线赛]",
+            "currency": 0
+          },
+          {
+            "raceId": 231593,
+            "referUrl": "",
+            "raceListStatus": 4,
+            "raceStartTime": "2017-02-28 00:00:00",
+            "bonus": 0,
+            "teamCount": 28521,
+            "nameEn": "Offline to Online (O2O) Prediction of Coupon Redemption",
+            "isSeries": 0,
+            "raceEndTime": "2026-03-31 23:59:59",
+            "visualTab": 4,
+            "tagsList": [
+              {
+                "tagId": 164,
+                "tagType": "RACE",
+                "tagNameCn": "本地生活",
+                "tagName": "Local life"
+              }
+            ],
+            "name": "天池新人实战赛o2o优惠券使用预测",
+            "currency": 0
+          }
+        ],
+        "visualTab": 4,
+        "tagsList": [],
+        "name": "天池新人实战赛"
+      },
+      {
+        "raceId": 231573,
+        "referUrl": "",
+        "raceListStatus": 0,
+        "raceStartTime": "2016-05-10 00:00:00",
+        "bonus": 0,
+        "teamCount": 15935,
+        "nameEn": "The Purchase and Redemption Forecasts-Challenge the Baseline",
+        "isSeries": 0,
+        "signupEndTime": "2027-05-06 23:59:59",
+        "raceEndTime": "2027-05-06 23:59:59",
+        "signupStartTime": "2016-05-10 00:00:00",
+        "visualTab": 4,
+        "tagsList": [
+          {
+            "tagId": 129,
+            "tagType": "RACE",
+            "tagNameCn": "‌金融",
+            "tagName": "Finance"
+          }
+        ],
+        "name": "资金流入流出预测-挑战Baseline",
+        "currency": 0
+      },
+      {
+        "raceId": 531830,
+        "referUrl": "",
+        "raceListStatus": 4,
+        "raceStartTime": "2020-09-05 11:50:00",
+        "bonus": 0,
+        "teamCount": 27379,
+        "isSeries": 0,
+        "raceEndTime": "2026-05-19 23:59:59",
+        "visualTab": 4,
+        "tagsList": [
+          {
+            "tagId": 129,
+            "tagType": "RACE",
+            "tagNameCn": "‌金融",
+            "tagName": "Finance"
+          }
+        ],
+        "name": "【AI入门系列】金融守护者：金融风险预测学习赛",
+        "currency": 0
+      }
+    ],
+    "pageNum": 1,
+    "total": 97
+  },
+  "code": "SUCCESS",
+  "success": true
+}

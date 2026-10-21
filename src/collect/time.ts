@@ -30,22 +30,56 @@ export function deadlineZone(ms: number): Deadline["zone"] {
 
 const LOCAL_TIME = /^(20\d{2}-\d{2}-\d{2})[ T](\d{2}:\d{2})(?::(\d{2}))?$/
 
-/** Korea keeps UTC+9 all year, with no daylight saving time. */
-const KST_OFFSET_MS = 9 * 60 * 60 * 1000
 const DAY_MS = 24 * 60 * 60 * 1000
 
+/** How far a zone's clock is ahead of UTC at an instant, in milliseconds. */
+function zoneOffsetMs(ms: number, timeZone: string): number {
+  const parts = Object.fromEntries(
+    new Intl.DateTimeFormat("en-US", {
+      timeZone,
+      hourCycle: "h23",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    })
+      .formatToParts(ms)
+      .map((part) => [part.type, Number(part.value)])
+  )
+  const wall = Date.UTC(
+    parts.year,
+    parts.month - 1,
+    parts.day,
+    parts.hour,
+    parts.minute,
+    parts.second
+  )
+  return wall - Math.floor(ms / 1000) * 1000
+}
+
 /**
- * A Korean local date and time without a zone, such as DACON's "2026-11-02 10:00:00", as a UTC instant, or null
- * when the text is not one. "24:00", a common way to write the end of a day in Korea, is midnight after that day.
+ * A local date and time without a zone, such as DACON's "2026-11-02 10:00:00", read in an IANA time zone, as a UTC
+ * instant; null when the text is not one. The zone's offset is the one in force at that time, daylight saving
+ * included. "24:00", a common way to write the end of a day in Korea, is midnight after that day.
  */
-export function isoFromKst(text: string): string | null {
+export function isoFromLocal(text: string, timeZone: string): string | null {
   const match = LOCAL_TIME.exec(text.trim())
   if (!match) return null
   const [, date, time, seconds = "00"] = match
   const endOfDay = time === "24:00" && seconds === "00"
   const local = `${date}T${endOfDay ? "00:00" : time}:${seconds}.000Z`
-  const ms = Date.parse(local)
+  const wall = Date.parse(local)
   // An impossible time, such as February 30, either fails to parse or rolls over, so it does not read back.
-  if (Number.isNaN(ms) || isoFromMs(ms) !== local) return null
-  return isoFromMs(ms + (endOfDay ? DAY_MS : 0) - KST_OFFSET_MS)
+  if (Number.isNaN(wall) || isoFromMs(wall) !== local) return null
+  const clock = wall + (endOfDay ? DAY_MS : 0)
+  // The offset at a first guess of the instant can differ near a clock change; the offset at the guess settles it.
+  const guess = clock - zoneOffsetMs(clock, timeZone)
+  return isoFromMs(clock - zoneOffsetMs(guess, timeZone))
+}
+
+/** A Korean local date and time without a zone, as `isoFromLocal` reads it in Korean time. */
+export function isoFromKst(text: string): string | null {
+  return isoFromLocal(text, "Asia/Seoul")
 }

@@ -1,0 +1,86 @@
+{
+  "schedule_list": [
+    {
+      "schedule_type": "datetime",
+      "month_section": null,
+      "schedule_at": "2026-08-28T13:00:00.000000+09:00",
+      "icon_type": "submission",
+      "content": "データダウンロード 開始"
+    },
+    {
+      "schedule_type": "month_section",
+      "month_section": "begin",
+      "schedule_at": "2026-10-01T00:00:00.000000+09:00",
+      "icon_type": "information",
+      "content": "投稿期間　開始予定"
+    },
+    {
+      "schedule_type": "datetime",
+      "month_section": null,
+      "schedule_at": "2026-10-18T23:59:00.000000+09:00",
+      "icon_type": "team",
+      "content": "チーム結成期限"
+    },
+    {
+      "schedule_type": "datetime",
+      "month_section": null,
+      "schedule_at": "2026-12-18T23:59:00.000000+09:00",
+      "icon_type": "information",
+      "content": "投稿期間 終了 ※評価期間に進める最大2個のエージェントを選択しておいてください。バッファ期間中も変更は可能ですが、評価期間に入ると変更はできません。"
+    },
+    {
+      "schedule_type": "date",
+      "month_section": null,
+      "schedule_at": "2026-12-19T00:00:00.000000+09:00",
+      "icon_type": "information",
+      "content": "バッファ（1日）"
+    },
+    {
+      "schedule_type": "datetime",
+      "month_section": null,
+      "schedule_at": "2026-12-20T00:00:00.000000+09:00",
+      "icon_type": "alarm",
+      "content": "評価期間 開始"
+    },
+    {
+      "schedule_type": "datetime",
+      "month_section": null,
+      "schedule_at": "2026-12-21T23:59:00.000000+09:00",
+      "icon_type": "calendar",
+      "content": "評価期間 終了（評価期間開始時に定めた数の対戦が完了次第、評価終了）"
+    },
+    {
+      "schedule_type": "date",
+      "month_section": null,
+      "schedule_at": "2027-01-06T00:00:00.000000+09:00",
+      "icon_type": "alarm",
+      "content": "提出物の提出締切（入賞候補連絡を受け取った方）"
+    },
+    {
+      "schedule_type": "month_section",
+      "month_section": "end",
+      "schedule_at": "2027-01-24T00:00:00.000000+09:00",
+      "icon_type": "prize",
+      "content": "入賞者の決定"
+    },
+    {
+      "schedule_type": "month_section",
+      "month_section": "middle",
+      "schedule_at": "2027-02-24T00:00:00.000000+09:00",
+      "icon_type": "calendar",
+      "content": "表彰式"
+    }
+  ],
+  "organization_list": [
+    {
+      "organization_name": "防衛装備庁",
+      "relation_type": "organizer",
+      "link_text_1": "",
+      "link_url_1": "",
+      "link_text_2": "",
+      "link_url_2": "",
+      "link_text_3": "",
+      "link_url_3": ""
+    }
+  ]
+}

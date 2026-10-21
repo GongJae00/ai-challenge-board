@@ -53,6 +53,25 @@ describe("datetime", () => {
     expect(formatSourceTime(kst, "en", "UTC")).toBe("KST Nov 16, 20:59")
   })
 
+  it("names a source zone without a code by its offset, or its abbreviation where English has one", () => {
+    const at = "2026-10-23T19:00:00.000Z"
+    const deadline = (zone: string) => ({
+      kind: "submission" as const,
+      label: null,
+      at,
+      zone,
+    })
+    expect(
+      formatSourceTime(deadline("America/Los_Angeles"), "ko", "Asia/Seoul")
+    ).toBe("PDT 10월 23일 12:00")
+    expect(
+      formatSourceTime(deadline("Asia/Shanghai"), "en", "Asia/Seoul")
+    ).toBe("GMT+8 Oct 24, 03:00")
+    expect(formatSourceTime(deadline("JST"), "en", "UTC")).toBe(
+      "JST Oct 24, 04:00"
+    )
+  })
+
   it("gives no source time when it would repeat the shown time or the source states no zone", () => {
     expect(formatSourceTime(kst, "ko", "Asia/Seoul")).toBeNull()
     expect(formatSourceTime(aoe, "en", "Etc/GMT+12")).toBeNull()

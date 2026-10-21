@@ -1,0 +1,77 @@
+{
+  "total_count": 219,
+  "competition_list": [
+    {
+      "public_key": "d97fc46b1b4841a090ce0d042c860e1d",
+      "title": "第3回 国土交通省 地理空間情報データチャレンジ",
+      "subtitle": "様々な地域の人流を予測しよう!",
+      "owner_name": "国土交通省 地理空間情報課",
+      "reward": "",
+      "purpose_label": null,
+      "status": "pre_open",
+      "remaining_second": 2217156,
+      "entry_count": 0,
+      "medal_point_task": "all"
+    },
+    {
+      "public_key": "42024ceef5064aa6a7f463aac3f26fc2",
+      "title": "第５回 空戦AIチャレンジ",
+      "subtitle": "シミュレータを使った空戦AＩに挑戦しよう！",
+      "owner_name": "防衛装備庁",
+      "reward": "192万円",
+      "purpose_label": null,
+      "status": "open",
+      "remaining_second": 5021496,
+      "entry_count": 1292,
+      "medal_point_task": "all"
+    },
+    {
+      "public_key": "0b3a60127b31462d9a8866ef7e66f7f2",
+      "title": "【練習問題】タイタニックの生存予測",
+      "subtitle": "タイタニック号の乗客の情報から、生存したか否かを予測しよう。",
+      "owner_name": "SIGNATE",
+      "reward": "Knowledge",
+      "purpose_label": "practice",
+      "status": "ongoing",
+      "remaining_second": null,
+      "entry_count": 7410,
+      "medal_point_task": "empty"
+    },
+    {
+      "public_key": "943670f905894d018078ff5605ffe059",
+      "title": "【復刻版】SIGNATE Cup 2024",
+      "subtitle": "SIGNATE主催のコンペティション！！",
+      "owner_name": "SIGNATE",
+      "reward": "-",
+      "purpose_label": null,
+      "status": "ongoing",
+      "remaining_second": null,
+      "entry_count": 149,
+      "medal_point_task": "empty"
+    },
+    {
+      "public_key": "54ee8a27750e4c8cb053d3aec3e2cebf",
+      "title": "SIGNATE × TECH OCEAN Student Cup 2026",
+      "subtitle": "学生の交流を目的とした学生限定コンペティション！！",
+      "owner_name": "SIGNATE × TECH OCEAN",
+      "reward": "21万円",
+      "purpose_label": "recruitment",
+      "status": "closed",
+      "remaining_second": null,
+      "entry_count": 552,
+      "medal_point_task": "all"
+    },
+    {
+      "public_key": "4166537503af417c81cb6bc947d48c8f",
+      "title": "【第59回_Beginner限定コンペ】医療保険の費用帯予測",
+      "subtitle": "医療データを使って保険の費用帯を予測しよう！",
+      "owner_name": "SIGNATE",
+      "reward": "",
+      "purpose_label": "beginner",
+      "status": "closed",
+      "remaining_second": null,
+      "entry_count": 186,
+      "medal_point_task": "empty"
+    }
+  ]
+}

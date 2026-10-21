@@ -1,0 +1,116 @@
+{
+  "data": {
+    "end_time": "2020-04-20T00:00:00.000Z",
+    "entries_close_at": null,
+    "id": "fowl-escapades",
+    "is_access_restricted": false,
+    "is_beginner_friendly": false,
+    "is_participant": false,
+    "kind": "competition",
+    "open": false,
+    "organization": null,
+    "participations_count": 199,
+    "reward": "2000 Zindi Points",
+    "reward_type": "points",
+    "sealed": true,
+    "secret_code_required": false,
+    "show_ranks": true,
+    "start_time": "2020-01-16T00:00:00.000Z",
+    "title": "Fowl Escapades",
+    "cohort": false,
+    "allow_teams": true,
+    "city": null,
+    "country": "Africa",
+    "countrycode": null,
+    "data_type": ["Audio"],
+    "difficulty": ["Intermediate"],
+    "entries_closed": null,
+    "helping": ["Africa"],
+    "helping_countrycode": null,
+    "impact": ["SDG13", "SDG15", "SDG14"],
+    "industry": ["Conservation", "Wildlife Conservation"],
+    "leaderboard_participations_count": 28,
+    "max_number_of_participants_per_team": 4,
+    "organization_url": null,
+    "rules": {
+      "title": "Rules",
+      "url_title": "rules",
+      "content": {
+        "blocks": []
+      }
+    },
+    "skills": ["Classification"],
+    "subtitle": "Southern African Bird Call Audio Identification Challenge",
+    "topics": ["Conservation", "Wildlife Conservation"],
+    "type_of_problem": ["Classification"],
+    "benchmark_submission_private_score": 0.0,
+    "benchmark_submission_public_score": 0.0,
+    "discussions_are_private": false,
+    "error_metric": "log_loss",
+    "error_metrics": [],
+    "has_benchmark": false,
+    "has_children": false,
+    "is_restricted_for_user": false,
+    "max_rank": 25,
+    "meta_emoji": "🐼",
+    "reveal_time": "2020-04-20T00:00:00.000Z",
+    "rubric_type": null,
+    "sealing_time": "2020-06-15T12:39:51.056Z",
+    "show_private_scores": true,
+    "show_submission_count": true,
+    "submissions_closed_at": "2020-04-19T23:30:00.000Z",
+    "supports_rubric": false,
+    "datafiles": [
+      {
+        "filename": "Train.csv",
+        "filesize": 48594,
+        "position": 0,
+        "zip_of_everything": false,
+        "description": "Train contains the target. This is the dataset that you will use to train your model."
+      },
+      {
+        "filename": "SampleSubmission.csv",
+        "filesize": 80027,
+        "position": 0,
+        "zip_of_everything": false,
+        "description": "Is an example of what your submission file should look like. The order of the rows does not matter, but the names of the \"ID\" must be correct."
+      },
+      {
+        "filename": "authors.csv",
+        "filesize": 2391,
+        "position": 0,
+        "zip_of_everything": false,
+        "description": null
+      },
+      {
+        "filename": "Test.zip",
+        "filesize": 743620991,
+        "position": 0,
+        "zip_of_everything": false,
+        "description": "Test resembles Train.csv but without the target-related columns. This is the dataset on which you will apply your model to."
+      },
+      {
+        "filename": "Train.zip",
+        "filesize": 1407124233,
+        "position": 0,
+        "zip_of_everything": false,
+        "description": "Train contains the target. This is the dataset that you will use to train your model."
+      },
+      {
+        "filename": "Test.csv",
+        "filesize": 13679,
+        "position": 0,
+        "zip_of_everything": false,
+        "description": "Test resembles Train.csv but without the target-related columns. This is the dataset on which you will apply your model to."
+      },
+      {
+        "filename": "StarterNotebook.ipynb",
+        "filesize": 3827855,
+        "position": 0,
+        "zip_of_everything": false,
+        "description": "This is a starter notebook to help you make your first submission. "
+      }
+    ],
+    "parent": null
+  }
+}

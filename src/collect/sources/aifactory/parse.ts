@@ -2,6 +2,7 @@ import { z } from "zod"
 
 import { minuteOf } from "../../../lib/datetime.ts"
 import type { Deadline, Listing } from "../../../lib/listing.ts"
+import { flightText, jsonAt } from "../../flight.ts"
 import { cleanText } from "../../text.ts"
 import { endsAhead, isoFromMs } from "../../time.ts"
 
@@ -25,8 +26,7 @@ const COMPETITION = 1
 /** Titles of practice entries and of recruitment posts, which the list mixes in with the competitions. */
 const NOT_A_CHALLENGE = ["[연습용]", "(채용"]
 
-// The page is a server-rendered Next.js page whose content is also sent as `self.__next_f.push([1,"…"])` scripts.
-const FLIGHT_SCRIPT = /self\.__next_f\.push\(\[1,("(?:[^"\\]|\\.)*")\]\)/g
+// The page is a server-rendered Next.js page; `src/collect/flight.ts` reads the data it ships.
 const TASK_KEY = '"task":'
 const ORGANIZER_ROLE = "주최"
 // A row of the detail page: an element keyed "<role>-<name>-<n>", whose props follow the key.
@@ -34,45 +34,6 @@ const ORGANIZER_ROW = new RegExp(
   `\\["\\$","[A-Za-z0-9$]+","(${ORGANIZER_ROLE}-(?:[^"\\\\]|\\\\.)*-\\d+)",(?=\\{)`,
   "g"
 )
-
-/** The page's flight data: every script's string literal decoded and joined in order. */
-export function flightText(html: string): string {
-  return [...html.matchAll(FLIGHT_SCRIPT)]
-    .map((match) => JSON.parse(match[1]) as string)
-    .join("")
-}
-
-/** The index of the brace that closes the object opening at `start`, or -1 when the text ends first. */
-function objectEnd(text: string, start: number): number {
-  let depth = 0
-  let inString = false
-  for (let i = start; i < text.length; i += 1) {
-    const char = text[i]
-    if (inString) {
-      if (char === "\\") i += 1
-      else if (char === '"') inString = false
-    } else if (char === '"') inString = true
-    else if (char === "{") depth += 1
-    else if (char === "}") {
-      depth -= 1
-      if (depth === 0) return i
-    }
-  }
-  return -1
-}
-
-/** The JSON object that opens at `start` in the flight text. */
-function readObject(text: string, start: number, what: string): unknown {
-  const end = objectEnd(text, start)
-  if (end === -1) throw new Error(`AIFactory ${what} is cut off`)
-  try {
-    return JSON.parse(text.slice(start, end + 1))
-  } catch (error) {
-    throw new Error(`AIFactory ${what} does not parse: ${String(error)}`, {
-      cause: error,
-    })
-  }
-}
 
 /**
  * Every object that follows a `"task":` key in the flight text. Other occurrences of the key hold a reference
@@ -86,7 +47,8 @@ export function extractTasks(text: string): unknown[] {
     at = text.indexOf(TASK_KEY, at + TASK_KEY.length)
   ) {
     const start = at + TASK_KEY.length
-    if (text[start] === "{") tasks.push(readObject(text, start, "task object"))
+    if (text[start] === "{")
+      tasks.push(jsonAt(text, start, "AIFactory task object"))
   }
   return tasks
 }
@@ -209,10 +171,10 @@ export function parseOrganizer(html: string): string | null {
   if (text === "") throw new Error("AIFactory competition page holds no data")
   const names: string[] = []
   for (const match of text.matchAll(ORGANIZER_ROW)) {
-    const props = readObject(
+    const props = jsonAt(
       text,
       match.index + match[0].length,
-      "organizer row"
+      "AIFactory organizer row"
     )
     const [role, ...rest] = texts(props)
     const name = rest.join("").trim()

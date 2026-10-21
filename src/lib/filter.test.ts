@@ -143,13 +143,15 @@ describe("facetCounts", () => {
   it("counts each kind and each conference, 0 for those with none", () => {
     const counts = facetCounts(all, none)
     expect(counts.kinds).toEqual({ challenge: 2, cfp: 1 })
-    expect(counts.platforms).toEqual({
-      aifactory: 0,
+    // Every platform has a count; these listings run on Codabench and DACON only.
+    expect(counts.platforms).toMatchObject({
       codabench: 1,
       dacon: 1,
-      evalai: 0,
       kaggle: 0,
     })
+    expect(Object.values(counts.platforms).reduce((sum, n) => sum + n, 0)).toBe(
+      2
+    )
     expect(counts.conferences).toEqual({
       CVPR: 0,
       ICCV: 0,

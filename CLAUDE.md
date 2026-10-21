@@ -47,6 +47,11 @@ Later on 2026-10-21 GongJae widened the sources and the kinds of events:
 - Contest portals that gather other organizers' 공모전, such as 위비티, 링커리어, and 콘테스트코리아, are not
   collected ("공모전 모음 사이트는 저런 잡들은 필요없음").
 - No prize field or column ("상금칸은 필요없어").
+- Asked what the new sites needed, GongJae answered "다 이정도 크롤정도는 할 수 있을텐데 정보도 다 찾을 수 있을거고".
+  Within robots.txt for the collector, that covers AIcrowd (whose robots.txt turns away AI crawlers but allows the
+  collector with a 10-second Crawl-delay), one calendar file per Devpost hackathon for its exact deadline, and
+  grand-challenge.org's HTML list. DAKER is not collected: its robots.txt disallows `/api/`, the only path that
+  carries its listings, and DACON's own list already carries the hackathons DACON runs.
 
 The landscape survey behind these choices is `reports/AI 챌린지 서비스 생태계 조사.md`, kept locally.
 

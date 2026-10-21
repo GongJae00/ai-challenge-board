@@ -53,6 +53,54 @@ export const sites = {
     platform: true,
     korean: true,
   },
+  drivendata: {
+    name: "DrivenData",
+    url: "https://www.drivendata.org/competitions/",
+    platform: true,
+    korean: false,
+  },
+  lablab: {
+    name: "lablab.ai",
+    url: "https://lablab.ai/ai-hackathons",
+    platform: true,
+    korean: false,
+  },
+  zindi: {
+    name: "Zindi",
+    url: "https://zindi.world/competitions",
+    platform: true,
+    korean: false,
+  },
+  signate: {
+    name: "SIGNATE",
+    url: "https://user.competition.signate.jp/ja/competition/list/",
+    platform: true,
+    korean: false,
+  },
+  tianchi: {
+    name: "Tianchi",
+    url: "https://tianchi.aliyun.com/competition/gameList/activeList",
+    platform: true,
+    korean: false,
+  },
+  devpost: {
+    name: "Devpost",
+    url: "https://devpost.com/hackathons",
+    platform: true,
+    korean: false,
+  },
+  grandchallenge: {
+    name: "Grand Challenge",
+    url: "https://grand-challenge.org/challenges/",
+    platform: true,
+    korean: false,
+  },
+  aicrowd: {
+    name: "AIcrowd",
+    url: "https://www.aicrowd.com/challenges",
+    platform: true,
+    korean: false,
+  },
 } as const satisfies Record<SourceId, Site>
 
 /** The sources that are competition platforms, such as `dacon`. */

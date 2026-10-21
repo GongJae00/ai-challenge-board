@@ -1,0 +1,116 @@
+{
+  "data": {
+    "race": {
+      "raceId": 532506,
+      "referUrl": "",
+      "raceListStatus": 2,
+      "raceStartTime": "2026-07-30 00:00:00",
+      "bonus": 100000,
+      "teamCount": 254,
+      "raceEndTime": "2026-11-15 23:59:59",
+      "visualTab": 1,
+      "tagsList": [],
+      "finalNameEn": "",
+      "name": "2026-具身仿真合成挑战赛",
+      "currency": 0,
+      "relatedSeriesRace": {
+        "raceId": 41,
+        "referUrl": "",
+        "raceStartTime": "2026-08-06 00:00:00",
+        "bonus": 300000,
+        "nameEn": "2026具身世界realworld挑战赛",
+        "isSeries": 1,
+        "raceEndTime": "2026-11-30 23:59:59",
+        "visualTab": 1,
+        "name": "2026-具身极限挑战赛",
+        "currency": 0
+      }
+    },
+    "raceTimeline": [
+      {
+        "raceId": 532506,
+        "startTimeAlias": "",
+        "startTimeAliasEn": "",
+        "name": "初赛A榜",
+        "timePointConfig": [
+          {
+            "name": "报名截止",
+            "nameEn": "Apply Deadline",
+            "time": "2026-09-21 13:59:59"
+          },
+          {
+            "name": "提交结果截止",
+            "nameEn": "Upload Result Deadline",
+            "time": "2026-09-21 13:59:59"
+          }
+        ],
+        "startTime": "2026-07-30 00:00:00",
+        "endTimeAlias": "",
+        "endTimeAliasEn": "",
+        "nameEn": "",
+        "endTime": "2026-09-21 23:59:59"
+      },
+      {
+        "raceId": 532506,
+        "startTimeAlias": "",
+        "startTimeAliasEn": "",
+        "name": "后续赛程",
+        "startTime": "2026-09-22 00:00:00",
+        "endTimeAlias": "",
+        "endTimeAliasEn": "",
+        "nameEn": "",
+        "endTime": "2026-11-15 23:59:59"
+      }
+    ],
+    "raceSeasons": [
+      {
+        "applyEndTime": "Mon Sep 21 13:59:59 CST 2026",
+        "seasonId": 1839,
+        "seasonName": "初赛A",
+        "seasonNameEn": "",
+        "seasonNum": 0,
+        "applyStartTime": "Thu Jul 30 00:00:00 CST 2026"
+      },
+      {
+        "seasonId": 1857,
+        "seasonName": "后续赛程",
+        "seasonNameEn": "",
+        "seasonNum": 1
+      },
+      {
+        "applyEndTime": "Thu Sep 24 23:59:59 CST 2026",
+        "seasonId": 1891,
+        "seasonName": "初赛B",
+        "seasonNameEn": "",
+        "seasonNum": 2,
+        "applyStartTime": "Tue Sep 22 00:00:00 CST 2026"
+      },
+      {
+        "applyEndTime": "Sun Oct 18 13:59:59 CST 2026",
+        "seasonId": 1892,
+        "seasonName": "复赛A",
+        "seasonNameEn": "",
+        "seasonNum": 3,
+        "applyStartTime": "Mon Sep 28 00:00:00 CST 2026"
+      },
+      {
+        "applyEndTime": "Sun Oct 25 13:59:59 CST 2026",
+        "seasonId": 1915,
+        "seasonName": "复赛B",
+        "seasonNameEn": "",
+        "seasonNum": 5,
+        "applyStartTime": "Wed Oct 21 00:00:00 CST 2026"
+      },
+      {
+        "applyEndTime": "Tue Oct 20 13:59:59 CST 2026",
+        "seasonId": 1918,
+        "seasonName": "复赛A-docker",
+        "seasonNameEn": "",
+        "seasonNum": 6,
+        "applyStartTime": "Thu Oct 15 00:00:00 CST 2026"
+      }
+    ]
+  },
+  "code": "SUCCESS",
+  "success": true
+}

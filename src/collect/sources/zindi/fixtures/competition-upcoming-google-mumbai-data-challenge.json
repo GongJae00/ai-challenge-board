@@ -1,0 +1,75 @@
+{
+  "data": {
+    "end_time": "2026-11-13T12:00:00.000Z",
+    "entries_close_at": null,
+    "id": "google-mumbai-data-challenge",
+    "is_access_restricted": true,
+    "is_beginner_friendly": false,
+    "is_participant": false,
+    "kind": "hackathon",
+    "open": true,
+    "organization": "Google",
+    "participations_count": 0,
+    "reward": "$6 000 USD",
+    "reward_type": "prize",
+    "sealed": false,
+    "secret_code_required": false,
+    "show_ranks": false,
+    "start_time": "2026-10-26T12:00:00.000Z",
+    "title": "Google Mumbai Data Challenge: Air Quality Mapping & Forecasting",
+    "cohort": false,
+    "allow_teams": true,
+    "city": null,
+    "country": null,
+    "countrycode": null,
+    "data_type": ["Structured", "Tabular"],
+    "difficulty": ["Beginners"],
+    "entries_closed": null,
+    "helping": [],
+    "helping_countrycode": null,
+    "impact": ["SDG3", "SDG13"],
+    "industry": ["Climate Change Impact", "Environment"],
+    "leaderboard_participations_count": 0,
+    "max_number_of_participants_per_team": 4,
+    "organization_url": null,
+    "rules": {
+      "title": "Rules",
+      "url_title": "rules",
+      "content": {
+        "blocks": [
+          {
+            "text": "Who can compete: Open to all",
+            "type": "unordered-list-item"
+          }
+        ]
+      }
+    },
+    "skills": [
+      "Classification",
+      "Visualisation",
+      "Data analysis",
+      "Data storytelling"
+    ],
+    "subtitle": "Can you use AI to map Mumbai’s air quality and predict pollution?",
+    "topics": [],
+    "type_of_problem": [],
+    "benchmark_submission_private_score": null,
+    "benchmark_submission_public_score": 0.0,
+    "discussions_are_private": true,
+    "error_metric": "multi",
+    "error_metrics": [],
+    "has_benchmark": false,
+    "has_children": false,
+    "is_restricted_for_user": false,
+    "max_rank": 0,
+    "meta_emoji": "🌍",
+    "reveal_time": "2026-11-13T12:00:00.000Z",
+    "rubric_type": "multi",
+    "sealing_time": "2026-12-04T12:00:00.000Z",
+    "show_private_scores": false,
+    "show_submission_count": true,
+    "submissions_closed_at": "2026-11-13T11:45:00.000Z",
+    "supports_rubric": true,
+    "parent": null
+  }
+}

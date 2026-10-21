@@ -5,7 +5,6 @@ import { describe, expect, it } from "vitest"
 import { listingSchema } from "../../../lib/listing.ts"
 import {
   extractTasks,
-  flightText,
   inScope,
   listingUrl,
   parseOrganizer,
@@ -41,23 +40,6 @@ function page(...payloads: string[]): string {
 function taskJson(id: string, extra = ""): string {
   return `{"task":{"id":"${id}","type":1,"name":"a","startDate":"2026-01-01T00:00:00.000Z","endDate":"2026-02-01T00:00:00.000Z"${extra}}}`
 }
-
-describe("flightText", () => {
-  it("decodes every payload's string literal and joins them in order", () => {
-    const html = page('a:["x",{"n":"\\u003cb\\u003e"}]\n', "b:1\n")
-    expect(flightText(html)).toBe('a:["x",{"n":"\\u003cb\\u003e"}]\nb:1\n')
-  })
-
-  it("joins a value that the site split across two scripts", () => {
-    expect(flightText(page('{"task":{"id":"1', '2"}}'))).toBe(
-      '{"task":{"id":"12"}}'
-    )
-  })
-
-  it("is empty for a page with no flight data", () => {
-    expect(flightText("<html><body>Not found</body></html>")).toBe("")
-  })
-})
 
 describe("extractTasks", () => {
   it("reads the object after each task key and skips the string references", () => {

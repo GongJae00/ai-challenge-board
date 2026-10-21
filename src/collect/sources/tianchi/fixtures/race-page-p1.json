@@ -1,0 +1,207 @@
+{
+  "data": {
+    "pageSize": 10,
+    "list": [
+      {
+        "raceId": 532514,
+        "referUrl": "",
+        "raceListStatus": 0,
+        "raceStartTime": "2026-09-11 00:00:00",
+        "bonus": 280000,
+        "teamCount": 1815,
+        "isSeries": 0,
+        "signupEndTime": "2026-10-26 23:59:59",
+        "raceEndTime": "2026-11-16 23:59:59",
+        "signupStartTime": "2026-09-11 00:00:00",
+        "visualTab": 1,
+        "tagsList": [
+          {
+            "tagId": 177,
+            "tagType": "RACE",
+            "tagNameCn": "机器人",
+            "tagName": "机器人"
+          },
+          {
+            "tagId": 153,
+            "tagType": "RACE",
+            "tagNameCn": "计算机视觉‌",
+            "tagName": "CV"
+          }
+        ],
+        "name": "蚂蚁灵波具身大模型挑战赛",
+        "currency": 0
+      },
+      {
+        "raceId": 532480,
+        "referUrl": "",
+        "raceListStatus": 4,
+        "raceStartTime": "2026-08-31 00:00:00",
+        "bonus": 0,
+        "teamCount": 314,
+        "nameEn": "medCodeGPT Evaluation",
+        "isSeries": 0,
+        "raceEndTime": "2026-10-14 11:59:59",
+        "visualTab": 1,
+        "tagsList": [
+          {
+            "tagId": 132,
+            "tagType": "RACE",
+            "tagNameCn": "‌医疗健康",
+            "tagName": "Medical Health"
+          }
+        ],
+        "name": "CHIP2026-医学NLP代码自动生成测评 ——识别符合临床试验入组标准的患者",
+        "currency": 0
+      },
+      {
+        "raceId": 532511,
+        "referUrl": "",
+        "raceListStatus": 0,
+        "raceStartTime": "2026-08-30 00:00:00",
+        "bonus": 55000,
+        "teamCount": 615,
+        "isSeries": 0,
+        "signupEndTime": "2026-10-25 23:59:59",
+        "raceEndTime": "2026-10-25 23:59:59",
+        "signupStartTime": "2026-10-09 00:00:00",
+        "visualTab": 1,
+        "tagsList": [
+          {
+            "tagId": 168,
+            "tagType": "RACE",
+            "tagNameCn": "程序设计",
+            "tagName": "programming"
+          },
+          {
+            "tagId": 154,
+            "tagType": "RACE",
+            "tagNameCn": "智能体",
+            "tagName": "Agent"
+          },
+          {
+            "tagId": 149,
+            "tagType": "RACE",
+            "tagNameCn": "大语言模型",
+            "tagName": "‌LLM"
+          }
+        ],
+        "name": "2026 SMP第十四届全国社会媒体处理大会-大模型图网络决策挑战赛",
+        "currency": 0
+      },
+      {
+        "raceId": 532512,
+        "referUrl": "",
+        "raceListStatus": 0,
+        "raceStartTime": "2026-08-20 00:00:00",
+        "bonus": 0,
+        "teamCount": 500,
+        "isSeries": 0,
+        "signupEndTime": "2029-10-03 23:59:59",
+        "raceEndTime": "2029-10-03 23:59:59",
+        "signupStartTime": "2026-10-03 00:00:00",
+        "visualTab": 1,
+        "tagsList": [
+          {
+            "tagId": 132,
+            "tagType": "RACE",
+            "tagNameCn": "‌医疗健康",
+            "tagName": "Medical Health"
+          },
+          {
+            "tagId": 151,
+            "tagType": "RACE",
+            "tagNameCn": "自然语言处理",
+            "tagName": "NLP"
+          },
+          {
+            "tagId": 149,
+            "tagType": "RACE",
+            "tagNameCn": "大语言模型",
+            "tagName": "‌LLM"
+          }
+        ],
+        "name": "CHIP2026-面向生物医学全文的特定患者表型概念识别任务",
+        "currency": 0
+      },
+      {
+        "raceId": 41,
+        "referUrl": "",
+        "raceStartTime": "2026-08-06 00:00:00",
+        "bonus": 300000,
+        "teamCount": 697,
+        "nameEn": "2026具身世界realworld挑战赛",
+        "isSeries": 1,
+        "raceEndTime": "2026-11-30 23:59:59",
+        "trackList": [
+          {
+            "raceId": 532506,
+            "referUrl": "",
+            "raceListStatus": 2,
+            "raceStartTime": "2026-07-30 00:00:00",
+            "bonus": 100000,
+            "teamCount": 254,
+            "nameEn": "",
+            "isSeries": 0,
+            "raceEndTime": "2026-11-15 23:59:59",
+            "visualTab": 1,
+            "tagsList": [],
+            "name": "2026-具身仿真合成挑战赛",
+            "currency": 0
+          },
+          {
+            "raceId": 532507,
+            "referUrl": "",
+            "raceListStatus": 2,
+            "raceStartTime": "2026-07-30 00:00:00",
+            "bonus": 100000,
+            "teamCount": 204,
+            "nameEn": "",
+            "isSeries": 0,
+            "raceEndTime": "2026-11-15 23:59:59",
+            "visualTab": 1,
+            "tagsList": [],
+            "name": "2026-具身安全应用挑战赛",
+            "currency": 0
+          },
+          {
+            "raceId": 532508,
+            "referUrl": "",
+            "raceListStatus": 2,
+            "raceStartTime": "2026-07-30 00:00:00",
+            "bonus": 100000,
+            "teamCount": 239,
+            "nameEn": "",
+            "isSeries": 0,
+            "raceEndTime": "2026-11-15 23:59:59",
+            "visualTab": 1,
+            "tagsList": [
+              {
+                "tagId": 177,
+                "tagType": "RACE",
+                "tagNameCn": "机器人",
+                "tagName": "机器人"
+              }
+            ],
+            "name": "2026-跨本体具身认知极限联合挑战赛",
+            "currency": 0
+          }
+        ],
+        "visualTab": 1,
+        "tagsList": [
+          {
+            "tagId": 177,
+            "tagType": "RACE",
+            "tagNameCn": "机器人",
+            "tagName": "机器人"
+          }
+        ],
+        "name": "2026-具身极限挑战赛",
+        "currency": 0
+      }
+    ],
+    "pageNum": 1,
+    "total": 600
+  },
+  "code": "SUCCESS",
+  "success": true
+}

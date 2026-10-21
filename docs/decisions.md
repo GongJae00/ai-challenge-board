@@ -106,13 +106,18 @@ source page the facts came from, when it opens, and one or more deadlines. `src/
 and the collector, the build, and the pages all use it. A listing's id is `<source>:<the source's own id>`, so it
 stays the same across runs and can later key bookmarks and calendar events.
 
-- **Deadlines:** each deadline is an instant in UTC with the zone the source gives it in, `UTC`, `AoE`, or `KST`. A
-  listing keeps every deadline still ahead, such as each challenge phase's end, and the page shows the next one.
-  OpenReview, EvalAI, and Codabench store instants without the organizers' own zone. A deadline at 11:59 or
-  12:00 UTC is 23:59 or midnight AoE, the convention of paper deadlines, so `src/collect/time.ts` marks it `AoE`;
-  the instant is the same either way, and the AoE form matches the organizers' announcement. Any other deadline
-  from these sources carries `UTC`. The Korean sources, DACON and AIFactory, state their times in Korean time, so
-  their deadlines carry `KST`; DACON writes a local time without a zone, which `isoFromKst` converts.
+- **Deadlines:** each deadline is an instant in UTC with the zone the source gives it in: a code, `UTC`, `AoE`,
+  `KST`, or `JST`, or else the zone's IANA name, such as `America/Los_Angeles`. A listing keeps every deadline
+  still ahead, such as each challenge phase's end, and the page shows the next one. OpenReview, EvalAI, and
+  Codabench store instants without the organizers' own zone. A deadline at 11:59 or 12:00 UTC is 23:59 or midnight
+  AoE, the convention of paper deadlines, so `src/collect/time.ts` marks it `AoE`; the instant is the same either
+  way, and the AoE form matches the organizers' announcement. Any other deadline from these sources carries `UTC`.
+  The Korean sources, DACON and AIFactory, state their times in Korean time, so their deadlines carry `KST`; DACON
+  writes a local time without a zone, which `isoFromLocal` converts in any IANA zone, daylight saving included.
+  IANA names became necessary on 2026-10-21 with Devpost, whose deadlines fall in each event's own zone, such as
+  Pacific or Helsinki time, and with Tianchi's China time; a fixed list of codes could not hold them, and the codes
+  already stored stay valid. The page names a code as written and any other zone by its English short name, such
+  as "PDT", or its offset, such as "GMT+8".
 - **Conference:** filled only from a structured field, such as OpenReview's venue group or an EvalAI tag like
   `cvpr2026`, never guessed from a title or description, since these mention conferences that a challenge merely
   follows.
