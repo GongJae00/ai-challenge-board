@@ -41,6 +41,9 @@ The interface starts from an established component kit and one set of design tok
 and carries no decoration that adds no information. GongJae wants it simple, natural, and clean, and not
 recognizable as agent-made. The frontend-design skill lists the defaults that give a generated page away; where its
 call for a distinctive identity or an aesthetic risk pulls against GongJae's direction, GongJae's direction wins.
+A page for desktop readers lays data out as data, a table with the fields as columns and other views of the same
+data a tab away, and not as a narrow vertical feed. It has one look, the light one, unless GongJae asks for a
+dark theme, and a setting that changes the page, such as the language, opens a menu of its choices.
 
 ## Code
 
