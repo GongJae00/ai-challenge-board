@@ -7,6 +7,13 @@ updates:
     groups:
       npm:
         patterns: ["*"]
+    ignore:
+      # Node is pinned to 22 in .node-version, and typescript-eslint and
+      # @astrojs/check accept TypeScript below 6.1; raise these by hand.
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: github-actions
     directory: /
     schedule:
