@@ -39,6 +39,15 @@ On 2026-10-21 GongJae chose DACON and AIFactory as the domestic sources ("한국
 left 과기정통부's own program sites out ("과기부는 딱히 안해도 될듯?"); a ministry competition that runs on DACON or
 AIFactory is listed through that platform.
 
+Later on 2026-10-21 GongJae widened the sources and the kinds of events:
+- Hackathons, 공모전, and 경진대회 are challenges too ("이런것도 다 챌린지의 일종이니까 싹다 하자"), listed when they
+  are AI or data events.
+- Every site that runs competitions itself is to be added, starting with sizable ones such as DAKER and DACON
+  ("대회 직접 운영하는 사이트 싹 다 추가하자 … Daker Dacon 같은 규모있는곳같은곳 하면 됨").
+- Contest portals that gather other organizers' 공모전, such as 위비티, 링커리어, and 콘테스트코리아, are not
+  collected ("공모전 모음 사이트는 저런 잡들은 필요없음").
+- No prize field or column ("상금칸은 필요없어").
+
 The landscape survey behind these choices is `reports/AI 챌린지 서비스 생태계 조사.md`, kept locally.
 
 ## Product constraints
