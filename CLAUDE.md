@@ -78,6 +78,7 @@ installed dev dependencies, and `.claude/settings.json` enables the frontend-des
 
 ## Harness
 
-The production rules, skills, and settings in `.claude/` are kept by the harness session (CLAUDE). Report a
-correction or a missing rule to it as `~/.claude/CLAUDE.md` describes, rather than editing `.claude/` here. This
-file belongs to the project and changes with it.
+The production settings, rules, hooks, skills, and subagents in `.claude/` are kept by the harness session
+(CLAUDE); `.claude/rules/engineering.md` names the project tools, such as plugins and MCP servers, that the project
+adds itself. Report a correction or a missing rule to the harness session as `~/.claude/CLAUDE.md` describes,
+rather than editing its parts of `.claude/` here. This file belongs to the project and changes with it.

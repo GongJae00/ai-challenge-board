@@ -122,13 +122,21 @@ Install Claude Code extensions for this project only: a plugin with
 MCP server in `.mcp.json`, run from a dev dependency with `npx --no -- <command>` so that the lockfile sets its
 version; and language servers and CLIs as project dependencies. These project tools are the project's to add. The
 rest of `.claude/` is kept by the harness session (CLAUDE): the `claudeMdExcludes`, `skillOverrides`, and `hooks`
-settings, and the files under `.claude/rules/`, `.claude/hooks/`, and `.claude/skills/`. Report a correction or a
-missing rule to it as `~/.claude/CLAUDE.md` describes.
+settings, and the files under `.claude/rules/`, `.claude/hooks/`, `.claude/skills/`, and `.claude/agents/`. Report
+a correction or a missing rule to it as `~/.claude/CLAUDE.md` describes.
 
 A command that would write GongJae's user-level configuration changes every research project too, such as
 `claude mcp add` outside the project scope, a plugin install without a project scope, `npm install -g`, or a
 vendor's setup wizard; `.claude/hooks/user-scope-guard.py` stops it and asks GongJae. The hook cannot see menus,
 so in the `/plugin` menu choose the project scope, and decline the language-server recommendation's install.
+
+## Subagents
+
+The subagents in `.claude/agents/` take the work their descriptions name, each on the model and effort that work
+needs. The main session leads them and keeps what needs one hand to stay consistent: the data model and the shared
+modules, the first collector, which sets the pattern for the others, the pages and the design, and the
+integration, records, commits, and deploys. It checks a subagent's result before building on it, and runs the full
+check after integrating.
 
 ## Records and reporting
 
