@@ -7,6 +7,7 @@ import { kaggle } from "./kaggle/index.ts"
 import { lablab } from "./lablab/index.ts"
 import { openreview } from "./openreview/index.ts"
 import { signate } from "./signate/index.ts"
+import { tianchi } from "./tianchi/index.ts"
 import { zindi } from "./zindi/index.ts"
 
 export const sources: Source[] = [
@@ -19,4 +20,5 @@ export const sources: Source[] = [
   lablab,
   zindi,
   signate,
+  tianchi,
 ]
