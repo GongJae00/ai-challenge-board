@@ -2,7 +2,8 @@
 import { getRelativeLocaleUrl } from "astro:i18n"
 
 import "@/styles/global.css"
-import { otherLocale, type Locale } from "@/i18n/locales"
+import LanguageMenu from "@/components/language-menu"
+import { localeNames, locales, type Locale } from "@/i18n/locales"
 import { t } from "@/i18n/messages"
 
 interface Props {
@@ -10,14 +11,18 @@ interface Props {
 }
 
 const { locale } = Astro.props
-const other = otherLocale(locale)
+const languages = locales.map((option) => ({
+  locale: option,
+  name: localeNames[option],
+  href: getRelativeLocaleUrl(option),
+}))
 ---
 
 <html lang={locale}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="light" />
     <meta name="description" content={t(locale, "site.description")} />
     <link
       rel="icon"
@@ -28,20 +33,18 @@ const other = otherLocale(locale)
     <slot name="head" />
   </head>
   <body class="min-h-svh">
-    <header class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
+    <header class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
       <a href={getRelativeLocaleUrl(locale)} class="font-semibold">
         {t(locale, "site.name")}
       </a>
-      <a
-        href={getRelativeLocaleUrl(other)}
-        hreflang={other}
-        lang={other}
-        class="text-sm text-muted-foreground hover:text-foreground"
-      >
-        {t(locale, "nav.otherLanguage")}
-      </a>
+      <LanguageMenu
+        client:load
+        current={locale}
+        label={t(locale, "nav.language")}
+        options={languages}
+      />
     </header>
-    <main class="mx-auto max-w-5xl px-4 pb-16">
+    <main class="mx-auto max-w-6xl px-4 pb-16">
       <slot />
     </main>
   </body>

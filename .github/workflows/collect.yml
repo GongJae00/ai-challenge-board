@@ -1,0 +1,56 @@
+name: Collect
+
+# Twice a day, off the hour; src/collect/run.ts also fetches a source at most once per half UTC day.
+on:
+  schedule:
+    - cron: "17 0,12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .node-version
+          cache: npm
+      # No install scripts: the collector needs none, and this job holds a token that can push.
+      - run: npm ci --ignore-scripts
+      # A failed source keeps its last data and makes the collector exit non-zero; the other sources' data is
+      # still committed, and the job fails at the end so that the failure shows.
+      - id: collect
+        run: npm run collect || echo "failed=true" >> "$GITHUB_OUTPUT"
+      - id: commit
+        run: |
+          git add src/data/sources
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "Update collected listings"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      # A push made with this workflow's token starts no other workflow, but a dispatch does: CI checks the new
+      # data and deploys it.
+      - if: steps.commit.outputs.changed == 'true'
+        run: gh workflow run ci.yml --ref main
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - if: steps.collect.outputs.failed == 'true'
+        run: |
+          echo "::error::A source failed; see the collect step's log."
+          exit 1

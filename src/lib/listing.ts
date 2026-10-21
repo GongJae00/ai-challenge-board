@@ -1,0 +1,62 @@
+import { z } from "zod"
+
+/** The sources ACB collects from; each has a collector under `src/collect/sources/`. */
+export const sourceIds = ["openreview", "evalai"] as const
+export type SourceId = (typeof sourceIds)[number]
+
+export const conferences = [
+  "CVPR",
+  "ICCV",
+  "ECCV",
+  "NeurIPS",
+  "ICML",
+  "ICLR",
+  "AAAI",
+] as const
+export type Conference = (typeof conferences)[number]
+
+/** An instant in UTC, written as ISO 8601 with a `Z`. */
+const instant = z.iso.datetime()
+
+/** Only web links reach the pages, so a `javascript:` or `data:` link from a source never becomes an href. */
+const webUrl = z.url({ protocol: /^https?$/ })
+
+export const deadlineSchema = z.object({
+  /** A paper call's submission deadline, the end of one challenge phase, or the end of a whole challenge. */
+  kind: z.enum(["submission", "phase", "end"]),
+  /** The source's name for the deadline, such as a phase's name; null when the kind says it all. */
+  label: z.string().min(1).nullable(),
+  at: instant,
+  /** The time zone the source states the deadline in. "UTC" also covers sources that give only an instant. */
+  zone: z.enum(["UTC", "AoE"]),
+})
+export type Deadline = z.infer<typeof deadlineSchema>
+
+export const listingSchema = z.object({
+  /** `<source>:<the source's own id>`, stable across runs. */
+  id: z.string().regex(/^[a-z]+:\S+$/),
+  source: z.enum(sourceIds),
+  kind: z.enum(["challenge", "cfp"]),
+  title: z.string().min(1).max(300),
+  organizer: z.string().min(1).max(200).nullable(),
+  conference: z
+    .object({ name: z.enum(conferences), year: z.number().int() })
+    .nullable(),
+  /** Where a visitor reads about the listing, such as the workshop's own site. */
+  url: webUrl,
+  /** The source page the facts were taken from. */
+  sourceUrl: webUrl,
+  opensAt: instant.nullable(),
+  deadlines: z.array(deadlineSchema).min(1),
+})
+export type Listing = z.infer<typeof listingSchema>
+
+/** What the collector writes for one source, in `src/data/sources/<source>.json`. */
+export const sourceFileSchema = z.object({
+  source: z.enum(sourceIds),
+  retrievedAt: instant,
+  /** The last run that fetched the source but kept the data above, when it came after `retrievedAt`. */
+  attemptedAt: instant.optional(),
+  listings: z.array(listingSchema),
+})
+export type SourceFile = z.infer<typeof sourceFileSchema>

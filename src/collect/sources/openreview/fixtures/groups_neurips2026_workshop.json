@@ -1,0 +1,95 @@
+{
+  "groups": [
+    {
+      "id": "NeurIPS.cc/2026/Workshop/MLForSys",
+      "parent": "NeurIPS.cc/2026/Workshop",
+      "domain": "NeurIPS.cc/2026/Workshop/MLForSys",
+      "cdate": 1780521001415,
+      "mdate": 1791684008629,
+      "content": {
+        "title": {
+          "value": "Machine Learning for Systems 2026"
+        },
+        "subtitle": {
+          "value": "MLForSys2026"
+        },
+        "website": {
+          "value": "https://mlforsystems.org"
+        },
+        "location": {
+          "value": "Sydney, Australia"
+        },
+        "start_date": {
+          "value": 1796990400000
+        },
+        "date": {
+          "value": ""
+        },
+        "submission_id": {
+          "value": "NeurIPS.cc/2026/Workshop/MLForSys/-/Submission"
+        }
+      }
+    },
+    {
+      "id": "NeurIPS.cc/2026/Workshop/Simbiochem",
+      "parent": "NeurIPS.cc/2026/Workshop",
+      "domain": "NeurIPS.cc/2026/Workshop/Simbiochem",
+      "cdate": 1783966620263,
+      "mdate": 1792176620871,
+      "content": {
+        "title": {
+          "value": "The 2nd Workshop on Simulations for Biology and Chemistry"
+        },
+        "subtitle": {
+          "value": "Simbiochem 2026"
+        },
+        "website": {
+          "value": "www.simbiochem.com"
+        },
+        "location": {
+          "value": "Sydney, Australia"
+        },
+        "start_date": {
+          "value": "Dec 11 2026"
+        },
+        "date": {
+          "value": "Submission Deadline: Sep 05 2026 11:59AM UTC-0"
+        },
+        "submission_id": {
+          "value": "NeurIPS.cc/2026/Workshop/Simbiochem/-/Submission"
+        }
+      }
+    },
+    {
+      "id": "NeurIPS.cc/2026/Workshop/A2NetOps",
+      "parent": "NeurIPS.cc/2026/Workshop",
+      "domain": "NeurIPS.cc/2026/Workshop/A2NetOps",
+      "cdate": 1790608077819,
+      "mdate": 1790608093961,
+      "content": {
+        "title": {
+          "value": "SAPC2: The Second Speech Accessibility Project Challenge"
+        },
+        "subtitle": {
+          "value": "SAPC2"
+        },
+        "website": {
+          "value": "https://xiuwenz2.github.io/SAPC2-website/"
+        },
+        "location": {
+          "value": "Sydney, Australia"
+        },
+        "start_date": {
+          "value": 1796967000000
+        },
+        "date": {
+          "value": ""
+        },
+        "submission_id": {
+          "value": "NeurIPS.cc/2026/Workshop/A2NetOps/-/Submission"
+        }
+      }
+    }
+  ],
+  "count": 3
+}

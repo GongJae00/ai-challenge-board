@@ -1,0 +1,72 @@
+{
+  "next": "https://codabench-prod.lisn.upsaclay.fr/api/competitions/public/?page=2&page_size=1000",
+  "previous": null,
+  "count": 1536,
+  "page_size": 20,
+  "results": [
+    {
+      "id": 18411,
+      "title": "Shared Task 1: BanglaKnight",
+      "created_when": "2026-10-17T23:44:32.075690Z",
+      "first_phase_start": "2026-10-17T00:00:00Z",
+      "published": true,
+      "participants_count": 15,
+      "logo": null,
+      "logo_icon": null,
+      "description": "Classify Bangla prompts (Bangla script, romanized, code-mixed) as Safe, Offensiv",
+      "competition_type": "competition",
+      "reward": null,
+      "report": null,
+      "is_featured": false,
+      "submissions_count": 12
+    },
+    {
+      "id": 18381,
+      "title": "Formatos - Iris",
+      "created_when": "2026-10-15T18:58:23.504683Z",
+      "first_phase_start": "2026-10-15T00:00:00Z",
+      "published": true,
+      "participants_count": 3,
+      "logo": null,
+      "logo_icon": null,
+      "description": "Classifique os desenhos como Patrick ou Bob Esponja.",
+      "competition_type": "competition",
+      "reward": "",
+      "report": "",
+      "is_featured": false,
+      "submissions_count": 5
+    },
+    {
+      "id": 18221,
+      "title": "ADD 2026 Track 2 - Explainable Audio Deepfake Detection (EAD)",
+      "created_when": "2026-09-24T02:55:40.988566Z",
+      "first_phase_start": "2026-11-25T00:00:00Z",
+      "published": true,
+      "participants_count": 38,
+      "logo": null,
+      "logo_icon": null,
+      "description": "Classify audio as real or fake and provide an evidence-based explanation.",
+      "competition_type": "competition",
+      "reward": "",
+      "report": "",
+      "is_featured": false,
+      "submissions_count": 0
+    },
+    {
+      "id": 17718,
+      "title": "test competion 2",
+      "created_when": "2026-07-31T03:48:52.993819Z",
+      "first_phase_start": "2026-07-31T00:00:00Z",
+      "published": true,
+      "participants_count": 3,
+      "logo": null,
+      "logo_icon": null,
+      "description": "",
+      "competition_type": "benchmark",
+      "reward": "",
+      "report": "",
+      "is_featured": false,
+      "submissions_count": 0
+    }
+  ]
+}

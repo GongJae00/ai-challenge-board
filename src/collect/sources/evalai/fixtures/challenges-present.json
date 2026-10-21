@@ -1,0 +1,122 @@
+{
+  "count": 18,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 2703,
+      "title": "CLIP2 - The 2nd Cadenza Lyrics Intelligibility Prediction Challenge",
+      "short_description": "Lyrics Intelligibility Prediction",
+      "description": "<p>\r\n    Understanding the lyrics in music is key for music enjoyment.\r\n    People with hearing loss can have difficulties clearly and effortlessly hearing lyrics, however.\r\n    In speech technology, having metrics to automatically evaluate intelligibility has driven improvements in speech enhanceme",
+      "start_date": "2026-06-08T00:00:00Z",
+      "end_date": "2027-01-08T23:59:59Z",
+      "creator": {
+        "id": 4316,
+        "team_name": "Cadenza Project Team",
+        "team_url": "https://cadenzachallenge.org/"
+      },
+      "list_tags": [
+        "lyric-intelligibility",
+        "signal-processing",
+        "machine-learning",
+        "music"
+      ],
+      "has_prize": false,
+      "published": true,
+      "is_registration_open": true,
+      "approved_by_admin": true,
+      "is_active": true,
+      "slug": "clip2-the-2nd-cadenza-lyrics-intelligibility-prediction-challenge-2703",
+      "created_at": "2026-06-08T09:40:27.452434Z",
+      "github_repository": "CadenzaProject/CLIP2-challenge-EvalAI"
+    },
+    {
+      "id": 2680,
+      "title": "eBay 2026 University Machine Learning Competition - Canada",
+      "short_description": "eBay's Machine Learning Competition for Students - Canada",
+      "description": "<!-- Introduction Section -->\r\n<div>\r\n    <p>\r\n        Attention all students! 🎓 We're thrilled to announce eBay's first University Machine Learning Competition for Canada, where we'll be diving into the exciting world of e-commerce datasets. 🌐\r\n    </p>\r\n\r\n    <p>\r\n        <strong>Here's the exciti",
+      "start_date": "2026-05-01T04:00:00Z",
+      "end_date": "2026-11-07T04:59:59Z",
+      "creator": {
+        "id": 480,
+        "team_name": "eBay ML Challenge",
+        "team_url": ""
+      },
+      "list_tags": ["eCommerce", "NER", "Internship 2027", "Hiring"],
+      "has_prize": false,
+      "published": true,
+      "is_registration_open": false,
+      "approved_by_admin": true,
+      "is_active": true,
+      "slug": "ebay-2026-university-machine-learning-competition-canada-2680",
+      "created_at": "2026-03-23T19:38:01.163375Z",
+      "github_repository": "rishajain/eBay-university-ml-challenge-2026-Canada"
+    },
+    {
+      "id": 2672,
+      "title": "CVPR 2026 Roboflow-20VL Few-Shot Object Detection Challenge",
+      "short_description": "Few shot object detection challenge that welcomes use of state-of-the-art foundational vision-language models leveraging web-scale pre-training.",
+      "description": "<div><!--block--><strong><br>📢 PSA: Many teams are downloading the dataset incorrectly — this causes very low mAP on the server<br></strong><br></div><div><!--block--><br>We have noticed that many participants are downloading the dataset directly from the Roboflow website. This produces a raw COCO e",
+      "start_date": "2025-03-01T00:00:00Z",
+      "end_date": "2099-06-01T23:59:59Z",
+      "creator": {
+        "id": 3903,
+        "team_name": "roboflow-vl",
+        "team_url": ""
+      },
+      "list_tags": ["Detection", "FSOD", "Multi-Modal", "VLMs"],
+      "has_prize": false,
+      "published": true,
+      "is_registration_open": true,
+      "approved_by_admin": true,
+      "is_active": true,
+      "slug": "cvpr-2026-roboflow-20vl-few-shot-object-detection-challenge-2672",
+      "created_at": "2026-02-18T13:11:42.062824Z",
+      "github_repository": "shrutijain1405/foundational_fsod_challenge_2026"
+    },
+    {
+      "id": 2619,
+      "title": "Reliable VQA Challenge ICCV-CLVL 2025",
+      "short_description": "VQA models excel on VQAv2 accuracy, but struggle with knowing when they are wrong - a task known as Selective Prediction. This challenge focuses on evaluating VQA models' ability to predict when they are uncertain about their answers and to provide a confidence score for their predictions that aligns with their accuracy.",
+      "description": "<p>\r\n    Visual Question Answering has been one of the core tasks in the Vision and Language Research Field. Approaches have significantly improved and maybe even saturated on datasets such as <a href=\"https://arxiv.org/abs/1612.00837\" target=\"_blank\">VQAv2</a> when measuring accuracy, with <a href=",
+      "start_date": "2025-08-04T21:59:59Z",
+      "end_date": "2100-01-01T07:59:59Z",
+      "creator": {
+        "id": 4213,
+        "team_name": "ICCV-CLVL-2025",
+        "team_url": ""
+      },
+      "list_tags": ["reliability", "vqa", "iccv-2025", "selective-prediction"],
+      "has_prize": false,
+      "published": true,
+      "is_registration_open": true,
+      "approved_by_admin": true,
+      "is_active": true,
+      "slug": "reliable-vqa-challenge-iccv-clvl-2025-2619",
+      "created_at": "2025-07-22T12:26:54.698918Z",
+      "github_repository": "tobiwiecz/selpred_challenge15"
+    },
+    {
+      "id": 518,
+      "title": "Visual Dialog Challenge 2020",
+      "short_description": "Build artificial agents that can hold conversations in natural, conversational language about images.",
+      "description": "<div class=\"container center\">\r\n\t<img src=\"https://i.imgur.com/YpRooyx.png\" alt=\"Visual Dialog Challenge Image\" class=\"center\" width=\"80%\">\r\n</div>\r\n\r\n<p>\r\nVisual Dialog requires an AI agent to hold a meaningful\r\ndialog with humans in natural, conversational language about visual content.\r\nSpecifica",
+      "start_date": "2020-02-02T00:00:00Z",
+      "end_date": "2042-10-09T23:59:59Z",
+      "creator": {
+        "id": 194,
+        "team_name": "Visual Dialog Team",
+        "team_url": "https://visualdialog.org/challenge/2020"
+      },
+      "list_tags": ["Visual Dialog"],
+      "has_prize": false,
+      "published": true,
+      "is_registration_open": true,
+      "approved_by_admin": true,
+      "is_active": true,
+      "slug": "visual-dialog-challenge-2020-518",
+      "created_at": "2020-02-03T18:43:28.856037Z",
+      "github_repository": null
+    }
+  ]
+}

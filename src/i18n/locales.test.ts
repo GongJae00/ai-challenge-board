@@ -1,10 +1,9 @@
 import { describe, expect, it } from "vitest"
 
-import { otherLocale } from "./locales"
+import { localeNames, locales } from "./locales"
 
-describe("otherLocale", () => {
-  it("pairs Korean and English", () => {
-    expect(otherLocale("ko")).toBe("en")
-    expect(otherLocale("en")).toBe("ko")
+describe("locales", () => {
+  it("gives every locale a name", () => {
+    for (const locale of locales) expect(localeNames[locale]).toBeTruthy()
   })
 })

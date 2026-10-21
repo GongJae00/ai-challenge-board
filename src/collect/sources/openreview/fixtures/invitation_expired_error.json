@@ -1,0 +1,8 @@
+{
+  "name": "InvitationExpiredError",
+  "message": "The Invitation NeurIPS.cc/2026/Workshop/MLForSys/-/Submission has expired (2026-10-21-3612361)",
+  "status": 400,
+  "details": {
+    "reqId": "2026-10-21-3612361"
+  }
+}

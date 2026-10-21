@@ -1,0 +1,37 @@
+{
+  "id": 18221,
+  "title": "ADD 2026 Track 2 - Explainable Audio Deepfake Detection (EAD)",
+  "published": true,
+  "created_when": "2026-09-24T02:55:40.988566Z",
+  "participants_count": 38,
+  "submissions_count": 0,
+  "competition_type": "competition",
+  "reward": "",
+  "report": "",
+  "description": "Classify audio as real or fake and provide an evidence-based explanation.",
+  "pages": [
+    {
+      "title": "Overview"
+    },
+    {
+      "title": "Registration and data"
+    },
+    {
+      "title": "Rules"
+    },
+    {
+      "title": "Submission"
+    }
+  ],
+  "phases": [
+    {
+      "id": 30743,
+      "index": 0,
+      "name": "Submission",
+      "start": "2026-11-25T00:00:00Z",
+      "end": "2026-12-07T23:59:00Z",
+      "status": "Next",
+      "is_final_phase": true
+    }
+  ]
+}

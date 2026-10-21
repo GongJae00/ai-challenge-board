@@ -1,0 +1,820 @@
+{
+  "source": "openreview",
+  "retrievedAt": "2026-10-21T06:03:28.832Z",
+  "listings": [
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/A2NetOps",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "AAAI-27 Workshop on Agents for Autonomous Network Operations: Causal Reasoning, Uncertainty, and Safe Action",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://a2netops.github.io/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FA2NetOps",
+      "opensAt": "2026-10-16T12:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-21T11:59:00.000Z",
+          "zone": "AoE"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/Agentic_Labs",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "Agentic Laboratories: Coordinating AI Scientists for Autonomous Physical Experimentation",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://siavashhkh.github.io/agentic-labs-aaai27/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FAgentic_Labs",
+      "opensAt": "2026-10-16T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-20T05:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/AgenticSE",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "AAAI 2027 Workshop on Agentic Software Engineering",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://agenticse-aaai.github.io/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FAgenticSE",
+      "opensAt": "2026-10-12T12:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-21T11:59:00.000Z",
+          "zone": "AoE"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/AICS",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "AAAI-27 Workshop on Artificial Intelligence for Cyber Security (AICS) 2027",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://aics.site/AICS2027/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FAICS",
+      "opensAt": "2026-10-12T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-21T10:59:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/ASTAD",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "The 4th Workshop on Automated Spatial and Temporal Anomaly Detection (ASTAD)",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://ismart.ece.mcgill.ca/astad4/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FASTAD",
+      "opensAt": "2026-10-15T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-21T03:59:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/DAI",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "5th Workshop on Deployable AI, AAAI-27",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://dai-workshop.github.io/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FDAI",
+      "opensAt": "2026-10-13T02:30:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-19T18:30:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/DiMiGenAIS",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "Disinformation and Misinformation under the lens of Generative AI Safety",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://dimigenais-aaai2027.netlify.app/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FDiMiGenAIS",
+      "opensAt": "2026-10-17T12:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-15T12:59:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/EAIM",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "Second Workshop on Emerging AI Technologies for Music",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://amaai-lab.github.io/EAIM2027/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FEAIM",
+      "opensAt": "2026-10-05T08:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-07T12:00:00.000Z",
+          "zone": "AoE"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/EvalAIScientists",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "AAAI-27 Workshop on Effective and Efficient Evaluation for AI Scientists",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://eval-ai-scientists.github.io/aaai27/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FEvalAIScientists",
+      "opensAt": "2026-10-05T06:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-20T06:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/FinFM",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "AAAI-27 Workshop on Foundation Models and Generative AI for Finance (FinFM)",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://finfm.finhorizons.org/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FFinFM",
+      "opensAt": "2026-10-02T12:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-21T11:59:00.000Z",
+          "zone": "AoE"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/FrontierIR",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "Second Workshop on New Frontiers in Information Retrieval (FrontierIR) at AAAI 2027",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://frontier-ir-workshop.github.io/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FFrontierIR",
+      "opensAt": "2026-10-19T14:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-20T11:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/GSR-VLM",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "AAAI Workshop on Geometric and Spatial Reasoning in Vision-Language Models",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://gsr-vlm.org/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FGSR-VLM",
+      "opensAt": "2026-10-12T08:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-20T11:59:00.000Z",
+          "zone": "AoE"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/Human-Centric_AgMS",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "AAAI-27 Workshop on Human-Centric Agentic Mobility Services",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://agentic-mobility-workshop.github.io/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FHuman-Centric_AgMS",
+      "opensAt": "2026-10-13T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-21T13:59:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/LoyalAgents",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "Who Does Your AI Agent Work For? A Workshop on Loyal Agents",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://github.com/noetx/loyalagents-2027",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FLoyalAgents",
+      "opensAt": "2026-10-16T12:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-21T10:59:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/MakingSense",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "AAAI-27 Workshop on Making Sense: Foundation Models for Multisensory Intelligence",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://making-sense-workshop.github.io/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FMakingSense",
+      "opensAt": "2026-10-01T23:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-21T11:59:00.000Z",
+          "zone": "AoE"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/MATH4AI",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "MATH4AI Workshop: Foretelling the Future of AI through Mathematical Foundations - From Learning Architectures to Trustworthy Agents",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://sites.google.com/view/math4aiworkshop2027",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FMATH4AI",
+      "opensAt": "2026-10-04T16:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-21T12:00:00.000Z",
+          "zone": "AoE"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/MEDWM",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "AAAI Medical World Models Workshop 2027",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://med-wm.github.io/aaai27-mwm/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FMEDWM",
+      "opensAt": "2026-10-15T16:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-16T11:59:00.000Z",
+          "zone": "AoE"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/MultiRobust",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "AAAI-27 Workshop on Multi-Objective and Multi-Task Optimization for Robust AI",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://robust-ai-2027.github.io/aaai27_workshop",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FMultiRobust",
+      "opensAt": "2026-10-07T11:59:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-21T11:59:00.000Z",
+          "zone": "AoE"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/NeSy-FM",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "NeSy-FM Workshop @ AAAI 2027: Neuro-Symbolic AI in Large Foundation Models",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://llm-symbol.github.io/NeSy-FM-AAAI2027/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FNeSy-FM",
+      "opensAt": "2026-10-04T16:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-01T11:59:00.000Z",
+          "zone": "AoE"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/NeuroAI",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "2nd International Workshop on Neuro for AI & AI for Neuro: Towards Multi-Modal Natural Intelligence",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://neuroai-multimodal-workshop.github.io/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FNeuroAI",
+      "opensAt": "2026-10-13T16:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-21T11:59:00.000Z",
+          "zone": "AoE"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/NeusymBridge",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "The Workshop on Bridging Neurons and Symbols for Reasoning over LLMs and Knowledge Graphs @ AAAI 2027",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://neusymbridge.github.io/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FNeusymBridge",
+      "opensAt": "2026-10-20T12:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-27T11:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/PGAI4E",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "Physics-Governed AI for Energy",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://pgai4e.github.io/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FPGAI4E",
+      "opensAt": "2026-10-16T18:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-21T11:59:00.000Z",
+          "zone": "AoE"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/SAFE",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "Third Workshop on Synthetic & Adversarial ForEnsics",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://www.safeworkshop.org/aaai-2027/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FSAFE",
+      "opensAt": "2026-09-29T09:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-03T04:59:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/SC4AI",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "Social Choice for AI Ethics and Safety 2027",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://sites.google.com/view/sc4ai/workshops/sc4ai27",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FSC4AI",
+      "opensAt": "2026-10-03T22:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-21T10:59:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/Social_Sim",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "Third Workshop on Social Simulation with LLMs: From Proxies to Populations",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://sites.google.com/view/social-sims-with-llms/social-sim27",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FSocial_Sim",
+      "opensAt": "2026-10-09T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-06T05:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/SPF-LLM",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "Security and Privacy Foundations for LLMs",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://spf-llm-2026.github.io/spf-llm-workshop.github.io/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FSPF-LLM",
+      "opensAt": "2026-10-16T06:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-21T16:59:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/ToM4AI",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "Third Theory of Mind in AI",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://tom4ai.github.io/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FToM4AI",
+      "opensAt": "2026-10-07T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-20T11:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/Trust4RSI-Agent",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "AAAI 2027 Workshop on Trustworthy Evolution of AI Agents: An Agent Operating System Perspective",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://trust4rsi-agent.github.io/AAAI2027/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FTrust4RSI-Agent",
+      "opensAt": "2026-10-03T13:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-21T13:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/WMAC",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "AAAI-27 Workshop on Measuring Collective Intelligence in Agentic Systems",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://multiagents.org/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FWMAC",
+      "opensAt": "2026-10-06T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-20T22:59:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:NeurIPS.cc/2026/Workshop/A2NetOps",
+      "source": "openreview",
+      "kind": "challenge",
+      "title": "SAPC2: The Second Speech Accessibility Project Challenge",
+      "organizer": null,
+      "conference": {
+        "name": "NeurIPS",
+        "year": 2026
+      },
+      "url": "https://xiuwenz2.github.io/SAPC2-website/",
+      "sourceUrl": "https://openreview.net/group?id=NeurIPS.cc%2F2026%2FWorkshop%2FA2NetOps",
+      "opensAt": "2026-09-25T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-08T10:59:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:NeurIPS.cc/2026/Workshop/AIMOInterp_Challenge",
+      "source": "openreview",
+      "kind": "challenge",
+      "title": "AIMO Interpretability Challenge",
+      "organizer": null,
+      "conference": {
+        "name": "NeurIPS",
+        "year": 2026
+      },
+      "url": "https://aimo-interp.github.io/",
+      "sourceUrl": "https://openreview.net/group?id=NeurIPS.cc%2F2026%2FWorkshop%2FAIMOInterp_Challenge",
+      "opensAt": "2026-10-20T22:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-01T08:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:NeurIPS.cc/2026/Workshop/ESR_Demo_Track",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "Embodied Spatial Reasoning Workshop at NeurIPS 2026 (Demo Track)",
+      "organizer": null,
+      "conference": {
+        "name": "NeurIPS",
+        "year": 2026
+      },
+      "url": "https://embodiedsr.github.io/",
+      "sourceUrl": "https://openreview.net/group?id=NeurIPS.cc%2F2026%2FWorkshop%2FESR_Demo_Track",
+      "opensAt": "2026-08-25T08:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-01T11:59:00.000Z",
+          "zone": "AoE"
+        }
+      ]
+    },
+    {
+      "id": "openreview:NeurIPS.cc/2026/Workshop/PAIEC",
+      "source": "openreview",
+      "kind": "challenge",
+      "title": "Predictive AI Evaluation Competition at NeurIPS 2026",
+      "organizer": null,
+      "conference": {
+        "name": "NeurIPS",
+        "year": 2026
+      },
+      "url": "https://aimslab.stanford.edu/competition",
+      "sourceUrl": "https://openreview.net/group?id=NeurIPS.cc%2F2026%2FWorkshop%2FPAIEC",
+      "opensAt": "2026-09-15T16:29:01.800Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-10-31T11:59:00.000Z",
+          "zone": "AoE"
+        }
+      ]
+    },
+    {
+      "id": "openreview:NeurIPS.cc/2026/Workshop/PhysWorldAI_Poster",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "The 1st Workshop on Physical World AI: Geometry, Characteristics, and Multimodal Sensing (Poster)",
+      "organizer": null,
+      "conference": {
+        "name": "NeurIPS",
+        "year": 2026
+      },
+      "url": "https://physworld-org.github.io/physworld.github.io/",
+      "sourceUrl": "https://openreview.net/group?id=NeurIPS.cc%2F2026%2FWorkshop%2FPhysWorldAI_Poster",
+      "opensAt": "2026-10-13T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-10-30T14:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:NeurIPS.cc/2026/Workshop/SB26_Challenge",
+      "source": "openreview",
+      "kind": "challenge",
+      "title": "The Smart Buildings Challenge [Neurips 2026 Competition]",
+      "organizer": null,
+      "conference": {
+        "name": "NeurIPS",
+        "year": 2026
+      },
+      "url": "https://smart-buildings-2026.github.io/competition/index.html",
+      "sourceUrl": "https://openreview.net/group?id=NeurIPS.cc%2F2026%2FWorkshop%2FSB26_Challenge",
+      "opensAt": "2026-09-24T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2027-01-15T03:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:NeurIPS.cc/2026/Workshop/VERICODEGEN_Competition",
+      "source": "openreview",
+      "kind": "challenge",
+      "title": "NeurIPS 2026 Workshop on AI for Verifiable Coding Competition Track",
+      "organizer": null,
+      "conference": {
+        "name": "NeurIPS",
+        "year": 2026
+      },
+      "url": "https://vericodegen.github.io/index.html#challenge",
+      "sourceUrl": "https://openreview.net/group?id=NeurIPS.cc%2F2026%2FWorkshop%2FVERICODEGEN_Competition",
+      "opensAt": "2026-08-14T19:07:31.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-09T11:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:NeurIPS.cc/2026/Workshop/VLM4RWD_Challenges",
+      "source": "openreview",
+      "kind": "challenge",
+      "title": "NeurIPS 2026 Workshop VLM4RWD Challenges",
+      "organizer": null,
+      "conference": {
+        "name": "NeurIPS",
+        "year": 2026
+      },
+      "url": "https://vlm4rwd.github.io/",
+      "sourceUrl": "https://openreview.net/group?id=NeurIPS.cc%2F2026%2FWorkshop%2FVLM4RWD_Challenges",
+      "opensAt": "2026-10-06T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-16T12:00:00.000Z",
+          "zone": "AoE"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": 18062,
+  "title": "Face-voice Association across LAnguages and Gender (FLAG) 2027 Challenge",
+  "published": true,
+  "created_when": "2026-09-10T14:21:34.054871Z",
+  "participants_count": 118,
+  "submissions_count": 1722,
+  "competition_type": "competition",
+  "reward": "",
+  "report": "",
+  "description": "Face–voice association models may rely on language or gender cues in the voice r",
+  "pages": [
+    {
+      "title": "Overview"
+    }
+  ],
+  "phases": [
+    {
+      "id": 30374,
+      "index": 0,
+      "name": "Progress",
+      "start": "2026-09-16T00:00:00Z",
+      "end": "2026-11-10T00:00:00Z",
+      "status": "Current",
+      "is_final_phase": false
+    },
+    {
+      "id": 30375,
+      "index": 1,
+      "name": "Evaluation FLAG",
+      "start": "2026-11-10T23:01:00Z",
+      "end": "2026-11-17T23:00:00Z",
+      "status": "Next",
+      "is_final_phase": false
+    },
+    {
+      "id": 30376,
+      "index": 2,
+      "name": "Evaluation  FLAG 2",
+      "start": "2026-11-19T00:00:00Z",
+      "end": "2026-11-26T00:00:00Z",
+      "status": "Next",
+      "is_final_phase": false
+    },
+    {
+      "id": 30377,
+      "index": 3,
+      "name": "Post-evaluation",
+      "start": "2026-12-01T00:00:00Z",
+      "end": "2027-12-31T00:00:00Z",
+      "status": "Next",
+      "is_final_phase": false
+    }
+  ]
+}

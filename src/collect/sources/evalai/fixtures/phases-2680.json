@@ -1,0 +1,31 @@
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 5309,
+      "name": "Quiz Phase",
+      "description": "<div>\r\n    <p>\r\n        Your submissions will be evaluated in this period.\r\n    </p>\r\n</div>\r\n\r\n<!-- Note Section -->\r\n<div>\r\n    <div class=\"fs-22 fw-regular\">\r\n        <strong>Note:</strong>\r\n    </",
+      "start_date": "2026-05-01T04:00:00Z",
+      "end_date": "2026-11-02T04:59:59Z",
+      "challenge": 2680,
+      "is_public": true,
+      "is_active": true,
+      "codename": "quiz_split",
+      "slug": "ebay-quiz_split-2680"
+    },
+    {
+      "id": 5310,
+      "name": "Test Phase (Private)",
+      "description": "<div>\n    <p>\n        This is the final evaluation phase. Teams must submit their test data predictions during this window.\n    </p>\n</div>\n\n<!-- Note Section -->\n<div>\n    <div class=\"fs-22 fw-regula",
+      "start_date": "2026-11-02T05:00:00Z",
+      "end_date": "2026-11-07T04:59:59Z",
+      "challenge": 2680,
+      "is_public": true,
+      "is_active": false,
+      "codename": "test_split",
+      "slug": "ebay-test_split-2680"
+    }
+  ]
+}

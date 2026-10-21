@@ -1,0 +1,37 @@
+{
+  "id": 12971,
+  "title": "NTIRE 2026 Single Image Reflection Removal in the Wild (@ CVPR 2026)",
+  "published": true,
+  "created_when": "2026-01-19T14:41:37.212168Z",
+  "participants_count": 116,
+  "submissions_count": 988,
+  "competition_type": "competition",
+  "reward": "",
+  "report": "",
+  "description": "Our objectives are extend the field of Image Reflection removal through experime",
+  "pages": [
+    {
+      "title": "overview"
+    },
+    {
+      "title": "evaluation"
+    },
+    {
+      "title": "data"
+    },
+    {
+      "title": "organizers"
+    }
+  ],
+  "phases": [
+    {
+      "id": 21228,
+      "index": 0,
+      "name": "Development",
+      "start": "2026-01-20T00:00:00Z",
+      "end": "2026-03-18T08:00:00Z",
+      "status": "Previous",
+      "is_final_phase": true
+    }
+  ]
+}

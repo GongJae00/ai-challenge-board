@@ -1,0 +1,55 @@
+{
+  "id": 5263,
+  "title": "CVPR 2025-2026: Foundation Models for Interactive 3D Biomedical Image Segmentation",
+  "published": true,
+  "created_when": "2025-01-23T16:40:36.638392Z",
+  "participants_count": 316,
+  "submissions_count": 128,
+  "competition_type": "competition",
+  "reward": "",
+  "report": "",
+  "description": "CVPR 2025-2026 Competition for Interactive 3D Biomedical Image Segmentation Foun",
+  "pages": [
+    {
+      "title": "Overview"
+    },
+    {
+      "title": "Organizers"
+    },
+    {
+      "title": "Baseline"
+    },
+    {
+      "title": "Evaluation"
+    },
+    {
+      "title": "Dataset"
+    },
+    {
+      "title": "Awards"
+    },
+    {
+      "title": "Testing Results"
+    }
+  ],
+  "phases": [
+    {
+      "id": 8777,
+      "index": 0,
+      "name": "Validation",
+      "start": "2026-02-01T10:00:00Z",
+      "end": "2026-05-15T09:00:00Z",
+      "status": "Previous",
+      "is_final_phase": false
+    },
+    {
+      "id": 8779,
+      "index": 1,
+      "name": "Competition Ends",
+      "start": "2027-01-01T05:00:00Z",
+      "end": null,
+      "status": "Next",
+      "is_final_phase": false
+    }
+  ]
+}

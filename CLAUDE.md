@@ -55,6 +55,10 @@ The site is a static Astro build; `docs/decisions.md` records the stack and why.
 - `src/pages/`: routes, one folder per locale under `[locale]/`; `src/layouts/`, `src/components/`: the page
   frame and components, with shadcn/ui components under `src/components/ui/` (added with `npx shadcn add`).
 - `src/i18n/`: the locale list and the KO/EN message catalog.
+- `src/lib/`: code the pages and the collector share, such as the listing schema in `listing.ts`.
+- `src/collect/`: the collector, which runs in Node outside the site: the polite HTTP client, the runner, and one
+  folder per source under `sources/` with its parser, tests, and fixtures.
+- `src/data/sources/`: the collected listings, one JSON file per source, written by the collector and committed.
 - `src/styles/global.css`: Tailwind and the shadcn design tokens, the one set of tokens.
 - `e2e/`: Playwright tests against the production build, at phone and desktop widths, with an axe scan.
 - `docs/`: `decisions.md`, and later `operations.md`.
@@ -70,6 +74,8 @@ These folders hold research material and stay local; `.gitignore` keeps them out
   end-to-end tests. CI runs the same command.
 - `npm run dev`: the local server at http://localhost:4321/ai-challenge-board/.
 - `npm run format`: apply Prettier.
+- `npm run collect`: fetch every source due for collection and write `src/data/sources/`. The Collect workflow
+  runs it at 00:17 and 12:17 UTC, commits the data, and starts CI, which deploys it.
 - Deploy: a push to `main` that passes the check deploys to GitHub Pages; there is no separate preview deploy.
 - Setup on a new machine: `npm ci`, then `npx playwright install chromium` for the end-to-end tests.
 

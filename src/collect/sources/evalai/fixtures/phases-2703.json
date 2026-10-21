@@ -1,0 +1,19 @@
+{
+  "count": 1,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 5346,
+      "name": "Validation Phase",
+      "description": "<p>\n  A validation set has been made available containing 1175 audio samples paired with intelligibility scores.\n  For details of the validation data set please see the\n  <a href=\"https://cadenzachall",
+      "start_date": "2026-06-08T00:00:00Z",
+      "end_date": "2027-01-07T23:59:59Z",
+      "challenge": 2703,
+      "is_public": true,
+      "is_active": true,
+      "codename": "dev",
+      "slug": "clip2-dev-2703"
+    }
+  ]
+}

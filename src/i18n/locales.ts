@@ -4,9 +4,8 @@ export const defaultLocale = "ko"
 
 export type Locale = (typeof locales)[number]
 
-// The language switcher links to the one other locale.
-export function otherLocale(locale: Locale): Locale {
-  const other = locales.find((candidate) => candidate !== locale)
-  if (!other) throw new Error(`No locale other than ${locale}`)
-  return other
+/** Each language in its own words, as the language menu lists it. */
+export const localeNames: Record<Locale, string> = {
+  ko: "한국어",
+  en: "English",
 }

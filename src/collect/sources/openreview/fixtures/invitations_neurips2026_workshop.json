@@ -1,0 +1,28 @@
+{
+  "invitations": [
+    {
+      "id": "NeurIPS.cc/2026/Workshop/MLForSys/-/Submission",
+      "domain": "NeurIPS.cc/2026/Workshop/MLForSys",
+      "cdate": 1784091600000,
+      "duedate": 1788263940000,
+      "expdate": 1788265740000,
+      "mdate": 1791684565923
+    },
+    {
+      "id": "NeurIPS.cc/2026/Workshop/A2NetOps/-/Submission",
+      "domain": "NeurIPS.cc/2026/Workshop/A2NetOps",
+      "cdate": 1790312400000,
+      "duedate": 1794135540000,
+      "expdate": 1794137340000,
+      "mdate": 1790608096649
+    },
+    {
+      "id": "NeurIPS.cc/2026/Workshop/Simbiochem/-/Submission",
+      "domain": "NeurIPS.cc/2026/Workshop/Simbiochem",
+      "cdate": 1787673334322,
+      "duedate": 1788609540000,
+      "expdate": 1788611340000,
+      "mdate": 1787673334344
+    }
+  ]
+}

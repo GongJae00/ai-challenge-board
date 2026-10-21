@@ -1,0 +1,28 @@
+{
+  "id": 17718,
+  "title": "test competion 2",
+  "published": true,
+  "created_when": "2026-07-31T03:48:52.993819Z",
+  "participants_count": 3,
+  "submissions_count": 0,
+  "competition_type": "benchmark",
+  "reward": "",
+  "report": "",
+  "description": "",
+  "pages": [
+    {
+      "title": "Test"
+    }
+  ],
+  "phases": [
+    {
+      "id": 29556,
+      "index": 0,
+      "name": "test phase 1",
+      "start": "2026-07-31T00:00:00Z",
+      "end": null,
+      "status": "Current",
+      "is_final_phase": true
+    }
+  ]
+}

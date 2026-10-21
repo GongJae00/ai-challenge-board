@@ -1,0 +1,82 @@
+{
+  "count": 483,
+  "next": "https://eval.ai/api/challenges/challenge/past/approved/public?limit=1&page=2",
+  "previous": null,
+  "results": [
+    {
+      "id": 2717,
+      "title": "Dr.DocBench Challenge",
+      "short_description": "A shared task on expert-level document parsing at DocInsights 2026, co-located with EMNLP 2026.",
+      "description": "<h2>Dr.DocBench Challenge</h2>\n\n<p>The Dr.DocBench Challenge is an expert-level document parsing shared task at <strong>DocInsights 2026: Workshop on Document Intelligence and Understanding</strong>, co-located with <strong>EMNLP 2026</strong> in Budapest, Hungary.</p>\n\n<p><strong>Competition period",
+      "start_date": "2026-08-10T00:00:00Z",
+      "end_date": "2026-10-10T12:59:59Z",
+      "creator": {
+        "id": 4723,
+        "team_name": "DocInsights Challenge",
+        "team_url": ""
+      },
+      "list_tags": ["emnlp-2026", "document-parsing", "docinsights-2026"],
+      "has_prize": false,
+      "published": true,
+      "is_registration_open": true,
+      "approved_by_admin": true,
+      "is_active": false,
+      "slug": "dr-docbench-challenge-2717",
+      "created_at": "2026-07-25T01:11:17.221740Z",
+      "github_repository": "AaronLuo00/drdocbench-evalai"
+    },
+    {
+      "id": 2713,
+      "title": "SLoMO-QA Competition",
+      "short_description": "Open-ended video question answering on the SF20K-Test movie benchmark",
+      "description": "<div><!--block--><strong>🚨 The Private Test Phase has now started! 🚨</strong></div><div><!--block--><strong><br></strong>The <strong>Movie Question Answering (MovieQA)</strong> track is part of the <strong>SLoMO Competition</strong> at the <em>Story-Level Movie Understanding and Audio Description</e",
+      "start_date": "2026-06-14T00:00:00Z",
+      "end_date": "2026-08-31T21:55:59Z",
+      "creator": {
+        "id": 4124,
+        "team_name": "SLoMO Workshop",
+        "team_url": "https://slomo-workshop.github.io/"
+      },
+      "list_tags": [
+        "video-understanding",
+        "long-form-video",
+        "multimodal",
+        "video-question-answering"
+      ],
+      "has_prize": false,
+      "published": true,
+      "is_registration_open": true,
+      "approved_by_admin": true,
+      "is_active": false,
+      "slug": "slomo-qa-competition-2713",
+      "created_at": "2026-06-23T18:51:54.305127Z",
+      "github_repository": "ridouaneg/slomo-qa-eval"
+    },
+    {
+      "id": 2707,
+      "title": "Perception Test Challenge 2026 - Task 4 - KilometerVision",
+      "short_description": "A challenge for evaluating tasks in the KilometerVision benchmark.",
+      "description": "<!DOCTYPE html>\n<html>\n\n<head>\n    <style>\n        h1 {\n          font-size: 16px; /* Adjust the font size as desired */\n        }\n        .image-container {\n          margin-bottom: 30px; /* Adjust the margin value as desired */\n        }\n        .half-size {\n          width: 15%;\n          height:",
+      "start_date": "2026-06-05T00:00:00Z",
+      "end_date": "2026-08-27T23:59:59Z",
+      "creator": {
+        "id": 2612,
+        "team_name": "perception_test_deepmind",
+        "team_url": ""
+      },
+      "list_tags": [
+        "computer-vision",
+        "machine-learning",
+        "multimodal-models-evaluation"
+      ],
+      "has_prize": false,
+      "published": true,
+      "is_registration_open": true,
+      "approved_by_admin": true,
+      "is_active": false,
+      "slug": "perception-test-challenge-2026-task-4-kilometervision-2707",
+      "created_at": "2026-06-11T14:07:55.930231Z",
+      "github_repository": "ptchallenge-workshop/challenge2026_kv"
+    }
+  ]
+}
