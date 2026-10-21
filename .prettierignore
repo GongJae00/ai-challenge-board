@@ -5,3 +5,5 @@ package-lock.json
 .claude/
 # HTML fixtures are a source's pages as received; formatting would rewrite their markup and inline scripts.
 src/collect/sources/*/fixtures/*.html
+# Collected listings and state are written by the collector as JSON.stringify writes them.
+src/data/
