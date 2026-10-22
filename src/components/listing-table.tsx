@@ -47,7 +47,7 @@ export function ListingTable({ items, locale, now, timeZone }: Props) {
           <TableHead className={cn("w-36", WIDE_ONLY)}>
             {t(locale, "table.start")}
           </TableHead>
-          <TableHead className="w-36 sm:w-60">
+          <TableHead className="w-36 sm:w-64">
             {t(locale, "table.deadline")}
           </TableHead>
           <TableHead className={cn("w-44", WIDE_ONLY)}>
@@ -86,20 +86,27 @@ export function ListingTable({ items, locale, now, timeZone }: Props) {
                     {formatTime(at, locale, timeZone)}
                   </span>
                 </time>
-                <div className="mt-0.5 flex flex-wrap gap-x-2 text-xs text-muted-foreground">
+                {/* A wide screen keeps the second line to one line: a long phase name gives way, cut short, to the
+                    days left and the source's time. */}
+                <div className="mt-0.5 flex flex-wrap gap-x-2 text-xs text-muted-foreground sm:flex-nowrap">
                   <span className="text-foreground tabular-nums sm:hidden">
                     {formatTime(at, locale, timeZone)}
                   </span>
                   <span
                     className={cn(
+                      "shrink-0",
                       days <= SOON_DAYS && "font-semibold text-foreground"
                     )}
                   >
                     {formatDaysLeft(days, locale)}
                   </span>
-                  {name && <span>{name}</span>}
+                  {name && (
+                    <span title={name} className="min-w-0 sm:truncate">
+                      {name}
+                    </span>
+                  )}
                   {sourceTime && (
-                    <span className="tabular-nums">{sourceTime}</span>
+                    <span className="shrink-0 tabular-nums">{sourceTime}</span>
                   )}
                 </div>
               </TableCell>
