@@ -332,6 +332,20 @@ describe("createClient", () => {
     await expect(client.getText("https://a.example/api")).resolves.toBe("ok")
   })
 
+  it("names the network failure's cause when a request keeps failing", async () => {
+    const { client, calls } = fakeWeb(() => {
+      throw new TypeError("fetch failed", {
+        cause: new Error(
+          "Connect Timeout Error (attempted address: a.example:443, timeout: 10000ms)"
+        ),
+      })
+    })
+    await expect(client.getText("https://a.example/api")).rejects.toThrow(
+      "Request to https://a.example/robots.txt failed: fetch failed: Connect Timeout Error"
+    )
+    expect(calls).toHaveLength(3)
+  })
+
   it("posts a JSON query with its headers and reads the JSON answer", async () => {
     const { client, calls } = fakeWeb((url) =>
       url.endsWith("/robots.txt")

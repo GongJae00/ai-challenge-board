@@ -69,6 +69,21 @@ interface Pace {
 }
 
 /**
+ * An error's message followed by its causes' messages. fetch reports every network failure as "fetch failed" and
+ * puts what happened, such as a connect timeout or a refused connection, in its cause.
+ */
+function withCauses(error: unknown): string {
+  const messages: string[] = []
+  for (
+    let current = error;
+    current != null && messages.length < 5;
+    current = current instanceof Error ? current.cause : undefined
+  )
+    messages.push(current instanceof Error ? current.message : String(current))
+  return messages.join(": ")
+}
+
+/**
  * The site a host belongs to, its registrable domain, such as `devpost.com` for `amazonappdev2026.devpost.com`:
  * the last two labels, or three under a country's second level such as `co.kr`. The hosts of one site share one
  * pace, since they are one server; each still has its own robots.txt.
@@ -171,7 +186,7 @@ export function createClient(options: ClientOptions = {}): Client {
         if (answer?.status === 429)
           throw new BlockedError(url, "rate limit did not clear")
         if (answer) return answer
-        throw new Error(`Request to ${url} failed: ${String(failure)}`, {
+        throw new Error(`Request to ${url} failed: ${withCauses(failure)}`, {
           cause: failure,
         })
       }
