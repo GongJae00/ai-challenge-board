@@ -44,7 +44,7 @@ describe("candidates", () => {
     firstPhaseStart: string | null = "2026-10-01T00:00:00Z"
   ) => ({ id, title, published: true, type: "competition", firstPhaseStart })
 
-  it("keeps competitions whose title names a phase-1 conference, newest first", () => {
+  it("keeps competitions whose title names a conference ACB covers, newest first", () => {
     const competitions = [
       listed(1, "NTIRE 2026 Challenge (@ CVPR 2026)"),
       listed(3, "Agenthon at NeurIPS"),
@@ -167,5 +167,24 @@ describe("conferenceFromTitle", () => {
 
   it("ignores a conference named without a year", () => {
     expect(conferenceFromTitle("A CVPR-style detection challenge")).toBeNull()
+  })
+
+  it("tells NAACL from ACL, and reads conferences outside the first seven", () => {
+    expect(conferenceFromTitle("NAACL 2027 Shared Task")).toEqual({
+      name: "NAACL",
+      year: 2027,
+    })
+    expect(conferenceFromTitle("BioNLP Shared Task @ ACL 2027")).toEqual({
+      name: "ACL",
+      year: 2027,
+    })
+    expect(conferenceFromTitle("MICCAI 2026 FLARE Challenge")).toEqual({
+      name: "MICCAI",
+      year: 2026,
+    })
+    expect(conferenceFromTitle("ICASSP2027 Speech Enhancement")).toEqual({
+      name: "ICASSP",
+      year: 2027,
+    })
   })
 })

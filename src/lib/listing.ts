@@ -23,14 +23,30 @@ export type SourceId = (typeof sourceIds)[number]
 export const kinds = ["challenge", "cfp"] as const
 export type Kind = (typeof kinds)[number]
 
+/**
+ * The AI conferences ACB covers, grouped by field: vision, machine learning, AI, language, medical imaging,
+ * robotics, data mining, and speech. An IEEE conference goes by its own name, such as ICRA.
+ */
 export const conferences = [
   "CVPR",
   "ICCV",
   "ECCV",
+  "WACV",
   "NeurIPS",
   "ICML",
   "ICLR",
+  "IJCNN",
   "AAAI",
+  "ACL",
+  "EMNLP",
+  "NAACL",
+  "MICCAI",
+  "ISBI",
+  "CoRL",
+  "ICRA",
+  "IROS",
+  "KDD",
+  "ICASSP",
 ] as const
 export type Conference = (typeof conferences)[number]
 

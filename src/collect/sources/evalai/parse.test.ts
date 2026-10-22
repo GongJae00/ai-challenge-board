@@ -162,7 +162,15 @@ describe("isOpenTimeBound", () => {
 })
 
 describe("conferenceFromTags", () => {
-  it("maps a tag of a phase-1 conference and a year to the conference's canonical name", () => {
+  it("maps a tag of a conference ACB covers and a year to the conference's canonical name", () => {
+    expect(conferenceFromTags(["emnlp-2026"])).toEqual({
+      name: "EMNLP",
+      year: 2026,
+    })
+    expect(conferenceFromTags(["corl2026"])).toEqual({
+      name: "CoRL",
+      year: 2026,
+    })
     expect(conferenceFromTags(["vqa", "iccv-2025"])).toEqual({
       name: "ICCV",
       year: 2025,
@@ -192,7 +200,7 @@ describe("conferenceFromTags", () => {
     ["a conference without a year", ["cvpr"]],
     ["a year without a conference", ["2026"]],
     ["a two-digit year", ["cvpr-26"]],
-    ["a conference outside phase 1", ["emnlp-2026"]],
+    ["a conference ACB does not cover", ["coling-2026"]],
     ["a tag that only contains a conference", ["cvpr-2026-workshop"]],
     ["a tag that is a longer word", ["xcvpr-2026"]],
     ["no tags", []],

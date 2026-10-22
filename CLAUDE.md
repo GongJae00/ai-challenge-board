@@ -3,8 +3,9 @@
 AI-Challenge-Board, ACB for short, is a web service in Korean and English, later an app, that gathers AI
 challenges, competitions, workshop paper calls, and conference-linked contests so that AI researchers can search,
 filter, bookmark, and follow their deadlines. Its repository is `ai-challenge-board`.
-Its first phase covers the major conferences (CVPR, ICCV, ECCV, NeurIPS, ICML, ICLR, AAAI); the project memory
-holds GongJae's statement of the vision and the phase order.
+It covers AI conferences, from the seven it started with (CVPR, ICCV, ECCV, NeurIPS, ICML, ICLR, AAAI) to the
+wider set GongJae chose on 2026-10-23 (see Scope); the project memory holds GongJae's statement of the vision and
+the phase order.
 
 Deadlines, venues, and calls in this project are the product's data, not GongJae's own research deadlines, so the
 research-sprint routing in `~/.claude/CLAUDE.md` does not apply here. That skill and the other research-workflow
@@ -33,7 +34,8 @@ GongJae set these on 2026-10-20:
 - Listed: time-bound challenges and competitions, workshop paper calls (CFPs), and domestic Korean competitions
   such as DACON, AIFactory, and 과기정통부 programs.
 - Not listed: persistent benchmarks and leaderboards without a deadline.
-- Not decided: whether journal special issues, fellowships, and internships are listed.
+- Not decided: whether fellowships and internships are listed. Journal special issues wait for later
+  ("저널은 나중에하자", 2026-10-23).
 
 On 2026-10-21 GongJae chose DACON and AIFactory as the domestic sources ("한국 Dacon이랑 AIFactory 추가하자") and
 left 과기정통부's own program sites out ("과기부는 딱히 안해도 될듯?"); a ministry competition that runs on DACON or
@@ -52,6 +54,12 @@ Later on 2026-10-21 GongJae widened the sources and the kinds of events:
   collector with a 10-second Crawl-delay), one calendar file per Devpost hackathon for its exact deadline, and
   grand-challenge.org's HTML list. DAKER is not collected: its robots.txt disallows `/api/`, the only path that
   carries its listings, and DACON's own list already carries the hackathons DACON runs.
+
+On 2026-10-23 GongJae widened the conferences beyond the first seven to AI conferences only ("다 넣자. 인공지능
+관련된 학회꺼만 넣을거야 주제가 인공지능이여야 우리가 쉽게 도전하고 서비스목적에 맞으니까"), each IEEE conference under its own
+name ("IEEE 내부에 따로 있는거는 그 자체 이름으로 잘 적어줘"). GongJae named ACL, EMNLP, NAACL, MICCAI, CoRL, ICRA, IROS,
+and KDD; of IEEE's conferences, those whose topic is AI and that ACB can read from, WACV, ICASSP, ISBI, and IJCNN,
+were added too, and ICIP was not, having one OpenReview workshop and a name Codabench's search cannot use.
 
 On 2026-10-23 GongJae kept only Devpost's online hackathons ("온라인해커톤만 남겨줘"). About half of Devpost's AI
 hackathons were held at a place, most of them over one to three days on a campus or in a city abroad, which ACB's

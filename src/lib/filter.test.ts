@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest"
 
 import { facetCounts, filterListings, type Filters } from "./filter.ts"
-import type { Listing } from "./listing.ts"
+import { conferences, type Listing } from "./listing.ts"
 
 const workshop: Listing = {
   id: "openreview:AAAI.org/2027/Workshop/TrustAI",
@@ -152,15 +152,14 @@ describe("facetCounts", () => {
     expect(Object.values(counts.platforms).reduce((sum, n) => sum + n, 0)).toBe(
       2
     )
-    expect(counts.conferences).toEqual({
-      CVPR: 0,
-      ICCV: 0,
-      ECCV: 0,
-      NeurIPS: 1,
-      ICML: 0,
-      ICLR: 0,
-      AAAI: 1,
-    })
+    // Every conference has a count; these listings belong to NeurIPS and AAAI only.
+    expect(Object.keys(counts.conferences).sort()).toEqual(
+      [...conferences].sort()
+    )
+    expect(counts.conferences).toMatchObject({ NeurIPS: 1, AAAI: 1, CVPR: 0 })
+    expect(
+      Object.values(counts.conferences).reduce((sum, n) => sum + n, 0)
+    ).toBe(2)
   })
 
   it("counts within the query and the other list, but not the list itself", () => {

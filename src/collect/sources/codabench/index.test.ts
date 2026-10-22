@@ -55,12 +55,17 @@ describe("codabench", () => {
     expect(state.next).toEqual({ settled: [18381], open: [18221, 18411] })
   })
 
-  it("searches Codabench once for each phase-1 conference", async () => {
+  it("searches Codabench once for each conference, except ACL, which is part of common words", async () => {
     const { client, requested } = fakeClient()
     await codabench.collect(client, now, { previous: null })
-    const searches = requested.filter((url) => url.includes("/public/"))
-    expect(searches).toHaveLength(7)
-    expect(searches[0]).toContain("search=CVPR")
+    const searches = requested
+      .filter((url) => url.includes("/public/"))
+      .map((url) => new URL(url).searchParams.get("search"))
+    expect(searches).toHaveLength(18)
+    expect(searches[0]).toBe("CVPR")
+    expect(searches).toContain("NAACL")
+    expect(searches).toContain("MICCAI")
+    expect(searches).not.toContain("ACL")
   })
 
   it("never requests a settled competition again", async () => {

@@ -107,7 +107,7 @@ export function competitionUrl(id: number): string {
 
 /**
  * The competitions worth a detail request, newest first: published competitions, not benchmarks, whose title
- * names a phase-1 conference, that started within the last year or start later, and that an earlier run has not
+ * names a conference ACB covers, that started within the last year or start later, and that an earlier run has not
  * settled. Competitions an earlier run found open stay in, however long ago they started.
  */
 export function candidates(
@@ -148,7 +148,7 @@ function deadlines(competition: Detail, now: Date): Deadline[] {
 }
 
 /**
- * A phase-1 conference named in a title. Codabench's search also matches descriptions, so the title is checked
+ * A conference ACB covers named in a title. Codabench's search also matches descriptions, so the title is checked
  * again here.
  */
 const CONFERENCE_NAME = new RegExp(`\\b(${conferences.join("|")})`, "i")

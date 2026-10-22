@@ -2,6 +2,30 @@
 
 Decisions that constrain later work, newest first, each with its reason and the alternatives considered.
 
+## 2026-10-23: AI conferences beyond the first seven
+
+ACB covers 19 conferences: the first seven, the eight GongJae named on 2026-10-23 (ACL, EMNLP, NAACL, MICCAI, CoRL,
+ICRA, IROS, KDD), and four IEEE conferences, WACV, ICASSP, ISBI, and IJCNN. GongJae asked for AI conferences only,
+since their challenges are the ones ACB's readers can take on, with each IEEE conference under its own name rather
+than "IEEE". An IEEE conference was added when its topic is AI and ACB can read something from it: OpenReview
+workshops or a name Codabench's search can use. ICIP was left out on the second count, with one OpenReview workshop
+and a name inside "participate", which would make Codabench's search return nearly every entry. ICME has no
+OpenReview workshops. `conferences` in `src/lib/listing.ts` is the one list; the chips, the footer, title matching,
+EvalAI's tags, Codabench's searches, and OpenReview's workshop parents all follow it, and the type check requires
+an OpenReview parent for each.
+
+- **OpenReview parents** are copied from OpenReview's venue list, because the prefixes differ (`EMNLP/2026`,
+  `aclweb.org/ACL/2026`, `IEEE.org/ICRA/2026`, `ieee.org/ISBI/2026`, `ICASSP/2026`) and a wrong one returns no
+  groups without an error. In 2026 the new conferences held about 300 OpenReview workshop groups; NAACL had no 2026
+  edition, only a 2027 group.
+- **Codabench** searches every conference but ACL, 18 searches against 7 before. Codabench has been unreachable
+  since 2026-10-21, so the longer run was not measured; the Collect job allows 45 minutes.
+- **Not filtered by topic:** ICRA and IROS workshops include robotics that is not about learning, such as soft or
+  agricultural robots. They are listed whole, since a keyword filter on workshop titles would guess.
+- **Workshop tracks:** a workshop OpenReview files as several groups, such as `GEM` and `GEM_ARR_Commitment` in the
+  ACL family, or a proceedings and a non-proceedings track at CVPR, appears as one row per group, as it already did
+  for NeurIPS and CVPR. EMNLP 2026 had 24 such groups.
+
 ## 2026-10-23: Devpost's online hackathons only
 
 Devpost's collector lists only the hackathons whose location Devpost shows as "Online". On 2026-10-22, 77 of
@@ -25,7 +49,7 @@ GongJae asked for chips instead ("형식이랑 모든학회같은거 약간 체�
 Compact하게?"), then for the rows under the search box, in alphabetical order, with the competition platforms in
 a row of their own ("DACON AIFactory Kaggle도 따로 빼서 이렇게 대회 막 올리는곳 따로 해서 분류 깔끔하게 만들자
 줄바꿈 단위로 잘 해서"). The language stays a menu. Any number of chips can be pressed, and none pressed in a row
-sets no filter for it. Every phase-1 conference and every platform has a chip, dimmed while nothing open fits:
+sets no filter for it. Every conference ACB covers and every platform has a chip, dimmed while nothing open fits:
 the first menu listed only the conferences with open listings, and GongJae asked why only two appeared, which a
 visitor would ask too. Each chip counts the listings it would show given the search and the other rows, so a
 count does not move when another chip in its own row is pressed.
@@ -174,8 +198,9 @@ grand-challenge.org, and AIcrowd. DAKER is left out because its robots.txt disal
 listings (see `CLAUDE.md`).
 - **Codabench** lists 1,536 public entries, most of them coursework and tests, sends its API responses at a few
   kilobytes a second, and gives deadlines only in a request per competition. The collector therefore takes only
-  the competitions whose title names a phase-1 conference, found through Codabench's search and checked against
-  the title, and reads the conference and its year from the title. It remembers in
+  the competitions whose title names a conference ACB covers, found through Codabench's search and checked against
+  the title, and reads the conference and its year from the title. ACL is not searched, since the search matches
+  descriptions by substring and "acl" is in "oracle" and "obstacle". It remembers in
   `src/data/state/codabench.json` the competitions that ended more than 30 days ago or never end, so it does not
   request them again; one that ended lately is still checked, in case its deadline is extended. A challenge whose title names no conference is
   missed. This was chosen over dropping Codabench, which GongJae raised on 2026-10-21, because Codabench hosts

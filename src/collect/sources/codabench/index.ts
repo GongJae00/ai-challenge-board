@@ -33,13 +33,20 @@ const stateSchema = z.object({
 })
 
 /**
- * The competitions whose titles name a phase-1 conference, found through Codabench's title search. Anyone can
- * open a competition on Codabench, and most of its 1,500 entries are coursework and tests, so ACB takes the ones
- * that name a conference rather than all of them.
+ * Conferences whose names are part of common words, which Codabench's search, matching descriptions by substring,
+ * finds in most entries, past `MAX_PAGES`: ACL in "oracle" and "obstacle". A competition titled with one is still
+ * read when another search finds it.
+ */
+const NOT_SEARCHED = new Set<string>(["ACL"])
+
+/**
+ * The competitions whose titles name a conference ACB covers, found through Codabench's search. Anyone can open a
+ * competition on Codabench, and most of its 1,500 entries are coursework and tests, so ACB takes the ones that
+ * name a conference rather than all of them.
  */
 async function fetchList(client: Client): Promise<ListedCompetition[]> {
   const byId = new Map<number, ListedCompetition>()
-  for (const conference of conferences) {
+  for (const conference of conferences.filter((c) => !NOT_SEARCHED.has(c))) {
     let seen = 0
     // Pages are built here rather than taken from `next`, which points at another host.
     for (let page = 1; ; page += 1) {
@@ -64,7 +71,7 @@ async function fetchList(client: Client): Promise<ListedCompetition[]> {
   return [...byId.values()]
 }
 
-/** Codabench competitions that name a phase-1 conference and have a deadline ahead. */
+/** Codabench competitions that name a conference ACB covers and have a deadline ahead. */
 export const codabench: Source = {
   id: "codabench",
   async collect(client, now, state) {

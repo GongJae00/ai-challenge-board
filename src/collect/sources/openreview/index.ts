@@ -5,15 +5,31 @@ import { parseGroups, parseInvitations, toListings } from "./parse.ts"
 
 const API = "https://api2.openreview.net"
 
-/** The OpenReview group under which each conference keeps its workshop venues for a year. */
+/**
+ * The OpenReview group under which each conference keeps its workshop venues for a year, as OpenReview's venue
+ * list (`/groups?id=venues`) names them. The prefixes follow no one pattern, and a wrong one answers with no
+ * groups rather than an error, so each is copied from that list.
+ */
 const WORKSHOP_PARENTS: Record<Conference, (year: number) => string> = {
   NeurIPS: (year) => `NeurIPS.cc/${year}/Workshop`,
   ICML: (year) => `ICML.cc/${year}/Workshop`,
   ICLR: (year) => `ICLR.cc/${year}/Workshop`,
+  IJCNN: (year) => `IEEE.org/IJCNN/${year}/Workshop`,
   AAAI: (year) => `AAAI.org/${year}/Workshop`,
   CVPR: (year) => `thecvf.com/CVPR/${year}/Workshop`,
   ICCV: (year) => `thecvf.com/ICCV/${year}/Workshop`,
   ECCV: (year) => `thecvf.com/ECCV/${year}/Workshop`,
+  WACV: (year) => `thecvf.com/WACV/${year}/Workshop`,
+  ACL: (year) => `aclweb.org/ACL/${year}/Workshop`,
+  EMNLP: (year) => `EMNLP/${year}/Workshop`,
+  NAACL: (year) => `aclweb.org/NAACL/${year}/Workshop`,
+  MICCAI: (year) => `MICCAI.org/${year}/Workshop`,
+  ISBI: (year) => `ieee.org/ISBI/${year}/Workshop`,
+  CoRL: (year) => `robot-learning.org/CoRL/${year}/Workshop`,
+  ICRA: (year) => `IEEE.org/ICRA/${year}/Workshop`,
+  IROS: (year) => `IEEE.org/IROS/${year}/Workshop`,
+  KDD: (year) => `KDD.org/${year}/Workshop`,
+  ICASSP: (year) => `ICASSP/${year}/Workshop`,
 }
 
 /** Submission ids per invitations request, which keeps the URL to a few kilobytes. */
@@ -48,7 +64,7 @@ async function collectConference(
   return toListings({ groups, invitations, conference, year, now })
 }
 
-/** Workshop paper calls of the major conferences, this year's and next year's. */
+/** Workshop paper calls of the conferences ACB covers, this year's and next year's. */
 export const openreview: Source = {
   id: "openreview",
   async collect(client, now) {
