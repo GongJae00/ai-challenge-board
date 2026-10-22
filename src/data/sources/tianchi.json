@@ -1,32 +1,7 @@
 {
   "source": "tianchi",
-  "retrievedAt": "2026-10-21T13:00:56.960Z",
+  "retrievedAt": "2026-10-22T04:40:56.397Z",
   "listings": [
-    {
-      "id": "tianchi:532338",
-      "source": "tianchi",
-      "kind": "challenge",
-      "title": "【打榜赛】CCL25-Eval 任务2：第三届汉语框架语义解析评测",
-      "organizer": null,
-      "conference": null,
-      "url": "https://tianchi.aliyun.com/competition/entrance/532338",
-      "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532338",
-      "opensAt": "2025-06-19T16:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "entry",
-          "label": null,
-          "at": "2027-05-24T15:59:59.000Z",
-          "zone": "Asia/Shanghai"
-        },
-        {
-          "kind": "end",
-          "label": null,
-          "at": "2027-05-25T15:59:59.000Z",
-          "zone": "Asia/Shanghai"
-        }
-      ]
-    },
     {
       "id": "tianchi:532460",
       "source": "tianchi",

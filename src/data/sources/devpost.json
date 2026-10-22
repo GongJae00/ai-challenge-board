@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-10-21T13:00:56.960Z",
+  "retrievedAt": "2026-10-22T04:40:56.397Z",
   "listings": [
     {
       "id": "devpost:29114",
@@ -273,7 +273,7 @@
       "source": "devpost",
       "kind": "challenge",
       "title": "Code for Humanity",
-      "organizer": "nill",
+      "organizer": null,
       "conference": null,
       "url": "https://code-for-humanity.devpost.com/",
       "sourceUrl": "https://code-for-humanity.devpost.com/",
@@ -915,25 +915,6 @@
       ]
     },
     {
-      "id": "devpost:31617",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "IEEE Hack For Humanity",
-      "organizer": "IEEE Charlotte Section",
-      "conference": null,
-      "url": "https://ieee-ai-hack-for-humanity.devpost.com/",
-      "sourceUrl": "https://ieee-ai-hack-for-humanity.devpost.com/",
-      "opensAt": "2026-10-11T04:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-10-22T03:45:00.000Z",
-          "zone": "America/New_York"
-        }
-      ]
-    },
-    {
       "id": "devpost:31621",
       "source": "devpost",
       "kind": "challenge",
@@ -1200,6 +1181,25 @@
       ]
     },
     {
+      "id": "devpost:31772",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Haunted Hacks: Realtime AI Edition",
+      "organizer": "Terse",
+      "conference": null,
+      "url": "https://haunted-hacks.devpost.com/",
+      "sourceUrl": "https://haunted-hacks.devpost.com/",
+      "opensAt": "2026-10-31T07:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-31T23:00:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
       "id": "devpost:31788",
       "source": "devpost",
       "kind": "challenge",
@@ -1310,6 +1310,82 @@
           "label": null,
           "at": "2026-11-28T23:00:00.000Z",
           "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31827",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "AI for Human Impact: A Global BASIS Hackathon",
+      "organizer": "BASIS Independent Silicon Valley",
+      "conference": null,
+      "url": "https://basisglobalhackathon.devpost.com/",
+      "sourceUrl": "https://basisglobalhackathon.devpost.com/",
+      "opensAt": "2027-02-06T08:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2027-02-13T08:00:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31831",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Ctrl+V Hackathon",
+      "organizer": "AKSZ",
+      "conference": null,
+      "url": "https://ctrl-v-hackathon-31831.devpost.com/",
+      "sourceUrl": "https://ctrl-v-hackathon-31831.devpost.com/",
+      "opensAt": "2026-11-06T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-10T22:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31840",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Zero Human Company Hackathon at Whop HQ by Terac",
+      "organizer": "Terac",
+      "conference": null,
+      "url": "https://zhch-nyc.devpost.com/",
+      "sourceUrl": "https://zhch-nyc.devpost.com/",
+      "opensAt": "2026-10-24T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-10-24T21:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31841",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Trick or Build: Mel × Prompt Anything × AI Builders",
+      "organizer": "Agentic Day (co-hosted with Mel)",
+      "conference": null,
+      "url": "https://trick-or-build.devpost.com/",
+      "sourceUrl": "https://trick-or-build.devpost.com/",
+      "opensAt": "2026-10-29T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-10-29T21:00:00.000Z",
+          "zone": "America/New_York"
         }
       ]
     }

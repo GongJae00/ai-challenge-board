@@ -1,6 +1,6 @@
 {
   "source": "openreview",
-  "retrievedAt": "2026-10-21T13:00:56.960Z",
+  "retrievedAt": "2026-10-22T04:40:56.397Z",
   "listings": [
     {
       "id": "openreview:AAAI.org/2027/Workshop/A2NetOps",
@@ -289,6 +289,28 @@
       ]
     },
     {
+      "id": "openreview:AAAI.org/2027/Workshop/LAUT",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "AAAI-27 Workshop on LLM Agents Under Threat in Cyberspace",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://llm-agents-under-threat.github.io/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FLAUT",
+      "opensAt": "2026-10-20T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-21T11:59:00.000Z",
+          "zone": "AoE"
+        }
+      ]
+    },
+    {
       "id": "openreview:AAAI.org/2027/Workshop/LoyalAgents",
       "source": "openreview",
       "kind": "cfp",
@@ -547,7 +569,7 @@
         {
           "kind": "submission",
           "label": null,
-          "at": "2026-11-06T05:00:00.000Z",
+          "at": "2026-11-21T09:00:00.000Z",
           "zone": "UTC"
         }
       ]
@@ -674,12 +696,12 @@
       },
       "url": "https://aimo-interp.github.io/",
       "sourceUrl": "https://openreview.net/group?id=NeurIPS.cc%2F2026%2FWorkshop%2FAIMOInterp_Challenge",
-      "opensAt": "2026-10-20T22:00:00.000Z",
+      "opensAt": "2026-10-21T16:12:27.600Z",
       "deadlines": [
         {
           "kind": "submission",
           "label": null,
-          "at": "2026-11-01T08:00:00.000Z",
+          "at": "2026-11-06T12:59:00.000Z",
           "zone": "UTC"
         }
       ]
