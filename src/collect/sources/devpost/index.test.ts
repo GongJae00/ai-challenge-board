@@ -24,8 +24,8 @@ type Raw =
   | (typeof lastPage.hackathons)[number]
   | (typeof upcomingPage1.hackathons)[number]
 
-// Three fixture pages hold ten hackathons, one of them invite-only: the open ones, the rest of them, and the
-// upcoming ones. A page's meta says how many there are in all.
+// Three fixture pages hold ten hackathons, one of them invite-only and three held at a place, so six are listed:
+// the open ones, the rest of them, and the upcoming ones. A page's meta says how many there are in all.
 const fixturePages = [
   page1.hackathons,
   lastPage.hackathons,
@@ -95,20 +95,17 @@ const calendarRequests = (requested: string[]) =>
   requested.filter((url) => url.endsWith("/calendar"))
 
 describe("devpost", () => {
-  it("lists the hackathons of every page with their deadlines, without the invite-only one", async () => {
+  it("lists the online hackathons of every page with their deadlines, without the invite-only one", async () => {
     const { client } = fakeClient()
     const listings = await devpost.collect(client, now, { previous: null })
     expect(listings.map((l) => l.id).sort()).toEqual(
       [
         "devpost:29135",
-        "devpost:30731",
         "devpost:30790",
         "devpost:30992",
         "devpost:31503",
         "devpost:31667",
-        "devpost:31735",
         "devpost:31737",
-        "devpost:31821",
       ].sort()
     )
     const amazon = listings.find((l) => l.id === `devpost:${AMAZON_ID}`)
@@ -148,7 +145,7 @@ describe("devpost", () => {
       `${LIST}3`,
       `${LIST}4`,
     ])
-    expect(listings).toHaveLength(9)
+    expect(listings).toHaveLength(6)
   })
 
   it("lists a hackathon once when it shifts onto the next page between two requests", async () => {
@@ -174,16 +171,17 @@ describe("devpost", () => {
     expect(listRequests(requested)).toHaveLength(30)
   })
 
-  it("requests the calendar on each hackathon's own host, and none for the invite-only one", async () => {
+  it("requests the calendar on each hackathon's own host, and none for the invite-only one or one held at a place", async () => {
     const { client, requested } = fakeClient()
     await devpost.collect(client, now, { previous: null })
     const calendars = calendarRequests(requested)
-    expect(calendars).toHaveLength(9)
+    expect(calendars).toHaveLength(6)
     expect(calendars).toContain("https://amazonappdev2026.devpost.com/calendar")
     expect(calendars).toContain("https://kiroween.devpost.com/calendar")
     expect(
       calendars.some((url) => url.includes("hackathon-agentico-2026b"))
     ).toBe(false)
+    expect(calendars.some((url) => url.includes("larphacks"))).toBe(false)
   })
 
   it("remembers each hackathon's dates and deadline, the ones with a deadline behind them too", async () => {
@@ -201,7 +199,7 @@ describe("devpost", () => {
       checkedAt: string
       deadline: unknown
     }[]
-    expect(saved).toHaveLength(9)
+    expect(saved).toHaveLength(6)
     expect(saved.map((e) => e.id)).toEqual(
       [...saved.map((e) => e.id)].sort((a, b) => a - b)
     )
@@ -332,7 +330,7 @@ describe("devpost", () => {
     })
     const state: SourceState = { previous: null }
     const listings = await devpost.collect(client, now, state)
-    expect(listings).toHaveLength(8)
+    expect(listings).toHaveLength(5)
     expect(listings.some((l) => l.id === `devpost:${KIROWEEN_ID}`)).toBe(false)
     expect(savedEntry(state, KIROWEEN_ID)?.deadline).toBeNull()
   })
@@ -347,7 +345,7 @@ describe("devpost", () => {
       },
     })
     const listings = await devpost.collect(client, now, { previous: null })
-    expect(listings).toHaveLength(8)
+    expect(listings).toHaveLength(5)
     expect(listings.some((l) => l.id === `devpost:${KIROWEEN_ID}`)).toBe(false)
   })
 
@@ -417,7 +415,7 @@ describe("devpost", () => {
     const later = new Date(now.getTime() + REFRESH_AFTER_MS + 1000)
     const next: SourceState = { previous: state.next }
     const listings = await devpost.collect(second.client, later, next)
-    expect(calendarRequests(second.requested)).toHaveLength(9)
+    expect(calendarRequests(second.requested)).toHaveLength(6)
     expect(
       listings.find((l) => l.id === `devpost:${AMAZON_ID}`)?.deadlines[0].at
     ).toBe("2026-10-31T01:00:00.000Z")
@@ -446,7 +444,7 @@ describe("devpost", () => {
 
     const second = fakeClient()
     await devpost.collect(second.client, now, { previous: stale })
-    expect(calendarRequests(second.requested)).toHaveLength(9)
+    expect(calendarRequests(second.requested)).toHaveLength(6)
   })
 
   it("fails when a list page does not fit", async () => {

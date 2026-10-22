@@ -34,6 +34,7 @@ const hackathon = (overrides: Partial<ListedHackathon> = {}) => ({
   dates: "Aug 31 - Oct 23, 2026",
   inviteOnly: false,
   ai: true,
+  online: true,
   ...overrides,
 })
 
@@ -60,6 +61,25 @@ describe("parseListPage", () => {
     const raw = structuredClone(page1)
     raw.hackathons[0].themes = [{ id: 22, name: "Open Ended" }]
     expect(parseListPage(raw).hackathons[0].ai).toBe(false)
+  })
+
+  it("marks a hackathon held at a place, which the collector leaves out", () => {
+    const page = parseListPage(lastPage)
+    expect(page.hackathons.map((h) => [h.id, h.online])).toEqual([
+      [31737, true],
+      [31626, true],
+      [31735, false],
+      [31821, false],
+    ])
+  })
+
+  it("takes a hackathon that shows no location as not online", () => {
+    const raw: { hackathons: { displayed_location?: unknown }[] } =
+      structuredClone(page1)
+    delete raw.hackathons[0].displayed_location
+    raw.hackathons[1].displayed_location = null
+    const hackathons = parseListPage(raw).hackathons
+    expect(hackathons.map((h) => h.online)).toEqual([false, false, true])
   })
 
   it("reads an empty page past the end", () => {

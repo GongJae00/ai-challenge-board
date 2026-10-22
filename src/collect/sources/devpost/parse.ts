@@ -31,6 +31,7 @@ const listPage = z.object({
       submission_period_dates: z.string(),
       invite_only: z.boolean(),
       themes: z.array(z.object({ name: z.string() })),
+      displayed_location: z.object({ location: z.string() }).nullish(),
     })
   ),
   meta: z.object({ total_count: z.number().int().nonnegative() }),
@@ -49,6 +50,11 @@ export interface ListedHackathon {
    * keeps non-AI hackathons out should Devpost stop honouring the undocumented filter.
    */
   ai: boolean
+  /**
+   * Whether Devpost shows the hackathon's location as "Online" rather than a place. ACB lists only online
+   * hackathons; one without a location counts as held at a place.
+   */
+  online: boolean
 }
 
 export function parseListPage(json: unknown): {
@@ -70,6 +76,7 @@ export function parseListPage(json: unknown): {
       dates: h.submission_period_dates,
       inviteOnly: h.invite_only,
       ai: h.themes.some((theme) => theme.name === AI_THEME),
+      online: h.displayed_location?.location.trim().toLowerCase() === "online",
     })),
   }
 }

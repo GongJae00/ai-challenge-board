@@ -2,6 +2,20 @@
 
 Decisions that constrain later work, newest first, each with its reason and the alternatives considered.
 
+## 2026-10-23: Devpost's online hackathons only
+
+Devpost's collector lists only the hackathons whose location Devpost shows as "Online". On 2026-10-22, 77 of
+ACB's 156 listings came from Devpost, and by their calendar files about 42 of those were held at a place, 30 of
+them over three days or fewer on a campus or in a city. A reader in Korea can rarely attend such an event, and
+they filled half the table. GongJae chose online only ("온라인해커톤만 남겨줘"). The list API already gives each
+hackathon's `displayed_location`, so the rule costs no extra request; a hackathon without a location counts as
+held at a place. Keeping on-site events that offer a prize as well was considered and not taken, because it would
+make the prize, which ACB does not show, a listing criterion.
+
+The runner keeps a source's last data when more than half of its open listings vanish, which this rule would
+trigger. The stored Devpost data was therefore cut in the same change to the listings whose calendar holds a
+submission deadline, the online shape, 35 of 77; the next collection replaces that guess with Devpost's own field.
+
 ## 2026-10-21: Search, filters, platforms, and the sources footer
 
 Above the table and the calendar sit a search box and, beneath it, one labeled row of chips for each way to narrow
@@ -196,7 +210,8 @@ listings (see `CLAUDE.md`).
   and series containers are left out;
   the English name is used when there is one.
 - **Devpost:** the JSON list behind its site, asked for open and upcoming hackathons with the "Machine
-  Learning/AI" theme and checked for that theme item by item; invite-only events are left out, and an organizer
+  Learning/AI" theme and checked for that theme item by item; invite-only events and, since 2026-10-23, events
+  held at a place are left out, and an organizer
   entered as a placeholder, such as "nill" or "N/A", is taken as none. The list gives
   dates only, so the exact deadline and its zone come from each hackathon's calendar file, a request GongJae
   approved; `src/data/state/devpost.json` remembers each one, so a calendar is fetched again only when the

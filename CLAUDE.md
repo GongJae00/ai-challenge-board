@@ -53,6 +53,10 @@ Later on 2026-10-21 GongJae widened the sources and the kinds of events:
   grand-challenge.org's HTML list. DAKER is not collected: its robots.txt disallows `/api/`, the only path that
   carries its listings, and DACON's own list already carries the hackathons DACON runs.
 
+On 2026-10-23 GongJae kept only Devpost's online hackathons ("온라인해커톤만 남겨줘"). About half of Devpost's AI
+hackathons were held at a place, most of them over one to three days on a campus or in a city abroad, which ACB's
+readers can rarely attend.
+
 The landscape survey behind these choices is `reports/AI 챌린지 서비스 생태계 조사.md`, kept locally.
 
 ## Product constraints

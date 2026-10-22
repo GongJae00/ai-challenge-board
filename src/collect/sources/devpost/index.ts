@@ -44,7 +44,10 @@ const stateSchema = z.array(
   })
 )
 
-/** The theme's hackathons that are open to everyone, each once. The list has no cursor and shifts as hackathons open. */
+/**
+ * The theme's online hackathons that are open to everyone, each once. The list has no cursor and shifts as
+ * hackathons open.
+ */
 async function fetchList(client: Client): Promise<ListedHackathon[]> {
   // By id, since a hackathon can move onto the next page between two requests.
   const byId = new Map<number, ListedHackathon>()
@@ -60,7 +63,7 @@ async function fetchList(client: Client): Promise<ListedHackathon[]> {
     // A page past the end answers 200 with no hackathons.
     if (hackathons.length === 0 || seen >= total) break
   }
-  return [...byId.values()].filter((h) => h.ai && !h.inviteOnly)
+  return [...byId.values()].filter((h) => h.ai && h.online && !h.inviteOnly)
 }
 
 /**
@@ -94,7 +97,7 @@ export function staleIds(
 }
 
 /**
- * Devpost's open and upcoming AI hackathons, except the invite-only ones. The list has only a date range as
+ * Devpost's open and upcoming online AI hackathons, except the invite-only ones. The list has only a date range as
  * display text, so each hackathon's calendar file is requested for its exact deadline in the organizer's own
  * zone: when the hackathon is new, when its dates changed, and again after `REFRESH_AFTER_MS`. A hackathon whose
  * calendar gives no deadline ACB can place is not listed; if Devpost changed its calendars wholesale, the
