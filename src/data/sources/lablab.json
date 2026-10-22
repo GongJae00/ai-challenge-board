@@ -1,6 +1,6 @@
 {
   "source": "lablab",
-  "retrievedAt": "2026-10-22T04:40:56.397Z",
+  "retrievedAt": "2026-10-22T17:08:31.314Z",
   "listings": [
     {
       "id": "lablab:amd-lablab-ai-academy-challenge",
@@ -36,7 +36,7 @@
           "kind": "end",
           "label": null,
           "at": "2026-11-08T22:00:00.000Z",
-          "zone": "UTC"
+          "zone": "America/Denver"
         }
       ]
     }

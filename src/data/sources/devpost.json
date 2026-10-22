@@ -1,7 +1,26 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-10-22T04:40:56.397Z",
+  "retrievedAt": "2026-10-22T17:08:31.314Z",
   "listings": [
+    {
+      "id": "devpost:26475",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Dakar Bitcoin Hack by BTrust",
+      "organizer": "Dakar Bitcoin Days",
+      "conference": null,
+      "url": "https://dakar-bitcoin-hack-2026.devpost.com/",
+      "sourceUrl": "https://dakar-bitcoin-hack-2026.devpost.com/",
+      "opensAt": "2026-10-26T00:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-20T20:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
     {
       "id": "devpost:29114",
       "source": "devpost",
@@ -478,6 +497,25 @@
       ]
     },
     {
+      "id": "devpost:31084",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Redshifted Cortex - AI built by High Schoolers",
+      "organizer": "Redshifted",
+      "conference": null,
+      "url": "https://redshifted-cortex.devpost.com/",
+      "sourceUrl": "https://redshifted-cortex.devpost.com/",
+      "opensAt": "2026-11-07T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-08T00:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
       "id": "devpost:31116",
       "source": "devpost",
       "kind": "challenge",
@@ -877,6 +915,25 @@
       ]
     },
     {
+      "id": "devpost:31552",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "UGREEN Hackathon 2026 on AI NAS",
+      "organizer": "UGREEN",
+      "conference": null,
+      "url": "https://ugreenhackathon.devpost.com/",
+      "sourceUrl": "https://ugreenhackathon.devpost.com/",
+      "opensAt": "2026-10-22T07:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-16T07:45:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
       "id": "devpost:31580",
       "source": "devpost",
       "kind": "challenge",
@@ -1219,25 +1276,6 @@
       ]
     },
     {
-      "id": "devpost:31802",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "HackOctober MLH X Tech4hack",
-      "organizer": "MLH",
-      "conference": null,
-      "url": "https://hackoctober-mlh-x-tech4hack.devpost.com/",
-      "sourceUrl": "https://hackoctober-mlh-x-tech4hack.devpost.com/",
-      "opensAt": "2026-10-17T18:30:00.000Z",
-      "deadlines": [
-        {
-          "kind": "end",
-          "label": null,
-          "at": "2026-10-22T11:30:00.000Z",
-          "zone": "Asia/Kolkata"
-        }
-      ]
-    },
-    {
       "id": "devpost:31805",
       "source": "devpost",
       "kind": "challenge",
@@ -1352,6 +1390,25 @@
       ]
     },
     {
+      "id": "devpost:31836",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Ship It: The Product Builders' Hackathon",
+      "organizer": "Mixpanel",
+      "conference": null,
+      "url": "https://ship-it-hackathon.devpost.com/",
+      "sourceUrl": "https://ship-it-hackathon.devpost.com/",
+      "opensAt": "2026-11-05T08:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-06T02:00:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
       "id": "devpost:31840",
       "source": "devpost",
       "kind": "challenge",
@@ -1385,6 +1442,25 @@
           "kind": "submission",
           "label": null,
           "at": "2026-10-29T21:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31843",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Blackout 2026",
+      "organizer": "buildicy",
+      "conference": null,
+      "url": "https://blackout-2026.devpost.com/",
+      "sourceUrl": "https://blackout-2026.devpost.com/",
+      "opensAt": "2026-11-28T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-29T01:00:00.000Z",
           "zone": "America/New_York"
         }
       ]

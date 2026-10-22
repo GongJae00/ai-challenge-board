@@ -1,6 +1,7 @@
 {
   "source": "codabench",
   "retrievedAt": "2026-10-21T13:00:56.960Z",
+  "attemptedAt": "2026-10-22T17:08:31.314Z",
   "listings": [
     {
       "id": "codabench:17739",
@@ -131,6 +132,5 @@
         }
       ]
     }
-  ],
-  "attemptedAt": "2026-10-22T04:40:56.397Z"
+  ]
 }
