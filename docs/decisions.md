@@ -62,6 +62,8 @@ count does not move when another chip in its own row is pressed.
   Korea, linked, and how often it collects, so that a visitor can tell what an empty result means. GongJae asked
   for it on 2026-10-21. The rows come from `src/lib/sites.ts`, which the type check requires to hold every
   source; a unit test fails if the Collect workflow's schedule no longer matches the hours the footer states.
+  Each row's label names what the row lists, 해외 사이트 and 국내 사이트: the bare 해외 and 국내 under 학회 read as
+  overseas and Korean conferences to GongJae on 2026-10-23 ("국내학회 해외학회인줄알겠어").
 - **Phones:** each row of chips stays one line that scrolls sideways, so that the listings start on the first
   screen; a wider screen wraps the rows. Each row is a toolbar, whose chips the arrow keys move between.
 - **Language:** the language menu carries the filters and the view to the other language's page.
