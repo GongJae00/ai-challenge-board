@@ -3,7 +3,7 @@ import { z } from "zod"
 
 import { minuteOf } from "../../../lib/datetime.ts"
 import type { Deadline, Listing } from "../../../lib/listing.ts"
-import { cleanText } from "../../text.ts"
+import { cleanName, cleanText } from "../../text.ts"
 import { endsAhead, isoFromLocal, isoFromMs } from "../../time.ts"
 
 const SITE = "https://www.aicrowd.com"
@@ -46,7 +46,7 @@ function organizerOf(card: HTMLElement): string | null {
   for (const span of card.querySelectorAll(
     '.card-footer a[href^="/organizers/"] span[title]'
   )) {
-    const name = cleanText(span.getAttribute("title"), 200)
+    const name = cleanName(span.getAttribute("title"), 200)
     if (name !== null && !names.includes(name)) names.push(name)
   }
   return cleanText(names.join(", "), 200)

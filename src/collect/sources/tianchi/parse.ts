@@ -77,14 +77,20 @@ export function parseRacePage(json: unknown): Race[] {
   return result.data.data.list
 }
 
+/** A leaderboard competition, 打榜赛, ranks entries without a contest's end; ACB lists no standing leaderboards. */
+const LEADERBOARD = "打榜"
+
 /**
- * Whether the row is a competition to list: not a learning competition, whose dates are placeholders, and not a
- * series container, which only groups the tracks one enters. It must also end after now and not so far ahead that
- * the end is a placeholder for "never".
+ * Whether the row is a competition to list: not a learning competition, whose dates are placeholders, not a
+ * leaderboard competition, and not a series container, which only groups the tracks one enters. It must also end
+ * after now and not so far ahead that the end is a placeholder for "never".
  */
 export function isListed(race: Race, now: Date): boolean {
   return (
-    !race.learning && !race.series && endsAhead(Date.parse(race.endsAt), now)
+    !race.learning &&
+    !race.series &&
+    !race.name.includes(LEADERBOARD) &&
+    endsAhead(Date.parse(race.endsAt), now)
   )
 }
 

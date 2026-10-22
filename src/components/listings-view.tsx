@@ -91,7 +91,10 @@ export default function ListingsView({ listings, locale, builtAt }: Props) {
         <div className="flex items-center justify-between gap-4">
           {/* The clear button sits beside the count it resets, so the search box keeps its width. */}
           <div className="flex min-h-8 items-center gap-2">
-            <p className="text-sm text-muted-foreground">{summary}</p>
+            {/* Screen readers hear the count from the live region below, once. */}
+            <p className="text-sm text-muted-foreground" aria-hidden="true">
+              {summary}
+            </p>
             {filters.active && (
               <Button
                 variant="ghost"

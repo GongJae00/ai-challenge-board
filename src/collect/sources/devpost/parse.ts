@@ -6,7 +6,7 @@ import {
   type Deadline,
   type Listing,
 } from "../../../lib/listing.ts"
-import { cleanText } from "../../text.ts"
+import { cleanName, cleanText } from "../../text.ts"
 import { endsAhead, isoFromLocal, monthOf } from "../../time.ts"
 
 /**
@@ -66,7 +66,7 @@ export function parseListPage(json: unknown): {
       id: h.id,
       title: h.title,
       url: h.url,
-      organizer: cleanText(h.organization_name ?? undefined, 200),
+      organizer: cleanName(h.organization_name ?? undefined, 200),
       dates: h.submission_period_dates,
       inviteOnly: h.invite_only,
       ai: h.themes.some((theme) => theme.name === AI_THEME),

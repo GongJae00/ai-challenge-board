@@ -112,6 +112,13 @@ describe("isListed", () => {
     ])
   })
 
+  it("does not list a leaderboard competition, 打榜赛, which is a standing ranking", () => {
+    const [open] = races.filter((r) => isListed(r, now))
+    expect(isListed({ ...open, name: "【打榜赛】CCL25-Eval 任务2" }, now)).toBe(
+      false
+    )
+  })
+
   it("does not list a learning competition, though it ends within two years", () => {
     const learning = parseRacePage(learningPage).find((r) => r.id === 231573)
     expect(learning?.endsAt).toBe("2027-05-06T15:59:59.000Z")

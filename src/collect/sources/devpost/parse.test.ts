@@ -66,6 +66,19 @@ describe("parseListPage", () => {
     expect(parseListPage(pastEnd)).toEqual({ total: 31, hackathons: [] })
   })
 
+  it("keeps a placeholder organizer name as null, and a real name as written", () => {
+    for (const name of ["nill", "NULL", "n/a", "N/A", "-", "none", "TBD"]) {
+      const raw = structuredClone(page1)
+      raw.hackathons[0].organization_name = name
+      expect(parseListPage(raw).hackathons[0].organizer, name).toBeNull()
+    }
+    for (const name of ["NA", "Acme Inc."]) {
+      const raw = structuredClone(page1)
+      raw.hackathons[0].organization_name = name
+      expect(parseListPage(raw).hackathons[0].organizer).toBe(name)
+    }
+  })
+
   it("keeps an empty organizer name as null", () => {
     const raw = structuredClone(page1)
     raw.hackathons[0].organization_name = "  "

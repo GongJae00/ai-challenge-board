@@ -48,6 +48,9 @@ count does not move when another chip in its own row is pressed.
   Korea, linked, and how often it collects, so that a visitor can tell what an empty result means. GongJae asked
   for it on 2026-10-21. The rows come from `src/lib/sites.ts`, which the type check requires to hold every
   source; a unit test fails if the Collect workflow's schedule no longer matches the hours the footer states.
+- **Phones:** each row of chips stays one line that scrolls sideways, so that the listings start on the first
+  screen; a wider screen wraps the rows. Each row is a toolbar, whose chips the arrow keys move between.
+- **Language:** the language menu carries the filters and the view to the other language's page.
 - **No inline styles:** the CSP blocks style attributes, so a kit component that sets one, as shadcn's
   ToggleGroup did for its gap, is changed to take a class; the end-to-end tests fail on the console error.
 
@@ -71,8 +74,12 @@ zone as an argument, so a reader's own region can replace it later. A deadline t
 zone than the page's also shows its date and time in that zone, so that "AoE 11월 15일 23:59" on a workshop's page
 reads the same on ACB; a KST deadline therefore shows no second time while the page shows KST. A deadline marked
 `UTC` comes from a source that gives only an instant, with no zone of its own, so it shows no second time either.
-`formatSourceTime` in `src/lib/datetime.ts` holds this rule for every view. The deadline cell keeps to two lines:
-the date and time, then the days left and the source's time.
+`formatSourceTime` in `src/lib/datetime.ts` holds this rule for every view; the source's date is left out when it
+is the date the page shows, as in "GMT+5:30 17:00", and a zone whose clock reads as KST's, such as JST, shows no
+second time. The deadline cell keeps to two lines: the date and time, then the days left, the name of a deadline
+that is not the plain end, such as 참가 신청 마감 or a phase, and the source's time. On a wide screen that second
+line does not wrap, and a long phase name is cut short; a submission deadline or the end of a challenge has no
+name, since the column already means the deadline. A phone lets the line wrap.
 
 ## 2026-10-21: Type and spacing
 
@@ -185,17 +192,21 @@ listings (see `CLAUDE.md`).
 - **SIGNATE:** the JSON list behind its site, then one overview request per open competition for its submission
   deadline, which carries a +09:00 offset and is shown as `JST`. Titles are in Japanese only.
 - **Tianchi:** the JSON race list behind its site, paged until a page has only competitions that ended long ago.
-  Times are China local times read as `Asia/Shanghai`. Learning competitions and series containers are left out;
+  Times are China local times read as `Asia/Shanghai`. Learning competitions, leaderboard competitions (打榜赛),
+  and series containers are left out;
   the English name is used when there is one.
 - **Devpost:** the JSON list behind its site, asked for open and upcoming hackathons with the "Machine
-  Learning/AI" theme and checked for that theme item by item; invite-only events are left out. The list gives
+  Learning/AI" theme and checked for that theme item by item; invite-only events are left out, and an organizer
+  entered as a placeholder, such as "nill" or "N/A", is taken as none. The list gives
   dates only, so the exact deadline and its zone come from each hackathon's calendar file, a request GongJae
   approved; `src/data/state/devpost.json` remembers each one, so a calendar is fetched again only when the
   hackathon's dates change or three days have passed, which catches a deadline moved within the same day. A
   calendar ACB cannot place, such as an all-day event, leaves that hackathon out rather than stopping the source.
 - **grand-challenge.org:** its robots.txt disallows the API, so the collector reads the HTML list of open
   challenges. A card states a deadline only while exactly one phase is open, so the source lists few; post-
-  challenge phases, open leaderboards after a challenge, are left out as persistent.
+  challenge phases, open leaderboards after a challenge, are left out as persistent. A practice phase such as
+  Debug or Sanity Check is listed by its name, since it is the only deadline the card shows while the challenge
+  takes entrants.
 - **AIcrowd:** its robots.txt turns away AI crawlers but allows the collector with a 10-second Crawl-delay. The
   running list's cards give the current phase's end; a challenge page with the newer overview gives every round.
   Only cards that offer a prize or another award are listed, which leaves out the coursework and test entries

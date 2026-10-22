@@ -6,7 +6,7 @@ import {
   type Deadline,
   type Listing,
 } from "../../../lib/listing.ts"
-import { cleanText } from "../../text.ts"
+import { cleanName, cleanText } from "../../text.ts"
 import { endsAhead, isoFromMs } from "../../time.ts"
 
 const HOST = "eval.ai"
@@ -179,7 +179,7 @@ export function toListing(
     source: "evalai",
     kind: "challenge",
     title: cleanText(challenge.title, 300)!,
-    organizer: cleanText(challenge.teamName ?? undefined, 200),
+    organizer: cleanName(challenge.teamName ?? undefined, 200),
     conference: conferenceFromTags(challenge.tags),
     url,
     sourceUrl: url,

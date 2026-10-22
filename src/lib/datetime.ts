@@ -1,5 +1,21 @@
 import { canonicalZone, zoneCodes, type Deadline } from "./listing.ts"
 
+const formatters = new Map<string, Intl.DateTimeFormat>()
+
+/** A date formatter for a locale and options, made once: the table formats every row's dates on each render. */
+function formatter(
+  locale: string,
+  options: Intl.DateTimeFormatOptions
+): Intl.DateTimeFormat {
+  const key = JSON.stringify([locale, options])
+  let found = formatters.get(key)
+  if (!found) {
+    found = new Intl.DateTimeFormat(locale, options)
+    formatters.set(key, found)
+  }
+  return found
+}
+
 function isZoneCode(zone: string): zone is keyof typeof zoneCodes {
   return Object.hasOwn(zoneCodes, zone)
 }
@@ -16,7 +32,7 @@ function ianaZone(zone: string): string {
 function zoneLabel(zone: string, at: Date): string {
   if (isZoneCode(zone)) return zone
   return (
-    new Intl.DateTimeFormat("en-US", { timeZone: zone, timeZoneName: "short" })
+    formatter("en-US", { timeZone: zone, timeZoneName: "short" })
       .formatToParts(at)
       .find((part) => part.type === "timeZoneName")?.value ?? zone
   )
@@ -41,12 +57,12 @@ export const DISPLAY_TIME_ZONE = "Asia/Seoul"
 /** The calendar date of an instant in a time zone, as `YYYY-MM-DD`. */
 export function zonedDate(at: Date, timeZone: string): string {
   // The Swedish locale writes dates as YYYY-MM-DD.
-  return new Intl.DateTimeFormat("sv-SE", { timeZone }).format(at)
+  return formatter("sv-SE", { timeZone }).format(at)
 }
 
 /** A `YYYY-MM` month as the locale names it, such as "2026년 11월" or "November 2026". */
 export function formatMonth(month: string, locale: string): string {
-  return new Intl.DateTimeFormat(locale, {
+  return formatter(locale, {
     year: "numeric",
     month: "long",
     timeZone: "UTC",
@@ -64,7 +80,7 @@ export function formatDate(
   now: Date
 ): string {
   const year = (date: Date) => zonedDate(date, timeZone).slice(0, 4)
-  return new Intl.DateTimeFormat(locale, {
+  return formatter(locale, {
     timeZone,
     ...(year(at) === year(now) ? {} : { year: "numeric" }),
     month: "short",
@@ -75,13 +91,14 @@ export function formatDate(
 
 /** The time of day on a 24-hour clock, such as "20:59". */
 export function formatTime(at: Date, locale: string, timeZone: string): string {
-  return new Intl.DateTimeFormat(locale, { timeZone, ...clock }).format(at)
+  return formatter(locale, { timeZone, ...clock }).format(at)
 }
 
 /**
- * The deadline in the zone the source states it in, with its date, such as "AoE 11월 15일 23:59", so that it reads
- * as the organizers announce it; a deadline at midnight AoE is ambiguous without the date. Null when the source
- * states no zone of its own (`UTC`) or its date and clock read the same in the zone the page shows times in.
+ * The deadline in the zone the source states it in, such as "AoE 11월 15일 23:59", so that it reads as the
+ * organizers announce it. The date is given when it differs from the date the page shows, since a deadline at
+ * midnight AoE is ambiguous without it, and left out when it is the same, as in "GMT+5:30 17:00". Null when the
+ * source states no zone of its own (`UTC`) or its date and clock read the same as the page's, as JST's do in KST.
  */
 export function formatSourceTime(
   deadline: Deadline,
@@ -91,16 +108,17 @@ export function formatSourceTime(
   if (canonicalZone(deadline.zone) === "UTC") return null
   const at = new Date(deadline.at)
   const format = (zone: string) =>
-    new Intl.DateTimeFormat(locale, {
+    formatter(locale, {
       timeZone: zone,
       month: "short",
       day: "numeric",
       ...clock,
     }).format(at)
-  const text = format(ianaZone(deadline.zone))
-  return text === format(timeZone)
-    ? null
-    : `${zoneLabel(deadline.zone, at)} ${text}`
+  const zone = ianaZone(deadline.zone)
+  const text = format(zone)
+  if (text === format(timeZone)) return null
+  const sameDate = zonedDate(at, zone) === zonedDate(at, timeZone)
+  return `${zoneLabel(deadline.zone, at)} ${sameDate ? formatTime(at, locale, zone) : text}`
 }
 
 /** Days until a date as the locale says it, such as "내일", "31일 후", or "in 31 days". */
@@ -113,7 +131,7 @@ export function formatDaysLeft(days: number, locale: string): string {
 
 /** The short weekday names, Sunday first, such as "일 월 화" or "Sun Mon Tue". */
 export function weekdayNames(locale: string): string[] {
-  const format = new Intl.DateTimeFormat(locale, {
+  const format = formatter(locale, {
     weekday: "short",
     timeZone: "UTC",
   })

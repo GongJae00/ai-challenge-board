@@ -1,7 +1,7 @@
 import { z } from "zod"
 
 import type { Listing } from "../../../lib/listing.ts"
-import { cleanText } from "../../text.ts"
+import { cleanName, cleanText } from "../../text.ts"
 import { endsAhead, isoFromKst } from "../../time.ts"
 
 /** DACON writes every date as `YYYY-MM-DD HH:MM:SS` in Korean time; one it cannot read fails the response. */
@@ -145,7 +145,7 @@ export function parseOrganizer(html: string): string | null {
     const match = ORGANIZER_LINE.exec(line.replace(/\s+/g, " ").trim())
     if (!match) continue
     const value = match[1].split(NEXT_ROLE)[0].replace(/[\s/,|]+$/, "")
-    const organizer = cleanText(value, 200)
+    const organizer = cleanName(value, 200)
     if (organizer !== null) return organizer
   }
   return null

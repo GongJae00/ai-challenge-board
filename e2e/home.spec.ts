@@ -46,6 +46,12 @@ for (const locale of locales) {
     ).toHaveAttribute("aria-selected", "true")
 
     expect(errors).toEqual([])
+
+    // Nothing pushes the page wider than the screen, such as a row of chips at phone width.
+    const overflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - window.innerWidth
+    )
+    expect(overflow).toBeLessThanOrEqual(0)
   })
 
   for (const other of locales.filter((l) => l !== locale)) {
@@ -111,7 +117,7 @@ for (const locale of locales) {
   test(`the ${locale} kind chips filter by keyboard`, async ({ page }) => {
     await page.goto(`${locale}/`)
     await hydrated(page)
-    const group = page.getByRole("group", { name: t(locale, "filter.kind") })
+    const group = page.getByRole("toolbar", { name: t(locale, "filter.kind") })
     // The chips follow the search box in the tab order, with one tab stop for the group. A kind with nothing open
     // has its chip disabled, so the test presses whichever chip the keyboard reaches.
     await page

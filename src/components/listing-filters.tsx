@@ -192,6 +192,11 @@ function ChipRow<T extends string>({
   onChange: (value: string[]) => void
 }) {
   const id = useId()
+  // A row whose chips are all dimmed has nothing to focus, so the row itself takes the tab stop, which keeps a
+  // row that scrolls sideways on a phone reachable by keyboard.
+  const allDisabled = options.every(
+    (option) => option.count === 0 && !value.includes(option.value)
+  )
   return (
     <>
       <span
@@ -200,13 +205,17 @@ function ChipRow<T extends string>({
       >
         {label}
       </span>
+      {/* A toolbar, since arrow keys move between its chips. A phone keeps each row to one line that scrolls
+          sideways, so the listings stay in view; a wider screen wraps the row. */}
       <ToggleGroup
         multiple
+        role="toolbar"
         aria-labelledby={id}
+        tabIndex={allDisabled ? 0 : undefined}
         value={value}
         onValueChange={onChange}
         spacing={1.5}
-        className="flex-wrap gap-1.5"
+        className="w-full min-w-0 [scrollbar-width:none] flex-nowrap gap-1.5 overflow-x-auto sm:w-fit sm:flex-wrap sm:overflow-visible"
       >
         {options.map((option) => (
           <ToggleGroupItem

@@ -15,6 +15,18 @@ export function cleanText(
   return clean.length > maxLength ? `${clean.slice(0, maxLength - 1)}…` : clean
 }
 
+/** What people type when they leave a name unfilled, such as "nill", "N/A", or "-". */
+const PLACEHOLDER = /^(nill?|null|none|n\/a|tbd|-+)$/i
+
+/** A name from another site, such as an organizer, as `cleanText` gives it; null for a placeholder entry. */
+export function cleanName(
+  text: string | undefined,
+  maxLength: number
+): string | null {
+  const clean = cleanText(text, maxLength)
+  return clean !== null && PLACEHOLDER.test(clean) ? null : clean
+}
+
 /** A link from another site as an absolute http(s) URL, adding https:// to a bare host; null when it is not one. */
 export function webUrl(text: string | undefined): string | null {
   const raw = text?.trim()

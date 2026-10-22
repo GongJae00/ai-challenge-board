@@ -177,7 +177,7 @@ export function ListingCalendar({ items, locale, now, timeZone }: Props) {
               </h4>
               <ul className="mt-1 divide-y border-y">
                 {list.map(({ listing, deadline }) => {
-                  const name = deadlineName(deadline, locale)
+                  const name = deadlineName(deadline, listing, locale)
                   const sourceTime = formatSourceTime(
                     deadline,
                     locale,

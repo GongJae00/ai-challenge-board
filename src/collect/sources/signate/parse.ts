@@ -1,7 +1,7 @@
 import { z } from "zod"
 
 import type { Listing } from "../../../lib/listing.ts"
-import { cleanText } from "../../text.ts"
+import { cleanName, cleanText } from "../../text.ts"
 import { endsAhead, isoFromLocal } from "../../time.ts"
 
 const JST_OFFSET = "+09:00"
@@ -111,7 +111,7 @@ export function toListing(entry: Entry, endsAt: string): Listing | null {
     source: "signate",
     kind: "challenge",
     title,
-    organizer: cleanText(entry.organizer ?? undefined, 200),
+    organizer: cleanName(entry.organizer ?? undefined, 200),
     conference: null,
     url,
     sourceUrl: url,

@@ -2,7 +2,7 @@ import { z } from "zod"
 
 import { minuteOf } from "../../../lib/datetime.ts"
 import type { Deadline, Listing } from "../../../lib/listing.ts"
-import { cleanText, webUrl } from "../../text.ts"
+import { cleanName, cleanText, webUrl } from "../../text.ts"
 import { endsAhead, isoFromMs } from "../../time.ts"
 
 const instant = z.iso.datetime()
@@ -93,7 +93,7 @@ export function toListing(competition: Competition, now: Date): Listing | null {
     source: "kaggle",
     kind: "challenge",
     title,
-    organizer: cleanText(
+    organizer: cleanName(
       competition.organizationName ?? competition.hostName,
       200
     ),

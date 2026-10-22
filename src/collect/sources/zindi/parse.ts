@@ -2,7 +2,7 @@ import { z } from "zod"
 
 import { minuteOf } from "../../../lib/datetime.ts"
 import type { Deadline, Listing } from "../../../lib/listing.ts"
-import { cleanText } from "../../text.ts"
+import { cleanName, cleanText } from "../../text.ts"
 import { endsAhead, isoFromMs } from "../../time.ts"
 
 const instant = z.iso.datetime()
@@ -116,7 +116,7 @@ export function toListing(competition: Competition, now: Date): Listing {
     source: "zindi",
     kind: "challenge",
     title,
-    organizer: cleanText(competition.organization ?? undefined, 200),
+    organizer: cleanName(competition.organization ?? undefined, 200),
     conference: null,
     url,
     sourceUrl: url,

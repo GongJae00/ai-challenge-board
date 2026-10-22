@@ -66,7 +66,7 @@ export function ListingTable({ items, locale, now, timeZone }: Props) {
           const conference = conferenceName(listing)
           const platform = platformName(listing)
           const host = hostName(listing)
-          const name = deadlineName(deadline, locale)
+          const name = deadlineName(deadline, listing, locale)
           const sourceTime = formatSourceTime(deadline, locale, timeZone)
           return (
             <TableRow key={listing.id} className="*:align-top">
@@ -94,7 +94,7 @@ export function ListingTable({ items, locale, now, timeZone }: Props) {
                   </span>
                   <span
                     className={cn(
-                      "shrink-0",
+                      "sm:shrink-0",
                       days <= SOON_DAYS && "font-semibold text-foreground"
                     )}
                   >
@@ -106,7 +106,9 @@ export function ListingTable({ items, locale, now, timeZone }: Props) {
                     </span>
                   )}
                   {sourceTime && (
-                    <span className="shrink-0 tabular-nums">{sourceTime}</span>
+                    <span className="tabular-nums sm:shrink-0">
+                      {sourceTime}
+                    </span>
                   )}
                 </div>
               </TableCell>

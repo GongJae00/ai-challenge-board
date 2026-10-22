@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
 
-import { cleanText, webUrl } from "./text.ts"
+import { cleanName, cleanText, webUrl } from "./text.ts"
 
 describe("cleanText", () => {
   it("collapses whitespace and control characters into single spaces", () => {
@@ -34,5 +34,27 @@ describe("webUrl", () => {
     expect(webUrl("TBA")).toBeNull()
     expect(webUrl("")).toBeNull()
     expect(webUrl(undefined)).toBeNull()
+  })
+})
+
+describe("cleanName", () => {
+  it("reads a placeholder entry as no name", () => {
+    for (const name of [
+      "nill",
+      "nil",
+      "NULL",
+      "None",
+      "n/a",
+      "N/A",
+      "TBD",
+      "-",
+      "---",
+    ])
+      expect(cleanName(name, 200), name).toBeNull()
+  })
+
+  it("keeps a real name as written, abbreviations included", () => {
+    expect(cleanName("  Acme  Inc. ", 200)).toBe("Acme Inc.")
+    expect(cleanName("NA", 200)).toBe("NA")
   })
 })

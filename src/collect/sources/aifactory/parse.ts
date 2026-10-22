@@ -3,7 +3,7 @@ import { z } from "zod"
 import { minuteOf } from "../../../lib/datetime.ts"
 import type { Deadline, Listing } from "../../../lib/listing.ts"
 import { flightText, jsonAt } from "../../flight.ts"
-import { cleanText } from "../../text.ts"
+import { cleanName, cleanText } from "../../text.ts"
 import { endsAhead, isoFromMs } from "../../time.ts"
 
 const instant = z.iso.datetime()
@@ -139,7 +139,7 @@ export function toListing(
     source: "aifactory",
     kind: "challenge",
     title,
-    organizer: cleanText(organizer ?? undefined, 200),
+    organizer: cleanName(organizer ?? undefined, 200),
     conference: null,
     url,
     sourceUrl: url,

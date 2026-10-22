@@ -50,7 +50,8 @@ describe("datetime", () => {
       "AoE 11월 15일 23:59"
     )
     expect(formatSourceTime(aoe, "en", "Asia/Seoul")).toBe("AoE Nov 15, 23:59")
-    expect(formatSourceTime(kst, "en", "UTC")).toBe("KST Nov 16, 20:59")
+    // Same date as shown in UTC, so the clock alone.
+    expect(formatSourceTime(kst, "en", "UTC")).toBe("KST 20:59")
   })
 
   it("names a source zone without a code by its offset, or its abbreviation where English has one", () => {
@@ -66,7 +67,7 @@ describe("datetime", () => {
     ).toBe("PDT 10월 23일 12:00")
     expect(
       formatSourceTime(deadline("Asia/Shanghai"), "en", "Asia/Seoul")
-    ).toBe("GMT+8 Oct 24, 03:00")
+    ).toBe("GMT+8 03:00")
     expect(formatSourceTime(deadline("JST"), "en", "UTC")).toBe(
       "JST Oct 24, 04:00"
     )
