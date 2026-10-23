@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-10-22T17:08:31.314Z",
+  "retrievedAt": "2026-10-23T04:46:14.660Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -474,6 +474,25 @@
           "label": null,
           "at": "2026-11-05T16:00:00.000Z",
           "zone": "Asia/Dhaka"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31617",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "IEEE Hack For Humanity",
+      "organizer": "IEEE Charlotte Section",
+      "conference": null,
+      "url": "https://ieee-ai-hack-for-humanity.devpost.com/",
+      "sourceUrl": "https://ieee-ai-hack-for-humanity.devpost.com/",
+      "opensAt": "2026-10-11T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-10-24T03:45:00.000Z",
+          "zone": "America/New_York"
         }
       ]
     },
