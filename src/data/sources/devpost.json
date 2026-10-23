@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-10-23T04:46:14.660Z",
+  "retrievedAt": "2026-10-23T17:04:49.235Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -573,6 +573,25 @@
       ]
     },
     {
+      "id": "devpost:31742",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Codex x TwitchCon Hackathon",
+      "organizer": "Twitch",
+      "conference": null,
+      "url": "https://twitchcon-codex.devpost.com/",
+      "sourceUrl": "https://twitchcon-codex.devpost.com/",
+      "opensAt": "2026-10-23T07:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-02T22:00:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
       "id": "devpost:31805",
       "source": "devpost",
       "kind": "challenge",
@@ -683,6 +702,25 @@
           "label": null,
           "at": "2026-10-29T21:00:00.000Z",
           "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31855",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "LPC Hacks",
+      "organizer": "LPCHacks",
+      "conference": null,
+      "url": "https://lpc-hacks.devpost.com/",
+      "sourceUrl": "https://lpc-hacks.devpost.com/",
+      "opensAt": "2026-11-14T08:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-15T01:30:00.000Z",
+          "zone": "America/Los_Angeles"
         }
       ]
     }

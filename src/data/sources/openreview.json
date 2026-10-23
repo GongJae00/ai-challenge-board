@@ -1,6 +1,6 @@
 {
   "source": "openreview",
-  "retrievedAt": "2026-10-23T04:46:14.660Z",
+  "retrievedAt": "2026-10-23T17:04:49.235Z",
   "listings": [
     {
       "id": "openreview:AAAI.org/2027/Workshop/A2NetOps",
@@ -65,6 +65,28 @@
           "label": null,
           "at": "2026-11-21T11:59:00.000Z",
           "zone": "AoE"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/AI4TS",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "The 4th Workshop on Artificial Intelligence for Time Series Analysis: Theory, Algorithms, and Applications",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://uconn-dsis.github.io/ai4ts-aaai2027/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FAI4TS",
+      "opensAt": "2026-10-20T12:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-21T10:59:00.000Z",
+          "zone": "UTC"
         }
       ]
     },
