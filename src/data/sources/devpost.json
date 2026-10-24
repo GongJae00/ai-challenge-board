@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-10-24T04:33:31.566Z",
+  "retrievedAt": "2026-10-24T15:55:58.360Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -459,25 +459,6 @@
       ]
     },
     {
-      "id": "devpost:31617",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "IEEE Hack For Humanity",
-      "organizer": "IEEE Charlotte Section",
-      "conference": null,
-      "url": "https://ieee-ai-hack-for-humanity.devpost.com/",
-      "sourceUrl": "https://ieee-ai-hack-for-humanity.devpost.com/",
-      "opensAt": "2026-10-11T04:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-10-24T09:00:00.000Z",
-          "zone": "America/New_York"
-        }
-      ]
-    },
-    {
       "id": "devpost:31659",
       "source": "devpost",
       "kind": "challenge",
@@ -625,6 +606,25 @@
           "kind": "submission",
           "label": null,
           "at": "2026-11-04T14:30:00.000Z",
+          "zone": "Asia/Kolkata"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31820",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "HackTheFashion Global'26",
+      "organizer": "FabricVTON",
+      "conference": null,
+      "url": "https://hackthefashion-global26.devpost.com/",
+      "sourceUrl": "https://hackthefashion-global26.devpost.com/",
+      "opensAt": "2026-11-05T18:30:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-31T11:30:00.000Z",
           "zone": "Asia/Kolkata"
         }
       ]
