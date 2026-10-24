@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-10-23T17:04:49.235Z",
+  "retrievedAt": "2026-10-24T04:33:31.566Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -188,25 +188,6 @@
           "kind": "submission",
           "label": null,
           "at": "2026-10-27T06:45:00.000Z",
-          "zone": "America/Los_Angeles"
-        }
-      ]
-    },
-    {
-      "id": "devpost:30992",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "Build, Ship, Shape: Amazon Developer Hackathon",
-      "organizer": "Amazon",
-      "conference": null,
-      "url": "https://amazonappdev2026.devpost.com/",
-      "sourceUrl": "https://amazonappdev2026.devpost.com/",
-      "opensAt": "2026-08-31T07:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-10-23T19:00:00.000Z",
           "zone": "America/Los_Angeles"
         }
       ]
@@ -491,7 +472,7 @@
         {
           "kind": "submission",
           "label": null,
-          "at": "2026-10-24T03:45:00.000Z",
+          "at": "2026-10-24T09:00:00.000Z",
           "zone": "America/New_York"
         }
       ]
@@ -596,7 +577,7 @@
       "source": "devpost",
       "kind": "challenge",
       "title": "NextSpark Hacks",
-      "organizer": "Independent",
+      "organizer": "Independent Student Organizer",
       "conference": null,
       "url": "https://nextspark-hacks.devpost.com/",
       "sourceUrl": "https://nextspark-hacks.devpost.com/",
@@ -607,6 +588,25 @@
           "label": null,
           "at": "2026-10-27T03:00:00.000Z",
           "zone": "America/Chicago"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31809",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Five Nights with AI",
+      "organizer": "ACM@UCSD",
+      "conference": null,
+      "url": "https://five-nights-with-ai.devpost.com/",
+      "sourceUrl": "https://five-nights-with-ai.devpost.com/",
+      "opensAt": "2026-10-24T07:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-10-24T23:00:00.000Z",
+          "zone": "America/Los_Angeles"
         }
       ]
     },
