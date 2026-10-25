@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-10-25T04:37:57.017Z",
+  "retrievedAt": "2026-10-25T16:14:22.822Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -18,25 +18,6 @@
           "label": null,
           "at": "2026-11-20T20:00:00.000Z",
           "zone": "UTC"
-        }
-      ]
-    },
-    {
-      "id": "devpost:29114",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "IEEE ClimateChain Global Hackathon",
-      "organizer": "IEEE Turkey",
-      "conference": null,
-      "url": "https://ieee-climatechain-hack.devpost.com/",
-      "sourceUrl": "https://ieee-climatechain-hack.devpost.com/",
-      "opensAt": "2026-10-04T21:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-10-25T14:00:00.000Z",
-          "zone": "Europe/Istanbul"
         }
       ]
     },
@@ -626,6 +607,25 @@
           "label": null,
           "at": "2026-12-31T11:30:00.000Z",
           "zone": "Asia/Kolkata"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31823",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "NorCal Hacks 27",
+      "organizer": "Lynbrook Engineering Club",
+      "conference": null,
+      "url": "https://norcal-hacks-27.devpost.com/",
+      "sourceUrl": "https://norcal-hacks-27.devpost.com/",
+      "opensAt": "2026-11-12T08:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-15T16:00:00.000Z",
+          "zone": "America/Los_Angeles"
         }
       ]
     },

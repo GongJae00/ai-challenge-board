@@ -1,6 +1,6 @@
 {
   "source": "tianchi",
-  "retrievedAt": "2026-10-25T04:37:57.017Z",
+  "retrievedAt": "2026-10-25T16:14:22.822Z",
   "listings": [
     {
       "id": "tianchi:532460",
@@ -30,12 +30,12 @@
       "conference": null,
       "url": "https://tianchi.aliyun.com/competition/entrance/532469",
       "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532469",
-      "opensAt": "2026-10-12T16:00:00.000Z",
+      "opensAt": "2026-04-19T16:00:00.000Z",
       "deadlines": [
         {
           "kind": "end",
           "label": null,
-          "at": "2026-10-25T15:59:59.000Z",
+          "at": "2026-10-26T15:59:59.000Z",
           "zone": "Asia/Shanghai"
         }
       ]
@@ -112,25 +112,6 @@
           "kind": "end",
           "label": null,
           "at": "2026-12-31T15:59:59.000Z",
-          "zone": "Asia/Shanghai"
-        }
-      ]
-    },
-    {
-      "id": "tianchi:532511",
-      "source": "tianchi",
-      "kind": "challenge",
-      "title": "2026 SMP第十四届全国社会媒体处理大会-大模型图网络决策挑战赛",
-      "organizer": null,
-      "conference": null,
-      "url": "https://tianchi.aliyun.com/competition/entrance/532511",
-      "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532511",
-      "opensAt": "2026-10-08T16:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "end",
-          "label": null,
-          "at": "2026-10-25T15:59:59.000Z",
           "zone": "Asia/Shanghai"
         }
       ]
