@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-10-24T15:55:58.360Z",
+  "retrievedAt": "2026-10-25T04:37:57.017Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -554,6 +554,25 @@
       ]
     },
     {
+      "id": "devpost:31775",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "OBSCURA: Satellite AI Research Challenge",
+      "organizer": "BTAJI CREW",
+      "conference": null,
+      "url": "https://obscura.devpost.com/",
+      "sourceUrl": "https://obscura.devpost.com/",
+      "opensAt": "2026-11-17T19:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-24T15:00:00.000Z",
+          "zone": "Asia/Karachi"
+        }
+      ]
+    },
+    {
       "id": "devpost:31805",
       "source": "devpost",
       "kind": "challenge",
@@ -569,25 +588,6 @@
           "label": null,
           "at": "2026-10-27T03:00:00.000Z",
           "zone": "America/Chicago"
-        }
-      ]
-    },
-    {
-      "id": "devpost:31809",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "Five Nights with AI",
-      "organizer": "ACM@UCSD",
-      "conference": null,
-      "url": "https://five-nights-with-ai.devpost.com/",
-      "sourceUrl": "https://five-nights-with-ai.devpost.com/",
-      "opensAt": "2026-10-24T07:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-10-24T23:00:00.000Z",
-          "zone": "America/Los_Angeles"
         }
       ]
     },
@@ -672,7 +672,7 @@
       "source": "devpost",
       "kind": "challenge",
       "title": "Ctrl+V Hackathon",
-      "organizer": "AKSZ",
+      "organizer": "ADHAYAN",
       "conference": null,
       "url": "https://ctrl-v-hackathon-31831.devpost.com/",
       "sourceUrl": "https://ctrl-v-hackathon-31831.devpost.com/",

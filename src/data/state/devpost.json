@@ -24,7 +24,7 @@
   {
     "id": 29135,
     "dates": "Mar 12 - 27, 2028",
-    "checkedAt": "2026-10-21T13:00:56.960Z",
+    "checkedAt": "2026-10-25T04:37:57.017Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -46,7 +46,7 @@
   {
     "id": 30456,
     "dates": "Nov 15 - 21, 2026",
-    "checkedAt": "2026-10-21T13:00:56.960Z",
+    "checkedAt": "2026-10-25T04:37:57.017Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -167,7 +167,7 @@
   {
     "id": 31222,
     "dates": "Jan 08 - 10, 2027",
-    "checkedAt": "2026-10-21T13:00:56.960Z",
+    "checkedAt": "2026-10-25T04:37:57.017Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -200,7 +200,7 @@
   {
     "id": 31480,
     "dates": "Nov 04 - Dec 18, 2026",
-    "checkedAt": "2026-10-21T13:00:56.960Z",
+    "checkedAt": "2026-10-25T04:37:57.017Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -211,7 +211,7 @@
   {
     "id": 31489,
     "dates": "Nov 02 - 08, 2026",
-    "checkedAt": "2026-10-21T13:00:56.960Z",
+    "checkedAt": "2026-10-25T04:37:57.017Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -233,7 +233,7 @@
   {
     "id": 31549,
     "dates": "Nov 15 - 22, 2026",
-    "checkedAt": "2026-10-21T13:00:56.960Z",
+    "checkedAt": "2026-10-25T04:37:57.017Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -319,6 +319,17 @@
     }
   },
   {
+    "id": 31775,
+    "dates": "Nov 18 - 24, 2026",
+    "checkedAt": "2026-10-25T04:37:57.017Z",
+    "deadline": {
+      "kind": "submission",
+      "label": null,
+      "at": "2026-11-24T15:00:00.000Z",
+      "zone": "Asia/Karachi"
+    }
+  },
+  {
     "id": 31805,
     "dates": "Oct 21 - 26, 2026",
     "checkedAt": "2026-10-24T15:55:58.360Z",
@@ -330,20 +341,9 @@
     }
   },
   {
-    "id": 31809,
-    "dates": "Oct 24, 2026",
-    "checkedAt": "2026-10-24T04:33:31.566Z",
-    "deadline": {
-      "kind": "submission",
-      "label": null,
-      "at": "2026-10-24T23:00:00.000Z",
-      "zone": "America/Los_Angeles"
-    }
-  },
-  {
     "id": 31815,
     "dates": "Nov 02 - 04, 2026",
-    "checkedAt": "2026-10-21T13:00:56.960Z",
+    "checkedAt": "2026-10-25T04:37:57.017Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -365,7 +365,7 @@
   {
     "id": 31826,
     "dates": "Nov 21 - 28, 2026",
-    "checkedAt": "2026-10-21T13:00:56.960Z",
+    "checkedAt": "2026-10-25T04:37:57.017Z",
     "deadline": {
       "kind": "submission",
       "label": null,
