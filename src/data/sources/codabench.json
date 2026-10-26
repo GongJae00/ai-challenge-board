@@ -1,7 +1,6 @@
 {
   "source": "codabench",
-  "retrievedAt": "2026-10-21T13:00:56.960Z",
-  "attemptedAt": "2026-10-26T04:43:24.939Z",
+  "retrievedAt": "2026-10-26T18:40:37.445Z",
   "listings": [
     {
       "id": "codabench:17739",
@@ -20,7 +19,7 @@
         {
           "kind": "phase",
           "label": "Final",
-          "at": "2026-10-26T00:00:00.000Z",
+          "at": "2026-10-28T23:55:00.000Z",
           "zone": "UTC"
         }
       ]
@@ -42,7 +41,7 @@
         {
           "kind": "phase",
           "label": "Final & Verification",
-          "at": "2026-10-26T11:59:59.000Z",
+          "at": "2026-10-28T11:59:59.000Z",
           "zone": "AoE"
         }
       ]
@@ -64,7 +63,7 @@
         {
           "kind": "phase",
           "label": "Final & Verification",
-          "at": "2026-10-26T11:59:59.000Z",
+          "at": "2026-10-28T11:59:59.000Z",
           "zone": "AoE"
         }
       ]
@@ -86,7 +85,7 @@
         {
           "kind": "phase",
           "label": "Final & Verification",
-          "at": "2026-10-26T11:59:59.000Z",
+          "at": "2026-10-28T11:59:59.000Z",
           "zone": "AoE"
         }
       ]
@@ -108,7 +107,7 @@
         {
           "kind": "phase",
           "label": "Final & Verification",
-          "at": "2026-10-26T11:59:59.000Z",
+          "at": "2026-10-28T11:59:59.000Z",
           "zone": "AoE"
         }
       ]

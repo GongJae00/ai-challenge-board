@@ -1,6 +1,6 @@
 {
   "source": "zindi",
-  "retrievedAt": "2026-10-26T04:43:24.939Z",
+  "retrievedAt": "2026-10-26T18:40:37.445Z",
   "listings": [
     {
       "id": "zindi:bias-bounty-mapping-equity-challenge",
@@ -54,7 +54,7 @@
         {
           "kind": "end",
           "label": null,
-          "at": "2026-11-13T12:00:00.000Z",
+          "at": "2026-11-10T18:29:59.000Z",
           "zone": "UTC"
         }
       ]

@@ -1,6 +1,6 @@
 {
   "source": "tianchi",
-  "retrievedAt": "2026-10-26T04:43:24.939Z",
+  "retrievedAt": "2026-10-26T18:40:37.445Z",
   "listings": [
     {
       "id": "tianchi:532460",
@@ -17,25 +17,6 @@
           "kind": "end",
           "label": null,
           "at": "2026-10-31T15:59:59.000Z",
-          "zone": "Asia/Shanghai"
-        }
-      ]
-    },
-    {
-      "id": "tianchi:532469",
-      "source": "tianchi",
-      "kind": "challenge",
-      "title": "“学AI，你做主”——天池平台学习赛题征集赛",
-      "organizer": null,
-      "conference": null,
-      "url": "https://tianchi.aliyun.com/competition/entrance/532469",
-      "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532469",
-      "opensAt": "2026-04-19T16:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "end",
-          "label": null,
-          "at": "2026-10-26T15:59:59.000Z",
           "zone": "Asia/Shanghai"
         }
       ]
@@ -127,12 +108,6 @@
       "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532514",
       "opensAt": "2026-09-10T16:00:00.000Z",
       "deadlines": [
-        {
-          "kind": "entry",
-          "label": null,
-          "at": "2026-10-26T15:59:59.000Z",
-          "zone": "Asia/Shanghai"
-        },
         {
           "kind": "end",
           "label": null,
