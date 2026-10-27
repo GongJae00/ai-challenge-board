@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-10-27T05:00:15.818Z",
+  "retrievedAt": "2026-10-27T17:59:47.286Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -131,25 +131,6 @@
           "kind": "submission",
           "label": null,
           "at": "2026-10-30T17:00:00.000Z",
-          "zone": "America/Los_Angeles"
-        }
-      ]
-    },
-    {
-      "id": "devpost:30984",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "OpenCV AI Competition 2026, powered by AWS",
-      "organizer": "OpenCV",
-      "conference": null,
-      "url": "https://opencv26.devpost.com/",
-      "sourceUrl": "https://opencv26.devpost.com/",
-      "opensAt": "2026-08-26T07:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-10-27T06:45:00.000Z",
           "zone": "America/Los_Angeles"
         }
       ]
@@ -364,25 +345,6 @@
       ]
     },
     {
-      "id": "devpost:31503",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "Life After Code",
-      "organizer": "GitLab",
-      "conference": null,
-      "url": "https://gitlab-transcend.devpost.com/",
-      "sourceUrl": "https://gitlab-transcend.devpost.com/",
-      "opensAt": "2026-10-05T00:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-10-27T13:00:00.000Z",
-          "zone": "UTC"
-        }
-      ]
-    },
-    {
       "id": "devpost:31549",
       "source": "devpost",
       "kind": "challenge",
@@ -416,6 +378,25 @@
           "kind": "submission",
           "label": null,
           "at": "2026-11-16T07:45:00.000Z",
+          "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31572",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Codegeist 2026: Build with context. Ship with confidence.",
+      "organizer": "Atlassian",
+      "conference": null,
+      "url": "https://codegeist2026.devpost.com/",
+      "sourceUrl": "https://codegeist2026.devpost.com/",
+      "opensAt": "2026-10-27T07:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-22T20:00:00.000Z",
           "zone": "America/Los_Angeles"
         }
       ]
@@ -740,6 +721,25 @@
           "label": null,
           "at": "2026-11-15T01:30:00.000Z",
           "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31907",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Build Your First AI App",
+      "organizer": "Yasir Insights",
+      "conference": null,
+      "url": "https://build-your-first-ai-app.devpost.com/",
+      "sourceUrl": "https://build-your-first-ai-app.devpost.com/",
+      "opensAt": "2026-10-27T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-27T22:00:00.000Z",
+          "zone": "America/New_York"
         }
       ]
     }
