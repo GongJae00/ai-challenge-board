@@ -1,6 +1,6 @@
 {
   "source": "tianchi",
-  "retrievedAt": "2026-10-28T05:38:51.701Z",
+  "retrievedAt": "2026-10-28T18:20:45.197Z",
   "listings": [
     {
       "id": "tianchi:532460",
@@ -131,6 +131,25 @@
           "kind": "end",
           "label": null,
           "at": "2026-12-31T15:59:59.000Z",
+          "zone": "Asia/Shanghai"
+        }
+      ]
+    },
+    {
+      "id": "tianchi:532536",
+      "source": "tianchi",
+      "kind": "challenge",
+      "title": "2026 Qoder 高校创造力大赛",
+      "organizer": null,
+      "conference": null,
+      "url": "https://tianchi.aliyun.com/competition/entrance/532536",
+      "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532536",
+      "opensAt": "2026-10-28T16:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-11-30T10:00:00.000Z",
           "zone": "Asia/Shanghai"
         }
       ]
