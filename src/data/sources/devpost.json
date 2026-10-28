@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-10-27T17:59:47.286Z",
+  "retrievedAt": "2026-10-28T05:38:51.701Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -690,17 +690,17 @@
       "id": "devpost:31841",
       "source": "devpost",
       "kind": "challenge",
-      "title": "Trick or Build: Mel × Prompt Anything × AI Builders",
+      "title": "Global AI Hackathon - Devcon 2026 By Mel",
       "organizer": "Agentic Day (co-hosted with Mel)",
       "conference": null,
       "url": "https://trick-or-build.devpost.com/",
       "sourceUrl": "https://trick-or-build.devpost.com/",
-      "opensAt": "2026-10-29T04:00:00.000Z",
+      "opensAt": "2026-10-31T04:00:00.000Z",
       "deadlines": [
         {
           "kind": "submission",
           "label": null,
-          "at": "2026-10-29T21:00:00.000Z",
+          "at": "2026-11-01T22:00:00.000Z",
           "zone": "America/New_York"
         }
       ]
