@@ -416,5 +416,16 @@
       "at": "2026-11-27T22:00:00.000Z",
       "zone": "America/New_York"
     }
+  },
+  {
+    "id": 31924,
+    "dates": "Nov 29, 2026 - Jan 31, 2027",
+    "checkedAt": "2026-10-29T18:27:47.915Z",
+    "deadline": {
+      "kind": "submission",
+      "label": null,
+      "at": "2027-01-31T11:30:00.000Z",
+      "zone": "Asia/Kolkata"
+    }
   }
 ]

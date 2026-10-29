@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-10-29T05:44:28.076Z",
+  "retrievedAt": "2026-10-29T18:27:47.915Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -721,6 +721,25 @@
           "label": null,
           "at": "2026-11-27T22:00:00.000Z",
           "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31924",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "HACKRISE'26",
+      "organizer": "Mulearn MBCCET",
+      "conference": null,
+      "url": "https://hackrise-26.devpost.com/",
+      "sourceUrl": "https://hackrise-26.devpost.com/",
+      "opensAt": "2026-11-28T18:30:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2027-01-31T11:30:00.000Z",
+          "zone": "Asia/Kolkata"
         }
       ]
     }
