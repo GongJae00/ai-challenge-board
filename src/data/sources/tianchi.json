@@ -1,6 +1,6 @@
 {
   "source": "tianchi",
-  "retrievedAt": "2026-10-28T18:20:45.197Z",
+  "retrievedAt": "2026-10-29T05:44:28.076Z",
   "listings": [
     {
       "id": "tianchi:532460",
@@ -147,9 +147,15 @@
       "opensAt": "2026-10-28T16:00:00.000Z",
       "deadlines": [
         {
-          "kind": "end",
+          "kind": "entry",
           "label": null,
           "at": "2026-11-30T10:00:00.000Z",
+          "zone": "Asia/Shanghai"
+        },
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-12-15T10:00:00.000Z",
           "zone": "Asia/Shanghai"
         }
       ]

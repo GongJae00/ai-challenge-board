@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-10-28T18:20:45.197Z",
+  "retrievedAt": "2026-10-29T05:44:28.076Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -150,25 +150,6 @@
           "kind": "submission",
           "label": null,
           "at": "2026-11-18T20:00:00.000Z",
-          "zone": "America/Los_Angeles"
-        }
-      ]
-    },
-    {
-      "id": "devpost:31052",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "AWS Communication Developer Services (CDS) Agentic AI Partner Hackathon",
-      "organizer": "AWS",
-      "conference": null,
-      "url": "https://aws-cds-partner.devpost.com/",
-      "sourceUrl": "https://aws-cds-partner.devpost.com/",
-      "opensAt": "2026-09-14T07:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-10-28T20:00:00.000Z",
           "zone": "America/Los_Angeles"
         }
       ]
