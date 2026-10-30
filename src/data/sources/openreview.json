@@ -1,6 +1,6 @@
 {
   "source": "openreview",
-  "retrievedAt": "2026-10-30T05:44:36.833Z",
+  "retrievedAt": "2026-10-30T17:59:41.454Z",
   "listings": [
     {
       "id": "openreview:AAAI.org/2027/Workshop/A2NetOps",
@@ -59,6 +59,28 @@
       "url": "https://agenticse-aaai.github.io/",
       "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FAgenticSE",
       "opensAt": "2026-10-12T12:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-21T11:59:00.000Z",
+          "zone": "AoE"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/AI4Research",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "The 2nd Workshop on AI for Scientific Research at AAAI 2027",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://ai4research-workshop.github.io/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FAI4Research",
+      "opensAt": "2026-10-23T04:00:00.000Z",
       "deadlines": [
         {
           "kind": "submission",
@@ -769,28 +791,6 @@
           "label": null,
           "at": "2026-10-31T11:59:00.000Z",
           "zone": "AoE"
-        }
-      ]
-    },
-    {
-      "id": "openreview:NeurIPS.cc/2026/Workshop/PhysWorldAI_Poster",
-      "source": "openreview",
-      "kind": "cfp",
-      "title": "The 1st Workshop on Physical World AI: Geometry, Characteristics, and Multimodal Sensing (Poster)",
-      "organizer": null,
-      "conference": {
-        "name": "NeurIPS",
-        "year": 2026
-      },
-      "url": "https://physworld-org.github.io/physworld.github.io/",
-      "sourceUrl": "https://openreview.net/group?id=NeurIPS.cc%2F2026%2FWorkshop%2FPhysWorldAI_Poster",
-      "opensAt": "2026-10-13T04:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-10-30T14:00:00.000Z",
-          "zone": "UTC"
         }
       ]
     },

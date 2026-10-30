@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-10-30T05:44:36.833Z",
+  "retrievedAt": "2026-10-30T17:59:41.454Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -112,25 +112,6 @@
           "kind": "submission",
           "label": null,
           "at": "2026-12-21T05:00:00.000Z",
-          "zone": "America/Los_Angeles"
-        }
-      ]
-    },
-    {
-      "id": "devpost:30790",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "Nebius x NVIDIA Global AI Hackathon",
-      "organizer": "nebius",
-      "conference": null,
-      "url": "https://nebiusglobalaihackathon.devpost.com/",
-      "sourceUrl": "https://nebiusglobalaihackathon.devpost.com/",
-      "opensAt": "2026-08-26T07:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-10-30T17:00:00.000Z",
           "zone": "America/Los_Angeles"
         }
       ]
