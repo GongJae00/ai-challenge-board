@@ -1,6 +1,6 @@
 {
   "source": "grandchallenge",
-  "retrievedAt": "2026-10-29T18:27:47.915Z",
+  "retrievedAt": "2026-10-30T05:44:36.833Z",
   "listings": [
     {
       "id": "grandchallenge:clear-ec",
@@ -36,25 +36,6 @@
           "kind": "phase",
           "label": "Sanity Check",
           "at": "2026-12-07T10:19:00.000Z",
-          "zone": "UTC"
-        }
-      ]
-    },
-    {
-      "id": "grandchallenge:prisma24",
-      "source": "grandchallenge",
-      "kind": "challenge",
-      "title": "PRISMA Challenge",
-      "organizer": null,
-      "conference": null,
-      "url": "https://prisma24.grand-challenge.org/",
-      "sourceUrl": "https://prisma24.grand-challenge.org/",
-      "opensAt": null,
-      "deadlines": [
-        {
-          "kind": "phase",
-          "label": "Debug",
-          "at": "2026-10-29T23:00:00.000Z",
           "zone": "UTC"
         }
       ]
