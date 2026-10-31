@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-10-30T17:59:41.454Z",
+  "retrievedAt": "2026-10-31T05:37:52.832Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -136,25 +136,6 @@
       ]
     },
     {
-      "id": "devpost:31054",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "Qloo Agentic Hackathon",
-      "organizer": "Qloo",
-      "conference": null,
-      "url": "https://qloo.devpost.com/",
-      "sourceUrl": "https://qloo.devpost.com/",
-      "opensAt": "2026-09-30T04:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-10-31T03:45:00.000Z",
-          "zone": "America/New_York"
-        }
-      ]
-    },
-    {
       "id": "devpost:31060",
       "source": "devpost",
       "kind": "challenge",
@@ -227,6 +208,25 @@
           "label": null,
           "at": "2027-01-10T12:00:00.000Z",
           "zone": "Asia/Bangkok"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31297",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "BUILD 4 ALL",
+      "organizer": "CS4ALL",
+      "conference": null,
+      "url": "https://build4all.devpost.com/",
+      "sourceUrl": "https://build4all.devpost.com/",
+      "opensAt": "2026-12-05T08:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-13T04:00:00.000Z",
+          "zone": "America/Los_Angeles"
         }
       ]
     },
@@ -721,6 +721,25 @@
           "label": null,
           "at": "2027-01-31T11:30:00.000Z",
           "zone": "Asia/Kolkata"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31942",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "INCEPTION 2026",
+      "organizer": "HIMATIFA UPN \"Veteran\" Jawa Timur",
+      "conference": null,
+      "url": "https://inception2026.devpost.com/",
+      "sourceUrl": "https://inception2026.devpost.com/",
+      "opensAt": "2026-10-30T17:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-01T04:45:00.000Z",
+          "zone": "Asia/Jakarta"
         }
       ]
     }
