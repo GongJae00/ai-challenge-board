@@ -1,26 +1,7 @@
 {
   "source": "tianchi",
-  "retrievedAt": "2026-10-31T05:37:52.832Z",
+  "retrievedAt": "2026-10-31T17:15:35.122Z",
   "listings": [
-    {
-      "id": "tianchi:532460",
-      "source": "tianchi",
-      "kind": "challenge",
-      "title": "International Contest on Aftershock Forecasting",
-      "organizer": null,
-      "conference": null,
-      "url": "https://tianchi.aliyun.com/competition/entrance/532460",
-      "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532460",
-      "opensAt": "2026-10-01T00:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "end",
-          "label": null,
-          "at": "2026-10-31T15:59:59.000Z",
-          "zone": "Asia/Shanghai"
-        }
-      ]
-    },
     {
       "id": "tianchi:532506",
       "source": "tianchi",
