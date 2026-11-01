@@ -1,26 +1,7 @@
 {
   "source": "zindi",
-  "retrievedAt": "2026-10-31T17:15:35.122Z",
+  "retrievedAt": "2026-11-01T05:59:20.683Z",
   "listings": [
-    {
-      "id": "zindi:bias-bounty-mapping-equity-challenge",
-      "source": "zindi",
-      "kind": "challenge",
-      "title": "Bias Bounty Mapping Equity Challenge",
-      "organizer": null,
-      "conference": null,
-      "url": "https://zindi.world/competitions/bias-bounty-mapping-equity-challenge",
-      "sourceUrl": "https://zindi.world/competitions/bias-bounty-mapping-equity-challenge",
-      "opensAt": "2026-08-28T14:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "end",
-          "label": null,
-          "at": "2026-10-31T23:59:00.000Z",
-          "zone": "UTC"
-        }
-      ]
-    },
     {
       "id": "zindi:french-embassy-underwater-vessel-noise-challenge",
       "source": "zindi",
@@ -55,25 +36,6 @@
           "kind": "end",
           "label": null,
           "at": "2026-11-10T18:29:59.000Z",
-          "zone": "UTC"
-        }
-      ]
-    },
-    {
-      "id": "zindi:google-waxal-asr-challenge-october-study-jam",
-      "source": "zindi",
-      "kind": "challenge",
-      "title": "October Study Jam: Google WAXAL ASR Challenge",
-      "organizer": null,
-      "conference": null,
-      "url": "https://zindi.world/competitions/google-waxal-asr-challenge-october-study-jam",
-      "sourceUrl": "https://zindi.world/competitions/google-waxal-asr-challenge-october-study-jam",
-      "opensAt": "2026-10-05T05:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "end",
-          "label": null,
-          "at": "2026-10-31T23:59:00.000Z",
           "zone": "UTC"
         }
       ]

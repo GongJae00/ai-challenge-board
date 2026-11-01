@@ -2,7 +2,7 @@
   {
     "id": 26475,
     "dates": "Oct 26 - Nov 20, 2026",
-    "checkedAt": "2026-10-29T05:44:28.076Z",
+    "checkedAt": "2026-11-01T05:59:20.683Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -90,7 +90,7 @@
   {
     "id": 31084,
     "dates": "Nov 07, 2026",
-    "checkedAt": "2026-10-29T05:44:28.076Z",
+    "checkedAt": "2026-11-01T05:59:20.683Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -189,7 +189,7 @@
   {
     "id": 31552,
     "dates": "Oct 22 - Nov 16, 2026",
-    "checkedAt": "2026-10-29T05:44:28.076Z",
+    "checkedAt": "2026-11-01T05:59:20.683Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -297,6 +297,17 @@
     }
   },
   {
+    "id": 31787,
+    "dates": "Nov 01 - Dec 26, 2026",
+    "checkedAt": "2026-11-01T05:59:20.683Z",
+    "deadline": {
+      "kind": "submission",
+      "label": null,
+      "at": "2026-12-26T05:00:00.000Z",
+      "zone": "America/New_York"
+    }
+  },
+  {
     "id": 31808,
     "dates": "Nov 09 - 30, 2026",
     "checkedAt": "2026-10-30T05:44:36.833Z",
@@ -332,7 +343,7 @@
   {
     "id": 31823,
     "dates": "Nov 12 - 15, 2026",
-    "checkedAt": "2026-10-28T18:20:45.197Z",
+    "checkedAt": "2026-11-01T05:59:20.683Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -354,7 +365,7 @@
   {
     "id": 31827,
     "dates": "Feb 06 - 13, 2027",
-    "checkedAt": "2026-10-28T18:20:45.197Z",
+    "checkedAt": "2026-11-01T05:59:20.683Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -365,7 +376,7 @@
   {
     "id": 31831,
     "dates": "Nov 06 - 10, 2026",
-    "checkedAt": "2026-10-28T18:20:45.197Z",
+    "checkedAt": "2026-11-01T05:59:20.683Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -415,17 +426,6 @@
       "label": null,
       "at": "2027-01-31T11:30:00.000Z",
       "zone": "Asia/Kolkata"
-    }
-  },
-  {
-    "id": 31942,
-    "dates": "Oct 31 - Nov 01, 2026",
-    "checkedAt": "2026-10-31T05:37:52.832Z",
-    "deadline": {
-      "kind": "submission",
-      "label": null,
-      "at": "2026-11-01T04:45:00.000Z",
-      "zone": "Asia/Jakarta"
     }
   }
 ]

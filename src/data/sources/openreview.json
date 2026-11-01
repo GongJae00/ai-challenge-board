@@ -1,6 +1,6 @@
 {
   "source": "openreview",
-  "retrievedAt": "2026-10-31T17:15:35.122Z",
+  "retrievedAt": "2026-11-01T05:59:20.683Z",
   "listings": [
     {
       "id": "openreview:AAAI.org/2027/Workshop/A2NetOps",
@@ -65,6 +65,28 @@
           "label": null,
           "at": "2026-11-21T11:59:00.000Z",
           "zone": "AoE"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/AgriAI",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "Second International Workshop on AI in Agriculture",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://agriai-workshop.github.io/aaai2027/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FAgriAI",
+      "opensAt": "2026-10-31T18:30:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-19T18:30:00.000Z",
+          "zone": "UTC"
         }
       ]
     },
