@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-01T05:59:20.683Z",
+  "retrievedAt": "2026-11-01T17:56:30.172Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -740,6 +740,25 @@
           "label": null,
           "at": "2027-01-31T11:30:00.000Z",
           "zone": "Asia/Kolkata"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31960",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "ML Empowerment Build Challenge 4.0",
+      "organizer": "ML Empowerment Foundation",
+      "conference": null,
+      "url": "https://ml-build-challenge-4.devpost.com/",
+      "sourceUrl": "https://ml-build-challenge-4.devpost.com/",
+      "opensAt": "2026-11-01T07:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-02T07:45:00.000Z",
+          "zone": "America/Los_Angeles"
         }
       ]
     }

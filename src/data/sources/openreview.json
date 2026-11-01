@@ -1,6 +1,6 @@
 {
   "source": "openreview",
-  "retrievedAt": "2026-11-01T05:59:20.683Z",
+  "retrievedAt": "2026-11-01T17:56:30.172Z",
   "listings": [
     {
       "id": "openreview:AAAI.org/2027/Workshop/A2NetOps",
@@ -769,28 +769,6 @@
           "label": null,
           "at": "2026-11-06T12:59:00.000Z",
           "zone": "UTC"
-        }
-      ]
-    },
-    {
-      "id": "openreview:NeurIPS.cc/2026/Workshop/ESR_Demo_Track",
-      "source": "openreview",
-      "kind": "cfp",
-      "title": "Embodied Spatial Reasoning Workshop at NeurIPS 2026 (Demo Track)",
-      "organizer": null,
-      "conference": {
-        "name": "NeurIPS",
-        "year": 2026
-      },
-      "url": "https://embodiedsr.github.io/",
-      "sourceUrl": "https://openreview.net/group?id=NeurIPS.cc%2F2026%2FWorkshop%2FESR_Demo_Track",
-      "opensAt": "2026-08-25T08:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-01T11:59:00.000Z",
-          "zone": "AoE"
         }
       ]
     },
