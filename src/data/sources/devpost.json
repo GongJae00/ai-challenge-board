@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-02T05:59:33.870Z",
+  "retrievedAt": "2026-11-02T21:42:50.512Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -155,6 +155,25 @@
       ]
     },
     {
+      "id": "devpost:31083",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "QNX Global Hackathon",
+      "organizer": "QNX",
+      "conference": null,
+      "url": "https://qnx.devpost.com/",
+      "sourceUrl": "https://qnx.devpost.com/",
+      "opensAt": "2026-11-02T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-15T19:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
       "id": "devpost:31084",
       "source": "devpost",
       "kind": "challenge",
@@ -246,25 +265,6 @@
           "label": null,
           "at": "2026-11-12T20:00:00.000Z",
           "zone": "America/Los_Angeles"
-        }
-      ]
-    },
-    {
-      "id": "devpost:31400",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
-      "organizer": "Perfect Corp",
-      "conference": null,
-      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/",
-      "sourceUrl": "https://youcam-api-skin-ai-ecommerce.devpost.com/",
-      "opensAt": "2026-09-29T04:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-02T16:45:00.000Z",
-          "zone": "America/New_York"
         }
       ]
     },
@@ -379,6 +379,25 @@
           "label": null,
           "at": "2026-11-05T16:00:00.000Z",
           "zone": "Asia/Dhaka"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31642",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "AWS MSP AI Hackathon",
+      "organizer": "AWS",
+      "conference": null,
+      "url": "https://aws-agentic-msp.devpost.com/",
+      "sourceUrl": "https://aws-agentic-msp.devpost.com/",
+      "opensAt": "2026-11-02T08:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-11T20:00:00.000Z",
+          "zone": "America/Los_Angeles"
         }
       ]
     },
@@ -702,6 +721,25 @@
           "label": null,
           "at": "2027-01-31T11:30:00.000Z",
           "zone": "Asia/Kolkata"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31943",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "CIVIC Hack 2026",
+      "organizer": "Future Cities Institute",
+      "conference": null,
+      "url": "https://civic-hack-2026.devpost.com/",
+      "sourceUrl": "https://civic-hack-2026.devpost.com/",
+      "opensAt": "2026-11-12T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-14T11:00:00.000Z",
+          "zone": "America/New_York"
         }
       ]
     },

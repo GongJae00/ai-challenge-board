@@ -88,6 +88,17 @@
     }
   },
   {
+    "id": 31083,
+    "dates": "Nov 02 - Dec 15, 2026",
+    "checkedAt": "2026-11-02T21:42:50.512Z",
+    "deadline": {
+      "kind": "submission",
+      "label": null,
+      "at": "2026-12-15T19:00:00.000Z",
+      "zone": "America/New_York"
+    }
+  },
+  {
     "id": 31084,
     "dates": "Nov 07, 2026",
     "checkedAt": "2026-11-01T05:59:20.683Z",
@@ -140,17 +151,6 @@
       "label": null,
       "at": "2026-11-12T20:00:00.000Z",
       "zone": "America/Los_Angeles"
-    }
-  },
-  {
-    "id": 31400,
-    "dates": "Sep 29 - Nov 02, 2026",
-    "checkedAt": "2026-10-31T05:37:52.832Z",
-    "deadline": {
-      "kind": "submission",
-      "label": null,
-      "at": "2026-11-02T16:45:00.000Z",
-      "zone": "America/New_York"
     }
   },
   {
@@ -217,6 +217,17 @@
       "label": null,
       "at": "2026-11-05T16:00:00.000Z",
       "zone": "Asia/Dhaka"
+    }
+  },
+  {
+    "id": 31642,
+    "dates": "Nov 02 - Dec 11, 2026",
+    "checkedAt": "2026-11-02T21:42:50.512Z",
+    "deadline": {
+      "kind": "submission",
+      "label": null,
+      "at": "2026-12-11T20:00:00.000Z",
+      "zone": "America/Los_Angeles"
     }
   },
   {
@@ -404,6 +415,17 @@
       "label": null,
       "at": "2027-01-31T11:30:00.000Z",
       "zone": "Asia/Kolkata"
+    }
+  },
+  {
+    "id": 31943,
+    "dates": "Nov 12 - 14, 2026",
+    "checkedAt": "2026-11-02T21:42:50.512Z",
+    "deadline": {
+      "kind": "submission",
+      "label": null,
+      "at": "2026-11-14T11:00:00.000Z",
+      "zone": "America/New_York"
     }
   },
   {
