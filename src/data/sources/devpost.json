@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-01T17:56:30.172Z",
+  "retrievedAt": "2026-11-02T05:59:33.870Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -497,25 +497,6 @@
       ]
     },
     {
-      "id": "devpost:31779",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "TRMI X Lovhack : Multiplayer Everything Hackathon",
-      "organizer": "Lovhack",
-      "conference": null,
-      "url": "https://lovhack-trmi-2026.devpost.com/",
-      "sourceUrl": "https://lovhack-trmi-2026.devpost.com/",
-      "opensAt": "2026-10-31T04:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-01T20:00:00.000Z",
-          "zone": "America/New_York"
-        }
-      ]
-    },
-    {
       "id": "devpost:31787",
       "source": "devpost",
       "kind": "challenge",
@@ -543,13 +524,13 @@
       "conference": null,
       "url": "https://firebasehybridaihackathon.devpost.com/",
       "sourceUrl": "https://firebasehybridaihackathon.devpost.com/",
-      "opensAt": "2026-11-09T05:00:00.000Z",
+      "opensAt": "2026-11-09T08:00:00.000Z",
       "deadlines": [
         {
           "kind": "submission",
           "label": null,
           "at": "2026-11-30T22:00:00.000Z",
-          "zone": "America/New_York"
+          "zone": "America/Los_Angeles"
         }
       ]
     },
@@ -663,25 +644,6 @@
           "kind": "submission",
           "label": null,
           "at": "2026-11-10T22:00:00.000Z",
-          "zone": "America/New_York"
-        }
-      ]
-    },
-    {
-      "id": "devpost:31841",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "Global AI Hackathon - Devcon 2026 By Mel",
-      "organizer": "Agentic Day (co-hosted with Mel)",
-      "conference": null,
-      "url": "https://trick-or-build.devpost.com/",
-      "sourceUrl": "https://trick-or-build.devpost.com/",
-      "opensAt": "2026-10-31T04:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-01T22:00:00.000Z",
           "zone": "America/New_York"
         }
       ]

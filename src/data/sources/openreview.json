@@ -1,6 +1,6 @@
 {
   "source": "openreview",
-  "retrievedAt": "2026-11-01T17:56:30.172Z",
+  "retrievedAt": "2026-11-02T05:59:33.870Z",
   "listings": [
     {
       "id": "openreview:AAAI.org/2027/Workshop/A2NetOps",
@@ -591,7 +591,7 @@
         {
           "kind": "submission",
           "label": null,
-          "at": "2026-11-03T04:59:00.000Z",
+          "at": "2026-11-05T04:59:00.000Z",
           "zone": "UTC"
         }
       ]
@@ -724,28 +724,6 @@
           "kind": "submission",
           "label": null,
           "at": "2026-11-20T22:59:00.000Z",
-          "zone": "UTC"
-        }
-      ]
-    },
-    {
-      "id": "openreview:NeurIPS.cc/2026/Workshop/A2NetOps",
-      "source": "openreview",
-      "kind": "challenge",
-      "title": "SAPC2: The Second Speech Accessibility Project Challenge",
-      "organizer": null,
-      "conference": {
-        "name": "NeurIPS",
-        "year": 2026
-      },
-      "url": "https://xiuwenz2.github.io/SAPC2-website/",
-      "sourceUrl": "https://openreview.net/group?id=NeurIPS.cc%2F2026%2FWorkshop%2FA2NetOps",
-      "opensAt": "2026-09-25T05:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-02T03:59:00.000Z",
           "zone": "UTC"
         }
       ]
