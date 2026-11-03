@@ -1,7 +1,26 @@
 {
   "source": "zindi",
-  "retrievedAt": "2026-11-03T06:45:26.166Z",
+  "retrievedAt": "2026-11-03T19:29:37.550Z",
   "listings": [
+    {
+      "id": "zindi:amd-global-physical-ai-safety-challenge",
+      "source": "zindi",
+      "kind": "challenge",
+      "title": "AMD Global Physical AI Behavioral Safety Challenge",
+      "organizer": null,
+      "conference": null,
+      "url": "https://zindi.world/competitions/amd-global-physical-ai-safety-challenge",
+      "sourceUrl": "https://zindi.world/competitions/amd-global-physical-ai-safety-challenge",
+      "opensAt": "2026-11-09T12:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2027-01-31T12:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
     {
       "id": "zindi:french-embassy-underwater-vessel-noise-challenge",
       "source": "zindi",
