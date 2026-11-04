@@ -1,6 +1,6 @@
 {
   "source": "zindi",
-  "retrievedAt": "2026-11-04T06:15:59.618Z",
+  "retrievedAt": "2026-11-04T19:44:12.969Z",
   "listings": [
     {
       "id": "zindi:amd-global-physical-ai-safety-challenge",
@@ -36,6 +36,25 @@
           "kind": "end",
           "label": null,
           "at": "2026-12-13T12:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "zindi:GenAI-for-Good-Challenge",
+      "source": "zindi",
+      "kind": "challenge",
+      "title": "GenAI for Good Challenge: Cities Edition (Phase 1 Technical Assessment)",
+      "organizer": "IEEE Humanitarian Technologies x UNDP",
+      "conference": null,
+      "url": "https://zindi.world/competitions/GenAI-for-Good-Challenge",
+      "sourceUrl": "https://zindi.world/competitions/GenAI-for-Good-Challenge",
+      "opensAt": "2026-11-05T16:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-12-13T04:59:00.000Z",
           "zone": "UTC"
         }
       ]

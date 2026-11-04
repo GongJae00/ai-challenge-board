@@ -1,6 +1,6 @@
 {
   "source": "openreview",
-  "retrievedAt": "2026-11-04T06:15:59.618Z",
+  "retrievedAt": "2026-11-04T19:44:12.969Z",
   "listings": [
     {
       "id": "openreview:AAAI.org/2027/Workshop/A2NetOps",
@@ -723,8 +723,8 @@
         {
           "kind": "submission",
           "label": null,
-          "at": "2026-11-20T22:59:00.000Z",
-          "zone": "UTC"
+          "at": "2026-11-21T11:59:00.000Z",
+          "zone": "AoE"
         }
       ]
     },
