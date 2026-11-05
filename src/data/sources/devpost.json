@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-05T06:42:40.632Z",
+  "retrievedAt": "2026-11-05T19:55:52.248Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -345,25 +345,6 @@
       ]
     },
     {
-      "id": "devpost:31580",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "Ostad Presents YUNet AIgnite Buildathon 2026",
-      "organizer": "Youth Upskill Network - YUNet",
-      "conference": null,
-      "url": "https://yunet-aignite26.devpost.com/",
-      "sourceUrl": "https://yunet-aignite26.devpost.com/",
-      "opensAt": "2026-10-31T18:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-05T16:00:00.000Z",
-          "zone": "Asia/Dhaka"
-        }
-      ]
-    },
-    {
       "id": "devpost:31642",
       "source": "devpost",
       "kind": "challenge",
@@ -512,25 +493,6 @@
           "label": null,
           "at": "2026-11-30T22:00:00.000Z",
           "zone": "America/Los_Angeles"
-        }
-      ]
-    },
-    {
-      "id": "devpost:31815",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "Neural Storm",
-      "organizer": "JNTUH",
-      "conference": null,
-      "url": "https://neuralstorm.devpost.com/",
-      "sourceUrl": "https://neuralstorm.devpost.com/",
-      "opensAt": "2026-11-01T18:30:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-05T14:30:00.000Z",
-          "zone": "Asia/Kolkata"
         }
       ]
     },
