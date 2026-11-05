@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-04T19:44:12.969Z",
+  "retrievedAt": "2026-11-05T06:42:40.632Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -169,25 +169,6 @@
           "kind": "submission",
           "label": null,
           "at": "2026-12-15T19:00:00.000Z",
-          "zone": "America/New_York"
-        }
-      ]
-    },
-    {
-      "id": "devpost:31084",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "Redshifted Cortex - AI built by High Schoolers",
-      "organizer": "Redshifted",
-      "conference": null,
-      "url": "https://redshifted-cortex.devpost.com/",
-      "sourceUrl": "https://redshifted-cortex.devpost.com/",
-      "opensAt": "2026-11-07T05:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-08T00:00:00.000Z",
           "zone": "America/New_York"
         }
       ]
@@ -744,6 +725,25 @@
       ]
     },
     {
+      "id": "devpost:31972",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "SLAY HACKS",
+      "organizer": "cite & slayy",
+      "conference": null,
+      "url": "https://slayy-hacks.devpost.com/",
+      "sourceUrl": "https://slayy-hacks.devpost.com/",
+      "opensAt": "2026-11-07T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-13T22:00:00.000Z",
+          "zone": "America/Indiana/Indianapolis"
+        }
+      ]
+    },
+    {
       "id": "devpost:31994",
       "source": "devpost",
       "kind": "challenge",
@@ -758,6 +758,25 @@
           "kind": "submission",
           "label": null,
           "at": "2026-12-11T04:45:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:32009",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "AI for Medicine: A Global Student Hackathon on the Future of Care",
+      "organizer": "Open Health AI Collective",
+      "conference": null,
+      "url": "https://ai-for-medicine.devpost.com/",
+      "sourceUrl": "https://ai-for-medicine.devpost.com/",
+      "opensAt": "2026-11-04T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-05T04:45:00.000Z",
           "zone": "America/New_York"
         }
       ]
