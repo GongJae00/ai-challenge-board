@@ -1,7 +1,26 @@
 {
   "source": "signate",
-  "retrievedAt": "2026-11-05T19:55:52.248Z",
+  "retrievedAt": "2026-11-06T06:39:35.088Z",
   "listings": [
+    {
+      "id": "signate:3e47fc8014554fddb6ecdd9251e71b67",
+      "source": "signate",
+      "kind": "challenge",
+      "title": "【招待制】NEDO Challenge Baggage-Loading Robot コンテスト2: 積付アルゴリズム 成果審査",
+      "organizer": "NEDO",
+      "conference": null,
+      "url": "https://user.competition.signate.jp/ja/competition/detail/?competition=3e47fc8014554fddb6ecdd9251e71b67",
+      "sourceUrl": "https://user.competition.signate.jp/ja/competition/detail/?competition=3e47fc8014554fddb6ecdd9251e71b67",
+      "opensAt": null,
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-01T14:55:00.000Z",
+          "zone": "JST"
+        }
+      ]
+    },
     {
       "id": "signate:42024ceef5064aa6a7f463aac3f26fc2",
       "source": "signate",
