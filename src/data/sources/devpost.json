@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-06T06:39:35.088Z",
+  "retrievedAt": "2026-11-06T19:22:49.266Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -169,6 +169,25 @@
           "kind": "submission",
           "label": null,
           "at": "2026-12-15T19:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31148",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "KeanUHackThis 2027",
+      "organizer": "Kean University",
+      "conference": null,
+      "url": "https://keauhackthis-2027.devpost.com/",
+      "sourceUrl": "https://keauhackthis-2027.devpost.com/",
+      "opensAt": "2027-04-02T04:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2027-04-03T20:30:00.000Z",
           "zone": "America/New_York"
         }
       ]
@@ -700,7 +719,7 @@
         {
           "kind": "submission",
           "label": null,
-          "at": "2026-11-13T22:00:00.000Z",
+          "at": "2026-12-07T22:00:00.000Z",
           "zone": "America/Indiana/Indianapolis"
         }
       ]
