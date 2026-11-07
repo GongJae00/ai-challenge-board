@@ -1,25 +1,5 @@
 {
   "source": "codabench",
-  "retrievedAt": "2026-11-07T05:55:41.403Z",
-  "listings": [
-    {
-      "id": "codabench:17828",
-      "source": "codabench",
-      "kind": "challenge",
-      "title": "NeurIPS Predictive AI Evaluation Competition",
-      "organizer": null,
-      "conference": null,
-      "url": "https://www.codabench.org/competitions/17828/",
-      "sourceUrl": "https://www.codabench.org/competitions/17828/",
-      "opensAt": "2026-08-15T00:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "phase",
-          "label": "Competition",
-          "at": "2026-11-07T11:59:00.000Z",
-          "zone": "AoE"
-        }
-      ]
-    }
-  ]
+  "retrievedAt": "2026-11-07T17:44:58.277Z",
+  "listings": []
 }

@@ -1,6 +1,6 @@
 {
   "source": "openreview",
-  "retrievedAt": "2026-11-07T05:55:41.403Z",
+  "retrievedAt": "2026-11-07T17:44:58.277Z",
   "listings": [
     {
       "id": "openreview:AAAI.org/2027/Workshop/A2NetOps",
@@ -239,7 +239,7 @@
         {
           "kind": "submission",
           "label": null,
-          "at": "2026-11-07T12:00:00.000Z",
+          "at": "2026-11-14T12:00:00.000Z",
           "zone": "AoE"
         }
       ]
@@ -702,28 +702,6 @@
           "kind": "submission",
           "label": null,
           "at": "2026-11-21T11:59:00.000Z",
-          "zone": "AoE"
-        }
-      ]
-    },
-    {
-      "id": "openreview:NeurIPS.cc/2026/Workshop/PAIEC",
-      "source": "openreview",
-      "kind": "challenge",
-      "title": "Predictive AI Evaluation Competition at NeurIPS 2026",
-      "organizer": null,
-      "conference": {
-        "name": "NeurIPS",
-        "year": 2026
-      },
-      "url": "https://aimslab.stanford.edu/competition",
-      "sourceUrl": "https://openreview.net/group?id=NeurIPS.cc%2F2026%2FWorkshop%2FPAIEC",
-      "opensAt": "2026-09-15T16:29:01.800Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-07T11:59:00.000Z",
           "zone": "AoE"
         }
       ]
