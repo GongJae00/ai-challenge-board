@@ -1,6 +1,6 @@
 {
   "source": "evalai",
-  "retrievedAt": "2026-11-06T19:22:49.266Z",
+  "retrievedAt": "2026-11-07T05:55:41.403Z",
   "listings": [
     {
       "id": "evalai:2099",
@@ -17,25 +17,6 @@
           "kind": "phase",
           "label": "Phase 1",
           "at": "2027-01-13T23:59:59.000Z",
-          "zone": "UTC"
-        }
-      ]
-    },
-    {
-      "id": "evalai:2680",
-      "source": "evalai",
-      "kind": "challenge",
-      "title": "eBay 2026 University Machine Learning Competition - Canada",
-      "organizer": "eBay ML Challenge",
-      "conference": null,
-      "url": "https://eval.ai/web/challenges/challenge-page/2680",
-      "sourceUrl": "https://eval.ai/web/challenges/challenge-page/2680",
-      "opensAt": "2026-05-01T04:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "phase",
-          "label": "Test Phase (Private)",
-          "at": "2026-11-07T04:59:59.000Z",
           "zone": "UTC"
         }
       ]

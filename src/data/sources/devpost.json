@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-06T19:22:49.266Z",
+  "retrievedAt": "2026-11-07T05:55:41.403Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -282,7 +282,7 @@
         {
           "kind": "submission",
           "label": null,
-          "at": "2026-12-18T16:00:00.000Z",
+          "at": "2026-12-18T22:00:00.000Z",
           "zone": "Europe/Paris"
         }
       ]
