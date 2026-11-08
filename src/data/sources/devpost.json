@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-08T05:57:47.427Z",
+  "retrievedAt": "2026-11-08T17:55:37.095Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -284,25 +284,6 @@
           "label": null,
           "at": "2026-12-18T22:00:00.000Z",
           "zone": "Europe/Paris"
-        }
-      ]
-    },
-    {
-      "id": "devpost:31489",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "EthnoHack",
-      "organizer": "ETHCSTWIN",
-      "conference": null,
-      "url": "https://ethnohack2026.devpost.com/",
-      "sourceUrl": "https://ethnohack2026.devpost.com/",
-      "opensAt": "2026-11-01T22:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-08T09:00:00.000Z",
-          "zone": "Europe/Athens"
         }
       ]
     },
