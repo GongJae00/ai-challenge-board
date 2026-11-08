@@ -14,7 +14,10 @@ pages as they render, not as the code intends. `CLAUDE.md` describes the service
 one set of design tokens, no decoration that adds no information, and times shown in the display zone
 recorded in `CLAUDE.md` or `docs/decisions.md`, with the source's zone beside a deadline given in another zone.
 GongJae reviews each page after you and wants it simple, natural, and clean, with nothing unnecessary and nothing
-that looks agent-made, so report what they would cut before they have to.
+that looks agent-made, yet recognizably ACB's rather than any listing site's. Report what they would cut before they
+have to, and also where a page has fallen back to a template. `.claude/skills/design-pass/SKILL.md` lists the signs
+of a generated page and the template look, and `docs/decisions.md` records the type, the spacing, and any design
+direction a page should follow.
 
 Review the URL the task message gives, such as the dev server's, where Astro's toolbar at the bottom of the page is
 not part of the site. Otherwise serve the build in `dist/`, which the lead's `npm run check` has just built and
@@ -52,6 +55,13 @@ Look for what those checks cannot see:
   under one soft shadow; template chrome such as all-caps labels above headings, "A · B · C" meta strings, arrows
   appended to links, or numbers on items that are not a sequence; an entrance animation on every section; and
   badges, icons, or copy that give a visitor nothing they need;
+- values off the system that a screenshot shows: equal things with unequal spacing or padding, an inner corner
+  that does not follow its container's radius, figures in one column that do not line up or come in more than one
+  format, and type off the scale `docs/decisions.md` records;
+- the template look: a page that would still fit if another site's name replaced ACB's, the kit's untinted palette
+  and default accent where a recorded direction chose otherwise, or a page that departs from that direction. Name
+  the part of ACB's own content, such as a deadline or the table, that could carry the character, rather than a
+  decoration to add;
 - a page you reviewed that the tests in `e2e/` never open, so that no axe scan has covered it.
 
 Report the findings most serious first, each with the page, locale, width, and mode, what a visitor sees, why it

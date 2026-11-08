@@ -38,9 +38,14 @@ Do the work at build or collection time rather than per request, so that a CDN s
 ahead of time comes before a server, and a scheduled job before a queue. When a feature does need a server or
 background work, say why static output cannot serve it, and keep each job idempotent and bounded by a timeout.
 The interface starts from an established component kit and one set of design tokens, keeps one purpose per page,
-and carries no decoration that adds no information. GongJae wants it simple, natural, and clean, and not
-recognizable as agent-made. The frontend-design skill lists the defaults that give a generated page away; where its
-call for a distinctive identity or an aesthetic risk pulls against GongJae's direction, GongJae's direction wins.
+and carries no decoration that adds no information. GongJae wants it simple, natural, and clean, not
+recognizable as agent-made, and not interchangeable with another service: the page stays quiet, and a few choices
+taken from what the service shows give it a character of its own, about half and half. The `design-pass` skill sets
+how, with an audit for the defaults of a generated page, a five-line direction recorded in `docs/decisions.md`,
+ordered passes with set values, and a template check; run it on the first page and on any page that looks generated
+or generic. The direction chooses only inside the frame this paragraph sets. The frontend-design plugin's advice
+applies where it agrees with both; where it calls for a bolder identity or an aesthetic risk, the frame and the
+direction win.
 A page for desktop readers lays data out as data, a table with the fields as columns and other views of the same
 data a tab away, and not as a narrow vertical feed. It has one look, the light one, unless GongJae asks for a
 dark theme. A setting that changes the whole page, such as the language, opens a menu of its choices, while a
