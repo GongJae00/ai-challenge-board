@@ -1,6 +1,6 @@
 {
   "source": "openreview",
-  "retrievedAt": "2026-11-09T06:22:47.474Z",
+  "retrievedAt": "2026-11-09T22:19:18.154Z",
   "listings": [
     {
       "id": "openreview:AAAI.org/2027/Workshop/A2NetOps",
@@ -597,6 +597,28 @@
       ]
     },
     {
+      "id": "openreview:AAAI.org/2027/Workshop/SAFE",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "Third Workshop on Synthetic & Adversarial ForEnsics",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://www.safeworkshop.org/aaai-2027/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FSAFE",
+      "opensAt": "2026-09-29T09:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-10T04:59:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
       "id": "openreview:AAAI.org/2027/Workshop/SC4AI",
       "source": "openreview",
       "kind": "cfp",
@@ -746,28 +768,6 @@
           "kind": "submission",
           "label": null,
           "at": "2027-01-15T03:00:00.000Z",
-          "zone": "UTC"
-        }
-      ]
-    },
-    {
-      "id": "openreview:NeurIPS.cc/2026/Workshop/VERICODEGEN_Competition",
-      "source": "openreview",
-      "kind": "challenge",
-      "title": "NeurIPS 2026 Workshop on AI for Verifiable Coding Competition Track",
-      "organizer": null,
-      "conference": {
-        "name": "NeurIPS",
-        "year": 2026
-      },
-      "url": "https://vericodegen.github.io/index.html#challenge",
-      "sourceUrl": "https://openreview.net/group?id=NeurIPS.cc%2F2026%2FWorkshop%2FVERICODEGEN_Competition",
-      "opensAt": "2026-08-14T19:07:31.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-09T11:00:00.000Z",
           "zone": "UTC"
         }
       ]

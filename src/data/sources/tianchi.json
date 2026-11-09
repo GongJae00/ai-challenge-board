@@ -1,6 +1,6 @@
 {
   "source": "tianchi",
-  "retrievedAt": "2026-11-09T06:22:47.474Z",
+  "retrievedAt": "2026-11-09T22:19:18.154Z",
   "listings": [
     {
       "id": "tianchi:532460",
@@ -93,6 +93,25 @@
           "kind": "end",
           "label": null,
           "at": "2026-12-31T15:59:59.000Z",
+          "zone": "Asia/Shanghai"
+        }
+      ]
+    },
+    {
+      "id": "tianchi:532512",
+      "source": "tianchi",
+      "kind": "challenge",
+      "title": "面向生物医学全文的特定患者表型概念识别任务-赛后评测",
+      "organizer": null,
+      "conference": null,
+      "url": "https://tianchi.aliyun.com/competition/entrance/532512",
+      "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532512",
+      "opensAt": "2026-10-02T16:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2027-09-30T15:59:59.000Z",
           "zone": "Asia/Shanghai"
         }
       ]

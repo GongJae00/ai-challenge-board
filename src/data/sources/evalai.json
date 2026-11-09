@@ -1,6 +1,6 @@
 {
   "source": "evalai",
-  "retrievedAt": "2026-11-09T06:22:47.474Z",
+  "retrievedAt": "2026-11-09T22:19:18.154Z",
   "listings": [
     {
       "id": "evalai:2099",
@@ -42,6 +42,25 @@
           "kind": "end",
           "label": null,
           "at": "2027-01-08T23:59:59.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "evalai:2742",
+      "source": "evalai",
+      "kind": "challenge",
+      "title": "2026 Genomes to Fields (G2F) Maize Genotype x Environment Prediction Competition",
+      "organizer": "G2F_GxE",
+      "conference": null,
+      "url": "https://eval.ai/web/challenges/challenge-page/2742",
+      "sourceUrl": "https://eval.ai/web/challenges/challenge-page/2742",
+      "opensAt": "2026-11-16T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "phase",
+          "label": "Test Phase",
+          "at": "2027-01-16T04:59:59.000Z",
           "zone": "UTC"
         }
       ]

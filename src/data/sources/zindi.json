@@ -1,6 +1,6 @@
 {
   "source": "zindi",
-  "retrievedAt": "2026-11-09T06:22:47.474Z",
+  "retrievedAt": "2026-11-09T22:19:18.154Z",
   "listings": [
     {
       "id": "zindi:amd-global-physical-ai-safety-challenge",
@@ -11,7 +11,7 @@
       "conference": null,
       "url": "https://zindi.world/competitions/amd-global-physical-ai-safety-challenge",
       "sourceUrl": "https://zindi.world/competitions/amd-global-physical-ai-safety-challenge",
-      "opensAt": "2026-11-09T12:00:00.000Z",
+      "opensAt": "2026-11-09T13:00:00.000Z",
       "deadlines": [
         {
           "kind": "end",

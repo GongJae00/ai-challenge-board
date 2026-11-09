@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-09T06:22:47.474Z",
+  "retrievedAt": "2026-11-09T22:19:18.154Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -364,25 +364,6 @@
       ]
     },
     {
-      "id": "devpost:31659",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "Learn AR with SPECS",
-      "organizer": "Devpost",
-      "conference": null,
-      "url": "https://learn-specs.devpost.com/",
-      "sourceUrl": "https://learn-specs.devpost.com/",
-      "opensAt": "2026-10-15T04:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-09T22:00:00.000Z",
-          "zone": "America/New_York"
-        }
-      ]
-    },
-    {
       "id": "devpost:31666",
       "source": "devpost",
       "kind": "challenge",
@@ -486,7 +467,7 @@
       "conference": null,
       "url": "https://firebasehybridaihackathon.devpost.com/",
       "sourceUrl": "https://firebasehybridaihackathon.devpost.com/",
-      "opensAt": "2026-11-09T08:00:00.000Z",
+      "opensAt": "2026-11-11T08:00:00.000Z",
       "deadlines": [
         {
           "kind": "submission",
