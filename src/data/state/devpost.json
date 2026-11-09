@@ -165,17 +165,6 @@
     }
   },
   {
-    "id": 31489,
-    "dates": "Nov 02 - 08, 2026",
-    "checkedAt": "2026-11-07T05:55:41.403Z",
-    "deadline": {
-      "kind": "submission",
-      "label": null,
-      "at": "2026-11-08T09:00:00.000Z",
-      "zone": "Europe/Athens"
-    }
-  },
-  {
     "id": 31549,
     "dates": "Nov 15 - 22, 2026",
     "checkedAt": "2026-11-07T05:55:41.403Z",

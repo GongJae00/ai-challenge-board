@@ -1,6 +1,6 @@
 {
   "source": "lablab",
-  "retrievedAt": "2026-11-08T17:55:37.095Z",
+  "retrievedAt": "2026-11-09T06:22:47.474Z",
   "listings": [
     {
       "id": "lablab:amd-lablab-ai-academy-challenge",
@@ -18,25 +18,6 @@
           "label": null,
           "at": "2026-12-01T19:00:00.000Z",
           "zone": "UTC"
-        }
-      ]
-    },
-    {
-      "id": "lablab:vultr-hackathon",
-      "source": "lablab",
-      "kind": "challenge",
-      "title": "Vultr: Agent Rush Hackathon",
-      "organizer": null,
-      "conference": null,
-      "url": "https://lablab.ai/ai-hackathons/vultr-hackathon",
-      "sourceUrl": "https://lablab.ai/ai-hackathons/vultr-hackathon",
-      "opensAt": "2026-11-03T16:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "end",
-          "label": null,
-          "at": "2026-11-08T23:00:00.000Z",
-          "zone": "America/Denver"
         }
       ]
     }

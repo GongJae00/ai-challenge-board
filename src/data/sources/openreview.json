@@ -1,6 +1,6 @@
 {
   "source": "openreview",
-  "retrievedAt": "2026-11-08T05:57:47.427Z",
+  "retrievedAt": "2026-11-09T06:22:47.474Z",
   "listings": [
     {
       "id": "openreview:AAAI.org/2027/Workshop/A2NetOps",
@@ -86,6 +86,28 @@
           "kind": "submission",
           "label": null,
           "at": "2026-11-19T18:30:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/AI4Factory",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "AAAI 27 Workshop on Trustworthy Generative and Agentic AI for Manufacturing Transformation",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://iamtirthankar.github.io/AI4Factory-2027/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FAI4Factory",
+      "opensAt": "2026-11-08T18:30:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-21T11:00:00.000Z",
           "zone": "UTC"
         }
       ]
@@ -772,6 +794,5 @@
         }
       ]
     }
-  ],
-  "attemptedAt": "2026-11-08T17:55:37.095Z"
+  ]
 }
