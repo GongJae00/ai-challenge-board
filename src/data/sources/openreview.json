@@ -1,6 +1,6 @@
 {
   "source": "openreview",
-  "retrievedAt": "2026-11-09T22:19:18.154Z",
+  "retrievedAt": "2026-11-10T07:14:34.876Z",
   "listings": [
     {
       "id": "openreview:AAAI.org/2027/Workshop/A2NetOps",
@@ -593,28 +593,6 @@
           "label": null,
           "at": "2026-11-21T11:59:00.000Z",
           "zone": "AoE"
-        }
-      ]
-    },
-    {
-      "id": "openreview:AAAI.org/2027/Workshop/SAFE",
-      "source": "openreview",
-      "kind": "cfp",
-      "title": "Third Workshop on Synthetic & Adversarial ForEnsics",
-      "organizer": null,
-      "conference": {
-        "name": "AAAI",
-        "year": 2027
-      },
-      "url": "https://www.safeworkshop.org/aaai-2027/",
-      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FSAFE",
-      "opensAt": "2026-09-29T09:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-10T04:59:00.000Z",
-          "zone": "UTC"
         }
       ]
     },

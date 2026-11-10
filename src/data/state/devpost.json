@@ -13,7 +13,7 @@
   {
     "id": 29135,
     "dates": "Mar 12 - 27, 2028",
-    "checkedAt": "2026-11-07T05:55:41.403Z",
+    "checkedAt": "2026-11-10T07:14:34.876Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -24,7 +24,7 @@
   {
     "id": 30456,
     "dates": "Nov 15 - 21, 2026",
-    "checkedAt": "2026-11-07T05:55:41.403Z",
+    "checkedAt": "2026-11-10T07:14:34.876Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -123,7 +123,7 @@
   {
     "id": 31222,
     "dates": "Jan 08 - 10, 2027",
-    "checkedAt": "2026-11-07T05:55:41.403Z",
+    "checkedAt": "2026-11-10T07:14:34.876Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -156,7 +156,7 @@
   {
     "id": 31480,
     "dates": "Nov 04 - Dec 18, 2026",
-    "checkedAt": "2026-11-07T05:55:41.403Z",
+    "checkedAt": "2026-11-10T07:14:34.876Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -167,7 +167,7 @@
   {
     "id": 31549,
     "dates": "Nov 15 - 22, 2026",
-    "checkedAt": "2026-11-07T05:55:41.403Z",
+    "checkedAt": "2026-11-10T07:14:34.876Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -244,7 +244,7 @@
   {
     "id": 31775,
     "dates": "Nov 18 - 24, 2026",
-    "checkedAt": "2026-11-07T05:55:41.403Z",
+    "checkedAt": "2026-11-10T07:14:34.876Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -275,17 +275,6 @@
     }
   },
   {
-    "id": 31820,
-    "dates": "Nov 06 - 25, 2026",
-    "checkedAt": "2026-11-08T17:55:37.095Z",
-    "deadline": {
-      "kind": "submission",
-      "label": null,
-      "at": "2026-11-25T11:30:00.000Z",
-      "zone": "Asia/Kolkata"
-    }
-  },
-  {
     "id": 31823,
     "dates": "Nov 12 - 15, 2026",
     "checkedAt": "2026-11-07T17:44:58.277Z",
@@ -299,7 +288,7 @@
   {
     "id": 31826,
     "dates": "Nov 21 - 28, 2026",
-    "checkedAt": "2026-11-07T05:55:41.403Z",
+    "checkedAt": "2026-11-10T07:14:34.876Z",
     "deadline": {
       "kind": "submission",
       "label": null,
