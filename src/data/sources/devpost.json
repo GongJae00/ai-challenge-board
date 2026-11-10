@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-10T07:14:34.876Z",
+  "retrievedAt": "2026-11-10T19:42:27.556Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -149,7 +149,7 @@
         {
           "kind": "submission",
           "label": null,
-          "at": "2026-11-10T17:45:00.000Z",
+          "at": "2026-11-11T17:45:00.000Z",
           "zone": "Asia/Dhaka"
         }
       ]
@@ -668,6 +668,25 @@
       ]
     },
     {
+      "id": "devpost:31973",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Deck the Pixels",
+      "organizer": "Google",
+      "conference": null,
+      "url": "https://deckthepixels.devpost.com/",
+      "sourceUrl": "https://deckthepixels.devpost.com/",
+      "opensAt": "2026-11-10T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-07T21:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
       "id": "devpost:31994",
       "source": "devpost",
       "kind": "challenge",
@@ -701,6 +720,25 @@
           "kind": "submission",
           "label": null,
           "at": "2026-12-05T04:45:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:32079",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Learn AR with SPECS",
+      "organizer": "Devpost",
+      "conference": null,
+      "url": "https://learn-specs.devpost.com/",
+      "sourceUrl": "https://learn-specs.devpost.com/",
+      "opensAt": "2026-11-10T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-07T22:00:00.000Z",
           "zone": "America/New_York"
         }
       ]

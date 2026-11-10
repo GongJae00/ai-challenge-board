@@ -1,7 +1,26 @@
 {
   "source": "zindi",
-  "retrievedAt": "2026-11-10T07:14:34.876Z",
+  "retrievedAt": "2026-11-10T19:42:27.556Z",
   "listings": [
+    {
+      "id": "zindi:ai-agents-for-ran-challenge",
+      "source": "zindi",
+      "kind": "challenge",
+      "title": "AI Agents for RAN Challenge",
+      "organizer": "ITU",
+      "conference": null,
+      "url": "https://zindi.world/competitions/ai-agents-for-ran-challenge",
+      "sourceUrl": "https://zindi.world/competitions/ai-agents-for-ran-challenge",
+      "opensAt": "2026-11-27T12:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2027-02-05T22:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
     {
       "id": "zindi:amd-global-physical-ai-safety-challenge",
       "source": "zindi",
@@ -60,25 +79,6 @@
       ]
     },
     {
-      "id": "zindi:google-mumbai-data-challenge",
-      "source": "zindi",
-      "kind": "challenge",
-      "title": "Google Mumbai Data Challenge: Air Quality Mapping & Forecasting",
-      "organizer": "Google",
-      "conference": null,
-      "url": "https://zindi.world/competitions/google-mumbai-data-challenge",
-      "sourceUrl": "https://zindi.world/competitions/google-mumbai-data-challenge",
-      "opensAt": "2026-10-26T12:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "end",
-          "label": null,
-          "at": "2026-11-10T18:29:59.000Z",
-          "zone": "UTC"
-        }
-      ]
-    },
-    {
       "id": "zindi:green-rising-methane-innovation-challenge",
       "source": "zindi",
       "kind": "challenge",
@@ -93,6 +93,31 @@
           "kind": "end",
           "label": null,
           "at": "2027-02-14T12:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "zindi:telcoretrieve-challenge-unlocking-telco-knowledge",
+      "source": "zindi",
+      "kind": "challenge",
+      "title": "TelcoRetrieve Challenge: Unlocking Telco Knowledge",
+      "organizer": "ITU",
+      "conference": null,
+      "url": "https://zindi.world/competitions/telcoretrieve-challenge-unlocking-telco-knowledge",
+      "sourceUrl": "https://zindi.world/competitions/telcoretrieve-challenge-unlocking-telco-knowledge",
+      "opensAt": "2026-11-13T12:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "entry",
+          "label": null,
+          "at": "2027-01-06T23:59:00.000Z",
+          "zone": "UTC"
+        },
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2027-01-13T22:55:00.000Z",
           "zone": "UTC"
         }
       ]
