@@ -1,6 +1,6 @@
 {
   "source": "zindi",
-  "retrievedAt": "2026-11-11T06:11:34.491Z",
+  "retrievedAt": "2026-11-11T19:34:48.497Z",
   "listings": [
     {
       "id": "zindi:ai-agents-for-ran-challenge",
@@ -35,7 +35,7 @@
         {
           "kind": "end",
           "label": null,
-          "at": "2027-01-31T12:00:00.000Z",
+          "at": "2027-01-31T23:59:00.000Z",
           "zone": "UTC"
         }
       ]

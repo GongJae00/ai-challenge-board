@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-11T06:11:34.491Z",
+  "retrievedAt": "2026-11-11T19:34:48.497Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -132,25 +132,6 @@
           "label": null,
           "at": "2026-11-18T20:00:00.000Z",
           "zone": "America/Los_Angeles"
-        }
-      ]
-    },
-    {
-      "id": "devpost:31060",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "Agentic Hackathon",
-      "organizer": "Devin",
-      "conference": null,
-      "url": "https://agentic-hackathon.devpost.com/",
-      "sourceUrl": "https://agentic-hackathon.devpost.com/",
-      "opensAt": "2026-10-31T18:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-11T17:45:00.000Z",
-          "zone": "Asia/Dhaka"
         }
       ]
     },
@@ -702,6 +683,25 @@
           "label": null,
           "at": "2026-12-05T04:45:00.000Z",
           "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:32024",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Relate by Neo4j Hackathon",
+      "organizer": "Neo4j",
+      "conference": null,
+      "url": "https://relate.devpost.com/",
+      "sourceUrl": "https://relate.devpost.com/",
+      "opensAt": "2026-11-11T08:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-12T02:00:00.000Z",
+          "zone": "America/Los_Angeles"
         }
       ]
     },

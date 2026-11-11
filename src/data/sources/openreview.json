@@ -1,6 +1,6 @@
 {
   "source": "openreview",
-  "retrievedAt": "2026-11-11T06:11:34.491Z",
+  "retrievedAt": "2026-11-11T19:34:48.497Z",
   "listings": [
     {
       "id": "openreview:AAAI.org/2027/Workshop/A2NetOps",
@@ -174,6 +174,28 @@
           "kind": "submission",
           "label": null,
           "at": "2026-11-21T10:59:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/ANTHROLOGOS",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "ANTHROLOGOS — To Be or Not to Be: Anthropomorphism in AI — Mechanism or Illusion?",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://pragyaai.github.io/anthrologos",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FANTHROLOGOS",
+      "opensAt": "2026-11-11T18:30:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-30T18:30:00.000Z",
           "zone": "UTC"
         }
       ]
@@ -679,7 +701,7 @@
         {
           "kind": "submission",
           "label": null,
-          "at": "2026-11-20T11:00:00.000Z",
+          "at": "2026-12-01T12:05:00.000Z",
           "zone": "UTC"
         }
       ]
