@@ -407,6 +407,17 @@
     }
   },
   {
+    "id": 32026,
+    "dates": "Nov 11, 2026 - Jan 11, 2027",
+    "checkedAt": "2026-11-12T07:07:28.014Z",
+    "deadline": {
+      "kind": "submission",
+      "label": null,
+      "at": "2027-01-11T16:00:00.000Z",
+      "zone": "America/Los_Angeles"
+    }
+  },
+  {
     "id": 32079,
     "dates": "Nov 10 - Dec 07, 2026",
     "checkedAt": "2026-11-10T19:42:27.556Z",
@@ -414,6 +425,17 @@
       "kind": "submission",
       "label": null,
       "at": "2026-12-07T22:00:00.000Z",
+      "zone": "America/New_York"
+    }
+  },
+  {
+    "id": 32093,
+    "dates": "Dec 04 - 11, 2026",
+    "checkedAt": "2026-11-12T07:07:28.014Z",
+    "deadline": {
+      "kind": "submission",
+      "label": null,
+      "at": "2026-12-12T04:45:00.000Z",
       "zone": "America/New_York"
     }
   }
