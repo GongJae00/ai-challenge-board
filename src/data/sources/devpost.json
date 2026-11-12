@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-12T07:07:28.014Z",
+  "retrievedAt": "2026-11-12T19:53:39.899Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -531,6 +531,25 @@
           "label": null,
           "at": "2026-11-15T01:30:00.000Z",
           "zone": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31882",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "CSAIC Hack-AI-Thon",
+      "organizer": "Computer Science and AI Circle @ IISH",
+      "conference": null,
+      "url": "https://csaic-hackaithon.devpost.com/",
+      "sourceUrl": "https://csaic-hackaithon.devpost.com/",
+      "opensAt": "2026-11-19T18:30:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-24T18:30:00.000Z",
+          "zone": "Asia/Kolkata"
         }
       ]
     },
