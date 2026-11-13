@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-13T06:41:26.562Z",
+  "retrievedAt": "2026-11-13T19:39:43.204Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -170,6 +170,25 @@
           "label": null,
           "at": "2027-04-03T20:30:00.000Z",
           "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31177",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "NeuroHack Fall 2026 - Rewiring Pathways: Innovative Neuroscience",
+      "organizer": "NeuroTech@UIUC",
+      "conference": null,
+      "url": "https://neurohack-fall-2026.devpost.com/",
+      "sourceUrl": "https://neurohack-fall-2026.devpost.com/",
+      "opensAt": "2026-12-05T06:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-06T18:30:00.000Z",
+          "zone": "America/Chicago"
         }
       ]
     },
@@ -569,25 +588,6 @@
           "label": null,
           "at": "2027-01-31T11:30:00.000Z",
           "zone": "Asia/Kolkata"
-        }
-      ]
-    },
-    {
-      "id": "devpost:31943",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "CIVIC Hack 2026",
-      "organizer": "Future Cities Institute",
-      "conference": null,
-      "url": "https://civic-hack-2026.devpost.com/",
-      "sourceUrl": "https://civic-hack-2026.devpost.com/",
-      "opensAt": "2026-11-12T05:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-14T15:00:00.000Z",
-          "zone": "America/New_York"
         }
       ]
     },

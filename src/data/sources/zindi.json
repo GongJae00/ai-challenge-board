@@ -1,6 +1,6 @@
 {
   "source": "zindi",
-  "retrievedAt": "2026-11-13T06:41:26.562Z",
+  "retrievedAt": "2026-11-13T19:39:43.204Z",
   "listings": [
     {
       "id": "zindi:ai-agents-for-ran-challenge",
@@ -36,6 +36,25 @@
           "kind": "end",
           "label": null,
           "at": "2027-01-31T23:59:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "zindi:dischem-product-data-entichment-challenge",
+      "source": "zindi",
+      "kind": "challenge",
+      "title": "Dis-Chem Product Data Enrichment Challenge",
+      "organizer": null,
+      "conference": null,
+      "url": "https://zindi.world/competitions/dischem-product-data-entichment-challenge",
+      "sourceUrl": "https://zindi.world/competitions/dischem-product-data-entichment-challenge",
+      "opensAt": "2026-11-13T15:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-12-13T23:59:00.000Z",
           "zone": "UTC"
         }
       ]
@@ -87,7 +106,7 @@
       "conference": null,
       "url": "https://zindi.world/competitions/green-rising-methane-innovation-challenge",
       "sourceUrl": "https://zindi.world/competitions/green-rising-methane-innovation-challenge",
-      "opensAt": "2026-11-13T12:00:00.000Z",
+      "opensAt": "2026-12-11T12:00:00.000Z",
       "deadlines": [
         {
           "kind": "end",
