@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-12T19:53:39.899Z",
+  "retrievedAt": "2026-11-13T06:41:26.562Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -226,25 +226,6 @@
           "kind": "submission",
           "label": null,
           "at": "2026-12-13T04:00:00.000Z",
-          "zone": "America/Los_Angeles"
-        }
-      ]
-    },
-    {
-      "id": "devpost:31302",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "PayPal AI Hackathon",
-      "organizer": "PayPal",
-      "conference": null,
-      "url": "https://paypalaihackathon.devpost.com/",
-      "sourceUrl": "https://paypalaihackathon.devpost.com/",
-      "opensAt": "2026-10-01T07:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-12T20:00:00.000Z",
           "zone": "America/Los_Angeles"
         }
       ]
