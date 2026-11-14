@@ -1,6 +1,6 @@
 {
   "source": "openreview",
-  "retrievedAt": "2026-11-14T06:18:17.351Z",
+  "retrievedAt": "2026-11-14T17:58:57.121Z",
   "listings": [
     {
       "id": "openreview:AAAI.org/2027/Workshop/A2NetOps",
@@ -267,28 +267,6 @@
       ]
     },
     {
-      "id": "openreview:AAAI.org/2027/Workshop/EAIM",
-      "source": "openreview",
-      "kind": "cfp",
-      "title": "Second Workshop on Emerging AI Technologies for Music",
-      "organizer": null,
-      "conference": {
-        "name": "AAAI",
-        "year": 2027
-      },
-      "url": "https://amaai-lab.github.io/EAIM2027/",
-      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FEAIM",
-      "opensAt": "2026-10-05T08:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-14T12:00:00.000Z",
-          "zone": "AoE"
-        }
-      ]
-    },
-    {
       "id": "openreview:AAAI.org/2027/Workshop/EvalAIScientists",
       "source": "openreview",
       "kind": "cfp",
@@ -503,7 +481,7 @@
         {
           "kind": "submission",
           "label": null,
-          "at": "2026-11-16T11:59:00.000Z",
+          "at": "2026-11-21T11:59:00.000Z",
           "zone": "AoE"
         }
       ]
