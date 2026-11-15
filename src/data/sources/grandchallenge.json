@@ -1,26 +1,7 @@
 {
   "source": "grandchallenge",
-  "retrievedAt": "2026-11-15T06:25:29.806Z",
+  "retrievedAt": "2026-11-15T18:49:13.240Z",
   "listings": [
-    {
-      "id": "grandchallenge:clear-ec",
-      "source": "grandchallenge",
-      "kind": "challenge",
-      "title": "CLEAR-EC",
-      "organizer": null,
-      "conference": null,
-      "url": "https://clear-ec.grand-challenge.org/",
-      "sourceUrl": "https://clear-ec.grand-challenge.org/",
-      "opensAt": null,
-      "deadlines": [
-        {
-          "kind": "phase",
-          "label": "Phase II: Final Evaluation Phase",
-          "at": "2026-11-15T11:00:00.000Z",
-          "zone": "UTC"
-        }
-      ]
-    },
     {
       "id": "grandchallenge:prisma24",
       "source": "grandchallenge",

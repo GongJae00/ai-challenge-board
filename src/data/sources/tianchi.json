@@ -1,6 +1,6 @@
 {
   "source": "tianchi",
-  "retrievedAt": "2026-11-15T06:25:29.806Z",
+  "retrievedAt": "2026-11-15T18:49:13.240Z",
   "listings": [
     {
       "id": "tianchi:532460",
@@ -17,44 +17,6 @@
           "kind": "end",
           "label": null,
           "at": "2026-12-20T15:59:59.000Z",
-          "zone": "Asia/Shanghai"
-        }
-      ]
-    },
-    {
-      "id": "tianchi:532506",
-      "source": "tianchi",
-      "kind": "challenge",
-      "title": "2026-具身仿真合成挑战赛",
-      "organizer": null,
-      "conference": null,
-      "url": "https://tianchi.aliyun.com/competition/entrance/532506",
-      "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532506",
-      "opensAt": "2026-07-29T16:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "end",
-          "label": null,
-          "at": "2026-11-15T15:59:59.000Z",
-          "zone": "Asia/Shanghai"
-        }
-      ]
-    },
-    {
-      "id": "tianchi:532507",
-      "source": "tianchi",
-      "kind": "challenge",
-      "title": "2026-具身安全应用挑战赛",
-      "organizer": null,
-      "conference": null,
-      "url": "https://tianchi.aliyun.com/competition/entrance/532507",
-      "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532507",
-      "opensAt": "2026-07-29T16:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "end",
-          "label": null,
-          "at": "2026-11-15T15:59:59.000Z",
           "zone": "Asia/Shanghai"
         }
       ]
