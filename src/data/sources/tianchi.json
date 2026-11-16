@@ -1,6 +1,6 @@
 {
   "source": "tianchi",
-  "retrievedAt": "2026-11-16T06:24:03.035Z",
+  "retrievedAt": "2026-11-16T21:59:33.596Z",
   "listings": [
     {
       "id": "tianchi:532460",
@@ -41,7 +41,7 @@
         {
           "kind": "end",
           "label": null,
-          "at": "2026-11-20T15:59:59.000Z",
+          "at": "2026-11-21T15:59:59.000Z",
           "zone": "Asia/Shanghai"
         }
       ]
@@ -80,25 +80,6 @@
           "kind": "end",
           "label": null,
           "at": "2027-09-30T15:59:59.000Z",
-          "zone": "Asia/Shanghai"
-        }
-      ]
-    },
-    {
-      "id": "tianchi:532514",
-      "source": "tianchi",
-      "kind": "challenge",
-      "title": "蚂蚁灵波具身大模型挑战赛",
-      "organizer": null,
-      "conference": null,
-      "url": "https://tianchi.aliyun.com/competition/entrance/532514",
-      "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532514",
-      "opensAt": "2026-11-13T16:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "end",
-          "label": null,
-          "at": "2026-11-16T15:59:59.000Z",
           "zone": "Asia/Shanghai"
         }
       ]
