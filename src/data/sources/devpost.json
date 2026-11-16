@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-15T18:49:13.240Z",
+  "retrievedAt": "2026-11-16T06:24:03.035Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -188,25 +188,6 @@
           "kind": "submission",
           "label": null,
           "at": "2026-12-06T18:30:00.000Z",
-          "zone": "America/Chicago"
-        }
-      ]
-    },
-    {
-      "id": "devpost:31187",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "STEMergent Hacks 2026",
-      "organizer": "STEMergent",
-      "conference": null,
-      "url": "https://stemergent-hacks.devpost.com/",
-      "sourceUrl": "https://stemergent-hacks.devpost.com/",
-      "opensAt": "2026-10-31T05:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-16T03:30:00.000Z",
           "zone": "America/Chicago"
         }
       ]
@@ -538,7 +519,7 @@
       "id": "devpost:31960",
       "source": "devpost",
       "kind": "challenge",
-      "title": "ML Empowerment Build Challenge 4.0",
+      "title": "ML Empowerment Build Challenge 4.0 - Prizes and Certificates for EVERYONE",
       "organizer": "ML Empowerment Foundation",
       "conference": null,
       "url": "https://ml-build-challenge-4.devpost.com/",
@@ -693,8 +674,8 @@
       "title": "FRONTIER//26",
       "organizer": "LoveHack",
       "conference": null,
-      "url": "https://lovhack.devpost.com/",
-      "sourceUrl": "https://lovhack.devpost.com/",
+      "url": "https://frontier26.devpost.com/",
+      "sourceUrl": "https://frontier26.devpost.com/",
       "opensAt": "2026-12-04T05:00:00.000Z",
       "deadlines": [
         {

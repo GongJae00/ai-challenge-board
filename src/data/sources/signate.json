@@ -1,6 +1,6 @@
 {
   "source": "signate",
-  "retrievedAt": "2026-11-15T18:49:13.240Z",
+  "retrievedAt": "2026-11-16T06:24:03.035Z",
   "listings": [
     {
       "id": "signate:3e47fc8014554fddb6ecdd9251e71b67",
@@ -36,6 +36,25 @@
           "kind": "submission",
           "label": null,
           "at": "2026-12-18T14:59:00.000Z",
+          "zone": "JST"
+        }
+      ]
+    },
+    {
+      "id": "signate:d97fc46b1b4841a090ce0d042c860e1d",
+      "source": "signate",
+      "kind": "challenge",
+      "title": "第3回 国土交通省 地理空間情報データチャレンジ",
+      "organizer": "国土交通省 地理空間情報課",
+      "conference": null,
+      "url": "https://user.competition.signate.jp/ja/competition/detail/?competition=d97fc46b1b4841a090ce0d042c860e1d",
+      "sourceUrl": "https://user.competition.signate.jp/ja/competition/detail/?competition=d97fc46b1b4841a090ce0d042c860e1d",
+      "opensAt": null,
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2027-01-12T14:55:00.000Z",
           "zone": "JST"
         }
       ]
