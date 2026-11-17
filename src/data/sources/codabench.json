@@ -1,5 +1,119 @@
 {
   "source": "codabench",
-  "retrievedAt": "2026-11-16T21:59:33.596Z",
-  "listings": []
+  "retrievedAt": "2026-11-17T00:29:07.614Z",
+  "listings": [
+    {
+      "id": "codabench:16040",
+      "source": "codabench",
+      "kind": "challenge",
+      "title": "MICCAI STSR 2026 Pre-Task: 2D Images Segmentation",
+      "organizer": null,
+      "conference": null,
+      "url": "https://www.codabench.org/competitions/16040/",
+      "sourceUrl": "https://www.codabench.org/competitions/16040/",
+      "opensAt": "2026-04-29T00:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "phase",
+          "label": "Validation",
+          "at": "2027-07-17T23:55:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "codabench:17856",
+      "source": "codabench",
+      "kind": "challenge",
+      "title": "ICASSP 2027 EEG-sAAD Challenge",
+      "organizer": null,
+      "conference": {
+        "name": "ICASSP",
+        "year": 2027
+      },
+      "url": "https://www.codabench.org/competitions/17856/",
+      "sourceUrl": "https://www.codabench.org/competitions/17856/",
+      "opensAt": "2026-09-08T23:55:00.000Z",
+      "deadlines": [
+        {
+          "kind": "phase",
+          "label": "Testing Phase",
+          "at": "2026-12-08T23:55:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "codabench:18100",
+      "source": "codabench",
+      "kind": "challenge",
+      "title": "Forecasting Responsiveness Under Propofol – ICASSP 2027 Grand Challenge",
+      "organizer": null,
+      "conference": {
+        "name": "ICASSP",
+        "year": 2027
+      },
+      "url": "https://www.codabench.org/competitions/18100/",
+      "sourceUrl": "https://www.codabench.org/competitions/18100/",
+      "opensAt": "2026-09-12T22:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "phase",
+          "label": "Feedback Phase",
+          "at": "2026-11-30T23:59:00.000Z",
+          "zone": "UTC"
+        },
+        {
+          "kind": "phase",
+          "label": "Final Phase",
+          "at": "2026-12-08T23:59:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "codabench:18330",
+      "source": "codabench",
+      "kind": "challenge",
+      "title": "Counter Narrative Generation on Homophobic and Transphobic Comments - LT-EDI@NAACL 2027",
+      "organizer": null,
+      "conference": {
+        "name": "NAACL",
+        "year": 2027
+      },
+      "url": "https://www.codabench.org/competitions/18330/",
+      "sourceUrl": "https://www.codabench.org/competitions/18330/",
+      "opensAt": "2026-10-26T00:05:00.000Z",
+      "deadlines": [
+        {
+          "kind": "phase",
+          "label": "Phase 1",
+          "at": "2027-06-30T23:55:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "codabench:18368",
+      "source": "codabench",
+      "kind": "challenge",
+      "title": "MisoShorts: Multimodal Misogyny Detection in Tamil and Malayalam Short-Form Videos (LTEDI @ NAACL 2027)",
+      "organizer": null,
+      "conference": {
+        "name": "NAACL",
+        "year": 2027
+      },
+      "url": "https://www.codabench.org/competitions/18368/",
+      "sourceUrl": "https://www.codabench.org/competitions/18368/",
+      "opensAt": "2026-10-26T00:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "phase",
+          "label": "Phase 1",
+          "at": "2027-07-31T00:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    }
+  ]
 }
