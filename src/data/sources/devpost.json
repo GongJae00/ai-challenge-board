@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-17T00:29:07.614Z",
+  "retrievedAt": "2026-11-17T20:53:09.565Z",
   "listings": [
     {
       "id": "devpost:26475",
@@ -246,6 +246,25 @@
           "label": null,
           "at": "2026-11-22T15:00:00.000Z",
           "zone": "Asia/Seoul"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31571",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Cloud9 x JetBrains: Sky's The Limit Hackathon 2026",
+      "organizer": "Cloud9",
+      "conference": null,
+      "url": "https://cloud9.devpost.com/",
+      "sourceUrl": "https://cloud9.devpost.com/",
+      "opensAt": "2026-11-17T08:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2027-01-12T19:00:00.000Z",
+          "zone": "America/Los_Angeles"
         }
       ]
     },
@@ -682,6 +701,25 @@
           "kind": "submission",
           "label": null,
           "at": "2027-04-11T16:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:32158",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "AI@UCF Semester Sprint",
+      "organizer": "AI@ucf",
+      "conference": null,
+      "url": "https://semester-sprint.devpost.com/",
+      "sourceUrl": "https://semester-sprint.devpost.com/",
+      "opensAt": "2026-11-17T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-21T00:00:00.000Z",
           "zone": "America/New_York"
         }
       ]
