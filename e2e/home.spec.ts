@@ -85,7 +85,7 @@ for (const locale of locales) {
     )
     await expect(page).toHaveURL(/\?sort=title$/)
     const ascending = await titles()
-    const collator = new Intl.Collator(locale)
+    const collator = new Intl.Collator(locale, { numeric: true })
     expect(ascending).toEqual([...ascending].sort(collator.compare))
 
     await header("table.title").getByRole("button").click()
