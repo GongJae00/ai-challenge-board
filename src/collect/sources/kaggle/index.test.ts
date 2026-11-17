@@ -21,6 +21,22 @@ function fakeClient() {
 }
 
 describe("kaggle", () => {
+  it("ends the list when the page after a full one comes back as {}", async () => {
+    const full = { competitions: page1.competitions.slice(0, 20) }
+    const client: Client = {
+      getText: async () => "",
+      getJson: async () => ({}),
+      postJson: async (_url, body) =>
+        (body as { page: number }).page === 1 ? full : {},
+    }
+    const listings = await createKaggle(() => "test-token").collect(
+      client,
+      now,
+      { previous: null }
+    )
+    expect(listings.length).toBeGreaterThan(0)
+  })
+
   it("pages through the list with the token until a short page", async () => {
     const { client, posts } = fakeClient()
     const listings = await createKaggle(() => "test-token").collect(

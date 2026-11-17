@@ -30,7 +30,18 @@ const listPage = z.object({
 
 export type Competition = z.infer<typeof listPage>["competitions"][number]
 
+/**
+ * One page of the list. The page after a full last page is `{}`, since Kaggle leaves an empty `competitions` array
+ * out, so that alone reads as no competitions; any other response without the list is rejected.
+ */
 export function parseListPage(json: unknown): { competitions: Competition[] } {
+  if (
+    typeof json === "object" &&
+    json !== null &&
+    !Array.isArray(json) &&
+    Object.keys(json).length === 0
+  )
+    return { competitions: [] }
   const result = listPage.safeParse(json)
   if (!result.success)
     throw new Error(

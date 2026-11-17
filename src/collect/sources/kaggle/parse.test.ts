@@ -12,6 +12,10 @@ const competitions = [
 ]
 
 describe("parseListPage", () => {
+  it("reads a page after the last one, which Kaggle sends as {} with no empty array, as no competitions", () => {
+    expect(parseListPage({}).competitions).toEqual([])
+  })
+
   it("reads every competition on a page, with the fields Kaggle leaves out as empty", () => {
     expect(parseListPage(page1).competitions).toHaveLength(20)
     expect(parseListPage(page2).competitions).toHaveLength(2)
