@@ -122,6 +122,18 @@ for (const locale of locales) {
     )
   })
 
+  test(`the ${locale} footer names a site that is coming soon`, async ({
+    page,
+  }) => {
+    await page.goto(`${locale}/`)
+    const footer = page.getByRole("contentinfo")
+    await expect(footer).toContainText(t(locale, "footer.soon"))
+    await expect(
+      footer.getByRole("link", { name: "Starfield Labs" })
+    ).toBeVisible()
+    await expect(footer).not.toContainText("lablab")
+  })
+
   for (const other of locales.filter((l) => l !== locale)) {
     test(`the ${locale} language menu leads to ${other} by keyboard`, async ({
       page,

@@ -10,7 +10,6 @@ export const sourceIds = [
   "dacon",
   "aifactory",
   "drivendata",
-  "lablab",
   "zindi",
   "signate",
   "tianchi",

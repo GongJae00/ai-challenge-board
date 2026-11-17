@@ -8,7 +8,6 @@ import { drivendata } from "./drivendata/index.ts"
 import { evalai } from "./evalai/index.ts"
 import { grandchallenge } from "./grandchallenge/index.ts"
 import { kaggle } from "./kaggle/index.ts"
-import { lablab } from "./lablab/index.ts"
 import { openreview } from "./openreview/index.ts"
 import { signate } from "./signate/index.ts"
 import { tianchi } from "./tianchi/index.ts"
@@ -22,7 +21,6 @@ export const sources: Source[] = [
   dacon,
   aifactory,
   drivendata,
-  lablab,
   zindi,
   signate,
   tianchi,

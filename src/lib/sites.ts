@@ -59,12 +59,6 @@ export const sites = {
     platform: true,
     korean: false,
   },
-  lablab: {
-    name: "lablab.ai",
-    url: "https://lablab.ai/ai-hackathons",
-    platform: true,
-    korean: false,
-  },
   zindi: {
     name: "Zindi",
     url: "https://zindi.world/competitions",
@@ -102,6 +96,14 @@ export const sites = {
     korean: false,
   },
 } as const satisfies Record<SourceId, Site>
+
+/**
+ * Sites ACB will collect from once they have listings to read, shown in the footer as coming soon. lablab.ai became
+ * Starfield Labs in November 2026, and its events page was empty then.
+ */
+export const sitesComingSoon = [
+  { name: "Starfield Labs", url: "https://starfieldlabs.ai/events" },
+]
 
 /** The sources that are competition platforms, such as `dacon`. */
 export type PlatformId = {

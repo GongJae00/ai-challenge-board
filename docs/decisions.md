@@ -2,6 +2,16 @@
 
 Decisions that constrain later work, newest first, each with its reason and the alternatives considered.
 
+## 2026-11-17: lablab.ai removed, Starfield Labs listed as coming soon
+
+GongJae chose to remove the lablab source ("lablab 없애고 나중에 추가할 수 있도록 커밍순하자"). lablab.ai became
+Starfield Labs in November 2026: `lablab.ai/ai-hackathons` redirects to `starfieldlabs.ai/events`, whose page says
+"No events yet", so the collector's parser, which read the hackathons from the old page's Next.js data, failed on
+every run from 2026-11-11 and kept the Collect job red. The collector, its fixtures, and its stored listing are
+deleted, and the footer shows Starfield Labs in a "곧 추가" row. A new collector waits until the events page lists
+events: robots.txt on starfieldlabs.ai disallows `/api/`, so if the list is only loaded from there it cannot be
+collected, which was not checked since the page held no events.
+
 ## 2026-11-16: Sortable table columns, and no zod in the page bundle
 
 Each column header of the table sorts it: a first click orders the column ascending, a second click reverses it. The
