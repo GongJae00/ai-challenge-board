@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
 
-import { listingSchema } from "../../../lib/listing.ts"
+import { listingSchema } from "../../../lib/listing-schema.ts"
 import type { Client } from "../../http.ts"
 import list from "./fixtures/competitions-list.json"
 import { zindi } from "./index.ts"

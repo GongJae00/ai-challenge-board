@@ -5,7 +5,8 @@
  */
 import { mkdir, readFile, writeFile } from "node:fs/promises"
 
-import { sourceFileSchema, type SourceFile } from "../lib/listing.ts"
+import type { SourceFile } from "../lib/listing.ts"
+import { sourceFileSchema } from "../lib/listing-schema.ts"
 import { createClient } from "./http.ts"
 import { runSource } from "./run.ts"
 import { sources } from "./sources/index.ts"

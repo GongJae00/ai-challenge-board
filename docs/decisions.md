@@ -2,6 +2,24 @@
 
 Decisions that constrain later work, newest first, each with its reason and the alternatives considered.
 
+## 2026-11-16: Sortable table columns, and no zod in the page bundle
+
+Each column header of the table sorts it: a first click orders the column ascending, a second click reverses it. The
+order lives in the URL as `?sort=title` or `?sort=-title`, like `?view=`, so that it survives a reload; the nearest
+deadline first is the default and has no parameter. A listing with nothing in the column, such as no start date, stays
+last in either direction, and equal values keep the nearest deadline first; a start date counts as the day shown in
+KST, not the hour. A type sorts in the order of the type chips, so that it is the same in both languages, while
+titles and hosts follow the locale's collation. The rules are in `src/lib/sort.ts`. A phone shows only the deadline
+and title columns, so only those two sort there, and a link sorted by another column, shared from a wide screen,
+opens on a phone in the default order.
+
+`listing.ts` held both the constants the pages import and the zod schema, so zod and its `Function("")` probe, which
+the page's CSP blocks, reached the client bundle (129 KB to 44 KB without it). The schema now lives in
+`listing-schema.ts`, for the collector and the content collection only; the types are still exported from
+`listing.ts`. Alternative: `z.config({ jitless: true })` would silence the probe but keep zod in the bundle. The e2e
+home test now fails on a `securitypolicyviolation` event, since a blocked script shows only in the browser's Issues
+panel and not as a console error.
+
 ## 2026-10-23: AI conferences beyond the first seven
 
 ACB covers 19 conferences: the first seven, the eight GongJae named on 2026-10-23 (ACL, EMNLP, NAACL, MICCAI, CoRL,

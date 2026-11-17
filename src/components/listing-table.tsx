@@ -1,3 +1,5 @@
+import { ArrowDown, ArrowUp, ChevronsUpDown } from "lucide-react"
+
 import {
   Table,
   TableBody,
@@ -15,12 +17,13 @@ import {
   formatSourceTime,
   formatTime,
 } from "@/lib/datetime"
-import { conferenceName } from "@/lib/listing"
+import { conferenceName, hostName } from "@/lib/listing"
 import { platformName } from "@/lib/sites"
+import { nextSort, type Sort, type SortColumn } from "@/lib/sort"
 import { cn } from "@/lib/utils"
 
 import { ListingContext } from "./listing-context"
-import { deadlineName, hostName } from "./listing-text"
+import { deadlineName } from "./listing-text"
 
 /** Deadlines a week or less away stand out. */
 const SOON_DAYS = 7
@@ -29,34 +32,76 @@ const SOON_DAYS = 7
 const WIDE_ONLY = "hidden sm:table-cell"
 
 interface Props {
+  /** The rows in the order `sort` names; the table does not reorder them. */
   items: AgendaItem[]
+  sort: Sort
+  onSort: (sort: Sort) => void
   locale: Locale
   now: Date
   timeZone: string
 }
 
+interface SortHeadProps {
+  column: SortColumn
+  sort: Sort
+  onSort: (sort: Sort) => void
+  locale: Locale
+  className?: string
+}
+
+/** A column header that sorts the table by its column; a second click reverses the order. */
+function SortHead({ column, sort, onSort, locale, className }: SortHeadProps) {
+  const active = sort.column === column
+  const Icon = !active ? ChevronsUpDown : sort.descending ? ArrowDown : ArrowUp
+  return (
+    <TableHead
+      className={className}
+      aria-sort={
+        active ? (sort.descending ? "descending" : "ascending") : undefined
+      }
+    >
+      <button
+        type="button"
+        onClick={() => onSort(nextSort(sort, column))}
+        className="-ml-1.5 inline-flex cursor-pointer items-center gap-1 rounded-md px-1.5 py-1 hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+      >
+        {t(locale, `table.${column}`)}
+        <Icon
+          aria-hidden="true"
+          className={cn("size-3.5", !active && "text-muted-foreground/60")}
+        />
+      </button>
+    </TableHead>
+  )
+}
+
 /**
- * Open listings as a table, one row each with its next deadline, nearest first. A phone shows the deadline and the
- * title side by side, with the host and type under the title.
+ * Open listings as a table, one row each with its next deadline, in the order the visitor sorted them by, the
+ * nearest deadline first to begin with. A phone shows the deadline and the title side by side, with the host and
+ * type under the title.
  */
-export function ListingTable({ items, locale, now, timeZone }: Props) {
+export function ListingTable({
+  items,
+  sort,
+  onSort,
+  locale,
+  now,
+  timeZone,
+}: Props) {
+  const head = { sort, onSort, locale }
   return (
     <Table className="table-fixed break-keep sm:min-w-[56rem]">
       <TableHeader>
         <TableRow className="hover:bg-transparent">
-          <TableHead className={cn("w-36", WIDE_ONLY)}>
-            {t(locale, "table.start")}
-          </TableHead>
-          <TableHead className="w-36 sm:w-64">
-            {t(locale, "table.deadline")}
-          </TableHead>
-          <TableHead className={cn("w-44", WIDE_ONLY)}>
-            {t(locale, "table.host")}
-          </TableHead>
-          <TableHead>{t(locale, "table.title")}</TableHead>
-          <TableHead className={cn("w-28", WIDE_ONLY)}>
-            {t(locale, "table.kind")}
-          </TableHead>
+          <SortHead
+            column="start"
+            className={cn("w-36", WIDE_ONLY)}
+            {...head}
+          />
+          <SortHead column="deadline" className="w-36 sm:w-64" {...head} />
+          <SortHead column="host" className={cn("w-44", WIDE_ONLY)} {...head} />
+          <SortHead column="title" {...head} />
+          <SortHead column="kind" className={cn("w-28", WIDE_ONLY)} {...head} />
         </TableRow>
       </TableHeader>
       <TableBody>

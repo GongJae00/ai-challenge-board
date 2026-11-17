@@ -25,6 +25,14 @@ for (const locale of locales) {
       if (message.type() === "error") errors.push(message.text())
     })
     page.on("pageerror", (error) => errors.push(error.message))
+    // A blocked script or eval shows only in the browser's Issues panel, not as a console error.
+    await page.addInitScript(() => {
+      document.addEventListener("securitypolicyviolation", (event) => {
+        console.error(
+          `CSP blocked ${event.effectiveDirective}: ${event.sourceFile}`
+        )
+      })
+    })
 
     await page.goto(`${locale}/`)
     await hydrated(page)
@@ -52,6 +60,66 @@ for (const locale of locales) {
       () => document.documentElement.scrollWidth - window.innerWidth
     )
     expect(overflow).toBeLessThanOrEqual(0)
+  })
+
+  test(`the ${locale} table sorts by a column and reverses on a second click`, async ({
+    page,
+  }) => {
+    await page.goto(`${locale}/`)
+    await hydrated(page)
+    const header = (key: "table.title" | "table.deadline") =>
+      page.getByRole("columnheader", { name: t(locale, key) })
+    const titles = () =>
+      page.locator("tbody tr td:nth-child(4) a").allTextContents()
+
+    // The page opens with the nearest deadline first.
+    await expect(header("table.deadline")).toHaveAttribute(
+      "aria-sort",
+      "ascending"
+    )
+
+    await header("table.title").getByRole("button").click()
+    await expect(header("table.title")).toHaveAttribute(
+      "aria-sort",
+      "ascending"
+    )
+    await expect(page).toHaveURL(/\?sort=title$/)
+    const ascending = await titles()
+    const collator = new Intl.Collator(locale)
+    expect(ascending).toEqual([...ascending].sort(collator.compare))
+
+    await header("table.title").getByRole("button").click()
+    await expect(header("table.title")).toHaveAttribute(
+      "aria-sort",
+      "descending"
+    )
+    await expect(page).toHaveURL(/\?sort=-title$/)
+    expect(await titles()).toEqual([...ascending].reverse())
+
+    // The order survives a reload, and the deadline header returns to the default order.
+    await page.reload()
+    await hydrated(page)
+    await expect(header("table.title")).toHaveAttribute(
+      "aria-sort",
+      "descending"
+    )
+    await header("table.deadline").getByRole("button").click()
+    await expect(page).toHaveURL(/\/(ko|en)\/$/)
+  })
+
+  test(`the ${locale} table opens a link sorted by a hidden column in the default order on a phone`, async ({
+    page,
+  }) => {
+    await page.goto(`${locale}/?sort=-host`)
+    await hydrated(page)
+    const wide = (page.viewportSize()?.width ?? 0) >= 640
+    const sorted = page.getByRole("columnheader", {
+      name: t(locale, wide ? "table.host" : "table.deadline"),
+    })
+    await expect(sorted).toHaveAttribute(
+      "aria-sort",
+      wide ? "descending" : "ascending"
+    )
   })
 
   for (const other of locales.filter((l) => l !== locale)) {

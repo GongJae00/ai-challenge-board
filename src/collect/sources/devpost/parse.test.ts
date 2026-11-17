@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs"
 
 import { describe, expect, it } from "vitest"
 
-import { listingSchema } from "../../../lib/listing.ts"
+import { listingSchema } from "../../../lib/listing-schema.ts"
 import edgeCases from "./fixtures/list-open-upcoming-edge-cases.json"
 import lastPage from "./fixtures/list-open-ml-last-page.json"
 import page1 from "./fixtures/list-open-ml-page1.json"

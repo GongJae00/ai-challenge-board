@@ -1,11 +1,7 @@
 import { z } from "zod"
 
-import {
-  listingSchema,
-  type Listing,
-  type SourceFile,
-  type SourceId,
-} from "../lib/listing.ts"
+import type { Listing, SourceFile, SourceId } from "../lib/listing.ts"
+import { listingSchema } from "../lib/listing-schema.ts"
 import type { Client } from "./http.ts"
 
 /**

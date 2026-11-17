@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs"
 
 import { describe, expect, it } from "vitest"
 
-import { listingSchema } from "../../../lib/listing.ts"
+import { listingSchema } from "../../../lib/listing-schema.ts"
 import emptyPage from "./fixtures/list-empty-page.json"
 import page0 from "./fixtures/list-page0.json"
 import {

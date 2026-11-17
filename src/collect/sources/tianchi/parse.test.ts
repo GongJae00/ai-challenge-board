@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
 
-import { listingSchema } from "../../../lib/listing.ts"
+import { listingSchema } from "../../../lib/listing-schema.ts"
 import learningPage from "./fixtures/race-page-learning.json"
 import page1 from "./fixtures/race-page-p1.json"
 import { isListed, parseRacePage, toListing, type Race } from "./parse.ts"

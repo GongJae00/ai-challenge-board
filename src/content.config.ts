@@ -1,7 +1,7 @@
 import { defineCollection } from "astro:content"
 import { glob } from "astro/loaders"
 
-import { sourceFileSchema } from "./lib/listing.ts"
+import { sourceFileSchema } from "./lib/listing-schema.ts"
 
 // One entry per collected source; the build fails when a file does not fit the schema.
 const sources = defineCollection({

@@ -1,10 +1,7 @@
 import { z } from "zod"
 
-import {
-  canonicalZone,
-  deadlineSchema,
-  type Listing,
-} from "../../../lib/listing.ts"
+import { canonicalZone, type Listing } from "../../../lib/listing.ts"
+import { deadlineSchema } from "../../../lib/listing-schema.ts"
 import { flightText, jsonAt } from "../../flight.ts"
 import { cleanText } from "../../text.ts"
 import { endsAhead, isoFromMs } from "../../time.ts"

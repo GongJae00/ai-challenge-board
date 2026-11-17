@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
 
-import { listingSchema } from "../../../lib/listing.ts"
+import { listingSchema } from "../../../lib/listing-schema.ts"
 import groupsNeurips from "./fixtures/groups_neurips2026_workshop.json"
 import invitationsNeurips from "./fixtures/invitations_neurips2026_workshop.json"
 import {

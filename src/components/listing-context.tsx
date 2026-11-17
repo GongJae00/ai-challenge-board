@@ -1,9 +1,7 @@
 import type { Locale } from "@/i18n/locales"
 import { t } from "@/i18n/messages"
-import type { Listing } from "@/lib/listing"
+import { hostName, type Listing } from "@/lib/listing"
 import { platformName } from "@/lib/sites"
-
-import { hostName } from "./listing-text"
 
 /**
  * A listing's type, host, and platform as items, such as "챌린지", "해양수산부", and "DACON", for a line of

@@ -8,6 +8,13 @@ import { upcoming, upcomingDeadlines } from "@/lib/agenda"
 import { DISPLAY_TIME_ZONE } from "@/lib/datetime"
 import { facetCounts, filterListings } from "@/lib/filter"
 import type { Listing } from "@/lib/listing"
+import {
+  defaultSort,
+  formatSort,
+  parseSort,
+  phoneSortColumns,
+  sortItems,
+} from "@/lib/sort"
 import { isOneOf } from "@/lib/utils"
 
 import { ListingCalendar } from "./listing-calendar"
@@ -15,6 +22,7 @@ import { ListingFilters, useFilters } from "./listing-filters"
 import { ListingTable } from "./listing-table"
 import { useNow } from "./use-now"
 import { useUrlParam } from "./use-url-param"
+import { useWide } from "./use-wide"
 
 const views = ["table", "calendar"] as const
 type View = (typeof views)[number]
@@ -51,9 +59,25 @@ export default function ListingsView({ listings, locale, builtAt }: Props) {
     () => new Set(filterListings(open, filters.filters)),
     [open, filters.filters]
   )
+  const [sortParam, setSortParam] = useUrlParam("sort", formatSort(defaultSort))
+  const wide = useWide()
+  // A phone cannot show the columns beyond the deadline and the title, so a link sorted by one of them, shared
+  // from a wide screen, opens there in the default order rather than in one nothing on the page explains.
+  const sort = useMemo(() => {
+    const requested = parseSort(sortParam)
+    return wide || phoneSortColumns.includes(requested.column)
+      ? requested
+      : defaultSort
+  }, [sortParam, wide])
   const items = useMemo(
-    () => all.filter(({ listing }) => shown.has(listing)),
-    [all, shown]
+    () =>
+      sortItems(
+        all.filter(({ listing }) => shown.has(listing)),
+        sort,
+        locale,
+        timeZone
+      ),
+    [all, shown, sort, locale, timeZone]
   )
   const counts = useMemo(
     () => facetCounts(open, filters.filters),
@@ -128,6 +152,8 @@ export default function ListingsView({ listings, locale, builtAt }: Props) {
           ) : (
             <ListingTable
               items={items}
+              sort={sort}
+              onSort={(next) => setSortParam(formatSort(next))}
               locale={locale}
               now={now}
               timeZone={timeZone}

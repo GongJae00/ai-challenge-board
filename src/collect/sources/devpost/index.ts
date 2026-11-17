@@ -1,6 +1,7 @@
 import { z } from "zod"
 
-import { deadlineSchema, type Listing } from "../../../lib/listing.ts"
+import type { Listing } from "../../../lib/listing.ts"
+import { deadlineSchema } from "../../../lib/listing-schema.ts"
 import type { Client } from "../../http.ts"
 import type { Source } from "../../run.ts"
 import {

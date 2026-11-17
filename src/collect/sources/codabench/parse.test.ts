@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
 
-import { listingSchema } from "../../../lib/listing.ts"
+import { listingSchema } from "../../../lib/listing-schema.ts"
 import benchmarkNoEnd from "./fixtures/detail-17718-benchmark-no-end.json"
 import finished from "./fixtures/detail-12971-finished-single-phase.json"
 import multiPhase from "./fixtures/detail-18062-multi-phase-upcoming.json"
