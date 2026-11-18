@@ -1,6 +1,6 @@
 {
   "source": "zindi",
-  "retrievedAt": "2026-11-18T07:24:24.810Z",
+  "retrievedAt": "2026-11-18T20:28:49.521Z",
   "listings": [
     {
       "id": "zindi:ai-agents-for-ran-challenge",
@@ -74,6 +74,25 @@
           "kind": "end",
           "label": null,
           "at": "2026-12-13T12:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "zindi:frugal-tonal-asr-challenge-for-fongbe",
+      "source": "zindi",
+      "kind": "challenge",
+      "title": "BENIN Fongbe Tonal ASR Challenge",
+      "organizer": null,
+      "conference": null,
+      "url": "https://zindi.world/competitions/frugal-tonal-asr-challenge-for-fongbe",
+      "sourceUrl": "https://zindi.world/competitions/frugal-tonal-asr-challenge-for-fongbe",
+      "opensAt": "2026-11-20T12:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-12-13T22:00:00.000Z",
           "zone": "UTC"
         }
       ]

@@ -1,6 +1,6 @@
 {
   "source": "codabench",
-  "retrievedAt": "2026-11-18T07:24:24.810Z",
+  "retrievedAt": "2026-11-18T20:28:49.521Z",
   "listings": [
     {
       "id": "codabench:16040",
@@ -67,6 +67,62 @@
           "kind": "phase",
           "label": "Final Phase",
           "at": "2026-12-08T23:59:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "codabench:18135",
+      "source": "codabench",
+      "kind": "challenge",
+      "title": "RoboWorld 2026 — Track 2: HA-VLN @ NeurIPS 2026",
+      "organizer": null,
+      "conference": {
+        "name": "NeurIPS",
+        "year": 2026
+      },
+      "url": "https://www.codabench.org/competitions/18135/",
+      "sourceUrl": "https://www.codabench.org/competitions/18135/",
+      "opensAt": "2026-10-15T07:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "phase",
+          "label": "Phase 1: Validation",
+          "at": "2026-11-23T07:59:00.000Z",
+          "zone": "UTC"
+        },
+        {
+          "kind": "phase",
+          "label": "Phase 2: Final Evaluation",
+          "at": "2026-11-30T23:59:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "codabench:18185",
+      "source": "codabench",
+      "kind": "challenge",
+      "title": "RoboWorld 2026 — Track 1: WorldNav @ NeurIPS 2026",
+      "organizer": null,
+      "conference": {
+        "name": "NeurIPS",
+        "year": 2026
+      },
+      "url": "https://www.codabench.org/competitions/18185/",
+      "sourceUrl": "https://www.codabench.org/competitions/18185/",
+      "opensAt": "2026-10-15T00:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "phase",
+          "label": "Phase 1: Validation",
+          "at": "2026-11-30T23:59:00.000Z",
+          "zone": "UTC"
+        },
+        {
+          "kind": "phase",
+          "label": "Phase 2: Final Evaluation",
+          "at": "2026-11-30T23:59:00.000Z",
           "zone": "UTC"
         }
       ]
