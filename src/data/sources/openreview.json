@@ -1,6 +1,6 @@
 {
   "source": "openreview",
-  "retrievedAt": "2026-11-19T20:32:20.594Z",
+  "retrievedAt": "2026-11-20T07:11:01.518Z",
   "listings": [
     {
       "id": "openreview:AAAI.org/2027/Workshop/A2NetOps",
@@ -107,7 +107,7 @@
         {
           "kind": "submission",
           "label": null,
-          "at": "2026-11-21T11:00:00.000Z",
+          "at": "2026-11-25T18:29:00.000Z",
           "zone": "UTC"
         }
       ]
@@ -262,28 +262,6 @@
           "kind": "submission",
           "label": null,
           "at": "2026-11-21T12:59:00.000Z",
-          "zone": "UTC"
-        }
-      ]
-    },
-    {
-      "id": "openreview:AAAI.org/2027/Workshop/EvalAIScientists",
-      "source": "openreview",
-      "kind": "cfp",
-      "title": "AAAI-27 Workshop on Effective and Efficient Evaluation for AI Scientists",
-      "organizer": null,
-      "conference": {
-        "name": "AAAI",
-        "year": 2027
-      },
-      "url": "https://eval-ai-scientists.github.io/aaai27/",
-      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FEvalAIScientists",
-      "opensAt": "2026-10-05T06:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-20T06:00:00.000Z",
           "zone": "UTC"
         }
       ]
@@ -459,7 +437,7 @@
         {
           "kind": "submission",
           "label": null,
-          "at": "2026-11-21T12:00:00.000Z",
+          "at": "2026-12-02T12:00:00.000Z",
           "zone": "AoE"
         }
       ]
