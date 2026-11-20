@@ -1,16 +1,5 @@
 [
   {
-    "id": 26475,
-    "dates": "Oct 26 - Nov 20, 2026",
-    "checkedAt": "2026-11-17T20:53:09.565Z",
-    "deadline": {
-      "kind": "submission",
-      "label": null,
-      "at": "2026-11-20T20:00:00.000Z",
-      "zone": "UTC"
-    }
-  },
-  {
     "id": 29135,
     "dates": "Mar 12 - 27, 2028",
     "checkedAt": "2026-11-20T07:11:01.518Z",
@@ -79,7 +68,7 @@
   {
     "id": 31148,
     "dates": "Apr 02 - 03, 2027",
-    "checkedAt": "2026-11-16T21:59:33.596Z",
+    "checkedAt": "2026-11-20T20:12:49.767Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -189,7 +178,7 @@
   {
     "id": 31775,
     "dates": "Nov 18 - 24, 2026",
-    "checkedAt": "2026-11-17T00:29:07.614Z",
+    "checkedAt": "2026-11-20T20:12:49.767Z",
     "deadline": {
       "kind": "submission",
       "label": null,

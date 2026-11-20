@@ -1,5 +1,31 @@
 {
   "source": "aifactory",
-  "retrievedAt": "2026-11-20T07:11:01.518Z",
-  "listings": []
+  "retrievedAt": "2026-11-20T20:12:49.767Z",
+  "listings": [
+    {
+      "id": "aifactory:9320",
+      "source": "aifactory",
+      "kind": "challenge",
+      "title": "2026 서울 야간경제 활성화 해커톤 (Dopamine Seoul 24)",
+      "organizer": "서울특별시",
+      "conference": null,
+      "url": "https://aifactory.space/ko/competitions/9320",
+      "sourceUrl": "https://aifactory.space/ko/competitions/9320",
+      "opensAt": "2026-11-18T07:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "entry",
+          "label": null,
+          "at": "2026-12-07T14:59:00.000Z",
+          "zone": "KST"
+        },
+        {
+          "kind": "end",
+          "label": null,
+          "at": "2026-12-19T14:59:00.000Z",
+          "zone": "KST"
+        }
+      ]
+    }
+  ]
 }
