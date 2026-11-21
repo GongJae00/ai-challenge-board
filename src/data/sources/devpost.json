@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-21T07:02:35.002Z",
+  "retrievedAt": "2026-11-21T19:12:39.854Z",
   "listings": [
     {
       "id": "devpost:29135",
@@ -18,25 +18,6 @@
           "label": null,
           "at": "2028-03-27T16:00:00.000Z",
           "zone": "America/New_York"
-        }
-      ]
-    },
-    {
-      "id": "devpost:30456",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "Bridge The Gap Hacks",
-      "organizer": "Bridge The Gap Hacks",
-      "conference": null,
-      "url": "https://sq-hacks.devpost.com/",
-      "sourceUrl": "https://sq-hacks.devpost.com/",
-      "opensAt": "2026-11-15T08:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-21T07:45:00.000Z",
-          "zone": "America/Los_Angeles"
         }
       ]
     },
@@ -682,6 +663,25 @@
           "kind": "submission",
           "label": null,
           "at": "2027-04-11T16:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:32208",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Agents that act. Systems that answer.",
+      "organizer": "studentchakra",
+      "conference": null,
+      "url": "https://accountable-agents.devpost.com/",
+      "sourceUrl": "https://accountable-agents.devpost.com/",
+      "opensAt": "2026-11-28T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-01T08:30:00.000Z",
           "zone": "America/New_York"
         }
       ]
