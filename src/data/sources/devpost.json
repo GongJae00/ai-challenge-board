@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-20T20:12:49.767Z",
+  "retrievedAt": "2026-11-21T07:02:35.002Z",
   "listings": [
     {
       "id": "devpost:29135",
@@ -682,25 +682,6 @@
           "kind": "submission",
           "label": null,
           "at": "2027-04-11T16:00:00.000Z",
-          "zone": "America/New_York"
-        }
-      ]
-    },
-    {
-      "id": "devpost:32158",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "AI@UCF Semester Sprint",
-      "organizer": "AI@ucf",
-      "conference": null,
-      "url": "https://semester-sprint.devpost.com/",
-      "sourceUrl": "https://semester-sprint.devpost.com/",
-      "opensAt": "2026-11-17T05:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-21T00:00:00.000Z",
           "zone": "America/New_York"
         }
       ]

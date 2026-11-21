@@ -123,7 +123,7 @@
   {
     "id": 31571,
     "dates": "Nov 17, 2026 - Jan 12, 2027",
-    "checkedAt": "2026-11-17T20:53:09.565Z",
+    "checkedAt": "2026-11-21T07:02:35.002Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -189,7 +189,7 @@
   {
     "id": 31787,
     "dates": "Nov 01 - Dec 26, 2026",
-    "checkedAt": "2026-11-17T20:53:09.565Z",
+    "checkedAt": "2026-11-21T07:02:35.002Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -222,7 +222,7 @@
   {
     "id": 31827,
     "dates": "Feb 06 - 13, 2027",
-    "checkedAt": "2026-11-17T20:53:09.565Z",
+    "checkedAt": "2026-11-21T07:02:35.002Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -277,7 +277,7 @@
   {
     "id": 31960,
     "dates": "Nov 01 - Dec 02, 2026",
-    "checkedAt": "2026-11-17T20:53:09.565Z",
+    "checkedAt": "2026-11-21T07:02:35.002Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -299,7 +299,7 @@
   {
     "id": 31973,
     "dates": "Nov 10 - Dec 07, 2026",
-    "checkedAt": "2026-11-17T20:53:09.565Z",
+    "checkedAt": "2026-11-21T07:02:35.002Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -310,7 +310,7 @@
   {
     "id": 31994,
     "dates": "Nov 05 - Dec 10, 2026",
-    "checkedAt": "2026-11-17T20:53:09.565Z",
+    "checkedAt": "2026-11-21T07:02:35.002Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -354,7 +354,7 @@
   {
     "id": 32079,
     "dates": "Nov 10 - Dec 07, 2026",
-    "checkedAt": "2026-11-17T20:53:09.565Z",
+    "checkedAt": "2026-11-21T07:02:35.002Z",
     "deadline": {
       "kind": "submission",
       "label": null,
@@ -392,17 +392,6 @@
       "kind": "submission",
       "label": null,
       "at": "2027-04-11T16:00:00.000Z",
-      "zone": "America/New_York"
-    }
-  },
-  {
-    "id": 32158,
-    "dates": "Nov 17 - 20, 2026",
-    "checkedAt": "2026-11-17T20:53:09.565Z",
-    "deadline": {
-      "kind": "submission",
-      "label": null,
-      "at": "2026-11-21T00:00:00.000Z",
       "zone": "America/New_York"
     }
   }
