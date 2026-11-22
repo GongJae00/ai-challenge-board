@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-21T19:12:39.854Z",
+  "retrievedAt": "2026-11-22T06:43:37.746Z",
   "listings": [
     {
       "id": "devpost:29135",
@@ -683,6 +683,25 @@
           "label": null,
           "at": "2026-12-01T08:30:00.000Z",
           "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:32213",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "SunnyHacks Jan 2027",
+      "organizer": "SunnyHacks",
+      "conference": null,
+      "url": "https://sunnyhacks-jan-2027.devpost.com/",
+      "sourceUrl": "https://sunnyhacks-jan-2027.devpost.com/",
+      "opensAt": "2027-01-25T08:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2027-02-01T07:45:00.000Z",
+          "zone": "America/Los_Angeles"
         }
       ]
     }

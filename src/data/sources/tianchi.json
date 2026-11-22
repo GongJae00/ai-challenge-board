@@ -1,6 +1,6 @@
 {
   "source": "tianchi",
-  "retrievedAt": "2026-11-21T19:12:39.854Z",
+  "retrievedAt": "2026-11-22T06:43:37.746Z",
   "listings": [
     {
       "id": "tianchi:532460",
@@ -36,14 +36,8 @@
       "conference": null,
       "url": "https://tianchi.aliyun.com/competition/entrance/532508",
       "sourceUrl": "https://tianchi.aliyun.com/competition/entrance/532508",
-      "opensAt": "2026-11-01T16:00:00.000Z",
+      "opensAt": "2026-07-29T16:00:00.000Z",
       "deadlines": [
-        {
-          "kind": "entry",
-          "label": null,
-          "at": "2026-11-22T05:59:59.000Z",
-          "zone": "Asia/Shanghai"
-        },
         {
           "kind": "end",
           "label": null,
