@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-22T06:43:37.746Z",
+  "retrievedAt": "2026-11-22T19:35:08.308Z",
   "listings": [
     {
       "id": "devpost:29135",
@@ -170,25 +170,6 @@
           "label": null,
           "at": "2026-12-18T22:00:00.000Z",
           "zone": "Europe/Paris"
-        }
-      ]
-    },
-    {
-      "id": "devpost:31549",
-      "source": "devpost",
-      "kind": "challenge",
-      "title": "KUK VIRTUAL HACKATHON",
-      "organizer": "Kelab UMNO Korea",
-      "conference": null,
-      "url": "https://kuk-virtual-hackathon.devpost.com/",
-      "sourceUrl": "https://kuk-virtual-hackathon.devpost.com/",
-      "opensAt": "2026-11-14T15:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-22T15:00:00.000Z",
-          "zone": "Asia/Seoul"
         }
       ]
     },
