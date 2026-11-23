@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-22T19:35:08.308Z",
+  "retrievedAt": "2026-11-23T07:32:43.899Z",
   "listings": [
     {
       "id": "devpost:29135",
@@ -93,6 +93,25 @@
           "kind": "submission",
           "label": null,
           "at": "2026-12-15T19:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:31134",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "MACHINE AGE",
+      "organizer": "Paramam",
+      "conference": null,
+      "url": "https://machineage.devpost.com/",
+      "sourceUrl": "https://machineage.devpost.com/",
+      "opensAt": "2027-01-01T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2027-03-31T21:00:00.000Z",
           "zone": "America/New_York"
         }
       ]
@@ -645,6 +664,25 @@
           "label": null,
           "at": "2027-04-11T16:00:00.000Z",
           "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:32161",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Hackstead: Winterfest",
+      "organizer": "Hackstead",
+      "conference": null,
+      "url": "https://hackstead.devpost.com/",
+      "sourceUrl": "https://hackstead.devpost.com/",
+      "opensAt": "2026-12-06T06:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-20T22:00:00.000Z",
+          "zone": "America/Chicago"
         }
       ]
     },
