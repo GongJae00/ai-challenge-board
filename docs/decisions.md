@@ -2,6 +2,16 @@
 
 Decisions that constrain later work, newest first, each with its reason and the alternatives considered.
 
+## 2026-11-24: Codabench collection paused
+
+Codabench's API has answered with a bot-check page (Anubis, "Making sure you're not a bot!") instead of JSON since
+2026-11-19, so every Collect run failed on it. The collection policy in `CLAUDE.md` is to stop at a challenge page
+and never solve it. The question was put to GongJae on 2026-11-21 with stopping as the default, which took effect
+on 2026-11-24 with no answer. The collector is out of the list in `src/collect/sources/index.ts`, so no run touches
+Codabench. Its code, its state file, and its stored listings stay: the listings leave the pages as their deadlines
+pass, and the footer lists Codabench as coming soon (`paused` in `src/lib/sites.ts`). To collect it again, remove
+`paused` and register `codabench` in the list, once a request without a bot check works.
+
 ## 2026-11-17: lablab.ai removed, Starfield Labs listed as coming soon
 
 GongJae chose to remove the lablab source ("lablab 없애고 나중에 추가할 수 있도록 커밍순하자"). lablab.ai became

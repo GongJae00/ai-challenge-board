@@ -13,6 +13,11 @@ interface Site {
   platform: boolean
   /** A Korean site, which the footer lists apart from the others. */
   korean: boolean
+  /**
+   * Whether the collector is switched off, so that the footer lists the site as coming soon. Its stored listings
+   * stay on the pages until their deadlines pass.
+   */
+  paused?: boolean
 }
 
 /** Every site ACB collects from; a new source needs its entry here. */
@@ -34,6 +39,8 @@ export const sites = {
     url: "https://www.codabench.org/",
     platform: true,
     korean: false,
+    // Its API has answered with a bot-check page since 2026-11-19, and ACB stops at a challenge page.
+    paused: true,
   },
   kaggle: {
     name: "Kaggle",
@@ -97,14 +104,6 @@ export const sites = {
   },
 } as const satisfies Record<SourceId, Site>
 
-/**
- * Sites ACB will collect from once they have listings to read, shown in the footer as coming soon. lablab.ai became
- * Starfield Labs in November 2026, and its events page was empty then.
- */
-export const sitesComingSoon = [
-  { name: "Starfield Labs", url: "https://starfieldlabs.ai/events" },
-]
-
 /** The sources that are competition platforms, such as `dacon`. */
 export type PlatformId = {
   [Id in SourceId]: (typeof sites)[Id]["platform"] extends true ? Id : never
@@ -136,6 +135,21 @@ function isPlatform(id: SourceId): id is PlatformId {
 /** The competition platforms, in alphabetical order, as the filters list them. */
 export const platforms = sourceIdsByName.filter(isPlatform)
 
+const isPaused = (id: SourceId) => (sites[id] as Site).paused === true
+
 /** The sites outside Korea and the Korean ones, each in alphabetical order, as the footer lists them. */
-export const sitesAbroad = sourceIdsByName.filter((id) => !sites[id].korean)
-export const sitesInKorea = sourceIdsByName.filter((id) => sites[id].korean)
+export const sitesAbroad = sourceIdsByName.filter(
+  (id) => !sites[id].korean && !isPaused(id)
+)
+export const sitesInKorea = sourceIdsByName.filter(
+  (id) => sites[id].korean && !isPaused(id)
+)
+
+/**
+ * Sites ACB will collect from once they can be read, shown in the footer as coming soon: the paused sources, and
+ * Starfield Labs, which lablab.ai became in November 2026 with an empty events page.
+ */
+export const sitesComingSoon: { name: string; url: string }[] = [
+  ...sourceIdsByName.filter(isPaused).map((id) => sites[id]),
+  { name: "Starfield Labs", url: "https://starfieldlabs.ai/events" },
+]

@@ -131,6 +131,7 @@ for (const locale of locales) {
     await expect(
       footer.getByRole("link", { name: "Starfield Labs" })
     ).toBeVisible()
+    await expect(footer.getByRole("link", { name: "Codabench" })).toBeVisible()
     await expect(footer).not.toContainText("lablab")
   })
 

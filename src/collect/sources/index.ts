@@ -1,7 +1,6 @@
 import type { Source } from "../run.ts"
 import { aicrowd } from "./aicrowd/index.ts"
 import { aifactory } from "./aifactory/index.ts"
-import { codabench } from "./codabench/index.ts"
 import { dacon } from "./dacon/index.ts"
 import { devpost } from "./devpost/index.ts"
 import { drivendata } from "./drivendata/index.ts"
@@ -16,7 +15,6 @@ import { zindi } from "./zindi/index.ts"
 export const sources: Source[] = [
   openreview,
   evalai,
-  codabench,
   kaggle,
   dacon,
   aifactory,

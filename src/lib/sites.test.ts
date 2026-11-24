@@ -1,7 +1,12 @@
 import { describe, expect, it } from "vitest"
 
 import type { Listing } from "./listing.ts"
-import { platformName } from "./sites.ts"
+import {
+  platformName,
+  sitesAbroad,
+  sitesComingSoon,
+  sitesInKorea,
+} from "./sites.ts"
 
 const dacon: Listing = {
   id: "dacon:236771",
@@ -40,5 +45,16 @@ describe("platformName", () => {
     expect(
       platformName({ ...dacon, source: "kaggle", organizer: "Kaggle Inc." })
     ).toBeNull()
+  })
+})
+
+describe("the footer's site lists", () => {
+  it("lists a site whose collector is paused under coming soon, not among the sources", () => {
+    const comingSoon = sitesComingSoon.map((site) => site.name)
+    expect(comingSoon).toContain("Codabench")
+    expect(comingSoon).toContain("Starfield Labs")
+    expect(sitesAbroad).not.toContain("codabench")
+    expect(sitesInKorea).not.toContain("codabench")
+    expect(sitesAbroad).toContain("kaggle")
   })
 })
