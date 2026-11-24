@@ -341,6 +341,17 @@
     }
   },
   {
+    "id": 32031,
+    "dates": "Jan 01 - 15, 2027",
+    "checkedAt": "2026-11-24T06:35:56.186Z",
+    "deadline": {
+      "kind": "submission",
+      "label": null,
+      "at": "2027-01-16T02:45:00.000Z",
+      "zone": "America/New_York"
+    }
+  },
+  {
     "id": 32079,
     "dates": "Nov 10 - Dec 07, 2026",
     "checkedAt": "2026-11-21T07:02:35.002Z",
