@@ -1,6 +1,6 @@
 {
   "source": "openreview",
-  "retrievedAt": "2026-11-24T06:35:56.186Z",
+  "retrievedAt": "2026-11-24T22:24:26.679Z",
   "listings": [
     {
       "id": "openreview:AAAI.org/2027/Workshop/A2NetOps",
@@ -113,28 +113,6 @@
       ]
     },
     {
-      "id": "openreview:AAAI.org/2027/Workshop/ASTAD",
-      "source": "openreview",
-      "kind": "cfp",
-      "title": "The 4th Workshop on Automated Spatial and Temporal Anomaly Detection (ASTAD)",
-      "organizer": null,
-      "conference": {
-        "name": "AAAI",
-        "year": 2027
-      },
-      "url": "https://ismart.ece.mcgill.ca/astad4/",
-      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FASTAD",
-      "opensAt": "2026-10-15T04:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-24T11:59:00.000Z",
-          "zone": "AoE"
-        }
-      ]
-    },
-    {
       "id": "openreview:AAAI.org/2027/Workshop/EvalAIScientists",
       "source": "openreview",
       "kind": "cfp",
@@ -152,28 +130,6 @@
           "kind": "submission",
           "label": null,
           "at": "2026-11-27T12:00:00.000Z",
-          "zone": "AoE"
-        }
-      ]
-    },
-    {
-      "id": "openreview:AAAI.org/2027/Workshop/FinFM",
-      "source": "openreview",
-      "kind": "cfp",
-      "title": "AAAI-27 Workshop on Foundation Models and Generative AI for Finance (FinFM)",
-      "organizer": null,
-      "conference": {
-        "name": "AAAI",
-        "year": 2027
-      },
-      "url": "https://finfm.finhorizons.org/",
-      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FFinFM",
-      "opensAt": "2026-10-02T12:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-24T11:59:00.000Z",
           "zone": "AoE"
         }
       ]
@@ -328,28 +284,6 @@
           "kind": "submission",
           "label": null,
           "at": "2026-12-01T11:59:00.000Z",
-          "zone": "AoE"
-        }
-      ]
-    },
-    {
-      "id": "openreview:AAAI.org/2027/Workshop/NeuroAI",
-      "source": "openreview",
-      "kind": "cfp",
-      "title": "2nd International Workshop on Neuro for AI & AI for Neuro: Towards Multi-Modal Natural Intelligence",
-      "organizer": null,
-      "conference": {
-        "name": "AAAI",
-        "year": 2027
-      },
-      "url": "https://neuroai-multimodal-workshop.github.io/",
-      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FNeuroAI",
-      "opensAt": "2026-10-13T16:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-24T11:59:00.000Z",
           "zone": "AoE"
         }
       ]
@@ -593,28 +527,6 @@
           "label": null,
           "at": "2027-01-15T03:00:00.000Z",
           "zone": "UTC"
-        }
-      ]
-    },
-    {
-      "id": "openreview:thecvf.com/WACV/2027/Workshop/Data4VFM",
-      "source": "openreview",
-      "kind": "cfp",
-      "title": "Data4VFM: Workshop on Data-Centric Learning for Visual and Multimodal Foundation Models",
-      "organizer": null,
-      "conference": {
-        "name": "WACV",
-        "year": 2027
-      },
-      "url": "https://data4vfm-wacv2027workshop.github.io/",
-      "sourceUrl": "https://openreview.net/group?id=thecvf.com%2FWACV%2F2027%2FWorkshop%2FData4VFM",
-      "opensAt": "2026-09-13T11:59:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-24T11:59:00.000Z",
-          "zone": "AoE"
         }
       ]
     }
