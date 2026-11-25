@@ -154,17 +154,6 @@
     }
   },
   {
-    "id": 31737,
-    "dates": "Oct 16 - Nov 25, 2026",
-    "checkedAt": "2026-11-23T07:32:43.899Z",
-    "deadline": {
-      "kind": "submission",
-      "label": null,
-      "at": "2026-11-25T18:15:00.000Z",
-      "zone": "Asia/Kolkata"
-    }
-  },
-  {
     "id": 31775,
     "dates": "Nov 18 - 30, 2026",
     "checkedAt": "2026-11-23T23:51:27.778Z",

@@ -1,5 +1,25 @@
 {
   "source": "grandchallenge",
-  "retrievedAt": "2026-11-25T08:29:13.176Z",
-  "listings": []
+  "retrievedAt": "2026-11-25T21:40:21.574Z",
+  "listings": [
+    {
+      "id": "grandchallenge:prisma24",
+      "source": "grandchallenge",
+      "kind": "challenge",
+      "title": "PRISMA Challenge",
+      "organizer": null,
+      "conference": null,
+      "url": "https://prisma24.grand-challenge.org/",
+      "sourceUrl": "https://prisma24.grand-challenge.org/",
+      "opensAt": null,
+      "deadlines": [
+        {
+          "kind": "phase",
+          "label": "Debug",
+          "at": "2026-11-29T23:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    }
+  ]
 }
