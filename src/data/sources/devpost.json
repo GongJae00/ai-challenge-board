@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-25T21:40:21.574Z",
+  "retrievedAt": "2026-11-26T08:13:07.631Z",
   "listings": [
     {
       "id": "devpost:29135",
@@ -759,6 +759,25 @@
           "label": null,
           "at": "2026-12-07T05:00:00.000Z",
           "zone": "Asia/Kolkata"
+        }
+      ]
+    },
+    {
+      "id": "devpost:32246",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "Fanshawe Hacks",
+      "organizer": "club",
+      "conference": null,
+      "url": "https://fanshawe-hacks.devpost.com/",
+      "sourceUrl": "https://fanshawe-hacks.devpost.com/",
+      "opensAt": "2026-11-25T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-03T05:00:00.000Z",
+          "zone": "America/New_York"
         }
       ]
     }

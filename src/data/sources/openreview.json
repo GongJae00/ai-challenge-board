@@ -1,6 +1,6 @@
 {
   "source": "openreview",
-  "retrievedAt": "2026-11-25T21:40:21.574Z",
+  "retrievedAt": "2026-11-26T08:13:07.631Z",
   "listings": [
     {
       "id": "openreview:AAAI.org/2027/Workshop/A2NetOps",
@@ -42,6 +42,28 @@
           "kind": "submission",
           "label": null,
           "at": "2026-11-28T11:00:00.000Z",
+          "zone": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/AI4Factory",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "AAAI 27 Workshop on Trustworthy Generative and Agentic AI for Manufacturing Transformation",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://iamtirthankar.github.io/AI4Factory-2027/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FAI4Factory",
+      "opensAt": "2026-11-08T18:30:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-26T18:29:00.000Z",
           "zone": "UTC"
         }
       ]
@@ -131,6 +153,28 @@
           "label": null,
           "at": "2026-12-11T12:00:00.000Z",
           "zone": "AoE"
+        }
+      ]
+    },
+    {
+      "id": "openreview:AAAI.org/2027/Workshop/Human-Centric_AgMS",
+      "source": "openreview",
+      "kind": "cfp",
+      "title": "AAAI-27 Workshop on Human-Centric Agentic Mobility Services",
+      "organizer": null,
+      "conference": {
+        "name": "AAAI",
+        "year": 2027
+      },
+      "url": "https://agentic-mobility-workshop.github.io/",
+      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FHuman-Centric_AgMS",
+      "opensAt": "2026-10-13T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-12-26T04:59:00.000Z",
+          "zone": "UTC"
         }
       ]
     },
