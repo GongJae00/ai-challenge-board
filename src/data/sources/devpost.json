@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-26T08:13:07.631Z",
+  "retrievedAt": "2026-11-26T21:29:08.357Z",
   "listings": [
     {
       "id": "devpost:29135",
@@ -386,7 +386,7 @@
       "id": "devpost:31886",
       "source": "devpost",
       "kind": "challenge",
-      "title": "Build with AI - Pico Space Program",
+      "title": "Build with AI - PICO Space Program",
       "organizer": "XR Bootcamp",
       "conference": null,
       "url": "https://pico-space-program.devpost.com/",
@@ -725,6 +725,25 @@
       ]
     },
     {
+      "id": "devpost:32222",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "National Hackathon 2026: AWS Student Builder Group COMSATS Sahiwal × ILC×Devsinc",
+      "organizer": "AWS SBG COMSATS Sahiwal",
+      "conference": null,
+      "url": "https://aws-sbg-cui-sahiwal-hack-2026.devpost.com/",
+      "sourceUrl": "https://aws-sbg-cui-sahiwal-hack-2026.devpost.com/",
+      "opensAt": "2026-11-25T19:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2026-11-30T22:00:00.000Z",
+          "zone": "Asia/Karachi"
+        }
+      ]
+    },
+    {
       "id": "devpost:32230",
       "source": "devpost",
       "kind": "challenge",
@@ -733,12 +752,12 @@
       "conference": null,
       "url": "https://hackthefashion-global-26.devpost.com/",
       "sourceUrl": "https://hackthefashion-global-26.devpost.com/",
-      "opensAt": "2026-12-01T05:00:00.000Z",
+      "opensAt": "2026-12-08T05:00:00.000Z",
       "deadlines": [
         {
           "kind": "submission",
           "label": null,
-          "at": "2027-01-15T22:00:00.000Z",
+          "at": "2026-12-31T22:00:00.000Z",
           "zone": "America/New_York"
         }
       ]
