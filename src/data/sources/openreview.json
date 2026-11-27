@@ -1,6 +1,6 @@
 {
   "source": "openreview",
-  "retrievedAt": "2026-11-27T08:24:37.110Z",
+  "retrievedAt": "2026-11-27T21:14:23.143Z",
   "listings": [
     {
       "id": "openreview:AAAI.org/2027/Workshop/A2NetOps",
@@ -91,28 +91,6 @@
       ]
     },
     {
-      "id": "openreview:AAAI.org/2027/Workshop/EvalAIScientists",
-      "source": "openreview",
-      "kind": "cfp",
-      "title": "AAAI-27 Workshop on Effective and Efficient Evaluation for AI Scientists",
-      "organizer": null,
-      "conference": {
-        "name": "AAAI",
-        "year": 2027
-      },
-      "url": "https://eval-ai-scientists.github.io/aaai27/",
-      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FEvalAIScientists",
-      "opensAt": "2026-10-05T06:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-27T12:00:00.000Z",
-          "zone": "AoE"
-        }
-      ]
-    },
-    {
       "id": "openreview:AAAI.org/2027/Workshop/FrontierIR",
       "source": "openreview",
       "kind": "cfp",
@@ -196,28 +174,6 @@
           "kind": "submission",
           "label": null,
           "at": "2026-11-28T11:59:00.000Z",
-          "zone": "AoE"
-        }
-      ]
-    },
-    {
-      "id": "openreview:AAAI.org/2027/Workshop/MakingSense",
-      "source": "openreview",
-      "kind": "cfp",
-      "title": "AAAI-27 Workshop on Making Sense: Foundation Models for Multisensory Intelligence",
-      "organizer": null,
-      "conference": {
-        "name": "AAAI",
-        "year": 2027
-      },
-      "url": "https://making-sense-workshop.github.io/",
-      "sourceUrl": "https://openreview.net/group?id=AAAI.org%2F2027%2FWorkshop%2FMakingSense",
-      "opensAt": "2026-10-01T23:00:00.000Z",
-      "deadlines": [
-        {
-          "kind": "submission",
-          "label": null,
-          "at": "2026-11-27T11:59:00.000Z",
           "zone": "AoE"
         }
       ]
@@ -349,7 +305,7 @@
         {
           "kind": "submission",
           "label": null,
-          "at": "2026-12-01T12:05:00.000Z",
+          "at": "2026-12-03T18:10:00.000Z",
           "zone": "UTC"
         }
       ]

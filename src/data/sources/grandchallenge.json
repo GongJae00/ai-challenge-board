@@ -1,6 +1,6 @@
 {
   "source": "grandchallenge",
-  "retrievedAt": "2026-11-27T08:24:37.110Z",
+  "retrievedAt": "2026-11-27T21:14:23.143Z",
   "listings": [
     {
       "id": "grandchallenge:prisma24",
@@ -16,7 +16,7 @@
         {
           "kind": "phase",
           "label": "Debug",
-          "at": "2026-11-29T23:00:00.000Z",
+          "at": "2026-12-01T23:00:00.000Z",
           "zone": "UTC"
         }
       ]
