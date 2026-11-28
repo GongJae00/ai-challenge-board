@@ -1,6 +1,6 @@
 {
   "source": "devpost",
-  "retrievedAt": "2026-11-27T21:14:23.143Z",
+  "retrievedAt": "2026-11-28T07:45:00.455Z",
   "listings": [
     {
       "id": "devpost:29135",
@@ -815,6 +815,25 @@
           "kind": "submission",
           "label": null,
           "at": "2026-12-03T05:00:00.000Z",
+          "zone": "America/New_York"
+        }
+      ]
+    },
+    {
+      "id": "devpost:32255",
+      "source": "devpost",
+      "kind": "challenge",
+      "title": "BurHacks - AI For The Little Things",
+      "organizer": "BurHacks",
+      "conference": null,
+      "url": "https://burhacks.devpost.com/",
+      "sourceUrl": "https://burhacks.devpost.com/",
+      "opensAt": "2027-02-05T05:00:00.000Z",
+      "deadlines": [
+        {
+          "kind": "submission",
+          "label": null,
+          "at": "2027-02-12T23:00:00.000Z",
           "zone": "America/New_York"
         }
       ]
